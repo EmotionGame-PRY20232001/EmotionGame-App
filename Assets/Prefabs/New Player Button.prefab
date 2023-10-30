@@ -259,7 +259,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 644435317217880267}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1442691564, guid: ed6526b532dc75043b9164f3412d24e9, type: 3}
+        m_TargetAssemblyTypeName: PanelScript, Assembly-CSharp
+        m_MethodName: OpenNewPlayerPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8544450174811030879
 MonoBehaviour:
   m_ObjectHideFlags: 0

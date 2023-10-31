@@ -6,6 +6,6 @@ public class PanelScript : MonoBehaviour
 {
     public void ClosePanel()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

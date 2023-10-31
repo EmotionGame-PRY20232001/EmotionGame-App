@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 644435316388198087}
   - component: {fileID: 644435316388198081}
   - component: {fileID: 644435316388198086}
+  - component: {fileID: 1331553675659139548}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -135,6 +136,26 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1331553675659139548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644435316388198084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: 1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &644435317217880270
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +170,7 @@ GameObject:
   - component: {fileID: 644435317217880264}
   - component: {fileID: 8544450174811030879}
   - component: {fileID: 8299124610888303146}
+  - component: {fileID: 142677864867749319}
   m_Layer: 5
   m_Name: New Player Button
   m_TagString: Untagged
@@ -260,8 +282,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1442691564, guid: ed6526b532dc75043b9164f3412d24e9, type: 3}
-        m_TargetAssemblyTypeName: PanelScript, Assembly-CSharp
+      - m_Target: {fileID: 142677864867749319}
+        m_TargetAssemblyTypeName: NewPlayerButton, Assembly-CSharp
         m_MethodName: OpenNewPlayerPanel
         m_Mode: 1
         m_Arguments:
@@ -290,7 +312,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 75
+  m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -312,6 +334,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!114 &142677864867749319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644435317217880270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58fd751035a404a4a94840cf327a4d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &644435317786051071
 GameObject:
   m_ObjectHideFlags: 0

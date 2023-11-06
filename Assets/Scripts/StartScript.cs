@@ -17,7 +17,9 @@ public class StartScript : MonoBehaviour
     {
         Application.targetFrameRate = 60;
 
-        if (Random.Range(0, 2)  == 0)
+        //int randNum = Random.Range(0, 2);
+        int randNum = 0;
+        if (randNum  == 0)
         { 
             Instantiate(scrollViewPrefab, transform);
             Instantiate(newPlayerButton2, transform);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerButton : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class PlayerButton : MonoBehaviour
 
     public void ActivateEdit()
     {
-        editButton.SetActive(!editButton.activeSelf);
+        if (editButton.activeSelf)
+        {
+            SceneManager.LoadScene("GameImitate");
+        }
+        editButton.SetActive(true);
     }
 }

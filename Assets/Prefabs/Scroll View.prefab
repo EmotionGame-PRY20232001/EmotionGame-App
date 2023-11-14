@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6872979606384779639}
   - component: {fileID: 6872979606384779638}
   - component: {fileID: 6872979606384779641}
-  - component: {fileID: 6872979606384779640}
+  - component: {fileID: 8138830806636504206}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
---- !u!114 &6872979606384779640
+--- !u!114 &8138830806636504206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 6872979607809181534}
   - component: {fileID: 6872979607809181535}
   - component: {fileID: 6872979607809181532}
+  - component: {fileID: 196835708829504917}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -569,6 +570,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &196835708829504917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872979607809181530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d6fc0ca2f46fe48967fc0ccedd85d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 6872979606384779636}
 --- !u!1 &6872979607918417720
 GameObject:
   m_ObjectHideFlags: 0

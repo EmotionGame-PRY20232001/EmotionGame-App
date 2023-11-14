@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class StartScript : MonoBehaviour
@@ -17,10 +18,9 @@ public class StartScript : MonoBehaviour
     {
         Application.targetFrameRate = 60;
 
-        //int randNum = Random.Range(0, 2);
-        int randNum = 0;
-        if (randNum  == 0)
-        { 
+        var playerList = DBManager.Instance.GetPlayersFromDb();
+        if (playerList.Count  != 0)
+        {
             Instantiate(scrollViewPrefab, transform);
             Instantiate(newPlayerButton2, transform);
         }

@@ -32,6 +32,12 @@ public class DBManager : MonoBehaviour
         db.CreateTable<Player>();
     }
 
+    public void AddPlayerToDb(Player player)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Insert(player);
+    }
+
     public List<Player> GetPlayersFromDb()
     {
         var db = new SQLiteConnection(dbPath);

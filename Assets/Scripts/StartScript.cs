@@ -21,7 +21,7 @@ public class StartScript : MonoBehaviour
         var playerList = DBManager.Instance.GetPlayersFromDb();
         if (playerList.Count  != 0)
         {
-            Instantiate(scrollViewPrefab, transform);
+            Instantiate(scrollViewPrefab, transform).GetComponent<ScrollView>().ShowPlayers(playerList);
             Instantiate(newPlayerButton2, transform);
         }
         else

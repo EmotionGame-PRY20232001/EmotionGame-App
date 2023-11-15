@@ -473,7 +473,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283256141
+    rgba: 4284504654
   m_fontColor: {r: 0.30588236, g: 0.3529412, b: 0.3764706, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1122,7 +1122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 668430118}
         m_TargetAssemblyTypeName: PanelScript, Assembly-CSharp
-        m_MethodName: ClosePanel
+        m_MethodName: CloseNewPlayerPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1289,6 +1289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fb1cba14489649abad6178bd6c8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 716353428}
+  needsText: {fileID: 568254126}
 --- !u!1 &716353426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,7 +1789,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283256141
+    rgba: 4284504654
   m_fontColor: {r: 0.30588236, g: 0.3529412, b: 0.3764706, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2105,7 +2107,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283256141
+    rgba: 4284504654
   m_fontColor: {r: 0.30588236, g: 0.3529412, b: 0.3764706, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2681,7 +2683,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 668430118}
         m_TargetAssemblyTypeName: PanelScript, Assembly-CSharp
-        m_MethodName: ClosePanel
+        m_MethodName: CloseNewPlayerPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2902,18 +2904,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107885381}
   m_CullTransparentMesh: 1
---- !u!114 &142677865143775275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644435316396557602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58fd751035a404a4a94840cf327a4d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &263700140640702746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2948,7 +2938,6 @@ GameObject:
   - component: {fileID: 644435316396557604}
   - component: {fileID: 8544450175091255475}
   - component: {fileID: 8299124610629595078}
-  - component: {fileID: 142677865143775275}
   m_Layer: 5
   m_Name: Check Button
   m_TagString: Untagged
@@ -2999,7 +2988,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 644435316396557607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 668430118}
+        m_TargetAssemblyTypeName: PanelScript, Assembly-CSharp
+        m_MethodName: AddNewPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &644435316396557605
 RectTransform:
   m_ObjectHideFlags: 0

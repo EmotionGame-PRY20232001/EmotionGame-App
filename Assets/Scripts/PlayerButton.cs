@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerButton : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI nameText;
     [SerializeField]
-    private Texture2D background;
+    private RawImage background;
     [SerializeField]
     private bool needsText;
     [SerializeField]
     private GameObject editButton;
 
+    private Player playerReference;
+
     public void ButtonInstantiate(Player player)
     {
+        playerReference = player;
         nameText.text = player.Name;
-        background = GameManager.Instance.GetBackgrounds()[player.BackgroundId];
+        background.texture = GameManager.Instance.GetBackgrounds()[player.BackgroundId];
         needsText = player.NeedsText;
     }
 

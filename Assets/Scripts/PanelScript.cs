@@ -26,8 +26,8 @@ public class PanelScript : MonoBehaviour
             BackgroundId = 0
         };
         DBManager.Instance.AddPlayerToDb(player);
+        UIManager.Instance.RefreshSelectPlayerMenu();
         RefreshNewPlayerPanel();
-        RefreshPlayers();
         gameObject.SetActive(false);
     }
 
@@ -35,16 +35,5 @@ public class PanelScript : MonoBehaviour
     {
         nameText.text = string.Empty;
         needsText.isOn = false;
-    }
-
-    private void RefreshPlayers()
-    {
-        var contentObj = GameObject.Find("Content");
-        foreach (Transform child in contentObj.transform)
-        {
-            GameObject.Destroy(child.gameObject);
-        }
-        var playerList = DBManager.Instance.GetPlayersFromDb();
-        GameObject.Find("Scroll View(Clone)").GetComponent<ScrollView>().ShowPlayers(playerList);
     }
 }

@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 57186181}
   - component: {fileID: 57186180}
   - component: {fileID: 57186179}
-  - component: {fileID: 57186183}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -326,21 +325,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &57186183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57186178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec7aea1dadd45f74491b18a21a29d213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollViewPrefab: {fileID: 6872979607809181530, guid: 9a49234d46c363049916ea28968db59f, type: 3}
-  newPlayerButton: {fileID: 644435317217880270, guid: 194787faeb137b540a5b0f027d0a515d, type: 3}
-  newPlayerButton2: {fileID: 236605037607604064, guid: f0611f20cd5c0464197b9ed638984b2b, type: 3}
 --- !u!1 &156361146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,7 +1958,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804811a5114b71042b3f40db313fa5f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UICanvas: {fileID: 57186178}
   newPlayerTemplate: {fileID: 668430116}
+  scrollViewPrefab: {fileID: 6872979607809181530, guid: 9a49234d46c363049916ea28968db59f, type: 3}
+  newPlayerButton: {fileID: 644435317217880270, guid: 194787faeb137b540a5b0f027d0a515d, type: 3}
+  newPlayerButton2: {fileID: 236605037607604064, guid: f0611f20cd5c0464197b9ed638984b2b, type: 3}
 --- !u!1 &1466956725
 GameObject:
   m_ObjectHideFlags: 0

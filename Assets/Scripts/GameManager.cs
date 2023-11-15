@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     public List<Texture2D> GetBackgrounds()
     {
         return backgrounds;

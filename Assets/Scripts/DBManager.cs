@@ -38,6 +38,18 @@ public class DBManager : MonoBehaviour
         db.Insert(player);
     }
 
+    public void UpdatePlayerToDb(Player player)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Update(player);
+    }
+
+    public void DeletePlayerFromDb(Player player)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Delete(player);
+    }
+
     public List<Player> GetPlayersFromDb()
     {
         var db = new SQLiteConnection(dbPath);

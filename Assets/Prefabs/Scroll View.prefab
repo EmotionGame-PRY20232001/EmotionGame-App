@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content: {fileID: 6872979606384779636}
-  playerButtonPrefab: {fileID: 2646608608871324910, guid: c8fad29a00012cd48895f4b8b6a5abe4, type: 3}
+  playerButtonPrefab: {fileID: 5676160867462294981, guid: c8fad29a00012cd48895f4b8b6a5abe4, type: 3}
 --- !u!1 &6872979607918417720
 GameObject:
   m_ObjectHideFlags: 0

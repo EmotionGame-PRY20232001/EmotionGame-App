@@ -34,4 +34,9 @@ public class PlayerButton : MonoBehaviour
         }
         editButton.SetActive(true);
     }
+
+    public void OpenEditPlayerPanel()
+    {
+        UIManager.Instance.ShowPanelTemplate("Edit Player", playerReference);
+    }
 }

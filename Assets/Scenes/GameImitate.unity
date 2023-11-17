@@ -1222,6 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emocionText: {fileID: 969788416}
+  emocionSprite: {fileID: 1173183048}
   faceImage: {fileID: 1502976664}
   grayMaterial: {fileID: 2100000, guid: 7dbe573356591b7459380ae981098bc1, type: 2}
   compute: {fileID: 7200000, guid: b6e11a9d628513243ba67a98aa12f516, type: 3}

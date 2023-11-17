@@ -1548,6 +1548,14 @@ MonoBehaviour:
   - {fileID: 2800000, guid: f109d98c53856cd439d8452f9e6282ac, type: 3}
   - {fileID: 2800000, guid: 0729e364eb85f604cb0b959efd19e416, type: 3}
   - {fileID: 2800000, guid: d9bb80aee12cebe48988fc47522c2fd9, type: 3}
+  emotionSprites:
+  - {fileID: 21300000, guid: 1e835718e6b64c54b8f089549782b8de, type: 3}
+  - {fileID: 21300000, guid: 4398729508647d9428bb5146bbe95a76, type: 3}
+  - {fileID: 21300000, guid: 21ba01ca3aa4e85499949c87c3fe5907, type: 3}
+  - {fileID: 21300000, guid: b7497e01fe6817b409f45956d1f964b2, type: 3}
+  - {fileID: 21300000, guid: 81705cbf52495074397c8f6d4f28f591, type: 3}
+  - {fileID: 21300000, guid: 6d149340f707d794b929d90ab4edc930, type: 3}
+  - {fileID: 21300000, guid: 0623178d53eb23345a8aeee13ab28120, type: 3}
 --- !u!1 &399401336
 GameObject:
   m_ObjectHideFlags: 0

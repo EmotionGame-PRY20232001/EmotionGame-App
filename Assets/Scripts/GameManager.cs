@@ -8,7 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
 
     [SerializeField]
+    private Player currentPlayer;
+    [SerializeField]
     private List<Texture2D> backgrounds;
+    [SerializeField]
+    private List<Sprite> emotionSprites;
 
     private void Awake()
     {
@@ -27,8 +31,23 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+    public void SetCurrentPlayer(Player player)
+    {
+        currentPlayer = player;
+    }
+
+    public Player GetCurrentPlayer()
+    {
+        return currentPlayer;
+    }
+
     public List<Texture2D> GetBackgrounds()
     {
         return backgrounds;
+    }
+
+    public List<Sprite> GetEmotionSprites()
+    {
+        return emotionSprites;
     }
 }

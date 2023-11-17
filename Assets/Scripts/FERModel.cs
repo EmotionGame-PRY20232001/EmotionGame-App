@@ -11,6 +11,8 @@ public class FERModel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI emocionText;
     [SerializeField]
+    private Image emocionSprite;
+    [SerializeField]
     private RawImage faceImage;
     [SerializeField]
     private Material grayMaterial;
@@ -63,6 +65,7 @@ public class FERModel : MonoBehaviour
         int maxIndex = output.ToList().IndexOf(maxValue);
 
         emocionText.text = emotions[maxIndex];
+        emocionSprite.sprite = GameManager.Instance.GetEmotionSprites()[maxIndex];
     }
 
     private void OnDestroy()

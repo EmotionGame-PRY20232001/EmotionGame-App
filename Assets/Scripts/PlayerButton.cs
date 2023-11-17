@@ -30,6 +30,7 @@ public class PlayerButton : MonoBehaviour
     {
         if (editButton.activeSelf)
         {
+            GameManager.Instance.SetCurrentPlayer(playerReference);
             SceneManager.LoadScene("MainMenu");
         }
         editButton.SetActive(true);

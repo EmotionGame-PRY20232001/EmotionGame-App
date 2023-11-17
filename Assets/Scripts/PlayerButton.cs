@@ -30,7 +30,7 @@ public class PlayerButton : MonoBehaviour
     {
         if (editButton.activeSelf)
         {
-            SceneManager.LoadScene("GameImitate");
+            SceneManager.LoadScene("MainMenu");
         }
         editButton.SetActive(true);
     }

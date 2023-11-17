@@ -7,6 +7,6 @@ public class ActivityManager : MonoBehaviour
 {
     public void BackToMenu()
     {
-        SceneManager.LoadScene("SelectPlayer");
+        SceneManager.LoadScene("MainMenu");
     }
 }

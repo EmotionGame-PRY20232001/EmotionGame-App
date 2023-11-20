@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     private Player currentPlayer;
     [SerializeField]
     private List<Texture2D> backgrounds;
+    [SerializeField]
+    private List<string> backgroundNames;
     [SerializeField]
     private List<Sprite> emotionSprites;
 
@@ -31,6 +34,11 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+    public void ChangeBackground(int backgroundId)
+    {
+        GameObject.Find("Background").GetComponent<RawImage>().texture = backgrounds[backgroundId];
+    }
+
     public void SetCurrentPlayer(Player player)
     {
         currentPlayer = player;
@@ -44,6 +52,11 @@ public class GameManager : MonoBehaviour
     public List<Texture2D> GetBackgrounds()
     {
         return backgrounds;
+    }
+
+    public List<string> GetBackgroundNames() 
+    {
+        return backgroundNames;
     }
 
     public List<Sprite> GetEmotionSprites()

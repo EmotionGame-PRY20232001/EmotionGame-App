@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<Texture2D> backgrounds;
     [SerializeField]
+    private List<Sprite> guideSprites;
+    [SerializeField]
     private List<string> backgroundNames;
     [SerializeField]
     private List<Sprite> emotionSprites;
@@ -52,6 +54,11 @@ public class GameManager : MonoBehaviour
     public List<Texture2D> GetBackgrounds()
     {
         return backgrounds;
+    }
+
+    public List<Sprite> GetGuideSprites()
+    {
+        return guideSprites;
     }
 
     public List<string> GetBackgroundNames() 

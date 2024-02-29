@@ -563,6 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 2646608607956300463}
   background: {fileID: 936411506641459675}
+  guide: {fileID: 2646608608258038504}
   needsText: 0
   editButton: {fileID: 1069604909}
 --- !u!1 &2646608608905787791

@@ -36,7 +36,8 @@ public class PanelScript : MonoBehaviour
         {
             Name = nameInputText.text,
             NeedsText = needsText.isOn,
-            BackgroundId = 0
+            BackgroundId = 0,
+            GuideId = 0
         };
         DBManager.Instance.AddPlayerToDb(player);
         UIManager.Instance.RefreshSelectPlayerMenu();

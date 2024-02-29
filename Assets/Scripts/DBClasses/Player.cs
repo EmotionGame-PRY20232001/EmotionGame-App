@@ -10,5 +10,6 @@ public class Player
     public int Id { get; set; }
     public string Name { get; set; }
     public bool NeedsText { get; set; }
-    public int BackgroundId { get; set; }
+    public int BackgroundId { get; set; } = 0;
+    public int GuideId { get; set; } = 0;
 }

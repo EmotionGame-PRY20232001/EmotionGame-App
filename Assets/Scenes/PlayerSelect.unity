@@ -1548,6 +1548,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: f109d98c53856cd439d8452f9e6282ac, type: 3}
   - {fileID: 2800000, guid: 0729e364eb85f604cb0b959efd19e416, type: 3}
   - {fileID: 2800000, guid: d9bb80aee12cebe48988fc47522c2fd9, type: 3}
+  guideSprites:
+  - {fileID: 21300000, guid: 55bf78f51f758c446af240e6366330c0, type: 3}
+  - {fileID: 21300000, guid: eaf04fe68e825f54f895c7daad40cb2c, type: 3}
+  - {fileID: 21300000, guid: c22099e369c64fc4590e17899e2f1ec0, type: 3}
   backgroundNames:
   - Espacio
   - Nubes

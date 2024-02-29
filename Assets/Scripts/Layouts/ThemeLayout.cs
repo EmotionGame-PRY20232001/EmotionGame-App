@@ -10,7 +10,7 @@ public class ThemeLayout : MonoBehaviour
     [SerializeField]
     private GameObject themeTogglePrefab;
     [SerializeField]
-    private int selectedTheme;
+    private int selectedTheme = -1;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class ThemeLayout : MonoBehaviour
     public void ApplySelection()
     {
         var player = GameManager.Instance.GetCurrentPlayer();
-        player.BackgroundId = selectedTheme;
+        if (selectedTheme != -1) player.BackgroundId = selectedTheme;
         GameManager.Instance.SetCurrentPlayer(player);
     }
 

@@ -758,6 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBackgroundImage: {fileID: 2027710610}
+  guideImage: {fileID: 1438699248}
 --- !u!4 &1083925586
 Transform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class PlayerButton : MonoBehaviour
     [SerializeField]
     private RawImage background;
     [SerializeField]
+    private Image guide;
+    [SerializeField]
     private bool needsText;
     [SerializeField]
     private GameObject editButton;
@@ -23,6 +25,7 @@ public class PlayerButton : MonoBehaviour
         playerReference = player;
         nameText.text = player.Name;
         background.texture = GameManager.Instance.GetBackgrounds()[player.BackgroundId];
+        guide.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
         needsText = player.NeedsText;
     }
 

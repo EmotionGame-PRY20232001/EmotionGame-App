@@ -132,10 +132,10 @@ TextureImporter:
       name: 4-eyes_3-eyelashes1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 86
-        width: 44
-        height: 41
+        x: 12
+        y: 172
+        width: 91
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,7 +143,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2df405ead8f1246458483b94b0ac53e5
+      spriteID: e9f7c7d4dec4c0743bcacf167ff25e35
       internalID: -1467933971
       vertices: []
       indices: 
@@ -153,10 +153,10 @@ TextureImporter:
       name: 4-eyes_3-eyelashes2
       rect:
         serializedVersion: 2
-        x: 77
-        y: 86
-        width: 44
-        height: 41
+        x: 152
+        y: 173
+        width: 92
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a6d4b652c4649a4cb10df4b6383f32d
+      spriteID: f8840af834918f542af5ab31777f025b
       internalID: 1396299746
       vertices: []
       indices: 
@@ -174,10 +174,10 @@ TextureImporter:
       name: 4-eyes_3-eyelashes3
       rect:
         serializedVersion: 2
-        x: 7
-        y: 44
-        width: 44
-        height: 41
+        x: 12
+        y: 88
+        width: 91
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 707cf856b4aecfc448c767bba2a4c158
+      spriteID: 45cecc0f555d99b48bff9ac5c32fa4b2
       internalID: -119044882
       vertices: []
       indices: 
@@ -195,10 +195,10 @@ TextureImporter:
       name: 4-eyes_3-eyelashes4
       rect:
         serializedVersion: 2
-        x: 77
-        y: 44
-        width: 44
-        height: 41
+        x: 152
+        y: 88
+        width: 91
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d934880bfefb52e4980c5825ae394e3f
+      spriteID: a0548940970810a49adc58c7bbddee10
       internalID: -219886783
       vertices: []
       indices: 
@@ -216,10 +216,10 @@ TextureImporter:
       name: 4-eyes_3-eyelashes5
       rect:
         serializedVersion: 2
-        x: 7
-        y: 2
-        width: 44
-        height: 41
+        x: 12
+        y: 4
+        width: 91
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,7 +227,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a0f2ffb59cd3024f9f668e30bea926b
+      spriteID: c9a521d66b5560142970b81f60261a64
       internalID: -1979510554
       vertices: []
       indices: 

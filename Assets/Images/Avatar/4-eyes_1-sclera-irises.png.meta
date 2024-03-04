@@ -132,10 +132,10 @@ TextureImporter:
       name: 4-eyes_1-iris1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 54
-        width: 31
-        height: 37
+        x: 7
+        y: 108
+        width: 63
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,7 +143,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26bf50570bbc2f14a98416e36246ef9f
+      spriteID: a06016829caacaf46af4f2e44e449cf3
       internalID: 727231326
       vertices: []
       indices: 
@@ -153,10 +153,10 @@ TextureImporter:
       name: 4-eyes_1-iris2
       rect:
         serializedVersion: 2
-        x: 43
-        y: 54
-        width: 31
-        height: 37
+        x: 87
+        y: 108
+        width: 63
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f506b21cb8eb6284da30546b0d926491
+      spriteID: 3140a7f7d8c141347997f087b69753d3
       internalID: 584781313
       vertices: []
       indices: 
@@ -174,10 +174,10 @@ TextureImporter:
       name: 4-eyes_1-iris3
       rect:
         serializedVersion: 2
-        x: 87
-        y: 54
-        width: 31
-        height: 37
+        x: 175
+        y: 108
+        width: 63
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99df42e86dd54e498c36c4d4305028a
+      spriteID: 8de0f92a329c43b43aaf76681871d224
       internalID: 1705489392
       vertices: []
       indices: 
@@ -195,10 +195,10 @@ TextureImporter:
       name: 4-eyes_1-iris4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 7
-        width: 31
-        height: 37
+        x: 7
+        y: 14
+        width: 63
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c5750b6567006448b4f5f545ea17182
+      spriteID: 548fbee79ca2b724088f58d9914b853d
       internalID: 2003091949
       vertices: []
       indices: 
@@ -216,10 +216,10 @@ TextureImporter:
       name: 4-eyes_1-iris5
       rect:
         serializedVersion: 2
-        x: 43
-        y: 7
-        width: 31
-        height: 37
+        x: 87
+        y: 14
+        width: 63
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,7 +227,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db7f36084ec90814da52533a07cb736e
+      spriteID: ff566bca19e378e4fb4bee44e4bfaf52
       internalID: -50963692
       vertices: []
       indices: 
@@ -237,10 +237,10 @@ TextureImporter:
       name: 4-eyes_0-sclera
       rect:
         serializedVersion: 2
-        x: 81
-        y: 6
-        width: 41
-        height: 40
+        x: 163
+        y: 11
+        width: 81
+        height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4821ccae6e27ae243984a1feac166cea
+      spriteID: acd0a071a73c34f49b1ea5be0e133dc5
       internalID: 135986223
       vertices: []
       indices: 

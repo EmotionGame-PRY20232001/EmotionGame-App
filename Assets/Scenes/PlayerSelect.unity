@@ -506,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0988f081188f04195e51d86c920358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MainBackground>k__BackingField: {fileID: 2800000, guid: d7c6cf8b2f0a63a4592f7001f31bd2be, type: 3}
   backgrounds:
   - {fileID: 2800000, guid: 337aaae78ae0a544da28b1ed33cfc486, type: 3}
   - {fileID: 2800000, guid: f109d98c53856cd439d8452f9e6282ac, type: 3}

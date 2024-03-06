@@ -7,20 +7,18 @@ using UnityEngine.UI;
 public class UIActions : MonoBehaviour
 {
     [SerializeField]
-    private RawImage playerBackgroundImage;
-    [SerializeField]
     private Image guideImage;
 
     private void Awake()
     {
         var player = GameManager.Instance.GetCurrentPlayer();
         //GameManager.Instance.GetCurrentPlayer().Info();
-        playerBackgroundImage.texture = GameManager.Instance.GetBackgrounds()[player.BackgroundId];
         if (guideImage) guideImage.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
     }
 
     public void ReturnToSelecion()
     {
+        GameManager.Instance.SetCurrentPlayer(null);
         SceneManager.LoadScene("PlayerSelect");
     }
 

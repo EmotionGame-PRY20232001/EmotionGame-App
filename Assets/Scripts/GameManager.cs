@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Player currentPlayer;
+    [field:SerializeField]
+    public Texture2D MainBackground { get; private set; }
     [SerializeField]
     private List<Texture2D> backgrounds;
     [SerializeField]
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     private List<string> backgroundNames;
     [SerializeField]
     private List<Sprite> emotionSprites;
+    
+    
 
     private void Awake()
     {

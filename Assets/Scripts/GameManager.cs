@@ -21,6 +21,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<Sprite> emotionSprites;
     
+    // GUIDE CUSTOMIZATION
+    // public Dictionary<Character.ESkinColor, Sprite> SkinColors = new Dictionary<Character.ESkinColor, Sprite>();
+    [field:SerializeField]
+    public List<UIutils.CustomSprites<Character.ESkinColor>> SkinColors { get; private set; }
+    [field:SerializeField]
+    public List<UIutils.CustomSpritesMul<Character.EHairCut, Character.EHairColor>> Hairs { get; private set; }
+    [field:SerializeField]
+    public List<UIutils.CustomSprites<Character.EHairColor>> Eyebrows { get; private set; }
+    [field:SerializeField]
+    public List<UIutils.CustomSprites<Character.EHairColor>> Eyelashes { get; private set; }
+    [field:SerializeField]
+    public List<UIutils.CustomSprites<Character.EEyeColor>> EyeColors { get; private set; }
+    [field:SerializeField]
+    public List<UIutils.CustomSprites<Character.EShirt>> Shirts { get; private set; }
     
 
     private void Awake()

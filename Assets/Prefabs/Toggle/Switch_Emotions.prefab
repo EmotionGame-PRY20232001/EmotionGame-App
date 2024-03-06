@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8844268990018140182}
   - component: {fileID: 8844268990018140183}
   m_Layer: 5
-  m_Name: Toogle_Btn_Emotions
+  m_Name: Switch_Emotions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

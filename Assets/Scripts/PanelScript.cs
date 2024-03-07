@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(PopUp))]
 public class PanelScript : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +16,9 @@ public class PanelScript : MonoBehaviour
     [SerializeField]
     private Toggle needsText;
 
+    [SerializeField]
+    private PopUp popUp;
+
     private Player playerRef;
 
     private enum PanelType
@@ -24,11 +28,33 @@ public class PanelScript : MonoBehaviour
         DeletePlayer
     }
 
-    public void ClosePlayerPanel()
+    public void Awake()
     {
-        RefreshPlayerPanel();
-        gameObject.SetActive(false);
+        popUp = gameObject.GetComponent<PopUp>();
+        // popUp.onClose += ClosePlayerPanel;
+        popUp.onClose += RefreshPlayerPanel;
+
+        switch (panelType)
+        {
+            case PanelType.NewPlayer:
+                popUp.onAccept += AddNewPlayer;
+                break;
+            case PanelType.EditPlayer:
+                popUp.onAccept += UpdatePlayer;
+                break;
+            case PanelType.DeletePlayer:
+                popUp.onAccept += DeletePlayer;
+                break;
+            default: break;
+        }
+        // popUp.onOpen += RefreshPlayerPanel;
     }
+
+    // public void ClosePlayerPanel()
+    // {
+    //     RefreshPlayerPanel();
+    //     // gameObject.SetActive(false);
+    // }
 
     public void AddNewPlayer()
     {
@@ -42,14 +68,14 @@ public class PanelScript : MonoBehaviour
         DBManager.Instance.AddPlayerToDb(player);
         UIManager.Instance.RefreshSelectPlayerMenu();
         RefreshPlayerPanel();
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     public void UpdatePlayer()
     {
         if (playerRef.Name.Equals(nameInputText.text) && playerRef.NeedsText.Equals(needsText.isOn))
         {
-            gameObject.SetActive(false);
+            // gameObject.SetActive(false);
             return;
         }
         playerRef.Name = nameInputText.text;
@@ -58,7 +84,7 @@ public class PanelScript : MonoBehaviour
         UIManager.Instance.RefreshSelectPlayerMenu();
         playerRef = null;
         RefreshPlayerPanel();
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     public void DeletePlayer()
@@ -67,7 +93,7 @@ public class PanelScript : MonoBehaviour
         UIManager.Instance.RefreshSelectPlayerMenu();
         playerRef = null;
         RefreshPlayerPanel();
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
         UIManager.Instance.ClosePanel("Edit Player");
     }
 
@@ -87,7 +113,7 @@ public class PanelScript : MonoBehaviour
                 needsText.isOn = player.NeedsText;
                 break;
             case PanelType.DeletePlayer:
-                nameText.text = "Está por eliminar a\n" + player.Name;
+                nameText.text = "Estï¿½ por eliminar a\n" + player.Name;
                 break;
             default: break;
         }

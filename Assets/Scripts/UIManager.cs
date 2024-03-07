@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
 
     public void ClosePanel(string panelName)
     {
-        templates[panelName].GetComponent<PanelScript>().ClosePlayerPanel();
+        templates[panelName].GetComponent<PopUp>().Close();
     }
 
     public void RefreshSelectPlayerMenu()

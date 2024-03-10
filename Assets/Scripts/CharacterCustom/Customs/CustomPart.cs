@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class CustomPart : MonoBehaviour
 {
     protected Toggle toggle;
-    [field:SerializeField]
-    public CharacterCustomization Customization { get; protected set; }
+    public CharacterCustomization Customization { protected get; set; }
 
     protected virtual void Awake()
     {

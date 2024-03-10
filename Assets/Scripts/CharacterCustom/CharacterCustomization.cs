@@ -13,80 +13,75 @@ public class CharacterCustomization : MonoBehaviour
     
     protected Character.Custom Customization;
     
-    public void SetHairCut(CustomHairCut hairCut)
-    {
-        _SetHairCut(hairCut.HairCut);
-    }
-    public void SetHairColor(CustomHairColor hairColor)
-    {
-        _SetHairColor(hairColor.HairColor);
-    }
-    public void SetEyeColor(CustomEyeColor eyeColor)
-    {
-        _SetEyeColor(eyeColor.EyeColor);
-    }
-    public void SetSkinColor(CustomSkinColor skinColor)
-    {
-        _SetSkinColor(skinColor.SkinColor);
-    }
-    public void SetShirt(CustomShirt shirt)
-    {
-        _SetShirt(shirt.Shirt);
-    }
-    protected void _SetHair(Character.EHairCut hairCut, Character.EHairColor hairColor)
+    protected void SetHair(Character.EHairCut hairCut, Character.EHairColor hairColor)
     {
         Customization.HairCut = hairCut;
         Customization.HairColor = hairColor;
-        _SetHairCut(hairCut);
-        _SetHairColor(hairColor);
+        SetHairCut(hairCut);
+        SetHairColor(hairColor);
     }
-    protected void _SetHairCut(Character.EHairCut hairCut)
+    
+    public Character.EHairCut GetHairCut() { return Customization.HairCut; }
+    public void SetHairCut(Character.EHairCut hairCut)
     {
         Customization.HairCut = hairCut;
-        Sprite _hairCut = GameManager.Instance.Hairs.Find( x => x.Key1 == hairCut &&
-                                                                x.Key2 == Customization.HairColor ).Value;
+        Sprite _hairCut = hairCut == Character.EHairCut.None ? null :
+                                        GameManager.Instance.CharacterCustom.Hairs[Customization.HairColor].HairCuts[hairCut];
         UIutils.SetImage(Parts.HairBack, _hairCut);
     }
-    protected void _SetHairColor(Character.EHairColor hairColor)
+
+    public Character.EHairColor GetHairColor() { return Customization.HairColor; }
+    public void SetHairColor(Character.EHairColor hairColor)
     {
         Customization.HairColor = hairColor;
-        Sprite hairBack = GameManager.Instance.Hairs.Find( x => x.Key1 == Customization.HairCut &&
-                                                                x.Key2 == hairColor ).Value;
-        UIutils.SetImage(Parts.HairBack, hairBack);
-        Sprite _eyelashes = GameManager.Instance.Eyelashes.Find( x => x.Key == hairColor ).Value;
+        
+        if (Customization.HairCut != Character.EHairCut.None)
+        {
+            Sprite hairBack = GameManager.Instance.CharacterCustom.Hairs[hairColor].HairCuts[Customization.HairCut];
+            UIutils.SetImage(Parts.HairBack, hairBack);
+        }
+
+        Sprite _eyelashes = GameManager.Instance.CharacterCustom.Hairs[hairColor].Eyelashes;
         UIutils.SetImage(Parts.EyelashesL, _eyelashes);
         UIutils.SetImage(Parts.EyelashesR, _eyelashes);
-        Sprite _eyebrows = GameManager.Instance.Eyebrows.Find( x => x.Key == hairColor ).Value;
+        
+        Sprite _eyebrows = GameManager.Instance.CharacterCustom.Hairs[hairColor].Eyebrow;
         UIutils.SetImage(Parts.EyebrowL, _eyebrows);
         UIutils.SetImage(Parts.EyebrowR, _eyebrows);
     }
-    protected void _SetEyeColor(Character.EEyeColor eyeColor)
+    
+    public Character.EEyeColor GetEyeColor() { return Customization.EyeColor; }
+    public void SetEyeColor(Character.EEyeColor eyeColor)
     {
         Customization.EyeColor = eyeColor;
-        Sprite _iris = GameManager.Instance.EyeColors.Find( x => x.Key == eyeColor ).Value;
+        Sprite _iris = GameManager.Instance.CharacterCustom.EyeColors[eyeColor];
         UIutils.SetImage(Parts.IrisL, _iris);
         UIutils.SetImage(Parts.IrisR, _iris);
     }
-    public void _SetSkinColor(Character.ESkinColor skinColor)
+
+    public Character.ESkinColor GetSkinColor() { return Customization.SkinColor; }
+    public void SetSkinColor(Character.ESkinColor skinColor)
     {
         Customization.SkinColor = skinColor;
-        Sprite _skin = GameManager.Instance.SkinColors.Find( x => x.Key == skinColor ).Value;
+        Sprite _skin = GameManager.Instance.CharacterCustom.SkinColors[skinColor];
         UIutils.SetImage(Parts.Body, _skin);
     }
-    protected void _SetShirt(Character.EShirt shirt)
+
+    public Character.EShirt GetShirt() { return Customization.Shirt; }
+    public void SetShirt(Character.EShirt shirt)
     {
         Customization.Shirt = shirt;
-        Sprite _shirt = GameManager.Instance.Shirts.Find( x => x.Key == shirt ).Value;
+        Sprite _shirt = GameManager.Instance.CharacterCustom.Shirts[shirt];
         UIutils.SetImage(Parts.Shirt, _shirt);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _SetHair(Character.EHairCut.Medium, Character.EHairColor.Black);
-        _SetEyeColor(Character.EEyeColor.Dark);
-        _SetSkinColor(Character.ESkinColor.Medium);
-        _SetShirt(Character.EShirt.Calm);
+        SetHair(Character.EHairCut.Medium, Character.EHairColor.Black);
+        SetEyeColor(Character.EEyeColor.Dark);
+        SetSkinColor(Character.ESkinColor.Medium);
+        SetShirt(Character.EShirt.Calm);
     }
 
     // // Update is called once per frame

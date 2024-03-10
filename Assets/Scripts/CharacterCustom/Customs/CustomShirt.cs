@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomShirt : MonoBehaviour
+public class CustomShirt : CustomPart
 {
     [field: SerializeField]
     public Character.EShirt Shirt {get; private set;}
@@ -11,5 +11,15 @@ public class CustomShirt : MonoBehaviour
     public CustomShirt(Character.EShirt shirt)
     {
         Shirt = shirt;
+    }
+    
+    protected override void Start()
+    {
+        toggle.isOn = Shirt == Customization.GetShirt();
+    }
+
+    protected override void SetPart()
+    {
+        Customization.SetShirt(Shirt);
     }
 }

@@ -2,14 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomHairCut : MonoBehaviour
+public class CustomHairCut : CustomHair
 {
     [field: SerializeField]
-    public Character.EHairCut HairCut {get; private set;}
-
+    public Character.EHairCut HairCut {get; protected set;}
+    [SerializeField]
+    protected GameObject HairColorsGroup;
+    [SerializeField]
+    protected CustomHairColor[] HairColors;
+    
     public CustomHairCut() {}
     public CustomHairCut(Character.EHairCut hairCut)
     {
         HairCut = hairCut;
+    }
+    
+    protected override void Start()
+    {
+        base.Start();
+        toggle.isOn = HairCut == Customization.GetHairCut();
+        FillHairColors();
+        SetColor(Customization.GetHairColor());
+    }
+
+    protected override void SetPart()
+    {
+        Customization.SetHairCut(HairCut);
+        foreach (CustomHairColor _hairColor in HairColors)
+            _hairColor.SetHairCut(HairCut);
+    }
+
+    public void FillHairColors()
+    {
+        if (HairColorsGroup == null) return;
+        HairColors = HairColorsGroup.GetComponentsInChildren<CustomHairColor>();
+    }
+    
+    public void SetColor(Character.EHairColor _hairColor)
+    {
+        GameManager.CustomHair _hair = GameManager.Instance.CharacterCustom.Hairs[_hairColor];
+
+        if (HairEye != null)
+            HairEye.color = _hair.Color;
+
+        if (HairBack != null)
+            UIutils.SetImage(HairBack, HairCut == Character.EHairCut.None ? null : _hair.HairCuts[HairCut]);
+            // HairBack.color = _hair.Color;
     }
 }

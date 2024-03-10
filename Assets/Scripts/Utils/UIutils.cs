@@ -9,8 +9,24 @@ public class UIutils : MonoBehaviour
     {
         if (_object == null) return;
         Image image = _object.GetComponent<Image>();
-        if (image != null)
-            image.overrideSprite = sprite;
+        SetImage(image, sprite);
+    }
+    
+    static public void SetImage(Image image, Sprite sprite)
+    {
+        if (image == null) return;
+        
+        if (sprite == null)
+        {
+            image.enabled = false;
+        }
+        else
+        {
+            if (!image.enabled)
+                image.enabled = true;
+            // image.overrideSprite = sprite;
+            image.sprite = sprite;
+        }
     }
     
 

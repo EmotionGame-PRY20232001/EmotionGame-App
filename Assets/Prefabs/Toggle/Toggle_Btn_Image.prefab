@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 3241603454715961383}
   - component: {fileID: 475753600282842790}
   m_Layer: 5
-  m_Name: Toggle_Btn_Customize
+  m_Name: Toggle_Btn_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

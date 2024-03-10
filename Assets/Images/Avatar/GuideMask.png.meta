@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cec8a6daf9b7a34fb2a21c07693223a
+guid: d4527a10fcdfebd4ebdc6b478275caf9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,70 +127,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: ic_hairBack1
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 270
-        width: 182
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2d9c52d23eef1b43ab509c201f7d349
-      internalID: 381833519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ic_hairBack2
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 196
-        width: 187
-        height: 248
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e3441c0fe3fc0c4089a837d3b786140
-      internalID: 544961288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ic_hairBack3
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 76
-        width: 159
-        height: 151
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7b01298efac9c14384b88bfa6a79da1
-      internalID: -1400683830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -201,10 +138,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      ic_hairBack1: 381833519
-      ic_hairBack2: 544961288
-      ic_hairBack3: -1400683830
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

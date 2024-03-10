@@ -15,9 +15,9 @@ public class Character : MonoBehaviour
     public struct Custom
     {
         public ESkinColor SkinColor;
+        public EEyeColor EyeColor;
         public EHairColor HairColor;
         public EHairCut HairCut;
-        public EEyeColor EyeColor;
         public EShirt Shirt;
     }
 

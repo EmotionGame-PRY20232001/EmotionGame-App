@@ -1,3 +1,4 @@
+using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,21 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<Sprite> emotionSprites;
     
-    // GUIDE CUSTOMIZATION
-    // public Dictionary<Character.ESkinColor, Sprite> SkinColors = new Dictionary<Character.ESkinColor, Sprite>();
     [field:SerializeField]
-    public List<UIutils.CustomSprites<Character.ESkinColor>> SkinColors { get; private set; }
-    [field:SerializeField]
-    public List<UIutils.CustomSpritesMul<Character.EHairCut, Character.EHairColor>> Hairs { get; private set; }
-    [field:SerializeField]
-    public List<UIutils.CustomSprites<Character.EHairColor>> Eyebrows { get; private set; }
-    [field:SerializeField]
-    public List<UIutils.CustomSprites<Character.EHairColor>> Eyelashes { get; private set; }
-    [field:SerializeField]
-    public List<UIutils.CustomSprites<Character.EEyeColor>> EyeColors { get; private set; }
-    [field:SerializeField]
-    public List<UIutils.CustomSprites<Character.EShirt>> Shirts { get; private set; }
-    
+    public CharacterCustomParts CharacterCustom { get; private set; }
 
     private void Awake()
     {
@@ -87,5 +75,35 @@ public class GameManager : MonoBehaviour
     public List<Sprite> GetEmotionSprites()
     {
         return emotionSprites;
+    }
+
+    
+    [System.Serializable]
+    public struct CharacterCustomParts
+    {
+        //TODO: Check if HairColor struct needed
+        [field:SerializeField][SerializedDictionary("Skin Color", "Sprite")]
+        public SerializedDictionary<Character.ESkinColor, Sprite> SkinColors { get; private set; }
+        [field:SerializeField][SerializedDictionary("Eye Color", "Sprite")]
+        public SerializedDictionary<Character.EEyeColor, Sprite> EyeColors { get; private set; }
+        [field:SerializeField][SerializedDictionary("Hair Color", "Sprites")]
+        public SerializedDictionary<Character.EHairColor, CustomHair> Hairs { get; private set; }
+        // [field:SerializeField][SerializedDictionary("Hair Cuts Icons", "Sprite")]
+        // public SerializedDictionary<Character.EHairCut, Sprite> HairCuts { get; private set; }
+        [field:SerializeField][SerializedDictionary("Shirt", "Sprite")]
+        public SerializedDictionary<Character.EShirt, Sprite> Shirts { get; private set; }
+    }
+
+    [System.Serializable]
+    public struct CustomHair
+    {
+        [field:SerializeField]
+        public Color Color { get; private set; }
+        [field:SerializeField]
+        public Sprite Eyebrow { get; private set; }
+        [field:SerializeField]
+        public Sprite Eyelashes { get; private set; }
+        [field:SerializeField][SerializedDictionary("Haircut", "Sprite")]
+        public SerializedDictionary<Character.EHairCut, Sprite> HairCuts { get; private set; }
     }
 }

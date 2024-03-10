@@ -529,110 +529,110 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 81705cbf52495074397c8f6d4f28f591, type: 3}
   - {fileID: 21300000, guid: 6d149340f707d794b929d90ab4edc930, type: 3}
   - {fileID: 21300000, guid: 0623178d53eb23345a8aeee13ab28120, type: 3}
-  <SkinColors>k__BackingField:
-  - Key: 0
-    Value: {fileID: 21300000, guid: 71de5fd43bbfbac4d8add651727f153a, type: 3}
-  - Key: 1
-    Value: {fileID: 21300000, guid: a3a274e955afb9a4cbd1b19972bcb05b, type: 3}
-  - Key: 2
-    Value: {fileID: 21300000, guid: ceebd3619e0006a4da0df8b6f6d9b0f8, type: 3}
-  - Key: 3
-    Value: {fileID: 21300000, guid: b15761a1611605549b535b7a41c7343d, type: 3}
-  - Key: 4
-    Value: {fileID: 21300000, guid: d60e0eba85b678548b4fc4af94a8c3f7, type: 3}
-  <Hairs>k__BackingField:
-  - Key1: 0
-    Key2: 0
-    Value: {fileID: 0}
-  - Key1: 1
-    Key2: 0
-    Value: {fileID: 21300000, guid: 42c9234789752d04c88e2a4c1c6e5ea9, type: 3}
-  - Key1: 1
-    Key2: 1
-    Value: {fileID: 21300000, guid: 23a8d38e6c128d440bdaced01400e184, type: 3}
-  - Key1: 1
-    Key2: 2
-    Value: {fileID: 21300000, guid: 3807fad70b9abcb4292eba4826a12200, type: 3}
-  - Key1: 1
-    Key2: 3
-    Value: {fileID: 21300000, guid: 77c8650d1b6e64243b7ba055a8188c32, type: 3}
-  - Key1: 1
-    Key2: 4
-    Value: {fileID: 21300000, guid: 95613e6e785ae894aac47643bbae6b94, type: 3}
-  - Key1: 2
-    Key2: 0
-    Value: {fileID: 21300000, guid: 33a5dc73e2e1aa34f849b74111b2bb5d, type: 3}
-  - Key1: 2
-    Key2: 1
-    Value: {fileID: 21300000, guid: dea94afe5d0cc1048bff78816a5c827c, type: 3}
-  - Key1: 2
-    Key2: 2
-    Value: {fileID: 21300000, guid: cddceccd706148f4b9d3265d1b4e1cd5, type: 3}
-  - Key1: 2
-    Key2: 3
-    Value: {fileID: 21300000, guid: 8975fd943ec552b4f84bf2b04118893b, type: 3}
-  - Key1: 2
-    Key2: 4
-    Value: {fileID: 21300000, guid: f2b3b9e4c67249344b6e488f0363a5b8, type: 3}
-  - Key1: 3
-    Key2: 0
-    Value: {fileID: 21300000, guid: fafe5cc078141584e8d213e993952e45, type: 3}
-  - Key1: 3
-    Key2: 1
-    Value: {fileID: 21300000, guid: 75708b08d2c3e2c4f8d2983ae1f80e34, type: 3}
-  - Key1: 3
-    Key2: 2
-    Value: {fileID: 21300000, guid: b4065cd3081f1be4196d62111f879b01, type: 3}
-  - Key1: 3
-    Key2: 3
-    Value: {fileID: 21300000, guid: 209d3619863f9ce449d1a27a72a008f8, type: 3}
-  - Key1: 3
-    Key2: 4
-    Value: {fileID: 21300000, guid: cbed5214ffdf87840889df8a0328a6e9, type: 3}
-  <Eyebrows>k__BackingField:
-  - Key: 0
-    Value: {fileID: 129524190, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
-  - Key: 1
-    Value: {fileID: -1182445031, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
-  - Key: 2
-    Value: {fileID: -1133849308, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
-  - Key: 3
-    Value: {fileID: 638615222, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
-  - Key: 4
-    Value: {fileID: -2055798081, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
-  <Eyelashes>k__BackingField:
-  - Key: 0
-    Value: {fileID: -1467933971, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
-  - Key: 0
-    Value: {fileID: 1396299746, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
-  - Key: 0
-    Value: {fileID: -119044882, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
-  - Key: 0
-    Value: {fileID: -219886783, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
-  - Key: 0
-    Value: {fileID: -1979510554, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
-  <EyeColors>k__BackingField:
-  - Key: 0
-    Value: {fileID: 727231326, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
-  - Key: 1
-    Value: {fileID: 584781313, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
-  - Key: 2
-    Value: {fileID: 1705489392, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
-  - Key: 3
-    Value: {fileID: 2003091949, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
-  - Key: 4
-    Value: {fileID: -50963692, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
-  <Shirts>k__BackingField:
-  - Key: 0
-    Value: {fileID: 21300000, guid: 59ee0527feec9bb4d8d7a9b87b95f5ed, type: 3}
-  - Key: 1
-    Value: {fileID: 21300000, guid: 00ce323d395980142ac455c1e5d896f9, type: 3}
-  - Key: 2
-    Value: {fileID: 21300000, guid: 80c505f6ba1be5b479b15f5b25ee0a80, type: 3}
-  - Key: 3
-    Value: {fileID: 21300000, guid: 106f602125f0cae4d8464fcd080fa1f5, type: 3}
-  - Key: 4
-    Value: {fileID: 21300000, guid: 6866dc7278186ce4eac3743ac73e1b42, type: 3}
+  <CharacterCustom>k__BackingField:
+    <SkinColors>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 21300000, guid: 71de5fd43bbfbac4d8add651727f153a, type: 3}
+      - Key: 1
+        Value: {fileID: 21300000, guid: a3a274e955afb9a4cbd1b19972bcb05b, type: 3}
+      - Key: 2
+        Value: {fileID: 21300000, guid: ceebd3619e0006a4da0df8b6f6d9b0f8, type: 3}
+      - Key: 3
+        Value: {fileID: 21300000, guid: b15761a1611605549b535b7a41c7343d, type: 3}
+      - Key: 4
+        Value: {fileID: 21300000, guid: d60e0eba85b678548b4fc4af94a8c3f7, type: 3}
+    <EyeColors>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 727231326, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
+      - Key: 1
+        Value: {fileID: 584781313, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
+      - Key: 3
+        Value: {fileID: 1705489392, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
+      - Key: 2
+        Value: {fileID: 2003091949, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
+      - Key: 4
+        Value: {fileID: -50963692, guid: c762ffa4bc4128e42ab37a69ccf4f67e, type: 3}
+    <Hairs>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value:
+          <Color>k__BackingField: {r: 0.1254902, g: 0.12156863, b: 0.13725491, a: 1}
+          <Eyebrow>k__BackingField: {fileID: 129524190, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
+          <Eyelashes>k__BackingField: {fileID: -1467933971, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
+          <HairCuts>k__BackingField:
+            _serializedList:
+            - Key: 2
+              Value: {fileID: 21300000, guid: 33a5dc73e2e1aa34f849b74111b2bb5d, type: 3}
+            - Key: 3
+              Value: {fileID: 21300000, guid: fafe5cc078141584e8d213e993952e45, type: 3}
+            - Key: 1
+              Value: {fileID: 21300000, guid: 42c9234789752d04c88e2a4c1c6e5ea9, type: 3}
+      - Key: 1
+        Value:
+          <Color>k__BackingField: {r: 0.3372549, g: 0.21568628, b: 0.15294118, a: 1}
+          <Eyebrow>k__BackingField: {fileID: -1182445031, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
+          <Eyelashes>k__BackingField: {fileID: 1396299746, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
+          <HairCuts>k__BackingField:
+            _serializedList:
+            - Key: 2
+              Value: {fileID: 21300000, guid: dea94afe5d0cc1048bff78816a5c827c, type: 3}
+            - Key: 3
+              Value: {fileID: 21300000, guid: 75708b08d2c3e2c4f8d2983ae1f80e34, type: 3}
+            - Key: 1
+              Value: {fileID: 21300000, guid: 23a8d38e6c128d440bdaced01400e184, type: 3}
+      - Key: 2
+        Value:
+          <Color>k__BackingField: {r: 0.7607843, g: 0.29411766, b: 0.18431373, a: 1}
+          <Eyebrow>k__BackingField: {fileID: -1133849308, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
+          <Eyelashes>k__BackingField: {fileID: -119044882, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
+          <HairCuts>k__BackingField:
+            _serializedList:
+            - Key: 2
+              Value: {fileID: 21300000, guid: cddceccd706148f4b9d3265d1b4e1cd5, type: 3}
+            - Key: 3
+              Value: {fileID: 21300000, guid: b4065cd3081f1be4196d62111f879b01, type: 3}
+            - Key: 1
+              Value: {fileID: 21300000, guid: 3807fad70b9abcb4292eba4826a12200, type: 3}
+      - Key: 3
+        Value:
+          <Color>k__BackingField: {r: 0.8666667, g: 0.8, b: 0.56078434, a: 1}
+          <Eyebrow>k__BackingField: {fileID: 638615222, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
+          <Eyelashes>k__BackingField: {fileID: -219886783, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
+          <HairCuts>k__BackingField:
+            _serializedList:
+            - Key: 2
+              Value: {fileID: 21300000, guid: 8975fd943ec552b4f84bf2b04118893b, type: 3}
+            - Key: 3
+              Value: {fileID: 21300000, guid: 209d3619863f9ce449d1a27a72a008f8, type: 3}
+            - Key: 1
+              Value: {fileID: 21300000, guid: 77c8650d1b6e64243b7ba055a8188c32, type: 3}
+      - Key: 4
+        Value:
+          <Color>k__BackingField: {r: 0.7490196, g: 0.7607843, b: 0.7921569, a: 1}
+          <Eyebrow>k__BackingField: {fileID: -2055798081, guid: 9d4701c1943138142b6199526ce169bc, type: 3}
+          <Eyelashes>k__BackingField: {fileID: -1979510554, guid: 69f01ab479e45f04594a06bded1d9ce3, type: 3}
+          <HairCuts>k__BackingField:
+            _serializedList:
+            - Key: 2
+              Value: {fileID: 21300000, guid: f2b3b9e4c67249344b6e488f0363a5b8, type: 3}
+            - Key: 3
+              Value: {fileID: 21300000, guid: cbed5214ffdf87840889df8a0328a6e9, type: 3}
+            - Key: 1
+              Value: {fileID: 21300000, guid: 95613e6e785ae894aac47643bbae6b94, type: 3}
+    <Shirts>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 21300000, guid: 59ee0527feec9bb4d8d7a9b87b95f5ed, type: 3}
+      - Key: 1
+        Value: {fileID: 21300000, guid: 00ce323d395980142ac455c1e5d896f9, type: 3}
+      - Key: 2
+        Value: {fileID: 21300000, guid: 80c505f6ba1be5b479b15f5b25ee0a80, type: 3}
+      - Key: 3
+        Value: {fileID: 21300000, guid: 106f602125f0cae4d8464fcd080fa1f5, type: 3}
+      - Key: 4
+        Value: {fileID: 21300000, guid: 6866dc7278186ce4eac3743ac73e1b42, type: 3}
 --- !u!1001 &445489394
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,9 +5,9 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public enum ESkinColor { Lightest, Light, Medium, Dark, Deep }
+    public enum EEyeColor { Dark, Brown, Green, Blue, Gray }
     public enum EHairColor { Black, Brown, Redhead, Blonde, Albino }
     public enum EHairCut { None, WeavyShort, Medium, Long }
-    public enum EEyeColor { Dark, Brown, Green, Blue, Gray }
     public enum EShirt { Calm, Sport, Andean, Forest, Plaid, }
 
     

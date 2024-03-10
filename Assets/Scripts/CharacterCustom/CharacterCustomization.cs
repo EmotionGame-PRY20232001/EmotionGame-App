@@ -9,9 +9,9 @@ using UnityEngine;
 public class CharacterCustomization : MonoBehaviour
 {
     [SerializeField]
-    private Character.GOParts Parts;
-    
     protected Character.Custom Customization;
+    [SerializeField]
+    private Character.GOParts Parts;
     
     protected void SetHair(Character.EHairCut hairCut, Character.EHairColor hairColor)
     {
@@ -74,14 +74,13 @@ public class CharacterCustomization : MonoBehaviour
         Sprite _shirt = GameManager.Instance.CharacterCustom.Shirts[shirt];
         UIutils.SetImage(Parts.Shirt, _shirt);
     }
-
-    // Start is called before the first frame update
+    
     void Start()
     {
-        SetHair(Character.EHairCut.Medium, Character.EHairColor.Black);
-        SetEyeColor(Character.EEyeColor.Dark);
-        SetSkinColor(Character.ESkinColor.Medium);
-        SetShirt(Character.EShirt.Calm);
+        SetHair(Customization.HairCut, Customization.HairColor);
+        SetEyeColor(Customization.EyeColor);
+        SetSkinColor(Customization.SkinColor);
+        SetShirt(Customization.Shirt);
     }
 
     // // Update is called once per frame

@@ -12,13 +12,15 @@ public class CustomShirt : CustomPart
     {
         Shirt = shirt;
     }
-    
-    protected override void Start()
+
+    protected override bool IsSameCustomActive(Character.Custom custom)
     {
-        toggle.isOn = Shirt == Customization.GetShirt();
+        // Debug.Log("Shirt " + Shirt + " | " + Customization.GetShirt() );
+        // Customization.GetShirt()
+        return Shirt == custom.Shirt;
     }
 
-    protected override void SetPart()
+    protected override void ChangeSelection()
     {
         Customization.SetShirt(Shirt);
     }

@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CharacterCustomization : MonoBehaviour
 {
-    [SerializeField]
+    [field:SerializeField]
     protected Character.Custom Customization;
     [SerializeField]
     private Character.GOParts Parts;
@@ -75,17 +75,22 @@ public class CharacterCustomization : MonoBehaviour
         UIutils.SetImage(Parts.Shirt, _shirt);
     }
     
-    void Start()
+    public string GetJSON()
     {
+        return Customization.ToJson();
+    }
+    public void SetByJson(string jsonCustom)
+    {
+        Debug.Log("SetByJson " + jsonCustom);
+        ChangeCustomization( Character.Custom.FromJson(jsonCustom) );
+    }
+    
+    public void ChangeCustomization(Character.Custom _customization)
+    {
+        Customization = _customization;
         SetHair(Customization.HairCut, Customization.HairColor);
         SetEyeColor(Customization.EyeColor);
         SetSkinColor(Customization.SkinColor);
         SetShirt(Customization.Shirt);
     }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
 }

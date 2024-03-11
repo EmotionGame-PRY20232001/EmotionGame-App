@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomEyeColor : CustomPart
 {
-    [field: SerializeField]
+    [field:SerializeField]
     public Character.EEyeColor EyeColor {get; private set;}
     
     public CustomEyeColor() {}
@@ -13,12 +13,14 @@ public class CustomEyeColor : CustomPart
         EyeColor = eyeColor;
     }
     
-    protected override void Start()
+    protected override bool IsSameCustomActive(Character.Custom custom)
     {
-        toggle.isOn = EyeColor == Customization.GetEyeColor();
+        // Debug.Log("EyeColor " + EyeColor + " | " + Customization.GetEyeColor() );
+        // Customization.GetEyeColor()
+        return EyeColor == custom.EyeColor;
     }
 
-    protected override void SetPart()
+    protected override void ChangeSelection()
     {
         Customization.SetEyeColor(EyeColor);
     }

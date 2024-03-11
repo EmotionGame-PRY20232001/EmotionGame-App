@@ -9,4 +9,11 @@ public class CustomHair : CustomPart
     protected Image HairBack;
     [SerializeField]
     protected Image HairEye;
+
+    protected virtual void Awake()
+    {
+        FillHairs();
+    }
+
+    protected virtual void FillHairs() { }
 }

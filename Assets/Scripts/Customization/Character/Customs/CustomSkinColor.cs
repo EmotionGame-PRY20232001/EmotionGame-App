@@ -13,12 +13,14 @@ public class CustomSkinColor : CustomPart
         SkinColor = skinColor;
     }
     
-    protected override void Start()
+    protected override bool IsSameCustomActive(Character.Custom custom)
     {
-        toggle.isOn = SkinColor == Customization.GetSkinColor();
+        // Debug.Log("SkinColor " + SkinColor + " | " + Customization.GetSkinColor() );
+        // Customization.GetSkinColor()
+        return SkinColor == custom.SkinColor;
     }
 
-    protected override void SetPart()
+    protected override void ChangeSelection()
     {
         Customization.SetSkinColor(SkinColor);
     }

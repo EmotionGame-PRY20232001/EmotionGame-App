@@ -19,6 +19,27 @@ public class Character : MonoBehaviour
         public EHairColor HairColor;
         public EHairCut HairCut;
         public EShirt Shirt;
+
+        public string ToJson()
+        {
+            return JsonUtility.ToJson(this);
+        }
+        public static Custom FromJson(string jsonString)
+        {
+            if (jsonString == "") return GetDefault();
+            return JsonUtility.FromJson<Custom>(jsonString);
+        }
+
+        public static Custom GetDefault()
+        {
+            var custom = new Custom();
+            custom.SkinColor   = Character.ESkinColor.Medium;
+            custom.EyeColor    = Character.EEyeColor.Dark;
+            custom.HairColor   = Character.EHairColor.Black;
+            custom.HairCut     = Character.EHairCut.Medium;
+            custom.Shirt       = Character.EShirt.Calm;
+            return custom;
+        }
     }
 
     [System.Serializable]

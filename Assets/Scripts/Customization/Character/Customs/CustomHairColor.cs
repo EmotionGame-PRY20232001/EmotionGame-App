@@ -16,23 +16,16 @@ public class CustomHairColor : CustomHair
     {
         HairColor = hairColor;
     }
-    
-    protected override void Start()
+
+    protected override bool IsSameCustomActive(Character.Custom custom)
     {
-        base.Start();
-        toggle.isOn = HairColor == Customization.GetHairColor();
-        FillHairCuts();
-        SetHairCut(Customization.GetHairCut());
+        SetHairCut(custom.HairCut);
+        // Debug.Log("HairColor " + HairColor + " | " + Customization.GetHairColor() );
+        // Customization.GetHairColor()
+        return HairColor == custom.HairColor;
     }
 
-    protected override void SetPart()
-    {
-        Customization.SetHairColor(HairColor);
-        foreach (CustomHairCut _hairCut in HairCuts)
-            _hairCut.SetColor(HairColor);
-    }
-
-    public void FillHairCuts()
+    protected override void FillHairs()
     {
         if (HairCutsGroup == null) return;
         HairCuts = HairCutsGroup.GetComponentsInChildren<CustomHairCut>();
@@ -53,5 +46,12 @@ public class CustomHairColor : CustomHair
 
         // if (HairBack != null)
         //     HairBack.sprite = GameManager.Instance.CharacterCustom.HairCuts[_hairCut];
+    }
+
+    protected override void ChangeSelection()
+    {
+        Customization.SetHairColor(HairColor);
+        foreach (CustomHairCut _hairCut in HairCuts)
+            _hairCut.SetHairColor(HairColor);
     }
 }

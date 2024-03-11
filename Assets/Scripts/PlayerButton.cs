@@ -10,9 +10,9 @@ public class PlayerButton : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI nameText;
     [SerializeField]
-    private RawImage background;
+    private Image background;
     [SerializeField]
-    private Image guide;
+    private CharacterCustomization guide;
     [SerializeField]
     private bool needsText;
     [SerializeField]
@@ -24,8 +24,8 @@ public class PlayerButton : MonoBehaviour
     {
         playerReference = player;
         nameText.text = player.Name;
-        background.texture = GameManager.Instance.GetBackgrounds()[player.BackgroundId];
-        guide.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
+        background.sprite = GameManager.Instance.GetBackgrounds()[(Theme.EBackground)player.BackgroundId].Thumbnail;
+        guide.SetByJson(player.GuideJSON);
         needsText = player.NeedsText;
     }
 

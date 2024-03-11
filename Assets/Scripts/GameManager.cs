@@ -9,19 +9,13 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
 
-    [SerializeField]
-    private Player currentPlayer;
-    [field:SerializeField]
-    public Texture2D MainBackground { get; private set; }
-    [SerializeField]
-    private List<Texture2D> backgrounds;
-    [SerializeField]
-    private List<Sprite> guideSprites;
-    [SerializeField]
-    private List<string> backgroundNames;
+    // [SerializeField]
+    public Player currentPlayer;
     [SerializeField]
     private List<Sprite> emotionSprites;
     
+    [field:SerializeField]
+    public CustomThemes ThemeCustom { get; private set; }
     [field:SerializeField]
     public CharacterCustomParts CharacterCustom { get; private set; }
 
@@ -42,9 +36,21 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    public void ChangeBackground(int backgroundId)
+    public bool IsPlayerActive()
     {
-        GameObject.Find("Background").GetComponent<RawImage>().texture = backgrounds[backgroundId];
+        //if on Player select menu then true else false
+        if (currentPlayer == null) return false;
+        return currentPlayer.Id != -1;
+    }
+    
+    public void SetCurrentPlayerTheme(Theme.EBackground selectedBg)
+    {
+        currentPlayer.BackgroundId = (int)selectedBg;
+    }
+    
+    public void SetCurrentPlayerGuide(string customization)
+    {
+        currentPlayer.GuideJSON = customization;
     }
 
     public void SetCurrentPlayer(Player player)
@@ -57,19 +63,14 @@ public class GameManager : MonoBehaviour
         return currentPlayer;
     }
 
-    public List<Texture2D> GetBackgrounds()
+    // public List<Sprite> GetGuideSprites()
+    // {
+    //     return guideSprites;
+    // }
+    
+    public SerializedDictionary<Theme.EBackground, Theme.CustomBackground> GetBackgrounds() 
     {
-        return backgrounds;
-    }
-
-    public List<Sprite> GetGuideSprites()
-    {
-        return guideSprites;
-    }
-
-    public List<string> GetBackgroundNames() 
-    {
-        return backgroundNames;
+        return ThemeCustom.Backgrounds;
     }
 
     public List<Sprite> GetEmotionSprites()
@@ -77,6 +78,15 @@ public class GameManager : MonoBehaviour
         return emotionSprites;
     }
 
+    
+    [System.Serializable]
+    public struct CustomThemes
+    {
+        [field:SerializeField][SerializedDictionary("Background", "TextureName")]
+        public SerializedDictionary<Theme.EBackground, Theme.CustomBackground> Backgrounds { get; private set; }
+        [field:SerializeField][SerializedDictionary("Theme", "CustomTheme")]
+        public SerializedDictionary<Theme.ETheme, Theme.CustomTheme> Themes { get; private set; }
+    }
     
     [System.Serializable]
     public struct CharacterCustomParts
@@ -88,8 +98,6 @@ public class GameManager : MonoBehaviour
         public SerializedDictionary<Character.EEyeColor, Sprite> EyeColors { get; private set; }
         [field:SerializeField][SerializedDictionary("Hair Color", "Sprites")]
         public SerializedDictionary<Character.EHairColor, CustomHair> Hairs { get; private set; }
-        // [field:SerializeField][SerializedDictionary("Hair Cuts Icons", "Sprite")]
-        // public SerializedDictionary<Character.EHairCut, Sprite> HairCuts { get; private set; }
         [field:SerializeField][SerializedDictionary("Shirt", "Sprite")]
         public SerializedDictionary<Character.EShirt, Sprite> Shirts { get; private set; }
     }

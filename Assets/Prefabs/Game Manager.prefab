@@ -44,21 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0988f081188f04195e51d86c920358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MainBackground>k__BackingField: {fileID: 2800000, guid: d7c6cf8b2f0a63a4592f7001f31bd2be, type: 3}
-  backgrounds:
-  - {fileID: 2800000, guid: 337aaae78ae0a544da28b1ed33cfc486, type: 3}
-  - {fileID: 2800000, guid: f109d98c53856cd439d8452f9e6282ac, type: 3}
-  - {fileID: 2800000, guid: 0729e364eb85f604cb0b959efd19e416, type: 3}
-  - {fileID: 2800000, guid: d9bb80aee12cebe48988fc47522c2fd9, type: 3}
-  guideSprites:
-  - {fileID: 21300000, guid: 55bf78f51f758c446af240e6366330c0, type: 3}
-  - {fileID: 21300000, guid: eaf04fe68e825f54f895c7daad40cb2c, type: 3}
-  - {fileID: 21300000, guid: c22099e369c64fc4590e17899e2f1ec0, type: 3}
-  backgroundNames:
-  - Espacio
-  - Nubes
-  - Bosque
-  - Acuario
   emotionSprites:
   - {fileID: 21300000, guid: 1e835718e6b64c54b8f089549782b8de, type: 3}
   - {fileID: 21300000, guid: 4398729508647d9428bb5146bbe95a76, type: 3}
@@ -67,6 +52,57 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 81705cbf52495074397c8f6d4f28f591, type: 3}
   - {fileID: 21300000, guid: 6d149340f707d794b929d90ab4edc930, type: 3}
   - {fileID: 21300000, guid: 0623178d53eb23345a8aeee13ab28120, type: 3}
+  <ThemeCustom>k__BackingField:
+    <Backgrounds>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value:
+          <Name>k__BackingField: Principal
+          <Texture>k__BackingField: {fileID: 2800000, guid: d7c6cf8b2f0a63a4592f7001f31bd2be, type: 3}
+          <Thumbnail>k__BackingField: {fileID: 21300000, guid: 7e0cbf58568096a4491e06a83cea0f87, type: 3}
+      - Key: 1
+        Value:
+          <Name>k__BackingField: Espacio
+          <Texture>k__BackingField: {fileID: 2800000, guid: 337aaae78ae0a544da28b1ed33cfc486, type: 3}
+          <Thumbnail>k__BackingField: {fileID: 21300000, guid: 0067adfdf22f39d4a9a9de0ed2544d3d, type: 3}
+      - Key: 2
+        Value:
+          <Name>k__BackingField: Principal
+          <Texture>k__BackingField: {fileID: 2800000, guid: f109d98c53856cd439d8452f9e6282ac, type: 3}
+          <Thumbnail>k__BackingField: {fileID: 21300000, guid: d545a5454488b5a4db7d61041d8b32d0, type: 3}
+      - Key: 3
+        Value:
+          <Name>k__BackingField: Bosque
+          <Texture>k__BackingField: {fileID: 2800000, guid: 0729e364eb85f604cb0b959efd19e416, type: 3}
+          <Thumbnail>k__BackingField: {fileID: 21300000, guid: c117a0e6cd1b77048822a531fb849559, type: 3}
+      - Key: 4
+        Value:
+          <Name>k__BackingField: Acuario
+          <Texture>k__BackingField: {fileID: 2800000, guid: d9bb80aee12cebe48988fc47522c2fd9, type: 3}
+          <Thumbnail>k__BackingField: {fileID: 21300000, guid: caee657b34c9a774fab47f90205bb0c7, type: 3}
+    <Themes>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value:
+          <Name>k__BackingField: "C\xE1lido"
+          <Primary>k__BackingField:
+            <Background>k__BackingField:
+              <Light>k__BackingField: {r: 0.84705883, g: 0.88235295, b: 0.8901961, a: 0}
+              <Main>k__BackingField: {r: 0.78039217, g: 0.8039216, b: 0.8352941, a: 0}
+              <Dark>k__BackingField: {r: 0.6117647, g: 0.6627451, b: 0.7254902, a: 0}
+            <Text>k__BackingField:
+              <Light>k__BackingField: {r: 0.4862745, g: 0.5529412, b: 0.5882353, a: 1}
+              <Main>k__BackingField: {r: 0.30588236, g: 0.3529412, b: 0.3764706, a: 1}
+              <Dark>k__BackingField: {r: 0.245105, g: 0.29882434, b: 0.33962262, a: 1}
+          <Accent>k__BackingField:
+            <Background>k__BackingField:
+              <Light>k__BackingField: {r: 1, g: 0.9647059, b: 0.627451, a: 0}
+              <Main>k__BackingField: {r: 1, g: 0.89411765, b: 0.33333334, a: 1}
+              <Dark>k__BackingField: {r: 1, g: 0.78431374, b: 0.22352941, a: 1}
+            <Text>k__BackingField:
+              <Light>k__BackingField: {r: 0.8156863, g: 0.35686275, b: 0.16078432, a: 1}
+              <Main>k__BackingField: {r: 0.4862745, g: 0.30588236, b: 0.22352941, a: 1}
+              <Dark>k__BackingField: {r: 0.20754719, g: 0.15778717, b: 0.14195444, a: 1}
   <CharacterCustom>k__BackingField:
     <SkinColors>k__BackingField:
       _serializedList:

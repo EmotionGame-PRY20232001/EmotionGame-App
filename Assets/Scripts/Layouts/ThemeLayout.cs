@@ -6,37 +6,32 @@ using UnityEngine.UI;
 public class ThemeLayout : MonoBehaviour
 {
     [SerializeField]
+    protected CustomBackground Background;
+    [SerializeField]
     private ToggleGroup toggleGroup;
     [SerializeField]
     private GameObject themeTogglePrefab;
-    [SerializeField]
-    private int selectedTheme = -1;
 
     private void Awake()
     {
+        LoadPrefabs();
+    }
+
+    protected void LoadPrefabs()
+    {
         var backgrounds = GameManager.Instance.GetBackgrounds();
-        var backgroundNames = GameManager.Instance.GetBackgroundNames();
-        var player = GameManager.Instance.GetCurrentPlayer();
-        selectedTheme = player.BackgroundId;
-        for (int i = 0; i < backgrounds.Count; i++)
+        foreach (KeyValuePair<Theme.EBackground, Theme.CustomBackground> bg in backgrounds)
         {
             var instance = Instantiate(themeTogglePrefab, transform);
-            var toggle = instance.GetComponent<Toggle>();
-            toggle.isOn = (player.BackgroundId == i);
-            toggle.group = toggleGroup;
-            instance.GetComponent<ThemeToggle>().LoadData(i, backgrounds[i], backgroundNames[i]);
+            instance.GetComponent<Toggle>().group = toggleGroup;
+            ThemeToggle themeToggle = instance.GetComponent<ThemeToggle>();
+            themeToggle.Background = Background;
+            themeToggle.LoadData(bg.Key, bg.Value);
         }
     }
 
     public void ApplySelection()
     {
-        var player = GameManager.Instance.GetCurrentPlayer();
-        if (selectedTheme != -1) player.BackgroundId = selectedTheme;
-        GameManager.Instance.SetCurrentPlayer(player);
-    }
-
-    public void SetSelectedTheme(int themeId)
-    {
-        selectedTheme = themeId;
+        GameManager.Instance.SetCurrentPlayerTheme(Background.Id);
     }
 }

@@ -12,5 +12,6 @@ public class Player
     public string Name { get; set; }
     public bool NeedsText { get; set; }
     public int BackgroundId { get; set; } = 0;
-    public int GuideId { get; set; } = 0;
+    // public int GuideId { get; set; } = 0; //avoid
+    public string GuideJSON { get; set; } = "";
 }

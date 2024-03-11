@@ -63,7 +63,8 @@ public class PanelScript : MonoBehaviour
             Name = nameInputText.text,
             NeedsText = needsText.isOn,
             BackgroundId = 0,
-            GuideId = 0
+            // GuideId = 0,
+            GuideJSON = Character.Custom.GetDefault().ToJson()
         };
         DBManager.Instance.AddPlayerToDb(player);
         UIManager.Instance.RefreshSelectPlayerMenu();
@@ -113,7 +114,7 @@ public class PanelScript : MonoBehaviour
                 needsText.isOn = player.NeedsText;
                 break;
             case PanelType.DeletePlayer:
-                nameText.text = "Est� por eliminar a\n" + player.Name;
+                nameText.text = "Está por eliminar a\n" + player.Name;
                 break;
             default: break;
         }

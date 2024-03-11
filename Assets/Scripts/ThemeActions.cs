@@ -21,7 +21,7 @@ public class ThemeActions : MonoBehaviour
 
     public void ShowGuideLayout()
     {
-        activityText.text = "Elegir Guía";
+        activityText.text = "Elegir GuÃ­a";
         themeLayout.SetActive(false);
         guideLayout.SetActive(true);
     }

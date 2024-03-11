@@ -18,7 +18,7 @@ public class GuideButton : MonoBehaviour
 
     public void SelectGuide()
     {
-        var guideLayout = GetComponentInParent<GuideLayout>();
-        guideLayout.ChangeSelection(guideId, GameManager.Instance.GetGuideSprites()[guideId]);
+        // var guideLayout = GetComponentInParent<GuideLayout>();
+        // guideLayout.ChangeSelection(guideId, GameManager.Instance.GetGuideSprites()[guideId]);
     }
 }

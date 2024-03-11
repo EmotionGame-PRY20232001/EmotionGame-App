@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class UIActions : MonoBehaviour
 {
-    [SerializeField]
-    private Image guideImage;
+    // [SerializeField]
+    // private Image guideImage;
 
     private void Awake()
     {
-        var player = GameManager.Instance.GetCurrentPlayer();
+        // var player = GameManager.Instance.GetCurrentPlayer();
         //GameManager.Instance.GetCurrentPlayer().Info();
-        if (guideImage) guideImage.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
+        // if (guideImage) guideImage.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
     }
 
     public void ReturnToSelecion()
@@ -34,7 +34,13 @@ public class UIActions : MonoBehaviour
 
     public void ApplySelectedOptions()
     {
-        DBManager.Instance.UpdatePlayerToDb(GameManager.Instance.GetCurrentPlayer());
+        var player = GameManager.Instance.GetCurrentPlayer();
+        if (player == null)
+        {
+            Debug.Log("Current player is null");
+            return;
+        }
+        DBManager.Instance.UpdatePlayerToDb(player);
         ReturnToMainMenu();
     }
 

@@ -30,18 +30,35 @@ public class UIutils : MonoBehaviour
     }
     
 
-    [System.Serializable]
-    public struct CustomSprites<T>
-    {
-        public T Key;
-        public Sprite Value;
-    }
+    // [System.Serializable]
+    // public struct CustomSprites<T>
+    // {
+    //     public T Key;
+    //     public Sprite Value;
+    // }
+
+    // [System.Serializable]
+    // public struct CustomSpritesMul<T,G>
+    // {
+    //     public T Key1;
+    //     public G Key2;
+    //     public Sprite Value;
+    // }
 
     [System.Serializable]
-    public struct CustomSpritesMul<T,G>
+    public struct SpriteName
     {
-        public T Key1;
-        public G Key2;
-        public Sprite Value;
+        [field:SerializeField]
+        public string Name { get; private set; }
+        [field:SerializeField]
+        public Sprite Sprite { get; private set; }
+    }
+    [System.Serializable]
+    public struct TextureName
+    {
+        [field:SerializeField]
+        public string Name { get; private set; }
+        [field:SerializeField]
+        public Texture Texture { get; private set; }
     }
 }

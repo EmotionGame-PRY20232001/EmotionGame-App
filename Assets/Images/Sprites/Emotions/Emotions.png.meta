@@ -132,10 +132,10 @@ TextureImporter:
       name: Emotions_Surprise_On
       rect:
         serializedVersion: 2
-        x: 16
-        y: 400
-        width: 96
-        height: 96
+        x: 0
+        y: 800
+        width: 224
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Emotions_Sadness_On
       rect:
         serializedVersion: 2
-        x: 144
-        y: 400
-        width: 96
-        height: 96
+        x: 0
+        y: 352
+        width: 224
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: Emotions_Happyness_On
       rect:
         serializedVersion: 2
-        x: 272
-        y: 400
-        width: 96
-        height: 96
+        x: 224
+        y: 352
+        width: 224
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: Emotions_Fear_On
       rect:
         serializedVersion: 2
-        x: 400
-        y: 400
-        width: 96
-        height: 96
+        x: 224
+        y: 576
+        width: 224
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: Emotions_Disgust_On
       rect:
         serializedVersion: 2
-        x: 16
-        y: 272
-        width: 96
-        height: 96
+        x: 0
+        y: 576
+        width: 224
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: Emotions_Anger_On
       rect:
         serializedVersion: 2
-        x: 144
-        y: 272
-        width: 96
-        height: 96
+        x: 224
+        y: 800
+        width: 224
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Emotions_Surprise_Off
       rect:
         serializedVersion: 2
-        x: 272
-        y: 272
-        width: 96
-        height: 96
+        x: 32
+        y: 192
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: Emotions_Sadness_Off
       rect:
         serializedVersion: 2
-        x: 400
-        y: 272
-        width: 96
-        height: 96
+        x: 192
+        y: 192
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,10 +300,10 @@ TextureImporter:
       name: Emotions_Happyness_Off
       rect:
         serializedVersion: 2
-        x: 16
-        y: 144
-        width: 96
-        height: 96
+        x: 192
+        y: 32
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: Emotions_Fear_Off
       rect:
         serializedVersion: 2
-        x: 144
-        y: 144
-        width: 96
-        height: 96
+        x: 352
+        y: 192
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,10 +342,10 @@ TextureImporter:
       name: Emotions_Disgust_Off
       rect:
         serializedVersion: 2
-        x: 272
-        y: 144
-        width: 96
-        height: 96
+        x: 33
+        y: 32
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,10 +363,10 @@ TextureImporter:
       name: Emotions_Anger_Off
       rect:
         serializedVersion: 2
-        x: 400
-        y: 144
-        width: 96
-        height: 96
+        x: 352
+        y: 32
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,8 +384,8 @@ TextureImporter:
       name: Emotions_Surprise
       rect:
         serializedVersion: 2
-        x: 17
-        y: 32
+        x: 448
+        y: 416
         width: 64
         height: 64
       alignment: 0
@@ -405,8 +405,8 @@ TextureImporter:
       name: Emotions_Sadness
       rect:
         serializedVersion: 2
-        x: 100
-        y: 32
+        x: 448
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -426,8 +426,8 @@ TextureImporter:
       name: Emotions_Happyness
       rect:
         serializedVersion: 2
-        x: 182
-        y: 32
+        x: 448
+        y: 608
         width: 64
         height: 64
       alignment: 0
@@ -447,8 +447,8 @@ TextureImporter:
       name: Emotions_Fear
       rect:
         serializedVersion: 2
-        x: 265
-        y: 32
+        x: 448
+        y: 704
         width: 64
         height: 64
       alignment: 0
@@ -468,8 +468,8 @@ TextureImporter:
       name: Emotions_Disgust
       rect:
         serializedVersion: 2
-        x: 349
-        y: 32
+        x: 448
+        y: 800
         width: 64
         height: 64
       alignment: 0
@@ -489,8 +489,8 @@ TextureImporter:
       name: Emotions_Anger
       rect:
         serializedVersion: 2
-        x: 431
-        y: 32
+        x: 448
+        y: 896
         width: 64
         height: 64
       alignment: 0

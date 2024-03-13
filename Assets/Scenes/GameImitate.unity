@@ -656,8 +656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae93ba482041b084e98aaa66f40bfb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBackgroundImage: {fileID: 1720893648}
-  guideImage: {fileID: 1438699248}
 --- !u!4 &1083925586
 Transform:
   m_ObjectHideFlags: 0
@@ -1407,17 +1405,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f998f088a282dfe42b98a1aec375132a, type: 3}
---- !u!114 &1720893648 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5958261966355717334, guid: f998f088a282dfe42b98a1aec375132a, type: 3}
-  m_PrefabInstance: {fileID: 1720893647}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1755145408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d03684ef00d6f4e428bacf22f1ba1d3f, type: 3}
+  m_Texture: {fileID: 2800000, guid: 17c05330c163f6d4a81572b1d1658140, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

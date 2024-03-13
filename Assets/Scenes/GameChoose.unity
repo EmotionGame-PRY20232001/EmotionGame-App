@@ -862,7 +862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae93ba482041b084e98aaa66f40bfb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guideImage: {fileID: 1438699248}
 --- !u!4 &1083925586
 Transform:
   m_ObjectHideFlags: 0
@@ -1468,7 +1467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d03684ef00d6f4e428bacf22f1ba1d3f, type: 3}
+  m_Texture: {fileID: 2800000, guid: ee222f779583b4a47b35bb5eed238b66, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

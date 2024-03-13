@@ -29,6 +29,7 @@ public class ThemeActions : MonoBehaviour
     public void ApplyChanges()
     {
         themeLayout?.GetComponent<ThemeLayout>().ApplySelection();
-        guideLayout?.GetComponent<GuideLayout>().ApplySelection();
+        // guideLayout?.GetComponent<GuideLayout>().ApplySelection();
+        // guideLayout?.GetComponent<CharacterCustomization>().ApplySelection();
     }
 }

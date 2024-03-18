@@ -8,19 +8,23 @@ using UnityEngine.UI;
 public class Tab : MonoBehaviour
 {
     public GameObject TabContent;
-    private Toggle TabButton;
+    protected Toggle TabButton;
 
     void Awake()
     {
         TabButton = gameObject.GetComponent<Toggle>();
         
-        UpdateActive(TabButton);
         TabButton.onValueChanged.AddListener(delegate {
             UpdateActive(TabButton);
         });
     }
 
-    void UpdateActive(Toggle change)
+    void Start()
+    {
+        UpdateActive(TabButton);
+    }
+
+    protected virtual void UpdateActive(Toggle change)
     {
         if (TabButton == null || TabContent == null)
             return;

@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Player currentPlayer;
     [SerializeField]
     private List<Sprite> emotionSprites;
+    [field:SerializeField][SerializedDictionary("Emotion", "Data")]
+    public SerializedDictionary<Emotion.EEmotion, Emotion.Data> Emotions { get; protected set; }
     
     [field:SerializeField]
     public CustomThemes ThemeCustom { get; private set; }

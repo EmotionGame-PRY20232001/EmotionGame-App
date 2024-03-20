@@ -10,15 +10,31 @@ public class EmotionButton : MonoBehaviour
     public Emotion.EEmotion CurrEmotion;
     [SerializeField]
     protected bool Random;
+    [SerializeField] 
+    protected int Velocity;
     protected Button Button;
     protected Image EmotionImage;
+    protected RectTransform RectTransform;
     
     protected void Awake()
     {
         Button = gameObject.GetComponent<Button>();
         EmotionImage = gameObject.GetComponent<Image>();
+        RectTransform = GetComponent<RectTransform>();
+    }
+
+    private void Start()
+    {
         LoadRandom();
         LoadImageByEmotion();
+    }
+
+    private void Update()
+    {
+        var anchoredPos = RectTransform.anchoredPosition;
+        anchoredPos += Vector2.up * Time.deltaTime * Velocity;
+        if (anchoredPos.y > 0) Velocity *= -1;
+        RectTransform.anchoredPosition = anchoredPos;
     }
 
     protected void LoadRandom()

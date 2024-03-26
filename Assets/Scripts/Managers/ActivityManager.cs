@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActivityManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ActivityManager : MonoBehaviour
     private EActivity Activity;
     [SerializeField]
     private TMP_Text ScoreText;
+    [SerializeField] 
+    private RawImage ExerciseImage;
     [SerializeField]
     private int Score;
 
@@ -47,8 +50,8 @@ public class ActivityManager : MonoBehaviour
     }
 
     private void StartChooseActivity()
-    {
-
+    { 
+        ExerciseImage.texture = GameManager.Instance.Emotions[ExerciseEmotion].Faces[0].texture;
     }
 
     private void StartContextActivity()

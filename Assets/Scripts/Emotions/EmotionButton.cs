@@ -9,7 +9,7 @@ public class EmotionButton : MonoBehaviour
 {
     public Emotion.EEmotion CurrEmotion;
     [SerializeField]
-    protected bool Random;
+    protected bool IsRandom;
     protected Button Button;
     protected Image EmotionImage;
     
@@ -27,11 +27,10 @@ public class EmotionButton : MonoBehaviour
 
     protected void LoadRandom()
     {
-        if (Random)
+        if (IsRandom)
         {
-            System.Random ran = new System.Random();
             int cant = System.Enum.GetNames(typeof(Emotion.EEmotion)).Length;
-            CurrEmotion = (Emotion.EEmotion)ran.Next(0, cant-1);
+            CurrEmotion = (Emotion.EEmotion)Random.Range(0, cant - 1);
             Debug.Log(CurrEmotion);
         }
     }

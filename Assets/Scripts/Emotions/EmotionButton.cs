@@ -44,4 +44,13 @@ public class EmotionButton : MonoBehaviour
         }
     }
 
+    public void PressButton()
+    {
+        if (ActivityManager.Instance != null)
+        {
+            if (CurrEmotion == ActivityManager.Instance.ExerciseEmotion) ActivityManager.Instance.Good();
+            else ActivityManager.Instance.Bad();
+        }
+    }
+
 }

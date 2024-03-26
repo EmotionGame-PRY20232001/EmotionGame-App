@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EmotionButtonMovement : MonoBehaviour
 {
+    [SerializeField] 
+    private RectTransform CanvasRectTransform;
     [SerializeField]
     protected int Velocity;
     protected RectTransform RectTransform;
@@ -12,6 +14,7 @@ public class EmotionButtonMovement : MonoBehaviour
     private void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
+        CanvasRectTransform = GameObject.Find("UI Canvas").GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -33,7 +36,7 @@ public class EmotionButtonMovement : MonoBehaviour
         float bottomPos = topPos - RectTransform.rect.height;
         float leftPos = RectTransform.anchoredPosition.x - RectTransform.rect.width / 2;
         float rightPos = leftPos + RectTransform.rect.width;
-        if (topPos > 0 || bottomPos < -Screen.height) Dir.y *= -1;
-        if (leftPos < 0 || rightPos > Screen.width) Dir.x *= -1;
+        if (topPos > 0 || bottomPos < -CanvasRectTransform.rect.height) Dir.y *= -1;
+        if (leftPos < 0 || rightPos > CanvasRectTransform.rect.width) Dir.x *= -1;
     }
 }

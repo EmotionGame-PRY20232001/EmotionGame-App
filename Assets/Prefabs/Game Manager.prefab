@@ -58,30 +58,99 @@ MonoBehaviour:
       Value:
         Sprite: {fileID: 21300000, guid: 81705cbf52495074397c8f6d4f28f591, type: 3}
         Name: Neutral
+        Faces: []
     - Key: 1
       Value:
         Sprite: {fileID: 21300000, guid: b7497e01fe6817b409f45956d1f964b2, type: 3}
         Name: "Alegr\xEDa"
+        Faces:
+        - {fileID: 21300000, guid: 5243e969cc7a2ee47bc477a3d9e87c0a, type: 3}
+        - {fileID: 21300000, guid: 35d2a3ff81d79dc4facfab80769b9b19, type: 3}
+        - {fileID: 21300000, guid: e6d3baea9c9c05e47a005abbf25b09b2, type: 3}
+        - {fileID: 21300000, guid: b2b3c460d4d4a524eab68900efc8164b, type: 3}
+        - {fileID: 21300000, guid: 98057e4152ab81f49be24beb48f59d7b, type: 3}
+        - {fileID: 21300000, guid: d03684ef00d6f4e428bacf22f1ba1d3f, type: 3}
+        - {fileID: 21300000, guid: d005531ccf3d54f439d7bc1e1d9b2b0e, type: 3}
+        - {fileID: 21300000, guid: 43d47cdad4a305746825f70b8f1aff1c, type: 3}
+        - {fileID: 21300000, guid: 69dadfdade1766f49a7a26eb9b2c4372, type: 3}
+        - {fileID: 21300000, guid: 07ccb5cdc98c6be4dab6e00bd06d3587, type: 3}
+        - {fileID: 21300000, guid: 1d10bab0939f5d949956d7648ef6d680, type: 3}
     - Key: 2
       Value:
         Sprite: {fileID: 21300000, guid: 6d149340f707d794b929d90ab4edc930, type: 3}
         Name: Tristeza
+        Faces:
+        - {fileID: 21300000, guid: 491bf3f5e4c351c48b694c6e9a8c3957, type: 3}
+        - {fileID: 21300000, guid: 574e9ab5b587bdc44b067c2e83889fad, type: 3}
+        - {fileID: 21300000, guid: d3717120e0f7b344986b7e2efa537944, type: 3}
+        - {fileID: 21300000, guid: 26d75a7a4c5a4ac45885ef7d78582d2d, type: 3}
+        - {fileID: 21300000, guid: 278422c0191c0ca4db63a4ed577b724b, type: 3}
+        - {fileID: 21300000, guid: 6d1850c3cfbeff940b160186961d6ab3, type: 3}
+        - {fileID: 21300000, guid: fe055b3ef14414a4b90ae34819393399, type: 3}
+        - {fileID: 21300000, guid: dd843cd85926df841bc6334eace80a22, type: 3}
+        - {fileID: 21300000, guid: 45b0dffdd775cb84baa756901a8d7211, type: 3}
+        - {fileID: 21300000, guid: f776fdb5d7c8bfc4fbe8703adc5a6d6c, type: 3}
     - Key: 3
       Value:
         Sprite: {fileID: 21300000, guid: 1e835718e6b64c54b8f089549782b8de, type: 3}
         Name: Enojo
+        Faces:
+        - {fileID: 21300000, guid: 22cf19d1a79969646919987b50e980e3, type: 3}
+        - {fileID: 21300000, guid: d7e8b5eb7e6555c48beda02528030f4e, type: 3}
+        - {fileID: 21300000, guid: c60920a174fa11e44b31a3236270a7b5, type: 3}
+        - {fileID: 21300000, guid: f47456038e537cb4198fde972b79e407, type: 3}
+        - {fileID: 21300000, guid: a9969e4a885e8074d936361dd0321f27, type: 3}
+        - {fileID: 21300000, guid: d2aba7de60d79d34282a93cfb0dec739, type: 3}
+        - {fileID: 21300000, guid: 51e77b7e626bee048892d054ada389c4, type: 3}
+        - {fileID: 21300000, guid: 1450a543884a1b3458d9dd65bf6b3ee8, type: 3}
+        - {fileID: 21300000, guid: aa450b8d128bee3459ed3d1fb10273b4, type: 3}
+        - {fileID: 21300000, guid: 5d48630353b163a4ebc3173cd4b58e07, type: 3}
     - Key: 4
       Value:
         Sprite: {fileID: 21300000, guid: 4398729508647d9428bb5146bbe95a76, type: 3}
         Name: Disgusto
+        Faces:
+        - {fileID: 21300000, guid: 9c1e79c58fa9e934f9ecd78f3a650929, type: 3}
+        - {fileID: 21300000, guid: f6f2fb7063bbed049a7d93a835b11700, type: 3}
+        - {fileID: 21300000, guid: ab4cd068e707de8469c4dd8cbf2f2249, type: 3}
+        - {fileID: 21300000, guid: 6acbd1a86e2eb6a4daf4f067d888d3f2, type: 3}
+        - {fileID: 21300000, guid: 8c069e630a66d3e4493c3166be53bfb6, type: 3}
+        - {fileID: 21300000, guid: 3434ad839c31b4c4f95346b4bb8aa005, type: 3}
+        - {fileID: 21300000, guid: 0211a4f67711e2f45aab28d762987857, type: 3}
+        - {fileID: 21300000, guid: 7ea9a29c3d1c7d34880546021235bbc7, type: 3}
+        - {fileID: 21300000, guid: c0b3e626da20b094888ca22fcf434d32, type: 3}
+        - {fileID: 21300000, guid: 11f04760bfe9ed24ea756b71dacc0280, type: 3}
+        - {fileID: 21300000, guid: b1cb83c7e2e983d488f5182f0fbc60b4, type: 3}
     - Key: 5
       Value:
         Sprite: {fileID: 21300000, guid: 21ba01ca3aa4e85499949c87c3fe5907, type: 3}
         Name: Miedo
+        Faces:
+        - {fileID: 21300000, guid: 98be749510ac4ee4bb11754e611dde97, type: 3}
+        - {fileID: 21300000, guid: 4f4f769fcb0f1e741bd670d455fd5a34, type: 3}
+        - {fileID: 21300000, guid: b8b05fba1118d3d4590d81dcb2f49ba7, type: 3}
+        - {fileID: 21300000, guid: ee222f779583b4a47b35bb5eed238b66, type: 3}
+        - {fileID: 21300000, guid: bf131d2badd080b448d47984e5c09386, type: 3}
+        - {fileID: 21300000, guid: 0029a948c8c14294b953ddea0a939050, type: 3}
+        - {fileID: 21300000, guid: fc579e7f9dd55024baf265aa4ddf6bdd, type: 3}
+        - {fileID: 21300000, guid: bea87858e2ad42c4a84a9ef8d22d5d83, type: 3}
+        - {fileID: 21300000, guid: 804ae6424900a914796b5d75c795084e, type: 3}
+        - {fileID: 21300000, guid: b0b82da34bed20649abb14bd6a061dcd, type: 3}
     - Key: 6
       Value:
         Sprite: {fileID: 21300000, guid: 0623178d53eb23345a8aeee13ab28120, type: 3}
         Name: Sorpresa
+        Faces:
+        - {fileID: 21300000, guid: f96ee01bf3ac850499d92ecf8692b95a, type: 3}
+        - {fileID: 21300000, guid: 17c05330c163f6d4a81572b1d1658140, type: 3}
+        - {fileID: 21300000, guid: 1b827a8342061db49ae9e73873baebe1, type: 3}
+        - {fileID: 21300000, guid: c2615424114125c42b3c3b951aa64802, type: 3}
+        - {fileID: 21300000, guid: 03ec244611b5d814da21edb9caebf267, type: 3}
+        - {fileID: 21300000, guid: d606ec4b399724946b466be3b7b2a7d7, type: 3}
+        - {fileID: 21300000, guid: ed04d23886218cf488faea28e0769b73, type: 3}
+        - {fileID: 21300000, guid: bbb3e99e6a7e4f442b44ebdddd950214, type: 3}
+        - {fileID: 21300000, guid: 2cd66fb3453036a4d8fe78bf9413df1d, type: 3}
+        - {fileID: 21300000, guid: ed88e10265893a04fa1a087785d39014, type: 3}
   <ThemeCustom>k__BackingField:
     <Backgrounds>k__BackingField:
       _serializedList:

@@ -25,18 +25,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6065091129786845075}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6827790752310502255}
-  m_RootOrder: 2
+  m_Father: {fileID: 5056771495522485076}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: -48, y: -48}
+  m_SizeDelta: {x: -24, y: -16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1523260224643077618
 CanvasRenderer:
@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 958278661506979517, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 381833519, guid: 5cec8a6daf9b7a34fb2a21c07693223a, type: 3}
+      objectReference: {fileID: 98260370, guid: d589a80f222bc7a4bb813ae36e2f0e0d, type: 3}
     - target: {fileID: 958278661506979517, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -109,11 +109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -48
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Pivot.x
@@ -209,6 +209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+--- !u!224 &5056771495522485076 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3751516405281603612, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+  m_PrefabInstance: {fileID: 8231826581000815432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6243036423248848689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2638803878648128633, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
@@ -226,17 +231,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaca928bda347b04e9c9fcc2a7d4639e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle: {fileID: 0}
-  <Customization>k__BackingField: {fileID: 0}
   HairBack: {fileID: 9183173843489510901}
   HairEye: {fileID: 1480611323778318495}
   <HairCut>k__BackingField: 1
+  HairColorsGroup: {fileID: 0}
   HairColors: []
---- !u!224 &6827790752310502255 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
-  m_PrefabInstance: {fileID: 8231826581000815432}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &9183173843489510901 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 958278661506979517, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}

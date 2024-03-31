@@ -57,11 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -47.999996
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Pivot.x
@@ -174,6 +174,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ac884c9c524914e99dd24886718da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Customization: {fileID: 0}
   <SkinColor>k__BackingField: 2
-  toggle: {fileID: 0}

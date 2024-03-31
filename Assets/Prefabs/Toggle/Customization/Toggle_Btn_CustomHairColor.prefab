@@ -25,18 +25,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2959082992813980325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4453101121269805493}
-  m_RootOrder: 2
+  m_Father: {fileID: 2675413614222135694}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: -48, y: -48}
+  m_SizeDelta: {x: -24, y: -16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7345323484263947328
 CanvasRenderer:
@@ -109,11 +109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -48
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652062426437535817, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Pivot.x
@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 160
+      value: 168
       objectReference: {fileID: 0}
     - target: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,6 +220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2675413614222135694 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3751516405281603612, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+  m_PrefabInstance: {fileID: 1238748053098729874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3868030156682999275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2638803878648128633, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
@@ -237,14 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e479faddd7da3764eb3753efb59998ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle: {fileID: 0}
-  <Customization>k__BackingField: {fileID: 0}
   HairBack: {fileID: 2052682205135488815}
   HairEye: {fileID: 5746728328341091091}
   <HairColor>k__BackingField: 0
+  HairCutsGroup: {fileID: 0}
   HairCuts: []
---- !u!224 &4453101121269805493 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
-  m_PrefabInstance: {fileID: 1238748053098729874}
-  m_PrefabAsset: {fileID: 0}

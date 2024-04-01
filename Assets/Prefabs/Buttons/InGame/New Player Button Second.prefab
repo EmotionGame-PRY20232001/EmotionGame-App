@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438857019698873231, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438857019698873231, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438857019698873231, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 438857019698873231, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3466894831447675835, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -33,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3466894831738391986, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
       propertyPath: m_Name
-      value: New Player Button Variant S
+      value: New Player Button Second
       objectReference: {fileID: 0}
     - target: {fileID: 3466894831738391989, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
       propertyPath: m_Pivot.x
@@ -69,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3466894831738391989, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 112
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 3466894831738391989, guid: 7960afabd386d2c46aaa8dc619f194ad, type: 3}
       propertyPath: m_LocalPosition.x

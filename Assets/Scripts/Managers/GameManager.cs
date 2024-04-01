@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
     {
         [field:SerializeField][SerializedDictionary("Background", "TextureName")]
         public SerializedDictionary<Theme.EBackground, Theme.CustomBackground> Backgrounds { get; private set; }
-        [field:SerializeField][SerializedDictionary("Theme", "CustomTheme")]
-        public SerializedDictionary<Theme.ETheme, Theme.CustomTheme> Themes { get; private set; }
+        [field:SerializeField][SerializedDictionary("Theme", "CustomPalette")]
+        public SerializedDictionary<Theme.ETheme, Theme.CustomPalette> Themes { get; private set; }
     }
     
     [System.Serializable]

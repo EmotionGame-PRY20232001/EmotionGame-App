@@ -132,10 +132,10 @@ TextureImporter:
       name: BtnIcon1x_light
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
-        width: 128
-        height: 128
+        x: 8
+        y: 144
+        width: 112
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,76 +150,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnIcon1x_pressed
+      name: BtnIcon1x_up
       rect:
         serializedVersion: 2
-        x: 128
-        y: 320
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e78b163918f5acf4f924c9aa0cbf9c21
-      internalID: 1355959700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon1x_regular
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5bf9fee1a73c4446a984ed6c3e77e48
-      internalID: -1959182015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon1x_selected
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82f179dec83c44c469bb104157f62394
-      internalID: -1009274161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon1x_highlighted
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 128
-        height: 128
+        x: 8
+        y: 16
+        width: 112
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,16 +171,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnIcon1x_disabled
+      name: BtnIcon1x_shadow
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 128
+        x: 136
+        y: 128
+        width: 112
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 56, z: 0, w: 56}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -265,12 +202,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BtnIcon1x_disabled: 12863396
-      BtnIcon1x_highlighted: -316924095
       BtnIcon1x_light: 1061821925
       BtnIcon1x_pressed: 1355959700
       BtnIcon1x_regular: -1959182015
       BtnIcon1x_selected: -1009274161
+      BtnIcon1x_shadow: 12863396
+      BtnIcon1x_up: -316924095
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

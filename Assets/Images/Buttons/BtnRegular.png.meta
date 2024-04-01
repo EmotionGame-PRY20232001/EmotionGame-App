@@ -133,54 +133,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
+        y: 144
         width: 256
-        height: 128
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 0, z: 64, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57edb8ed81812b249ad2abc54114488c
-      internalID: 702035288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnRegular_pressed
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 320
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 0, z: 64, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: beab90bebd6fbca43b080d1b1572b082
-      internalID: -1510712710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnRegular_regular
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 0, z: 64, w: 0}
+      border: {x: 56, y: 0, z: 56, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -192,16 +150,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnRegular_selected
+      name: BtnRegular_up
       rect:
         serializedVersion: 2
         x: 256
-        y: 192
+        y: 144
         width: 256
-        height: 128
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 0, z: 64, w: 0}
+      border: {x: 56, y: 0, z: 56, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -213,16 +171,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnRegular_highlighted
+      name: BtnRegular_shadow
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 0
         width: 256
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 0, z: 64, w: 0}
+      border: {x: 56, y: 56, z: 56, w: 56}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -234,16 +192,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnRegular_disabled
+      name: BtnRegular_highlight
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 0
         width: 256
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 0, z: 64, w: 0}
+      border: {x: 56, y: 56, z: 56, w: 56}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -265,12 +223,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BtnRegular_disabled: 1590574469
-      BtnRegular_highlighted: -1543740983
-      BtnRegular_light: 702035288
+      BtnRegular_highlight: 1590574469
+      BtnRegular_light: -1418511783
       BtnRegular_pressed: -1510712710
-      BtnRegular_regular: -1418511783
-      BtnRegular_selected: 808791346
+      BtnRegular_shadow: -1543740983
+      BtnRegular_up: 808791346
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

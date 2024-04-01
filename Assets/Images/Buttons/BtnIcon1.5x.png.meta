@@ -132,10 +132,10 @@ TextureImporter:
       name: BtnIcon1.5x_light
       rect:
         serializedVersion: 2
-        x: 92
-        y: 338
-        width: 164
-        height: 164
+        x: 54
+        y: 354
+        width: 148
+        height: 148
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,37 +150,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnIcon1.5x_pressed
+      name: BtnIcon1.5x_shadow
       rect:
         serializedVersion: 2
-        x: 256
-        y: 338
-        width: 164
-        height: 164
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adc650497480b7a4ba71106a105606fc
-      internalID: 442297907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon1.5x_regular
-      rect:
-        serializedVersion: 2
-        x: 92
+        x: 54
         y: 174
-        width: 164
+        width: 148
         height: 164
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 74, z: 0, w: 74}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -192,34 +171,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnIcon1.5x_selected
+      name: BtnIcon1.5x_up
       rect:
         serializedVersion: 2
-        x: 256
-        y: 174
-        width: 164
-        height: 164
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7a830ada2dc8a946a92a30cb73a20a0
-      internalID: 1941020797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon1.5x_highlighted
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 10
-        width: 164
-        height: 164
+        x: 54
+        y: 26
+        width: 148
+        height: 148
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,27 +187,6 @@ TextureImporter:
       bones: []
       spriteID: 658c7398631f585418538b9cb91e485d
       internalID: 1711189550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon1.5x_disabled
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 10
-        width: 164
-        height: 164
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54a2f302533c3004191ef76aa7fa1e33
-      internalID: 1537466955
       vertices: []
       indices: 
       edges: []
@@ -266,11 +203,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       BtnIcon1.5x_disabled: 1537466955
-      BtnIcon1.5x_highlighted: 1711189550
       BtnIcon1.5x_light: -377389420
       BtnIcon1.5x_pressed: 442297907
-      BtnIcon1.5x_regular: 104284146
       BtnIcon1.5x_selected: 1941020797
+      BtnIcon1.5x_shadow: 104284146
+      BtnIcon1.5x_up: 1711189550
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

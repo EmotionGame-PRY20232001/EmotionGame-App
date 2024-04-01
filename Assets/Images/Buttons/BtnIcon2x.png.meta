@@ -132,10 +132,10 @@ TextureImporter:
       name: BtnIcon2x_light
       rect:
         serializedVersion: 2
-        x: 28
-        y: 498
-        width: 228
-        height: 228
+        x: 36
+        y: 272
+        width: 212
+        height: 212
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,58 +150,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnIcon2x_highlighted
+      name: BtnIcon2x_shadow
       rect:
         serializedVersion: 2
-        x: 256
-        y: 498
-        width: 228
+        x: 264
+        y: 256
+        width: 212
         height: 228
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb4e47004c44d1342b3f096a56742cb4
-      internalID: -1333534003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon2x_regular
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 270
-        width: 228
-        height: 228
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1a95efe60f279d46b9d19527da554f4
-      internalID: 2020160598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon2x_pressed
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 270
-        width: 228
-        height: 228
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 106, z: 0, w: 106}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -213,13 +171,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnIcon2x_selected
+      name: BtnIcon2x_up
       rect:
         serializedVersion: 2
-        x: 28
-        y: 42
-        width: 228
-        height: 228
+        x: 36
+        y: 44
+        width: 212
+        height: 212
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,27 +187,6 @@ TextureImporter:
       bones: []
       spriteID: 840de5b39b80273488407eb6ec0581ca
       internalID: 1502226335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnIcon2x_disabled
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 42
-        width: 228
-        height: 228
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2fb8cdb55ef1cc459dcbc2c6333ea8b
-      internalID: 1050491981
       vertices: []
       indices: 
       edges: []
@@ -268,9 +205,9 @@ TextureImporter:
       BtnIcon2x_disabled: 1050491981
       BtnIcon2x_highlighted: -1333534003
       BtnIcon2x_light: 665449967
-      BtnIcon2x_pressed: -1866565115
       BtnIcon2x_regular: 2020160598
-      BtnIcon2x_selected: 1502226335
+      BtnIcon2x_shadow: -1866565115
+      BtnIcon2x_up: 1502226335
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

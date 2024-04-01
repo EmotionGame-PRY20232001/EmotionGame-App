@@ -47,22 +47,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4284504654
       objectReference: {fileID: 0}
-    - target: {fileID: 6569795447378537819, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569795447378537819, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569795447378537819, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6569795447378537819, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 5670995149775772912, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1711189550, guid: ad48c040c35051b46a523c462205b4ae, type: 3}
     - target: {fileID: 7015502060755684100, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -79,6 +67,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -24
       objectReference: {fileID: 0}
+    - target: {fileID: 7127831596675480592, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 148
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127831596675480592, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 148
+      objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976179, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_SizeDelta.x
       value: 88
@@ -90,14 +86,6 @@ PrefabInstance:
     - target: {fileID: 7506513800619235907, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Name
       value: BtnIcon1.5X
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506513800619235908, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7506513800619235908, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800619235908, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_RootOrder
@@ -121,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800619235908, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 164
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800619235908, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_SizeDelta.y

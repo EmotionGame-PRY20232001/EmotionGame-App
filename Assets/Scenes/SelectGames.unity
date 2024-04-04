@@ -250,6 +250,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1243669060}
     m_Modifications:
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976179, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -868,6 +884,34 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1284034253}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1456743436}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayContextGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3848249677270814429, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -963,6 +1007,10 @@ PrefabInstance:
     - target: {fileID: 4396970905583323779, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Name
       value: Btn Reacciona
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504854573942083374, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: m_text
+      value: Reacciona
       objectReference: {fileID: 0}
     - target: {fileID: 9051373508940078679, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Sprite
@@ -1244,6 +1292,34 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1284034253}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1456743436}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayImitateGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3848249677270814429, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1339,6 +1415,10 @@ PrefabInstance:
     - target: {fileID: 4396970905583323779, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Name
       value: Btn Imita
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504854573942083374, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: m_text
+      value: Imita
       objectReference: {fileID: 0}
     - target: {fileID: 9051373508940078679, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Sprite
@@ -1494,7 +1574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -588}
+  m_AnchoredPosition: {x: 0, y: -500}
   m_SizeDelta: {x: -256, y: 360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1277574760
@@ -2075,6 +2155,34 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1284034253}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1456743436}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayChooseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234331852603390044, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3848249677270814429, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2170,6 +2278,10 @@ PrefabInstance:
     - target: {fileID: 4396970905583323779, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Name
       value: Btn Reconoce
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504854573942083374, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: m_text
+      value: Reconoce
       objectReference: {fileID: 0}
     - target: {fileID: 9051373508940078679, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Sprite

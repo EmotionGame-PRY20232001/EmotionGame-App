@@ -12,9 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c46ef8ee32a197f40afd8db4184a39f7
   - enabled: 1
+    path: Assets/Scenes/Games/GameChoose.unity
+    guid: f0457e57c7d91b24babc772550e67409
+  - enabled: 1
+    path: Assets/Scenes/Games/GameContext.unity
+    guid: d5f812a875144de4091858816f5aecd5
+  - enabled: 1
     path: Assets/Scenes/Games/GameImitate.unity
     guid: 93ebecd7802584e45b70ee204aade44a
   - enabled: 1
     path: Assets/Scenes/SelectTheme.unity
     guid: dccb955aae43e4c4fb57dc298adb6230
+  - enabled: 1
+    path: Assets/Scenes/SelectGames.unity
+    guid: e85310dbb05853040a4c0d51760a8230
   m_configObjects: {}

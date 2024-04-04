@@ -219,7 +219,7 @@ RectTransform:
   - {fileID: 1731515872}
   - {fileID: 1260064602}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -665,6 +665,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4078013014713609777, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
   m_PrefabInstance: {fileID: 610279692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &630522682
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311412, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133792351918311419, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
+      propertyPath: m_Name
+      value: Game Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 708e48147687eec4cb16de87ece3bfae, type: 3}
 --- !u!1 &639257404
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +788,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714729877
 GameObject:
@@ -1029,7 +1086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5958261967319272752, guid: f998f088a282dfe42b98a1aec375132a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5958261967319272752, guid: f998f088a282dfe42b98a1aec375132a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1109,17 +1166,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f998f088a282dfe42b98a1aec375132a, type: 3}
---- !u!114 &1262894836 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5958261966355717334, guid: f998f088a282dfe42b98a1aec375132a, type: 3}
-  m_PrefabInstance: {fileID: 1262894835}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1456743434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,8 +1210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae93ba482041b084e98aaa66f40bfb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBackgroundImage: {fileID: 1262894836}
-  guideImage: {fileID: 0}
 --- !u!1 &1731515871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1293,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227653218}
     m_Modifications:
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784601227340223614, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976179, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1660,7 +1720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
+      value: GoToGameSelection
       objectReference: {fileID: 0}
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

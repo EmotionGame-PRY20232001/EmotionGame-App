@@ -44,7 +44,22 @@ public class UIActions : MonoBehaviour
         ReturnToMainMenu();
     }
 
-    public void Play()
+    public void GoToGameSelection()
+    {
+        SceneManager.LoadScene("SelectGames");
+    }
+
+    public void PlayChooseGame()
+    {
+        SceneManager.LoadScene("GameChoose");
+    }
+
+    public void PlayContextGame()
+    {
+        SceneManager.LoadScene("GameContext");
+    }
+
+    public void PlayImitateGame()
     {
         SceneManager.LoadScene("GameImitate");
     }

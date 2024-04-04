@@ -17,7 +17,7 @@ public class EmotionToggles : MonoBehaviour
     {
     }
 
-    public void GetEmotionsChecked()
+    public void SaveEmotionsChecked()
     {
         // Emotion.EFEmotions emotions;
         List<Emotion.EEmotion> emotions = new List<Emotion.EEmotion>();
@@ -30,5 +30,7 @@ public class EmotionToggles : MonoBehaviour
                 Debug.Log(etg.Key);
             }
         }
+
+        //TODO: Save to GameManager
     }
 }

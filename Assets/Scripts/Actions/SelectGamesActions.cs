@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectGamesActions : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SelectGamesActions : MonoBehaviour
     protected PopUp PopUpEmotions;
     [SerializeField]
     protected EmotionToggles EmotionToggles;
+    // TODO ADD buttons to unselect?
 
 	public void Start()
 	{

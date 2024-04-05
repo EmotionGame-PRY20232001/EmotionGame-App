@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     private List<Sprite> emotionSprites;
     [field:SerializeField][SerializedDictionary("Emotion", "Data")]
     public SerializedDictionary<Emotion.EEmotion, Emotion.Data> Emotions { get; protected set; }
+
+    [field:SerializeField]
+    public List<Emotion.EEmotion> SelectedEmotions { get; private set; }
     
     [field:SerializeField]
     public CustomThemes ThemeCustom { get; private set; }

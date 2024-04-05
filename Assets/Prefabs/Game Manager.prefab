@@ -151,6 +151,7 @@ MonoBehaviour:
         - {fileID: 21300000, guid: bbb3e99e6a7e4f442b44ebdddd950214, type: 3}
         - {fileID: 21300000, guid: 2cd66fb3453036a4d8fe78bf9413df1d, type: 3}
         - {fileID: 21300000, guid: ed88e10265893a04fa1a087785d39014, type: 3}
+  <SelectedEmotions>k__BackingField: 01000000040000000500000002000000
   <ThemeCustom>k__BackingField:
     <Backgrounds>k__BackingField:
       _serializedList:
@@ -185,23 +186,17 @@ MonoBehaviour:
         Value:
           <Name>k__BackingField: "C\xE1lido"
           <Primary>k__BackingField:
-            <Background>k__BackingField:
-              <Light>k__BackingField: {r: 0.84705883, g: 0.88235295, b: 0.8901961, a: 0}
-              <Main>k__BackingField: {r: 0.78039217, g: 0.8039216, b: 0.8352941, a: 0}
-              <Dark>k__BackingField: {r: 0.6117647, g: 0.6627451, b: 0.7254902, a: 0}
-            <Text>k__BackingField:
-              <Light>k__BackingField: {r: 0.4862745, g: 0.5529412, b: 0.5882353, a: 1}
-              <Main>k__BackingField: {r: 0.30588236, g: 0.3529412, b: 0.3764706, a: 1}
-              <Dark>k__BackingField: {r: 0.245105, g: 0.29882434, b: 0.33962262, a: 1}
+            <Background>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+            <Text>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
           <Accent>k__BackingField:
-            <Background>k__BackingField:
-              <Light>k__BackingField: {r: 1, g: 0.9647059, b: 0.627451, a: 0}
-              <Main>k__BackingField: {r: 1, g: 0.89411765, b: 0.33333334, a: 1}
-              <Dark>k__BackingField: {r: 1, g: 0.78431374, b: 0.22352941, a: 1}
-            <Text>k__BackingField:
-              <Light>k__BackingField: {r: 0.8156863, g: 0.35686275, b: 0.16078432, a: 1}
-              <Main>k__BackingField: {r: 0.4862745, g: 0.30588236, b: 0.22352941, a: 1}
-              <Dark>k__BackingField: {r: 0.20754719, g: 0.15778717, b: 0.14195444, a: 1}
+            <Background>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+            <Text>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+          <Paper>k__BackingField:
+            <Background>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+            <Text>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+          <Danger>k__BackingField:
+            <Background>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+            <Text>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
   <CharacterCustom>k__BackingField:
     <SkinColors>k__BackingField:
       _serializedList:

@@ -21,6 +21,11 @@ public class ActivityManager : MonoBehaviour
     private int Score;
 
     [SerializeField]
+    private GameObject AreaOfButtons;
+    [SerializeField]
+    private EmotionButton BtnEmotionPrefab;
+
+    [SerializeField]
     public Emotion.EEmotion ExerciseEmotion;
 
     private void Awake()
@@ -50,8 +55,21 @@ public class ActivityManager : MonoBehaviour
     }
 
     private void StartChooseActivity()
-    { 
-        ExerciseImage.texture = GameManager.Instance.Emotions[ExerciseEmotion].Faces[0].texture;
+    {
+        var gm = GameManager.Instance;
+        var se = new List<Emotion.EEmotion>(gm.SelectedEmotions);
+        Emotion.EEmotion randEmotion = se[Random.Range(0, se.Count)];
+        ExerciseEmotion = randEmotion;
+        for (int i = 0; i < 3; i++)
+        {
+            var es = gm.Emotions[randEmotion].Sprite;
+            var bt = Instantiate(BtnEmotionPrefab, AreaOfButtons.transform);
+            bt.SetButton(es);
+            se.Remove(randEmotion);
+            randEmotion = se[Random.Range(0, se.Count)];
+        }
+        var fl = gm.Emotions[ExerciseEmotion].Faces;
+        ExerciseImage.texture = fl[Random.Range(0, fl.Count)].texture;
     }
 
     private void StartContextActivity()

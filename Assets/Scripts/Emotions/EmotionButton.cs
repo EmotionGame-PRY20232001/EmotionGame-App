@@ -21,8 +21,8 @@ public class EmotionButton : MonoBehaviour
 
     private void Start()
     {
-        LoadRandom();
-        LoadImageByEmotion();
+        //LoadRandom();
+        //LoadImageByEmotion();
     }
 
     protected void LoadRandom()
@@ -41,6 +41,11 @@ public class EmotionButton : MonoBehaviour
         {
             EmotionImage.sprite = GameManager.Instance.Emotions[CurrEmotion].Sprite;
         }
+    }
+
+    public void SetButton(Sprite emotionSprite)
+    {
+        EmotionImage.sprite = emotionSprite;
     }
 
     public void PressButton()

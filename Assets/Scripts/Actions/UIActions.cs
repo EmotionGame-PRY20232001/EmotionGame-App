@@ -9,6 +9,24 @@ public class UIActions : MonoBehaviour
     // [SerializeField]
     // private Image guideImage;
 
+    public static class Scenes
+    {
+        public static readonly string NONE = "";
+        public static readonly string PLAYER_SELECT = "PlayerSelect";
+        public static readonly string MAIN_MENU = "MainMenu";
+        public static readonly string SELECT_THEME = "SelectTheme";
+        public static readonly string SELECT_GAMES = "SelectGames";
+        public static readonly string GAME_CHOOSE = "GameChoose";
+        public static readonly string GAME_CONTEXT = "GameContext";
+        public static readonly string GAME_IMITATE = "GameImitate";
+        //static readonly string  = "";
+        //static readonly string  = "";
+        //static readonly string  = "";
+        //static readonly string  = "";
+    };
+    
+    public enum EGames { None, Choose, Context, Imitate, }
+
     private void Awake()
     {
         // var player = GameManager.Instance.GetCurrentPlayer();
@@ -16,20 +34,26 @@ public class UIActions : MonoBehaviour
         // if (guideImage) guideImage.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
     }
 
-    public void ReturnToSelecion()
+
+    ////========  ========////
+
+    public void GoToPlayerSelecion()
     {
         GameManager.Instance.SetCurrentPlayer(null);
-        SceneManager.LoadScene("PlayerSelect");
+        SceneManager.LoadScene(Scenes.PLAYER_SELECT);
     }
 
-    public void ReturnToMainMenu()
+    public static void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
 
-    public void GoToSelectTheme()
+
+    ////======== CUSTOMIZATION SCREENS ========////
+    
+    public static void GoToSelectTheme()
     {
-        SceneManager.LoadScene("SelectTheme");
+        SceneManager.LoadScene(Scenes.SELECT_THEME);
     }
 
     public void ApplySelectedOptions()
@@ -41,26 +65,29 @@ public class UIActions : MonoBehaviour
             return;
         }
         DBManager.Instance.UpdatePlayerToDb(player);
-        ReturnToMainMenu();
+        GoToMainMenu();
     }
 
-    public void GoToGameSelection()
+
+    ////======== GO TO GAME SCREENS ========////
+
+    public static void GoToGameSelection()
     {
-        SceneManager.LoadScene("SelectGames");
+        SceneManager.LoadScene(Scenes.SELECT_GAMES);
     }
 
-    public void PlayChooseGame()
+    public static void GoToChooseGame()
     {
-        SceneManager.LoadScene("GameChoose");
+        SceneManager.LoadScene(Scenes.GAME_CHOOSE);
     }
 
-    public void PlayContextGame()
+    public static void GoToContextGame()
     {
-        SceneManager.LoadScene("GameContext");
+        SceneManager.LoadScene(Scenes.GAME_CONTEXT);
     }
 
-    public void PlayImitateGame()
+    public static void GoToImitateGame()
     {
-        SceneManager.LoadScene("GameImitate");
+        SceneManager.LoadScene(Scenes.GAME_IMITATE);
     }
 }

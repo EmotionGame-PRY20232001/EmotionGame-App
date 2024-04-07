@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class ActivityManager : MonoBehaviour
     private EActivity Activity;
     [SerializeField]
     private TMP_Text ScoreText;
+    [SerializeField]
+    private TMP_Text ExerciseText;
     [SerializeField] 
     private RawImage ExerciseImage;
     [SerializeField] 
@@ -26,7 +29,11 @@ public class ActivityManager : MonoBehaviour
     [SerializeField]
     private GameObject AreaOfButtons;
     [SerializeField]
+    private GameObject GridOfButtons;
+    [SerializeField]
     private EmotionButton BtnEmotionPrefab;
+    [SerializeField]
+    private EmotionButton BtnEmotionMovePrefab;
 
     [SerializeField]
     public Emotion.EEmotion ExerciseEmotion { get; private set; }
@@ -47,31 +54,10 @@ public class ActivityManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScoreText.text = "Score: " + Score;
-        int cant = System.Enum.GetNames(typeof(Emotion.EEmotion)).Length;
-        ExerciseEmotion = (Emotion.EEmotion)Random.Range(1, cant - 1);
-        switch (Activity)
-        {
-            case EActivity.Choose: StartChooseActivity(); break;
-            case EActivity.Context: StartContextActivity(); break;
-            case EActivity.Imitate: StartImitateActivity(); break;
-            default: break;
-        }
-    }
-
-    private void StartChooseActivity()
-    {
-        LoadChooseExcercise();
-    }
-
-    private void StartContextActivity()
-    {
-
-    }
-
-    private void StartImitateActivity()
-    {
-
+        //int cant = System.Enum.GetNames(typeof(Emotion.EEmotion)).Length;
+        //ExerciseEmotion = (Emotion.EEmotion)Random.Range(1, cant - 1);
+        UpdateScoreText();
+        LoadExercise();
     }
 
     private void CleanUp()
@@ -83,17 +69,28 @@ public class ActivityManager : MonoBehaviour
     {
         Score += 10;
         UpdateScoreText();
-        LoadChooseExcercise();
+        LoadExercise();
     }
     
     public void Bad()
     {
         if (Score >= 5) Score -= 5;
         UpdateScoreText();
-        LoadChooseExcercise();
+        LoadExercise();
     }
 
-    private void LoadChooseExcercise()
+    void LoadExercise()
+    {
+        switch (Activity)
+        {
+            case EActivity.Choose: LoadChooseExercise(); break;
+            case EActivity.Context: LoadContextExercise(); break;
+            case EActivity.Imitate: LoadImitateExercise(); break;
+            default: break;
+        }
+    }
+
+    private void LoadChooseExercise()
     {
         CleanUp();
         var gm = GameManager.Instance;
@@ -108,13 +105,48 @@ public class ActivityManager : MonoBehaviour
                 ExerciseEmotion = randEmotion;
             }
             var emoSprite = gm.Emotions[randEmotion].Sprite;
-            var button = Instantiate(BtnEmotionPrefab, AreaOfButtons.transform);
+            var button = Instantiate(BtnEmotionMovePrefab, AreaOfButtons.transform);
             button.SetButton(emoSprite, randEmotion);
             allEmotions.Remove(randEmotion);
             InstantiateButtons.Add(button.gameObject);
         }
         var faceImages = gm.Emotions[ExerciseEmotion].Faces;
         ExerciseImage.texture = faceImages[Random.Range(0, faceImages.Count)].texture;
+    }
+
+    private void LoadContextExercise()
+    {
+        CleanUp();
+        var gm = GameManager.Instance;
+        var allEmotions = new List<Emotion.EEmotion>(gm.AllEmotions);
+        var selEmotions = new List<Emotion.EEmotion>(gm.SelectedEmotions);
+        var intEmotions = new List<Emotion.EEmotion>();
+        for (int i = 0; i < NumButtons; i++)
+        {
+            Emotion.EEmotion randEmotion = allEmotions[Random.Range(0, allEmotions.Count)];
+            if (i == 0)
+            {
+                randEmotion = selEmotions[Random.Range(0, selEmotions.Count)];
+                ExerciseEmotion = randEmotion;
+            }
+            intEmotions.Add(randEmotion);
+            allEmotions.Remove(randEmotion);
+        }
+        intEmotions = intEmotions.OrderBy(x => Random.value).ToList();
+        foreach (var i in intEmotions)
+        {
+            var emoSprite = gm.Emotions[i].Sprite;
+            var button = Instantiate(BtnEmotionPrefab, GridOfButtons.transform);
+            button.SetButton(emoSprite, i);
+            InstantiateButtons.Add(button.gameObject);
+        }
+        var contextStrings = gm.Emotions[ExerciseEmotion].Contexts;
+        ExerciseText.text = contextStrings[Random.Range(0, contextStrings.Count)];
+    }
+
+    private void LoadImitateExercise()
+    {
+
     }
 
     private void UpdateScoreText()

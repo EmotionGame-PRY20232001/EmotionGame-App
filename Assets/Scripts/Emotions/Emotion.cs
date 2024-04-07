@@ -24,5 +24,6 @@ public class Emotion : MonoBehaviour
         public Sprite Sprite;
         public string Name;
         public List<Sprite> Faces;
+        public List<string> Contexts;
     }
 }

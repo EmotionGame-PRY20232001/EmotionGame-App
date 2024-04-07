@@ -992,10 +992,10 @@ MonoBehaviour:
   Activity: 0
   ScoreText: {fileID: 8062010288743239039}
   ExerciseImage: {fileID: 1755145410}
-  Score: 50
+  NumButtons: 4
+  Score: 0
   AreaOfButtons: {fileID: 657675618955085769}
-  BtnEmotionPrefab: {fileID: 1168071407051892537, guid: 22d937df91bdc5b4e8555e75a47a6490, type: 3}
-  ExerciseEmotion: 0
+  BtnEmotionPrefab: {fileID: 4739876699862633458, guid: 29a1b7ba81be77f449c4e98ad989f649, type: 3}
 --- !u!1 &744207309586261610
 GameObject:
   m_ObjectHideFlags: 0

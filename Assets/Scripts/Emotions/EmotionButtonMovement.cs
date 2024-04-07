@@ -14,7 +14,7 @@ public class EmotionButtonMovement : MonoBehaviour
     private void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
-        CanvasRectTransform = GameObject.Find("UI Canvas").GetComponent<RectTransform>();
+        CanvasRectTransform = GameObject.Find("AreaOfButtons").GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -24,8 +24,6 @@ public class EmotionButtonMovement : MonoBehaviour
 
     private void Update()
     {
-        //float randomNum = Random.Range(0f, 2 * Mathf.PI);
-        //Vector2 randomVec = new Vector2(Mathf.Cos(randomNum), Mathf.Sin(randomNum));
         RectTransform.anchoredPosition += Dir * Time.deltaTime * Velocity;
         CheckTouchingBorders();
     }

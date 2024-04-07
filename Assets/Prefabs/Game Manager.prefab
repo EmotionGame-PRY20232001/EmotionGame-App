@@ -151,6 +151,7 @@ MonoBehaviour:
         - {fileID: 21300000, guid: bbb3e99e6a7e4f442b44ebdddd950214, type: 3}
         - {fileID: 21300000, guid: 2cd66fb3453036a4d8fe78bf9413df1d, type: 3}
         - {fileID: 21300000, guid: ed88e10265893a04fa1a087785d39014, type: 3}
+  <AllEmotions>k__BackingField: 010000000200000003000000040000000500000006000000
   <SelectedEmotions>k__BackingField: 01000000040000000500000002000000
   <ThemeCustom>k__BackingField:
     <Backgrounds>k__BackingField:

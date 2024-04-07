@@ -43,9 +43,10 @@ public class EmotionButton : MonoBehaviour
         }
     }
 
-    public void SetButton(Sprite emotionSprite)
+    public void SetButton(Sprite emotionSprite, Emotion.EEmotion emotion)
     {
         EmotionImage.sprite = emotionSprite;
+        CurrEmotion = emotion;
     }
 
     public void PressButton()

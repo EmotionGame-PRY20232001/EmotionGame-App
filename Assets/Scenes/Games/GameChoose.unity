@@ -879,10 +879,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameBase
       objectReference: {fileID: 0}
-    - target: {fileID: 3032247245126323105, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
-      propertyPath: BtnEmotionPrefab
-      value: 
-      objectReference: {fileID: 4739876699862633458, guid: 29a1b7ba81be77f449c4e98ad989f649, type: 3}
     - target: {fileID: 5222658933759964212, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

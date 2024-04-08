@@ -133,12 +133,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
+        y: 528
         width: 256
-        height: 256
+        height: 240
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 72, z: 64, w: 64}
+      border: {x: 64, y: 64, z: 64, w: 64}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -150,34 +150,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnImage_highlighted
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 64, y: 64, z: 64, w: 64}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1698207d58754542b2e7e20223684b4
-      internalID: 1098200555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BtnImage_regular
+      name: BtnImage_up
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 272
         width: 256
-        height: 256
+        height: 240
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 64, y: 64, z: 64, w: 64}
@@ -192,13 +171,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnImage_pressed
+      name: BtnImage_up_off
       rect:
         serializedVersion: 2
         x: 256
-        y: 256
+        y: 272
         width: 256
-        height: 256
+        height: 240
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 64, y: 64, z: 64, w: 64}
@@ -213,7 +192,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnImage_selected
+      name: BtnImage_shadow
       rect:
         serializedVersion: 2
         x: 0
@@ -234,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BtnImage_disabled
+      name: BtnImage_shadow_off
       rect:
         serializedVersion: 2
         x: 256
@@ -265,12 +244,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BtnImage_disabled: 1811743526
       BtnImage_highlighted: 1098200555
       BtnImage_light: -756788699
-      BtnImage_pressed: 846813469
-      BtnImage_regular: 210000184
-      BtnImage_selected: -1281094604
+      BtnImage_shadow: -1281094604
+      BtnImage_shadow_off: 1811743526
+      BtnImage_up: 210000184
+      BtnImage_up_off: 846813469
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -392,10 +392,10 @@ MonoBehaviour:
         <Shape>k__BackingField: {r: 0.30588236, g: 0.3529412, b: 0.3764706, a: 1}
     <Accent>k__BackingField:
       <Light>k__BackingField:
-        <Background>k__BackingField: {r: 1, g: 0.9647059, b: 0.627451, a: 1}
+        <Background>k__BackingField: {r: 1, g: 0.93333334, b: 0.33333334, a: 1}
         <Shape>k__BackingField: {r: 0.8156863, g: 0.35686275, b: 0.16078432, a: 1}
       <Main>k__BackingField:
-        <Background>k__BackingField: {r: 0.99607843, g: 0.89411765, b: 0.3372549, a: 1}
+        <Background>k__BackingField: {r: 1, g: 0.8784314, b: 0.24705882, a: 1}
         <Shape>k__BackingField: {r: 0.4862745, g: 0.30588236, b: 0.22352941, a: 1}
       <Dark>k__BackingField:
         <Background>k__BackingField: {r: 1, g: 0.78431374, b: 0.22352941, a: 1}
@@ -451,11 +451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d29d9164c43c08d40bd4e4c3226f95ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionTime: 0.2
+  TransitionTime: 0.1
   AlphaOnDisabled: 0.5
   ShadowRect: {fileID: 6638598362119371922}
   UpRect: {fileID: 6784601227340223614}
-  HighlightedShadowHeight: 136
+  Tooltip: {fileID: 0}
 --- !u!1 &7506513801400681545
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class ThemeColorFilled : MonoBehaviour
     //DangerColor | FFC1BF 255, 193, 191, 255
     
     // Settings
+    protected Theme.ETypes LastFillType = Theme.ETypes.None;
     [SerializeField]
     protected Theme.ETypes FillType = Theme.ETypes.Primary;
     [SerializeField]
@@ -32,9 +33,9 @@ public class ThemeColorFilled : MonoBehaviour
 
     protected void Start()
     {
-        //Elements = gameObject.GetComponentsInChildren<ThemeElement>();
         UpdateColors();
         UpdateFillType();
+        LastFillType = FillType;
     }
 
     protected void UpdateColors()
@@ -161,8 +162,13 @@ public class ThemeColorFilled : MonoBehaviour
         //    if (el != null)
         //        el.UpdateFill();
         //}
+
+        if (LastFillType == FillType) return;
+
         UpdateFillGraphic(ColorFill);
         UpdateContrastGraphic(ColorContrast);
+
+        LastFillType = FillType;
     }
 
     public void OnLightnessChange(Theme.ELightness newLightness, float time = 1f)
@@ -186,6 +192,12 @@ public class ThemeColorFilled : MonoBehaviour
 
     protected void Update()
     {
-        //UpdateFillType();
+#if (UNITY_EDITOR)
+        if (!Application.isPlaying)
+        {
+            UpdateColors();
+            UpdateFillType();
+        }
+#endif
     }
 }

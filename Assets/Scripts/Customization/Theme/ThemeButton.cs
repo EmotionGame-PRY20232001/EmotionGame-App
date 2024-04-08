@@ -62,26 +62,33 @@ public class ThemeButton : MonoBehaviour
 {
     protected Button Btn;
 
+    //---- State ----//
     protected SelectionState CurrentState = SelectionState.Normal;
-    protected SelectionState PrevState = SelectionState.Normal;
     public SelectionState State
     {
         get { return CurrentState; }
         set { ChangeState(value, false); }
     }
 
+    //---- Tooltip ----//
     protected ThemeColorFilled ThemeColor;
     [SerializeField]
-    protected float TransitionTime = 0.2f;
+    protected float TransitionTime = 0.15f;
     [SerializeField]
     protected float AlphaOnDisabled = 0.5f;
 
+    //---- Transform ----//
     [SerializeField]
     protected RectTransform ShadowRect;
     [SerializeField]
     protected RectTransform UpRect;
     protected Vector2 DefaultShadowSize;
 
+    //---- Tooltip ----//
+    [SerializeField]
+    protected CanvasGroup Tooltip;
+
+    ////////==== Unity ====////////
     protected void Awake()
     {
         ThemeColor = gameObject.GetComponent<ThemeColorFilled>();
@@ -98,11 +105,9 @@ public class ThemeButton : MonoBehaviour
         ChangeState(SelectionState.Normal, true);
     }
 
+    ////////==== State ====////////
     protected void ChangeState(SelectionState state, bool instant)
     {
-        if (state == PrevState) return;
-
-        PrevState = CurrentState;
         CurrentState = state;
         float time = instant ? 0.0f : TransitionTime;
 
@@ -110,45 +115,51 @@ public class ThemeButton : MonoBehaviour
         {
             case SelectionState.Normal:
                 ThemeColor?.OnLightnessChange(Theme.ELightness.Main, time);
-                LeanTween.size(ShadowRect, DefaultShadowSize, time);
+                FadeTooltop(false, time);
+                FadeShadowHeight(false, time);
                 break;
             case SelectionState.Highlighted:
-                ThemeColor?.OnLightnessChange(Theme.ELightness.Light, instant ? 0.0f : TransitionTime);
+                ThemeColor?.OnLightnessChange(Theme.ELightness.Light, time);
+                FadeTooltop(false, time);
                 break;
             case SelectionState.Pressed:
                 ThemeColor?.OnLightnessChange(Theme.ELightness.Dark, time);
-                if (UpRect != null)
-                    LeanTween.size(ShadowRect, UpRect.sizeDelta, time);
+                FadeTooltop(true, time);
+                FadeShadowHeight(true, time);
                 break;
             case SelectionState.Selected:
                 ThemeColor?.OnLightnessChange(Theme.ELightness.Light, time);
-                if (UpRect != null)
-                    LeanTween.size(ShadowRect, UpRect.sizeDelta, time);
+                FadeTooltop(false, time);
+                FadeShadowHeight(true, time);
                 break;
             case SelectionState.Disabled:
-                ThemeColor?.OnLightnessChange(Theme.ELightness.Disabled, instant ? 0.0f : TransitionTime);
+                ThemeColor?.OnLightnessChange(Theme.ELightness.Disabled, time);
+                FadeTooltop(false, time);
                 break;
         }
     }
 
+    protected void FadeShadowHeight(bool down, float time)
+    {
+        if (down)
+        {
+            if (UpRect != null)
+                LeanTween.size(ShadowRect, UpRect.sizeDelta, time);
+        }
+        else
+        {
+            LeanTween.size(ShadowRect, DefaultShadowSize, time);
+        }
+    }
 
-    ////////==== Animations ====////////
-    //public void PlayAnimationNormal(bool instant = false)
-    //{
-    //}
-    //public void PlayAnimationHighlighted(bool instant = false)
-    //{
-    //}
-    //public void PlayAnimationPressed(bool instant = false)
-    //{
-    //}
-    //public void PlayAnimationSelected(bool instant = false)
-    //{
-    //}
-    //public void PlayAnimationDisabled(bool instant = false)
-    //{
-    //}
+    protected void FadeTooltop(bool fadeIn, float time)
+    {
+        if (Tooltip == null) return;
 
+        //float from = fadeIn ? 0.0f : 1.0f;
+        float to = fadeIn ? 1.0f : 0.0f;
+        LeanTween.alphaCanvas(Tooltip, to, time);
+    }
 
     // Copied From Button
     public enum SelectionState

@@ -7,7 +7,7 @@ public class Theme : MonoBehaviour
 {
     public enum EBackground { Main, Space, Clouds, Forest, Underwater, }
     public enum ETheme { Warm, Cold, }
-    public enum ETypes { Primary, Accent, Paper, Danger }
+    public enum ETypes { Primary, Accent, Paper, Danger, None }
     public enum ELightness { Main, Light, Dark, Disabled }
     
     

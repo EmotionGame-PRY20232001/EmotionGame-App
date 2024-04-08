@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(ThemeColorFilled))]
-[RequireComponent(typeof(Button))]
 //public class ThemeButton : Button
 //{
 
@@ -89,13 +87,12 @@ public class ThemeButton : MonoBehaviour
     protected CanvasGroup Tooltip;
 
     ////////==== Unity ====////////
-    protected void Awake()
+    protected virtual void Awake()
     {
         ThemeColor = gameObject.GetComponent<ThemeColorFilled>();
-        Btn = gameObject.GetComponent<Button>();
     }
 
-    protected void Start()
+    protected virtual void Start()
     {
         if (ShadowRect != null)
         {
@@ -106,7 +103,7 @@ public class ThemeButton : MonoBehaviour
     }
 
     ////////==== State ====////////
-    protected void ChangeState(SelectionState state, bool instant)
+    protected virtual void ChangeState(SelectionState state, bool instant)
     {
         CurrentState = state;
         float time = instant ? 0.0f : TransitionTime;
@@ -114,33 +111,26 @@ public class ThemeButton : MonoBehaviour
         switch (state)
         {
             case SelectionState.Normal:
-                ThemeColor?.OnLightnessChange(Theme.ELightness.Main, time);
-                FadeTooltop(false, time);
-                FadeShadowHeight(false, time);
+                PlayAnimationNormal(time);
                 break;
             case SelectionState.Highlighted:
-                ThemeColor?.OnLightnessChange(Theme.ELightness.Light, time);
-                FadeTooltop(false, time);
+                PlayAnimationHighlighted(time);
                 break;
             case SelectionState.Pressed:
-                ThemeColor?.OnLightnessChange(Theme.ELightness.Dark, time);
-                FadeTooltop(true, time);
-                FadeShadowHeight(true, time);
+                PlayAnimationPressed(time);
                 break;
             case SelectionState.Selected:
-                ThemeColor?.OnLightnessChange(Theme.ELightness.Light, time);
-                FadeTooltop(false, time);
-                FadeShadowHeight(true, time);
+                PlayAnimationSelected(time);
                 break;
             case SelectionState.Disabled:
-                ThemeColor?.OnLightnessChange(Theme.ELightness.Disabled, time);
-                FadeTooltop(false, time);
+                PlayAnimationDisabled(time);
                 break;
         }
     }
 
-    protected void FadeShadowHeight(bool down, float time)
+    protected virtual void FadeShadowHeight(bool down, float time)
     {
+        if (ShadowRect == null) return;
         if (down)
         {
             if (UpRect != null)
@@ -152,13 +142,42 @@ public class ThemeButton : MonoBehaviour
         }
     }
 
-    protected void FadeTooltop(bool fadeIn, float time)
+    protected void FadeTooltop(bool show, float time)
     {
         if (Tooltip == null) return;
 
-        //float from = fadeIn ? 0.0f : 1.0f;
-        float to = fadeIn ? 1.0f : 0.0f;
+        //float from = show ? 0.0f : 1.0f;
+        float to = show ? 1.0f : 0.0f;
         LeanTween.alphaCanvas(Tooltip, to, time);
+    }
+
+    protected virtual void PlayAnimationNormal(float time)
+    {
+        ThemeColor?.OnLightnessChange(Theme.ELightness.Main, time);
+        FadeTooltop(false, time);
+        FadeShadowHeight(false, time);
+    }
+    protected virtual void PlayAnimationHighlighted(float time)
+    {
+        ThemeColor?.OnLightnessChange(Theme.ELightness.Light, time);
+        FadeTooltop(false, time);
+    }
+    protected virtual void PlayAnimationPressed(float time)
+    {
+        ThemeColor?.OnLightnessChange(Theme.ELightness.Dark, time);
+        FadeTooltop(true, time);
+        FadeShadowHeight(true, time);
+    }
+    protected virtual void PlayAnimationSelected(float time)
+    {
+        ThemeColor?.OnLightnessChange(Theme.ELightness.Light, time);
+        FadeTooltop(false, time);
+        FadeShadowHeight(true, time);
+    }
+    protected virtual void PlayAnimationDisabled(float time)
+    {
+        ThemeColor?.OnLightnessChange(Theme.ELightness.Disabled, time);
+        FadeTooltop(false, time);
     }
 
     // Copied From Button

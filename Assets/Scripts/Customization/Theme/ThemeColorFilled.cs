@@ -13,7 +13,6 @@ public class ThemeColorFilled : MonoBehaviour
     //DangerColor | FFC1BF 255, 193, 191, 255
     
     // Settings
-    protected Theme.ETypes LastFillType = Theme.ETypes.None;
     [SerializeField]
     protected Theme.ETypes FillType = Theme.ETypes.Primary;
     [SerializeField]
@@ -24,8 +23,6 @@ public class ThemeColorFilled : MonoBehaviour
     [SerializeField]
     protected Color ColorContrast;
 
-    // Elements
-    //protected ThemeElement[] Elements;
     [SerializeField]
     protected List<Graphic> GraphicsToFill;
     [SerializeField]
@@ -35,7 +32,6 @@ public class ThemeColorFilled : MonoBehaviour
     {
         UpdateColors();
         UpdateFillType();
-        LastFillType = FillType;
     }
 
     protected void UpdateColors()
@@ -155,20 +151,8 @@ public class ThemeColorFilled : MonoBehaviour
 
     protected void UpdateFillType()
     {
-        //if (Elements.Length == 0) return;
-
-        //foreach(ThemeElement el in Elements)
-        //{
-        //    if (el != null)
-        //        el.UpdateFill();
-        //}
-
-        if (LastFillType == FillType) return;
-
         UpdateFillGraphic(ColorFill);
         UpdateContrastGraphic(ColorContrast);
-
-        LastFillType = FillType;
     }
 
     public void OnLightnessChange(Theme.ELightness newLightness, float time = 1f)

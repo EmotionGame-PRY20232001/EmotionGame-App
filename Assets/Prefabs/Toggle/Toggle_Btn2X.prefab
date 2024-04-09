@@ -46,7 +46,7 @@ PrefabInstance:
     - target: {fileID: 2025105459709585671, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1866565115, guid: 0c81563bacbad9143b70a085f4c183fa, type: 3}
+      objectReference: {fileID: 802294132, guid: e5d68ee83de346f43a63cc37f1148135, type: 3}
     - target: {fileID: 2492911480541453999, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Pivot.y
       value: 1
@@ -278,11 +278,11 @@ PrefabInstance:
     - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: ShadowOnOff.SpriteOn
       value: 
-      objectReference: {fileID: -1866565115, guid: 0c81563bacbad9143b70a085f4c183fa, type: 3}
+      objectReference: {fileID: 802294132, guid: e5d68ee83de346f43a63cc37f1148135, type: 3}
     - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: ShadowOnOff.SpriteOff
       value: 
-      objectReference: {fileID: 802294132, guid: e5d68ee83de346f43a63cc37f1148135, type: 3}
+      objectReference: {fileID: -1866565115, guid: 0c81563bacbad9143b70a085f4c183fa, type: 3}
     - target: {fileID: 7512135826399742642, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: GraphicsToFill.Array.size
       value: 2

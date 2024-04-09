@@ -38,6 +38,9 @@ public class ActivityManager : MonoBehaviour
     [SerializeField]
     public Emotion.EEmotion ExerciseEmotion { get; private set; }
 
+    [SerializeField]
+    private FERModel Model;
+
     private List<GameObject> InstantiateButtons = new List<GameObject>();
 
     private void Awake()
@@ -54,8 +57,6 @@ public class ActivityManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //int cant = System.Enum.GetNames(typeof(Emotion.EEmotion)).Length;
-        //ExerciseEmotion = (Emotion.EEmotion)Random.Range(1, cant - 1);
         UpdateScoreText();
         LoadExercise();
     }
@@ -85,7 +86,10 @@ public class ActivityManager : MonoBehaviour
         {
             case EActivity.Choose: LoadChooseExercise(); break;
             case EActivity.Context: LoadContextExercise(); break;
-            case EActivity.Imitate: LoadImitateExercise(); break;
+            case EActivity.Imitate: 
+                LoadImitateExercise();
+                StartCoroutine(CheckImitateEmotion());
+                break;
             default: break;
         }
     }
@@ -146,7 +150,25 @@ public class ActivityManager : MonoBehaviour
 
     private void LoadImitateExercise()
     {
+        var gm = GameManager.Instance;
+        var selEmotions = new List<Emotion.EEmotion>(gm.SelectedEmotions);
+        Emotion.EEmotion randEmotion = selEmotions[Random.Range(0, selEmotions.Count)];
+        ExerciseEmotion = randEmotion;
+        var faceImages = gm.Emotions[ExerciseEmotion].Faces;
+        ExerciseImage.texture = faceImages[Random.Range(0, faceImages.Count)].texture;
+    }
 
+    IEnumerator CheckImitateEmotion()
+    {
+        while (true)
+        {
+            if (Model.PredictedEmotion == ExerciseEmotion)
+            {
+                Debug.Log("Sí es");
+                LoadImitateExercise();
+            }
+            yield return null;
+        }
     }
 
     private void UpdateScoreText()

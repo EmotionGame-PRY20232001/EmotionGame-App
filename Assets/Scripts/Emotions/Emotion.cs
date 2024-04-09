@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Emotion : MonoBehaviour
 {
-    public enum EEmotion { Neutral, Happy, Sad, Anger, Disgust, Fear, Surprise }
+    public enum EEmotion { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
     
     // [System.Flags]
     // public enum EFEmotions

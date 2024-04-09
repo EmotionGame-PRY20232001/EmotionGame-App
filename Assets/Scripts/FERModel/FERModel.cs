@@ -28,6 +28,9 @@ public class FERModel : MonoBehaviour
     private byte[] modelFile;
     private string[] emotions = { "Enojo", "Disgusto", "Miedo", "Feliz", "Neutral", "Triste", "Sorpresa" };
 
+    [field: SerializeField]
+    public Emotion.EEmotion PredictedEmotion { get; private set; }
+
     private void Awake()
     {
         faceImage.material = grayMaterial;
@@ -64,8 +67,10 @@ public class FERModel : MonoBehaviour
         float maxValue = output.Max();
         int maxIndex = output.ToList().IndexOf(maxValue);
 
-        emocionText.text = emotions[maxIndex];
-        emocionSprite.sprite = GameManager.Instance.GetEmotionSprites()[maxIndex];
+        var gm = GameManager.Instance;
+        PredictedEmotion = (Emotion.EEmotion)maxIndex;
+        emocionText.text = gm.Emotions[PredictedEmotion].Name;
+        emocionSprite.sprite = gm.Emotions[PredictedEmotion].Sprite;
     }
 
     private void OnDestroy()

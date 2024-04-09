@@ -128,10 +128,10 @@ public class ThemeButton : MonoBehaviour
         }
     }
 
-    protected virtual void FadeShadowHeight(bool down, float time)
+    protected virtual void OnSetActiveAnimation(bool isActive, float time)
     {
         if (ShadowRect == null) return;
-        if (down)
+        if (isActive)
         {
             if (UpRect != null)
                 LeanTween.size(ShadowRect, UpRect.sizeDelta, time);
@@ -155,7 +155,7 @@ public class ThemeButton : MonoBehaviour
     {
         ThemeColor?.OnLightnessChange(Theme.ELightness.Main, time);
         FadeTooltop(false, time);
-        FadeShadowHeight(false, time);
+        OnSetActiveAnimation(false, time);
     }
     protected virtual void PlayAnimationHighlighted(float time)
     {
@@ -166,13 +166,13 @@ public class ThemeButton : MonoBehaviour
     {
         ThemeColor?.OnLightnessChange(Theme.ELightness.Dark, time);
         FadeTooltop(true, time);
-        FadeShadowHeight(true, time);
+        OnSetActiveAnimation(true, time);
     }
     protected virtual void PlayAnimationSelected(float time)
     {
         ThemeColor?.OnLightnessChange(Theme.ELightness.Light, time);
         FadeTooltop(false, time);
-        FadeShadowHeight(true, time);
+        OnSetActiveAnimation(true, time);
     }
     protected virtual void PlayAnimationDisabled(float time)
     {

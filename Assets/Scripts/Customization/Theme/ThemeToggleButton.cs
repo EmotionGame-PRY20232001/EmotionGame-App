@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 [RequireComponent(typeof(ThemeColorFilled))]
 [RequireComponent(typeof(Toggle))]
-public class ThemeToggleButton : ThemeToggleSwitch
+public class ThemeToggleButton : ThemeToggle
 {
     [SerializeField]
     protected SpriteToogle ShadowOnOff;
@@ -28,7 +28,7 @@ public class ThemeToggleButton : ThemeToggleSwitch
 
     protected override void OnSetActiveAnimation(bool isActive, float time)
     {
-        ToggleIconSprite(isActive);
+        base.OnSetActiveAnimation(isActive, time);
 
         float moveY = isActive ? -TrackThumbDiff : 0.0f;
         if (ShadowRect != null)
@@ -37,9 +37,9 @@ public class ThemeToggleButton : ThemeToggleSwitch
             LeanTween.moveY(UpRect, moveY, time);
     }
 
-    protected void ToggleIconSprite(bool isActive)
+    protected override void ToggleIconSprite(bool isActive)
     {
-        IconThumb.UpdateToogle(isActive);
+        base.ToggleIconSprite(isActive);
         ShadowOnOff.UpdateToogle(isActive);
     }
 }

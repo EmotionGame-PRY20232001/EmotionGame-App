@@ -58,8 +58,6 @@ using UnityEngine.UI;
 
 public class ThemeButton : MonoBehaviour
 {
-    protected Button Btn;
-
     //---- State ----//
     protected SelectionState CurrentState = SelectionState.Normal;
     public SelectionState State
@@ -72,8 +70,8 @@ public class ThemeButton : MonoBehaviour
     protected ThemeColorFilled ThemeColor;
     [SerializeField]
     protected float TransitionTime = 0.15f;
-    [SerializeField]
-    protected float AlphaOnDisabled = 0.5f;
+    //[SerializeField]
+    //protected float AlphaOnDisabled = 0.5f;
 
     //---- Transform ----//
     [SerializeField]

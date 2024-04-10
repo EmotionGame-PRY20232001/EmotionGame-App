@@ -23,9 +23,7 @@ public class ThemeToggleSwitch : ThemeToggle
     protected override void PlayAnimationSelected(float time)
     {
         ThemeColor?.OnLightnessChange(Theme.ELightness.Main, time);
-        FadeTooltop(false, time);
-
-        OnSetActiveAnimation(ThemeToogle.isOn, time);
+        base.PlayAnimationSelected(time);
     }
 
     // Will move Toogle Left or Right

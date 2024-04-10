@@ -10,6 +10,8 @@ public class ThemeToggleButton : ThemeToggle
 {
     [SerializeField]
     protected SpriteToogle ShadowOnOff;
+    [SerializeField]
+    protected SpriteToogle UpOnOff;
 
     protected override void CalcTrackThumDiff()
     {
@@ -17,13 +19,11 @@ public class ThemeToggleButton : ThemeToggle
             TrackThumbDiff = ShadowRect.sizeDelta.y - UpRect.sizeDelta.y;
     }
 
-    ////////==== State ====////////
+    //////==== State ====////////
     protected override void PlayAnimationSelected(float time)
     {
-        ThemeColor?.OnLightnessChange(ThemeToogle.isOn ? Theme.ELightness.Main : Theme.ELightness.Light, time);
-        FadeTooltop(false, time);
-
-        OnSetActiveAnimation(ThemeToogle.isOn, time);
+        ThemeColor?.OnLightnessChange(m_Toggle.isOn ? Theme.ELightness.Dark : Theme.ELightness.Main, time);
+        base.PlayAnimationSelected(time);
     }
 
     protected override void OnSetActiveAnimation(bool isActive, float time)
@@ -31,15 +31,9 @@ public class ThemeToggleButton : ThemeToggle
         base.OnSetActiveAnimation(isActive, time);
 
         float moveY = isActive ? -TrackThumbDiff : 0.0f;
-        if (ShadowRect != null)
-            LeanTween.moveY(ShadowRect, moveY, time);
+        //if (ShadowRect != null)
+        //    LeanTween.moveY(ShadowRect, moveY, time);
         if (UpRect != null)
             LeanTween.moveY(UpRect, moveY, time);
-    }
-
-    protected override void ToggleIconSprite(bool isActive)
-    {
-        base.ToggleIconSprite(isActive);
-        ShadowOnOff.UpdateToogle(isActive);
     }
 }

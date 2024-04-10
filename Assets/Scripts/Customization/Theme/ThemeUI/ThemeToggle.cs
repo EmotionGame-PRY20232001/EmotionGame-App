@@ -59,7 +59,7 @@ using UnityEngine.UI;
 
 public class ThemeToggle : ThemeButton
 {
-    protected Toggle ThemeToogle;
+    protected Toggle m_Toggle;
     protected float TrackThumbDiff = 0.0f;
     [SerializeField]
     protected SpriteToogle IconThumb;
@@ -68,7 +68,10 @@ public class ThemeToggle : ThemeButton
     protected override void Awake()
     {
         base.Awake();
-        ThemeToogle = gameObject.GetComponent<Toggle>();
+        m_Toggle = gameObject.GetComponent<Toggle>();
+        m_Toggle.onValueChanged.AddListener(delegate {
+            ToggleValueChanged(m_Toggle);
+        });
     }
 
     protected override void Start()
@@ -76,26 +79,45 @@ public class ThemeToggle : ThemeButton
         CalcTrackThumDiff();
         base.Start();
     }
+
+    protected virtual void ToggleValueChanged(Toggle toggle)
+    {
+        m_Toggle.isOn = toggle.isOn;
+        ChangeState(SelectionState.Normal, false);
+    }
+
     protected virtual void CalcTrackThumDiff() { }
 
 
     ////////==== State ====////////
+    //OFF | Normal > Highlighted > Pressed
+    //ON  | Selected > Highlighted > Normal > Presed
+    //OFF | ^
+    //---------
+    //ON  | Normal > Highlighted > Pressed
+    //OFF | Selected > Highlighted > Normal > Presed
+    //ON  | ^
     protected override void PlayAnimationNormal(float time)
     {
-        ThemeColor?.OnLightnessChange(Theme.ELightness.Main, time);
+        ThemeColor?.OnLightnessChange(m_Toggle.isOn ? Theme.ELightness.Dark : Theme.ELightness.Main, time);
         FadeTooltop(false, time);
 
-        OnSetActiveAnimation(ThemeToogle.isOn, time);
+        OnSetActiveAnimation(m_Toggle.isOn, time);
     }
     protected override void PlayAnimationHighlighted(float time)
     {
     }
     protected override void PlayAnimationPressed(float time)
     {
-        ThemeColor?.OnLightnessChange(Theme.ELightness.Dark, time);
-        FadeTooltop(true, time);
+        ThemeColor?.OnLightnessChange(m_Toggle.isOn ? Theme.ELightness.Main : Theme.ELightness.Dark, time);
+        FadeTooltop(false, time);
 
-        OnSetActiveAnimation(!ThemeToogle.isOn, time);
+        OnSetActiveAnimation(!m_Toggle.isOn, time);
+    }
+    protected override void PlayAnimationSelected(float time)
+    {
+        FadeTooltop(false, time);
+        OnSetActiveAnimation(m_Toggle.isOn, time);
     }
 
     protected override void OnSetActiveAnimation(bool isActive, float time)

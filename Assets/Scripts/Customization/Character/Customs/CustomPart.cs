@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CustomPart : CustomToggle
+public class CustomPart : ToggleCustom
 {
     public CharacterCustomization Customization { protected get; set; }
 

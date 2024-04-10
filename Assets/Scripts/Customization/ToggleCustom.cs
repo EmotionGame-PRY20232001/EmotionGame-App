@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Toggle))]
-public class CustomToggle : MonoBehaviour
+public class ToggleCustom : MonoBehaviour
 {
     protected Toggle toggle;
     

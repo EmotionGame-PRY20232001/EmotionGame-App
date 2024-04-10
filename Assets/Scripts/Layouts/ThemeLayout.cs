@@ -24,7 +24,7 @@ public class ThemeLayout : MonoBehaviour
         {
             var instance = Instantiate(themeTogglePrefab, transform);
             instance.GetComponent<Toggle>().group = toggleGroup;
-            ThemeToggle themeToggle = instance.GetComponent<ThemeToggle>();
+            ToggleTheme themeToggle = instance.GetComponent<ToggleTheme>();
             themeToggle.Background = Background;
             themeToggle.LoadData(bg.Key, bg.Value);
         }

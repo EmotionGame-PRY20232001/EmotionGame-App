@@ -4,15 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ThemeToggle : CustomToggle
+public class ToggleTheme : ToggleCustom
 {
     public CustomBackground Background { protected get; set; }
     
     [field:SerializeField]
     public Theme.EBackground Theme { get; private set; }
 
-    public ThemeToggle() {}
-    public ThemeToggle(Theme.EBackground _theme)
+    public ToggleTheme() {}
+    public ToggleTheme(Theme.EBackground _theme)
     {
         Theme = _theme;
     }

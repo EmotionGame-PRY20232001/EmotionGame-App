@@ -402,16 +402,16 @@ MonoBehaviour:
         <Shape>k__BackingField: {r: 0.6117647, g: 0.6627451, b: 0.7254902, a: 1}
     <Paper>k__BackingField:
       <Light>k__BackingField:
-        <Background>k__BackingField: {r: 1, g: 0.96862745, b: 0.93333334, a: 1}
+        <Background>k__BackingField: {r: 1, g: 0.96862745, b: 0.93333334, a: 0.5019608}
         <Shape>k__BackingField: {r: 0.4627451, g: 0.44313726, b: 0.43137255, a: 1}
       <Main>k__BackingField:
-        <Background>k__BackingField: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 1}
+        <Background>k__BackingField: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 0.5019608}
         <Shape>k__BackingField: {r: 0.3301887, g: 0.31402695, b: 0.3005963, a: 1}
       <Dark>k__BackingField:
-        <Background>k__BackingField: {r: 0.8901961, g: 0.85882354, b: 0.827451, a: 1}
+        <Background>k__BackingField: {r: 0.8901961, g: 0.85882354, b: 0.827451, a: 0.5019608}
         <Shape>k__BackingField: {r: 0.19607843, g: 0.18431373, b: 0.17254902, a: 1}
       <Disabled>k__BackingField:
-        <Background>k__BackingField: {r: 0.84705883, g: 0.88235295, b: 0.8901961, a: 1}
+        <Background>k__BackingField: {r: 0.84705883, g: 0.88235295, b: 0.8901961, a: 0.5019608}
         <Shape>k__BackingField: {r: 0.4862745, g: 0.5529412, b: 0.5882353, a: 1}
     <Danger>k__BackingField:
       <Light>k__BackingField:
@@ -428,7 +428,7 @@ MonoBehaviour:
         <Shape>k__BackingField: {r: 0.753916, g: 0.77305096, b: 0.8113208, a: 1}
   FillType: 2
   Lightness: 0
-  ColorFill: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 1}
+  ColorFill: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 0.5019608}
   ColorContrast: {r: 0.3301887, g: 0.31402695, b: 0.3005963, a: 1}
   GraphicsToFill:
   - {fileID: 2358393386963906644}
@@ -449,20 +449,11 @@ MonoBehaviour:
   TransitionTime: 0.15
   ShadowRect: {fileID: 5108078007030056735}
   UpRect: {fileID: 376020309679398812}
-  DefaultShadowSize: {x: 0, y: 0}
   Tooltip: {fileID: 0}
   IconThumb:
     ImageT: {fileID: 0}
     SpriteOn: {fileID: 0}
     SpriteOff: {fileID: 0}
-  ShadowOnOff:
-    ImageT: {fileID: 2358393386963906644}
-    SpriteOn: {fileID: 1811743526, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
-    SpriteOff: {fileID: -1281094604, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
-  UpOnOff:
-    ImageT: {fileID: 8951923076788295615}
-    SpriteOn: {fileID: 846813469, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
-    SpriteOff: {fileID: 210000184, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
 --- !u!1 &3936974619990419557
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 1}
+  m_Color: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -601,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 1}
+  m_Color: {r: 0.9490196, g: 0.92156863, b: 0.8862745, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

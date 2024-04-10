@@ -14,11 +14,15 @@ public class CharacterCustomizationLayout : MonoBehaviour
         if (Customization != null)
         {
             gameObject.GetComponentsInChildren<CustomPart>(true, CustomParts);
-            foreach (CustomPart _part in CustomParts)
-                _part.Customization = Customization;
         }
     }
-    
+
+    private void Start()
+    {
+        foreach (CustomPart _part in CustomParts)
+            _part.Customization = Customization;
+    }
+
     public void ApplySelection()
     {
         string _customization = Customization.GetJSON();

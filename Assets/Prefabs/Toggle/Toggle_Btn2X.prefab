@@ -42,11 +42,11 @@ PrefabInstance:
     - target: {fileID: 1808326969780649253, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1502226335, guid: 0c81563bacbad9143b70a085f4c183fa, type: 3}
+      objectReference: {fileID: -316924095, guid: a0e4edfbe879bdb47927d41bfee4a25e, type: 3}
     - target: {fileID: 2025105459709585671, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 802294132, guid: e5d68ee83de346f43a63cc37f1148135, type: 3}
+      objectReference: {fileID: -1866565115, guid: 0c81563bacbad9143b70a085f4c183fa, type: 3}
     - target: {fileID: 2492911480541453999, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Pivot.y
       value: 1
@@ -274,6 +274,22 @@ PrefabInstance:
     - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: Tooltip
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: UpOnOff.SpriteOn
+      value: 
+      objectReference: {fileID: 1152889340, guid: e5d68ee83de346f43a63cc37f1148135, type: 3}
+    - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: UpOnOff.SpriteOff
+      value: 
+      objectReference: {fileID: 1502226335, guid: 0c81563bacbad9143b70a085f4c183fa, type: 3}
+    - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: DefaultShadowSize.x
+      value: 212
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: DefaultShadowSize.y
+      value: 228
       objectReference: {fileID: 0}
     - target: {fileID: 6534367232590024777, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: ShadowOnOff.SpriteOn

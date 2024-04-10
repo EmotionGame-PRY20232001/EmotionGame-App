@@ -447,21 +447,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TransitionTime: 0.15
-  AlphaOnDisabled: 0.5
   ShadowRect: {fileID: 5108078007030056735}
   UpRect: {fileID: 376020309679398812}
+  DefaultShadowSize: {x: 0, y: 0}
   Tooltip: {fileID: 0}
   IconThumb:
     ImageT: {fileID: 0}
     SpriteOn: {fileID: 0}
     SpriteOff: {fileID: 0}
-  IconTrack:
-    Img: {fileID: 0}
-    Rect: {fileID: 0}
   ShadowOnOff:
     ImageT: {fileID: 2358393386963906644}
     SpriteOn: {fileID: 1811743526, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
     SpriteOff: {fileID: -1281094604, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
+  UpOnOff:
+    ImageT: {fileID: 8951923076788295615}
+    SpriteOn: {fileID: 846813469, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
+    SpriteOff: {fileID: 210000184, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
 --- !u!1 &3936974619990419557
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1811743526, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
+  m_Sprite: {fileID: -1281094604, guid: 8ef30590854384146b80ca80ad023b8c, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

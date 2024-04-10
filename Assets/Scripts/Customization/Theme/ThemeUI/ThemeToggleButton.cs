@@ -8,10 +8,10 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Toggle))]
 public class ThemeToggleButton : ThemeToggle
 {
-    [SerializeField]
-    protected SpriteToogle ShadowOnOff;
-    [SerializeField]
-    protected SpriteToogle UpOnOff;
+    //[SerializeField]
+    //protected SpriteToogle ShadowOnOff;
+    //[SerializeField]
+    //protected SpriteToogle UpOnOff;
 
     protected override void CalcTrackThumDiff()
     {

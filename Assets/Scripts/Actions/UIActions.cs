@@ -19,6 +19,7 @@ public class UIActions : MonoBehaviour
         public static readonly string GAME_CHOOSE = "GameChoose";
         public static readonly string GAME_CONTEXT = "GameContext";
         public static readonly string GAME_IMITATE = "GameImitate";
+        public static readonly string LEARN_EMOTIONS = "EmotionsTeaching";
         //static readonly string  = "";
         //static readonly string  = "";
         //static readonly string  = "";
@@ -89,5 +90,9 @@ public class UIActions : MonoBehaviour
     public static void GoToImitateGame()
     {
         SceneManager.LoadScene(Scenes.GAME_IMITATE);
+    }
+    public static void GoToLearnEmotions()
+    {
+        SceneManager.LoadScene(Scenes.LEARN_EMOTIONS);
     }
 }

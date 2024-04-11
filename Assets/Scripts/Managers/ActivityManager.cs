@@ -20,7 +20,7 @@ public class ActivityManager : MonoBehaviour
     [SerializeField]
     private TMP_Text ExerciseText;
     [SerializeField] 
-    private RawImage ExerciseImage;
+    private EmotionPhoto ExerciseImage;
     [SerializeField] 
     private int NumButtons = 4;
     [SerializeField]
@@ -37,6 +37,7 @@ public class ActivityManager : MonoBehaviour
 
     [SerializeField]
     public Emotion.EEmotion ExerciseEmotion { get; private set; }
+
 
     [SerializeField]
     private FERModel Model;
@@ -114,8 +115,8 @@ public class ActivityManager : MonoBehaviour
             allEmotions.Remove(randEmotion);
             InstantiateButtons.Add(button.gameObject);
         }
-        var faceImages = gm.Emotions[ExerciseEmotion].Faces;
-        ExerciseImage.texture = faceImages[Random.Range(0, faceImages.Count)].texture;
+        if (ExerciseImage != null)
+            ExerciseImage.SetPhotoEmotion(ExerciseEmotion);
     }
 
     private void LoadContextExercise()
@@ -150,12 +151,10 @@ public class ActivityManager : MonoBehaviour
 
     private void LoadImitateExercise()
     {
-        var gm = GameManager.Instance;
-        var selEmotions = new List<Emotion.EEmotion>(gm.SelectedEmotions);
-        Emotion.EEmotion randEmotion = selEmotions[Random.Range(0, selEmotions.Count)];
-        ExerciseEmotion = randEmotion;
-        var faceImages = gm.Emotions[ExerciseEmotion].Faces;
-        ExerciseImage.texture = faceImages[Random.Range(0, faceImages.Count)].texture;
+        if (ExerciseImage != null)
+        {
+            ExerciseEmotion = ExerciseImage.SetPhotoEmotionFromGMSelected();
+        }
     }
 
     IEnumerator CheckImitateEmotion()

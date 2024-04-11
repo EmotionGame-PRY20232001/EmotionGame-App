@@ -64,10 +64,7 @@ public class EmotionTeaching : MonoBehaviour
             LoadExercise();
 
         if (StepperCont != null)
-        {
-            StepperCont.CheckButtons();
             StepperCont.onStepChange += OnEmotionChanged;
-        }
     }
 
     public void LoadExercise()
@@ -100,11 +97,14 @@ public class EmotionTeaching : MonoBehaviour
         {
             EmotionExercises.Remove(CurrentEmotion);
         }
+
+        EmotionsToLearn.Add(CurrentEmotion);
     }
 
     public void OnEmotionChanged()
     {
         if (StepperCont == null) return;
+        if (StepperCont.CurrentStep > EmotionsToLearn.Count) return;
 
         CurrentExercise = (uint)StepperCont.CurrentStep;
         CurrentEmotion = EmotionsToLearn.ElementAt(StepperCont.CurrentStep);

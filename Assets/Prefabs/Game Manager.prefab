@@ -174,26 +174,31 @@ MonoBehaviour:
           <Name>k__BackingField: Principal
           <Texture>k__BackingField: {fileID: 2800000, guid: d7c6cf8b2f0a63a4592f7001f31bd2be, type: 3}
           <Thumbnail>k__BackingField: {fileID: 21300000, guid: 7e0cbf58568096a4491e06a83cea0f87, type: 3}
+          <Frame>k__BackingField: {fileID: 0}
       - Key: 1
         Value:
           <Name>k__BackingField: Espacio
           <Texture>k__BackingField: {fileID: 2800000, guid: 337aaae78ae0a544da28b1ed33cfc486, type: 3}
           <Thumbnail>k__BackingField: {fileID: 21300000, guid: 0067adfdf22f39d4a9a9de0ed2544d3d, type: 3}
+          <Frame>k__BackingField: {fileID: 21300000, guid: 971efd3aba3493448a0c50f1d2be1fbb, type: 3}
       - Key: 2
         Value:
           <Name>k__BackingField: Principal
           <Texture>k__BackingField: {fileID: 2800000, guid: f109d98c53856cd439d8452f9e6282ac, type: 3}
           <Thumbnail>k__BackingField: {fileID: 21300000, guid: d545a5454488b5a4db7d61041d8b32d0, type: 3}
+          <Frame>k__BackingField: {fileID: 21300000, guid: b19aebe1157fe1f4398d524e5dbf05c3, type: 3}
       - Key: 3
         Value:
           <Name>k__BackingField: Bosque
           <Texture>k__BackingField: {fileID: 2800000, guid: 0729e364eb85f604cb0b959efd19e416, type: 3}
           <Thumbnail>k__BackingField: {fileID: 21300000, guid: c117a0e6cd1b77048822a531fb849559, type: 3}
+          <Frame>k__BackingField: {fileID: 21300000, guid: e3b834781fe8c144cb0ec9cff76bae98, type: 3}
       - Key: 4
         Value:
           <Name>k__BackingField: Acuario
           <Texture>k__BackingField: {fileID: 2800000, guid: d9bb80aee12cebe48988fc47522c2fd9, type: 3}
           <Thumbnail>k__BackingField: {fileID: 21300000, guid: caee657b34c9a774fab47f90205bb0c7, type: 3}
+          <Frame>k__BackingField: {fileID: 21300000, guid: ad8d9dc72a3f4d441b41a14ca12e4696, type: 3}
     <Themes>k__BackingField:
       _serializedList:
       - Key: 0

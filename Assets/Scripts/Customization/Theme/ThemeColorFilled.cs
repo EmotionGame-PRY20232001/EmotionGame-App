@@ -19,6 +19,10 @@ public class ThemeColorFilled : MonoBehaviour
     protected Theme.ELightness Lightness = Theme.ELightness.Main;
 
     [SerializeField]
+    [Tooltip("Only used if FillType is Paper")]
+    protected float PaperAlphaFill = 0.5f;
+
+    [SerializeField]
     protected Color ColorFill;
     [SerializeField]
     protected Color ColorContrast;
@@ -121,6 +125,7 @@ public class ThemeColorFilled : MonoBehaviour
                         ColorContrast = DefaultTheme.Paper.Disabled.Shape;
                         break;
                 }
+                ColorFill.a = PaperAlphaFill;
             break;
         }
     }

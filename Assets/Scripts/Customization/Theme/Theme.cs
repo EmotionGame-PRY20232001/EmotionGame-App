@@ -58,5 +58,7 @@ public class Theme : MonoBehaviour
         public Texture Texture { get; private set; }
         [field:SerializeField]
         public Sprite Thumbnail { get; private set; }
+        [field:SerializeField]
+        public Sprite Frame { get; private set; }
     }
 }

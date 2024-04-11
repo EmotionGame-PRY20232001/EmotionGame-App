@@ -3,63 +3,92 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Linq;
 public class Stepper : MonoBehaviour
 {
     // [SerializeField]
-    Step[] Steps;
+    List<Step> Steps;
     [SerializeField]
     GameObject StepsGroup;
     [SerializeField]
-    GameObject ButtonPrev;
+    Button ButtonPrev;
     [SerializeField]
-    GameObject ButtonNext;
-    uint CurrentStep;
+    Button ButtonNext;
+    public int CurrentStep { get; protected set; }
+
+    // To spawn
+    [SerializeField]
+    protected Step StepPrefab;
+    public delegate void OnStepChange();
+    public OnStepChange onStepChange;
 
     void Awake()
     {
         LoadSteps();
         CurrentStep = 0;
         ActiveStep(true);
+
+        if (ButtonPrev != null)
+            ButtonPrev.onClick.AddListener(delegate { SetPreviousStep(); });
+
+        if (ButtonNext != null)
+            ButtonNext.onClick.AddListener(delegate { SetNextStep(); });
+
+        onStepChange += CheckStep;
     }
 
     void LoadSteps()
     {
         // StepsGroup
         if (StepsGroup != null)
-            Steps = StepsGroup.GetComponentsInChildren<Step>();
-        
-        if (Steps.Length < 2)
+            Steps = StepsGroup.GetComponentsInChildren<Step>().ToList<Step>();
+        CheckButtons();
+    }
+
+    public void AddStep(GameObject content)
+    {
+        if (StepPrefab != null && StepsGroup != null)
+        {
+            var step = Instantiate(StepPrefab, StepsGroup.transform);
+            if (step != null)
+            {
+                step.TabContent = content;
+                step.Stepper = this;
+            }
+        }
+    }
+    
+    public void CheckButtons()
+    {
+        if (Steps.Count < 2)
             gameObject.SetActive(false);
         else
         {
             ShowButton(ButtonPrev, true);
             ShowButton(ButtonNext, true);
             EnableButton(ButtonPrev, false);
-            for (uint i = 0; i < Steps.Length; i++)
+            for (uint i = 0; i < Steps.Count; i++)
             {
-                Step step = Steps[i];
+                Step step = Steps.ElementAt((int)i);
                 step.Index = i;
             }
             // foreach(Toggle step in Steps)
         }
     }
-    
-    void ShowButton(GameObject button, bool value)
+    void ShowButton(Button button, bool value)
     {
         if (button != null)
-            button.SetActive(value);
+            button.gameObject.SetActive(value);
     }
 
-    public void CheckStep(uint index)
+    void CheckStep() //uint index
     {
-        CurrentStep = index;
-        if (index == 0)
+        if (CurrentStep == 0)
         {
             EnableButton(ButtonPrev, false);
             EnableButton(ButtonNext, true);
         }
-        else if (index == Steps.Length-1)
+        else if (CurrentStep == Steps.Count - 1)
         {
             EnableButton(ButtonPrev, true);
             EnableButton(ButtonNext, false);
@@ -69,36 +98,43 @@ public class Stepper : MonoBehaviour
         //     EnableButton(ButtonPrev, true);
         //     EnableButton(ButtonNext, true);
         // }
+        onStepChange?.Invoke();
+    }
+    public void CheckStep(uint index)
+    {
+        CurrentStep = (int)index;
+        CheckStep();
     }
 
-    void EnableButton(GameObject button, bool value)
+    /// BUTTON LOAD
+    void EnableButton(Button button, bool value)
     {
-        if (button != null && button.activeSelf)
+        if (button != null && button.gameObject.activeSelf)
         {
-            Button btn = button.GetComponent<Button>();
-            btn.interactable = value;
+            button.interactable = value;
         }
     }
-
     
-    public void SetPreviousStep()
+    void SetPreviousStep()
     {
         if (CurrentStep == 0) { return; }
         ActiveStep(false);
         CurrentStep -= 1;
         ActiveStep(true);
+        CheckStep();
     }
-    public void SetNextStep()
+    void SetNextStep()
     {
-        if (CurrentStep == Steps.Length-1) { return; }
+        if (CurrentStep == Steps.Count - 1) { return; }
         ActiveStep(false);
         CurrentStep += 1;
         ActiveStep(true);
+        CheckStep();
     }
     void ActiveStep(bool value)
     {
         // Debug.Log(CurrentStep + (value ? " true" : " false"));
-        if (Steps[CurrentStep] != null)
+        if (Steps.ElementAt(CurrentStep) != null)
             Steps[CurrentStep].EnableStep(value);
     }
 }

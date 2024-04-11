@@ -8,8 +8,7 @@ using UnityEngine.UI;
 public class Step : Tab
 {
     public uint Index;
-    [SerializeField]
-    protected Stepper Stepper;
+    public Stepper Stepper;
 
     protected override void UpdateActive(Toggle change)
     {

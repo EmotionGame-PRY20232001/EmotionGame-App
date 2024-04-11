@@ -7,13 +7,14 @@ using System.Linq;
 public class Stepper : MonoBehaviour
 {
     // [SerializeField]
-    List<Step> Steps;
+    List<Step> Steps = new List<Step>();
     [SerializeField]
     GameObject StepsGroup;
     [SerializeField]
     Button ButtonPrev;
     [SerializeField]
     Button ButtonNext;
+    [field:SerializeField]
     public int CurrentStep { get; protected set; }
 
     // To spawn
@@ -25,16 +26,7 @@ public class Stepper : MonoBehaviour
     void Awake()
     {
         LoadSteps();
-        CurrentStep = 0;
-        ActiveStep(true);
-
-        if (ButtonPrev != null)
-            ButtonPrev.onClick.AddListener(delegate { SetPreviousStep(); });
-
-        if (ButtonNext != null)
-            ButtonNext.onClick.AddListener(delegate { SetNextStep(); });
-
-        onStepChange += CheckStep;
+        AddListeners();
     }
 
     void LoadSteps()
@@ -42,47 +34,47 @@ public class Stepper : MonoBehaviour
         // StepsGroup
         if (StepsGroup != null)
             Steps = StepsGroup.GetComponentsInChildren<Step>().ToList<Step>();
-        CheckButtons();
-    }
 
-    public void AddStep(GameObject content)
-    {
-        if (StepPrefab != null && StepsGroup != null)
+        //gameObject.SetActive(false);
+        if (Steps != null)
         {
-            var step = Instantiate(StepPrefab, StepsGroup.transform);
-            if (step != null)
-            {
-                step.TabContent = content;
-                step.Stepper = this;
-            }
-        }
-    }
-    
-    public void CheckButtons()
-    {
-        if (Steps.Count < 2)
-            gameObject.SetActive(false);
-        else
-        {
-            ShowButton(ButtonPrev, true);
-            ShowButton(ButtonNext, true);
-            EnableButton(ButtonPrev, false);
             for (uint i = 0; i < Steps.Count; i++)
             {
                 Step step = Steps.ElementAt((int)i);
+                step.Stepper = this;
                 step.Index = i;
             }
-            // foreach(Toggle step in Steps)
+            ChangeStep(0);
         }
     }
-    void ShowButton(Button button, bool value)
-    {
-        if (button != null)
-            button.gameObject.SetActive(value);
-    }
 
-    void CheckStep() //uint index
+    /// LISTENERS
+    void AddListeners()
     {
+        if (ButtonPrev != null)
+            ButtonPrev.onClick.AddListener(delegate { SetPreviousStep(); });
+
+        if (ButtonNext != null)
+            ButtonNext.onClick.AddListener(delegate { SetNextStep(); });
+
+        //onStepChange += UpdateNavigationButtons;
+    }
+    
+    void EnableButton(Button button, bool value)
+    {
+         //&& button.gameObject.activeSelf
+        if (button != null)
+        {
+            button.interactable = value;
+        }
+    }
+    void UpdateNavigationButtons() //uint index
+    {
+        if (Steps.Count < 2)
+        {
+            EnableButton(ButtonPrev, false);
+            EnableButton(ButtonNext, false);
+        }
         if (CurrentStep == 0)
         {
             EnableButton(ButtonPrev, false);
@@ -93,48 +85,63 @@ public class Stepper : MonoBehaviour
             EnableButton(ButtonPrev, true);
             EnableButton(ButtonNext, false);
         }
-        // else
-        // {
-        //     EnableButton(ButtonPrev, true);
-        //     EnableButton(ButtonNext, true);
-        // }
-        onStepChange?.Invoke();
-    }
-    public void CheckStep(uint index)
-    {
-        CurrentStep = (int)index;
-        CheckStep();
-    }
-
-    /// BUTTON LOAD
-    void EnableButton(Button button, bool value)
-    {
-        if (button != null && button.gameObject.activeSelf)
+        else
         {
-            button.interactable = value;
+            EnableButton(ButtonPrev, true);
+            EnableButton(ButtonNext, true);
         }
     }
-    
-    void SetPreviousStep()
+
+    //// ENABLING STEPS
+    public void ChangeStep(int index)
     {
-        if (CurrentStep == 0) { return; }
-        ActiveStep(false);
-        CurrentStep -= 1;
-        ActiveStep(true);
-        CheckStep();
+        if (index > Steps.Count || Steps.Count == 0) return;
+        CurrentStep = index;
+        UpdateNavigationButtons();
+        onStepChange?.Invoke();
     }
-    void SetNextStep()
-    {
-        if (CurrentStep == Steps.Count - 1) { return; }
-        ActiveStep(false);
-        CurrentStep += 1;
-        ActiveStep(true);
-        CheckStep();
-    }
-    void ActiveStep(bool value)
+    void EnableStep(bool value)
     {
         // Debug.Log(CurrentStep + (value ? " true" : " false"));
         if (Steps.ElementAt(CurrentStep) != null)
             Steps[CurrentStep].EnableStep(value);
+    }
+    void ChangeStepByNavigation(int index)
+    {
+        EnableStep(false);
+        ChangeStep(index);
+        EnableStep(true);
+    }
+    void SetPreviousStep()
+    {
+        if (CurrentStep == 0) { return; }
+        ChangeStepByNavigation(CurrentStep - 1);
+    }
+    void SetNextStep()
+    {
+        if (CurrentStep == Steps.Count - 1) { return; }
+        ChangeStepByNavigation(CurrentStep + 1);
+    }
+
+    //// AUTOGENERATION
+    public void AddStep(GameObject content)
+    {
+        if (StepPrefab == null || StepsGroup == null)
+        {
+            if (StepPrefab == null)
+                Debug.Log("[Stepper] StepPrefab is null");
+            if (StepsGroup == null)
+                Debug.Log("[Stepper] StepsGroup is null");
+            return;
+        }
+
+        Step step = Instantiate(StepPrefab, StepsGroup.transform);
+        step.TabContent = content;
+        step.Stepper = this;
+
+        Steps.Add(step);
+        step.Index = (uint)Steps.Count - 1;
+        if (Steps.Count == 1)
+            ChangeStep(0);
     }
 }

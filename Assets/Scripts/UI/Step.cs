@@ -15,12 +15,12 @@ public class Step : Tab
         base.UpdateActive(change);
         
         if (!change.isOn) return;
-        Stepper?.CheckStep(Index);
+        Stepper?.ChangeStep((int)Index);
     }
 
     public void EnableStep(bool value)
     {
-        if (TabButton != null)
+        if (TabButton != null && TabButton.isOn != value)
             TabButton.isOn = value;
     }
 }

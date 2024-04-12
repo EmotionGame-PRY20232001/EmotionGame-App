@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Tab : MonoBehaviour
 {
     public GameObject TabContent;
-    protected Toggle TabButton;
+    public Toggle TabButton { get; protected set; }
 
     void Awake()
     {

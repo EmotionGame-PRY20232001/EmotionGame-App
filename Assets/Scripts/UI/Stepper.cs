@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+
+[RequireComponent(typeof(ToggleGroup))]
 public class Stepper : MonoBehaviour
 {
     // [SerializeField]
+    public ToggleGroup Group { get; protected set; }
     List<Step> Steps = new List<Step>();
     [SerializeField]
     GameObject StepsGroup;
@@ -25,8 +28,18 @@ public class Stepper : MonoBehaviour
 
     void Awake()
     {
+        Group = gameObject.GetComponent<ToggleGroup>();
         LoadSteps();
         AddListeners();
+    }
+
+    void FillStep(Step step, uint index)
+    {
+        step.Stepper = this;
+        step.Index = index;
+
+        if (Group != null)
+            step.TabButton.group = Group;
     }
 
     void LoadSteps()
@@ -41,8 +54,7 @@ public class Stepper : MonoBehaviour
             for (uint i = 0; i < Steps.Count; i++)
             {
                 Step step = Steps.ElementAt((int)i);
-                step.Stepper = this;
-                step.Index = i;
+                FillStep(step, i);
             }
             ChangeStep(0);
         }
@@ -137,10 +149,9 @@ public class Stepper : MonoBehaviour
 
         Step step = Instantiate(StepPrefab, StepsGroup.transform);
         step.TabContent = content;
-        step.Stepper = this;
+        FillStep(step, (uint)Steps.Count);
 
         Steps.Add(step);
-        step.Index = (uint)Steps.Count - 1;
         if (Steps.Count == 1)
             ChangeStep(0);
     }

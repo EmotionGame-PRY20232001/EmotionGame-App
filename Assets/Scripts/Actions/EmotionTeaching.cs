@@ -10,7 +10,7 @@ public class EmotionTeaching : MonoBehaviour
     public uint NumExercises = 10;
     protected uint CurrentExercise = 0;
     protected Emotion.EEmotion CurrentEmotion;
-    protected Dictionary<Emotion.EEmotion, uint> EmotionExercises;
+
     [SerializeField]
     protected bool UseRandom = true;
 
@@ -36,7 +36,9 @@ public class EmotionTeaching : MonoBehaviour
 
     protected void SetEmotionExercises()
     {
+        Dictionary<Emotion.EEmotion, uint> EmotionExercises;
         EmotionExercises = new Dictionary<Emotion.EEmotion, uint>();
+        EmotionsToLearn = new List<Emotion.EEmotion>();
 
         var gm = GameManager.Instance;
         uint numEmotions = (uint)(gm.SelectedEmotions.Count);
@@ -61,13 +63,13 @@ public class EmotionTeaching : MonoBehaviour
 
         CurrentEmotion = gm.SelectedEmotions[0];
         for (uint i = 0; i < NumExercises; i++)
-            LoadExercise();
+            LoadExercise(EmotionExercises);
 
         if (StepperCont != null)
             StepperCont.onStepChange += OnEmotionChanged;
     }
 
-    public void LoadExercise()
+    public void LoadExercise(Dictionary<Emotion.EEmotion, uint> EmotionExercises)
     {
         List<Emotion.EEmotion> emotionsLeft = EmotionExercises.Keys.ToList();
         if (UseRandom)

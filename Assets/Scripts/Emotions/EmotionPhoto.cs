@@ -26,7 +26,12 @@ public class EmotionPhoto : MonoBehaviour
         var faceImages = gm.Emotions[PhotoEmotion].Faces;
         //ExerciseImage.texture = faceImages[Random.Range(0, faceImages.Count)].texture;
         if (Photo != null)
-            Photo.sprite = faceImages[Random.Range(0, faceImages.Count)];
+        {
+            int randIndex = Random.Range(0, faceImages.Count - 1);
+            //TODO: Check if needed:
+            if (faceImages.Count > randIndex)
+                Photo.sprite = faceImages[randIndex];
+        }
     }
 
     public Emotion.EEmotion SetPhotoEmotion(List<Emotion.EEmotion> emotions)
@@ -37,7 +42,7 @@ public class EmotionPhoto : MonoBehaviour
             PhotoEmotion = Emotion.EEmotion.Neutral;
         }
         else
-            SetPhotoEmotion(emotions[Random.Range(0, emotions.Count)]);
+            SetPhotoEmotion(emotions[Random.Range(0, emotions.Count - 1)]);
         return PhotoEmotion;
     }
     public Emotion.EEmotion SetPhotoEmotionFromGMSelected()

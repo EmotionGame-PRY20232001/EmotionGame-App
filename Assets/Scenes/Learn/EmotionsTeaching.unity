@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78548dad5072c2f41a92d8f2d679c784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumExcercises: 10
+  NumExcercises: 20
   PhotosContent: {fileID: 680706357}
   StepperCont: {fileID: 1682827055}
   ImageEmotion: {fileID: 1810654892}

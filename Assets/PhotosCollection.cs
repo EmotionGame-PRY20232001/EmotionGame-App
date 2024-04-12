@@ -59,6 +59,15 @@ public class PhotosCollection : MonoBehaviour
         foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
         {
             List<Sprite> faceImages = gm.Emotions[emotion].Faces;
+            int q = (int)emotionExercises[emotion];
+
+            if (faceImages.Count < q)
+            {
+                Debug.LogWarning("[PhotosCollection] " + emotion + " has less face Images " + q + " . !");
+                NumPhotos = (uint)(NumPhotos - (q - faceImages.Count));
+                q = faceImages.Count;
+            }
+
             faceImages = faceImages.OrderBy(x => Random.value).ToList();
             faceImages = faceImages.GetRange(0, (int)emotionExercises[emotion]);
             foreach (Sprite sprite in faceImages)

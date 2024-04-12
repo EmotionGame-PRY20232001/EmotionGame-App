@@ -111,18 +111,19 @@ public class Stepper : MonoBehaviour
         CurrentStep = index;
         UpdateNavigationButtons();
         onStepChange?.Invoke();
+        Debug.Log("[Stepper] Current step: " + CurrentStep);
     }
-    void EnableStep(bool value)
+    void EnableStep(bool value, int index)
     {
+        if (index > Steps.Count || Steps.Count == 0) return;
         // Debug.Log(CurrentStep + (value ? " true" : " false"));
-        if (Steps.ElementAt(CurrentStep) != null)
-            Steps[CurrentStep].EnableStep(value);
+        if (Steps.ElementAt(index) != null)
+            Steps[index].EnableStep(value);
     }
     void ChangeStepByNavigation(int index)
     {
-        EnableStep(false);
-        ChangeStep(index);
-        EnableStep(true);
+        EnableStep(false, CurrentStep);
+        EnableStep(true, index);
     }
     void SetPreviousStep()
     {
@@ -152,7 +153,6 @@ public class Stepper : MonoBehaviour
         FillStep(step, (uint)Steps.Count);
 
         Steps.Add(step);
-        if (Steps.Count == 1)
-            ChangeStep(0);
+        EnableStep(true, CurrentStep);
     }
 }

@@ -7,23 +7,26 @@ public class EmotionPhoto : MonoBehaviour
 {
     [SerializeField]
     protected Image Photo; //or RawImage
-    [SerializeField]
-    protected Image Frame;
-    protected Emotion.EEmotion m_Emotion;
+    //[SerializeField]
+    //protected Image Frame;
+    public Emotion.EEmotion PhotoEmotion { get; protected set; }
 
-    [SerializeField]
-    public Emotion.EEmotion PhotoEmotion {
-        get { return m_Emotion; }
-        set { SetPhotoEmotion(value); }
+    public void SetPhotoEmotion(Emotion.EEmotion emotion, Sprite photo = null)
+    {
+        PhotoEmotion = emotion;
+        if (photo == null)
+            SetRandomPhoto();
+        else
+            Photo.sprite = photo;
     }
 
-    public void SetPhotoEmotion(Emotion.EEmotion emotion)
+    public void SetRandomPhoto()
     {
-        m_Emotion = emotion;
         var gm = GameManager.Instance;
-        var faceImages = gm.Emotions[m_Emotion].Faces;
+        var faceImages = gm.Emotions[PhotoEmotion].Faces;
         //ExerciseImage.texture = faceImages[Random.Range(0, faceImages.Count)].texture;
-        Photo.sprite = faceImages[Random.Range(0, faceImages.Count)];
+        if (Photo != null)
+            Photo.sprite = faceImages[Random.Range(0, faceImages.Count)];
     }
 
     public Emotion.EEmotion SetPhotoEmotion(List<Emotion.EEmotion> emotions)
@@ -31,11 +34,11 @@ public class EmotionPhoto : MonoBehaviour
         if (emotions.Count == 0)
         {
             Debug.Log("[EmotionPhoto] Empty Emotion list");
-            m_Emotion = Emotion.EEmotion.Neutral;
+            PhotoEmotion = Emotion.EEmotion.Neutral;
         }
         else
             SetPhotoEmotion(emotions[Random.Range(0, emotions.Count)]);
-        return m_Emotion;
+        return PhotoEmotion;
     }
     public Emotion.EEmotion SetPhotoEmotionFromGMSelected()
     {

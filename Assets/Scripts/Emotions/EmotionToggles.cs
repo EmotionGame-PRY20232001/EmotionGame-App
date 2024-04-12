@@ -32,5 +32,7 @@ public class EmotionToggles : MonoBehaviour
         }
 
         //TODO: Save to GameManager
+        var gm = GameManager.Instance;
+        gm.SelectedEmotions = emotions;
     }
 }

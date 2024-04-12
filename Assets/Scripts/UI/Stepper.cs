@@ -26,6 +26,12 @@ public class Stepper : MonoBehaviour
     public delegate void OnStepChange();
     public OnStepChange onStepChange;
 
+    // To snap if many steps
+    [SerializeField]
+    protected ScrollRect StepperScrollRect;
+    [SerializeField]
+    protected RectTransform StepperContent;
+
     void Awake()
     {
         Group = gameObject.GetComponent<ToggleGroup>();
@@ -110,8 +116,12 @@ public class Stepper : MonoBehaviour
         if (index > Steps.Count || Steps.Count == 0) return;
         CurrentStep = index;
         UpdateNavigationButtons();
+
+        RectTransform target = Steps[index].gameObject.GetComponent<RectTransform>();
+        SnapTo(target);
+
         onStepChange?.Invoke();
-        Debug.Log("[Stepper] Current step: " + CurrentStep);
+        //Debug.Log("[Stepper] Current step: " + CurrentStep);
     }
     void EnableStep(bool value, int index)
     {
@@ -154,5 +164,20 @@ public class Stepper : MonoBehaviour
 
         Steps.Add(step);
         EnableStep(true, CurrentStep);
+    }
+
+
+    //// SNAPPING SCROLL
+    public void SnapTo(RectTransform target)
+    {
+        if (target == null || StepperContent == null || StepperScrollRect == null) return;
+        if (StepperContent.sizeDelta.x <= StepperScrollRect.preferredWidth) return;
+
+        //https://stackoverflow.com/questions/30766020/how-to-scroll-to-a-specific-element-in-scrollrect-with-unity-ui
+        Canvas.ForceUpdateCanvases();
+        
+        StepperContent.anchoredPosition =
+                (Vector2)StepperScrollRect.transform.InverseTransformPoint(StepperContent.position)
+                - (Vector2)StepperScrollRect.transform.InverseTransformPoint(target.position);
     }
 }

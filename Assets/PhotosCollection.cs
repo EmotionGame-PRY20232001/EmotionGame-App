@@ -23,7 +23,7 @@ public class PhotosCollection : MonoBehaviour
     {
         FillPhotos(GetQuantityPerEmotion());
         if (UseRandom)
-            Photos.OrderBy(x => Random.value).ToList();
+            Photos = Photos.OrderBy(x => Random.value).ToList();
     }
 
     protected Dictionary<Emotion.EEmotion, uint> GetQuantityPerEmotion()

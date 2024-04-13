@@ -13,6 +13,8 @@ public class Stepper : MonoBehaviour
     List<Step> Steps = new List<Step>();
     [SerializeField]
     GameObject StepsGroup;
+    [SerializeField][Tooltip("If isnt null will fill all steps from content childrens")]
+    Transform ContentGroup;
     [SerializeField]
     Button ButtonPrev;
     [SerializeField]
@@ -45,24 +47,36 @@ public class Stepper : MonoBehaviour
         step.Index = index;
 
         if (Group != null)
-            step.TabButton.group = Group;
+        {
+            if (step.TabButton != null)
+                step.TabButton.group = Group;
+        }
     }
 
     void LoadSteps()
     {
-        // StepsGroup
-        if (StepsGroup != null)
-            Steps = StepsGroup.GetComponentsInChildren<Step>().ToList<Step>();
-
-        //gameObject.SetActive(false);
-        if (Steps != null)
+        if (ContentGroup != null)
         {
-            for (uint i = 0; i < Steps.Count; i++)
+            foreach (Transform child in ContentGroup)
             {
-                Step step = Steps.ElementAt((int)i);
-                FillStep(step, i);
+                AddStep(child.gameObject);
             }
-            ChangeStep(0);
+        }
+        else
+        {
+            if (StepsGroup != null)
+                Steps = StepsGroup.GetComponentsInChildren<Step>().ToList<Step>();
+
+            //gameObject.SetActive(false);
+            if (Steps != null)
+            {
+                for (uint i = 0; i < Steps.Count; i++)
+                {
+                    Step step = Steps.ElementAt((int)i);
+                    FillStep(step, i);
+                }
+                ChangeStep(0);
+            }
         }
     }
 

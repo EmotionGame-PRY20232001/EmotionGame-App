@@ -552,6 +552,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stepper
       objectReference: {fileID: 0}
+    - target: {fileID: 2547027511284900261, guid: 902b8f8f51001214e9f25ae872b45234, type: 3}
+      propertyPath: ContentGroup
+      value: 
+      objectReference: {fileID: 9192336165387487587}
+    - target: {fileID: 7536732972289925680, guid: 902b8f8f51001214e9f25ae872b45234, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7786018729157189838, guid: 902b8f8f51001214e9f25ae872b45234, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

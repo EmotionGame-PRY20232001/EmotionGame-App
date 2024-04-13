@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CustomPart : ToggleCustom
 {
-    public CharacterCustomization Customization { protected get; set; }
+    public Character Customization { protected get; set; }
 
     protected virtual Character.Custom GetCustom(Player player)
     {

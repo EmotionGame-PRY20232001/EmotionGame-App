@@ -1283,7 +1283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2269005467538478709}
-  - component: {fileID: -8053754445483273659}
+  - component: {fileID: 620345466424986065}
   m_Layer: 0
   m_Name: GuideThumbnail
   m_TagString: Untagged
@@ -1313,7 +1313,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 512}
   m_SizeDelta: {x: 384, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &-8053754445483273659
+--- !u!114 &620345466424986065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1322,26 +1322,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 2269005467538478708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5880ce7791cfd241a6021886f7e2593, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9be98ede4b9f1469af8e9300852345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Customization:
-    SkinColor: 0
+    SkinColor: 2
     EyeColor: 0
     HairColor: 0
-    HairCut: 0
+    HairCut: 2
     Shirt: 0
   Parts:
     Body: {fileID: 2269005465662619654}
     HairBack: {fileID: 2269005466480942647}
-    EyelashesL: {fileID: 2269005466458911925}
-    EyelashesR: {fileID: 2269005466595567856}
-    EyebrowL: {fileID: 2269005465940161621}
-    EyebrowR: {fileID: 2269005467244636201}
-    ScleraL: {fileID: 2269005466180484111}
-    ScleraR: {fileID: 2269005467558717568}
-    IrisL: {fileID: 2269005467154435895}
-    IrisR: {fileID: 2269005467420911282}
+    Eyelashes:
+      Left: {fileID: 2269005466458911925}
+      Right: {fileID: 2269005466595567856}
+    Eyebrow:
+      Left: {fileID: 2269005465940161621}
+      Right: {fileID: 2269005467244636201}
+    Sclera:
+      Left: {fileID: 2269005466180484111}
+      Right: {fileID: 2269005467558717568}
+    Iris:
+      Left: {fileID: 2269005467154435895}
+      Right: {fileID: 2269005467420911282}
     Mouth: {fileID: 2269005466904940964}
     Shirt: {fileID: 2269005465847014238}
 --- !u!1 &2269005467558717568

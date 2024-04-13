@@ -12,7 +12,7 @@ public class PlayerButton : MonoBehaviour
     [SerializeField]
     private Image background;
     [SerializeField]
-    private CharacterCustomization guide;
+    private Character guide;
     [SerializeField]
     private bool needsText;
     [SerializeField]

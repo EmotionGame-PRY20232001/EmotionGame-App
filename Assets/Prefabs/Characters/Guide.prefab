@@ -1351,14 +1351,18 @@ MonoBehaviour:
   Parts:
     Body: {fileID: 2269005465662619654}
     HairBack: {fileID: 2269005466480942647}
-    EyelashesL: {fileID: 2269005466458911925}
-    EyelashesR: {fileID: 2269005466595567856}
-    EyebrowL: {fileID: 2269005465940161621}
-    EyebrowR: {fileID: 2269005467244636201}
-    ScleraL: {fileID: 2269005466180484111}
-    ScleraR: {fileID: 2269005467558717568}
-    IrisL: {fileID: 2269005467154435895}
-    IrisR: {fileID: 2269005467420911282}
+    Eyelashes:
+      Left: {fileID: 2269005466458911925}
+      Right: {fileID: 2269005466595567856}
+    Eyebrow:
+      Left: {fileID: 2269005465940161621}
+      Right: {fileID: 2269005467244636201}
+    Sclera:
+      Left: {fileID: 2269005466180484111}
+      Right: {fileID: 2269005467558717568}
+    Iris:
+      Left: {fileID: 0}
+      Right: {fileID: 0}
     Mouth: {fileID: 2269005466904940964}
     Shirt: {fileID: 2269005465847014238}
 --- !u!1 &2269005467558717568

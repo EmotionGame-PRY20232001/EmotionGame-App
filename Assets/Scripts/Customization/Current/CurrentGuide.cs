@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurrentGuide : CharacterCustomization
+public class CurrentGuide : Character
 {
     private void Start()
     {

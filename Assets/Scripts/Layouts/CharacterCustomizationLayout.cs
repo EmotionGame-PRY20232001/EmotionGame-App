@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterCustomizationLayout : MonoBehaviour
 {
     [SerializeField]
-    protected CharacterCustomization Customization;
+    protected Character Customization;
     [SerializeField]
     protected List<CustomPart> CustomParts;
     

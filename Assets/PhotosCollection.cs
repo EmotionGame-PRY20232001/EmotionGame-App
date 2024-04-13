@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhotosCollection : MonoBehaviour
 {
-    public uint NumPhotos = 10;
-
     [SerializeField]
     protected bool UseRandom = true;
     [SerializeField]
     protected EmotionPhoto PhotoPrefab;
+    [SerializeField]
+    protected Image Frame;
 
     public List<EmotionPhoto> Photos { get; protected set; }
 
@@ -19,28 +20,33 @@ public class PhotosCollection : MonoBehaviour
         Photos = new List<EmotionPhoto>();
     }
 
-    public void LoadPhotos()
+    public void LoadPhotos(uint numPhotos)
     {
-        FillPhotos(GetQuantityPerEmotion());
+        FillPhotos(GetQuantityPerEmotion(numPhotos), numPhotos);
         if (UseRandom)
             Photos = Photos.OrderBy(x => Random.value).ToList();
     }
 
-    protected Dictionary<Emotion.EEmotion, uint> GetQuantityPerEmotion()
+    protected Dictionary<Emotion.EEmotion, uint> GetQuantityPerEmotion(uint numPhotos)
     {
         Dictionary<Emotion.EEmotion, uint> emotionExercises = new Dictionary<Emotion.EEmotion, uint>();
         var gm = GameManager.Instance;
         uint numEmotions = (uint)(gm.SelectedEmotions.Count);
-        uint numPerEmotion = NumPhotos / numEmotions;
+        if (numEmotions == 0)
+        {
+            Debug.LogError("[PhotosCollection] numEmotions selected = 0");
+            return emotionExercises;
+        }
+        uint numPerEmotion = numPhotos / numEmotions;
 
         foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
         {
             emotionExercises[emotion] = numPerEmotion;
         }
 
-        if (NumPhotos % numEmotions != 0)
+        if (numPhotos % numEmotions != 0)
         {
-            uint aux = NumPhotos - (numEmotions * numPerEmotion);
+            uint aux = numPhotos - (numEmotions * numPerEmotion);
             var emotions = gm.SelectedEmotions.OrderBy(x => Random.value).ToList();
 
             for (int i = 0; i < aux; i++)
@@ -53,7 +59,7 @@ public class PhotosCollection : MonoBehaviour
         return emotionExercises;
     }
 
-    protected void FillPhotos(Dictionary<Emotion.EEmotion, uint> emotionExercises)
+    protected void FillPhotos(Dictionary<Emotion.EEmotion, uint> emotionExercises, uint numPhotos)
     {
         var gm = GameManager.Instance;
         foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
@@ -64,7 +70,7 @@ public class PhotosCollection : MonoBehaviour
             if (faceImages.Count < q)
             {
                 Debug.LogWarning("[PhotosCollection] " + emotion + " has less face Images " + q + " . !");
-                NumPhotos = (uint)(NumPhotos - (q - faceImages.Count));
+                numPhotos = (uint)(numPhotos - (q - faceImages.Count));
                 q = faceImages.Count;
             }
 
@@ -88,5 +94,12 @@ public class PhotosCollection : MonoBehaviour
             }
         }
         return null;
+    }
+
+    protected void LoadFrame()
+    {
+        if (Frame == null) return;
+        var gm = GameManager.Instance;
+        //Frame.sprite = GameManager.Instance.GetBackgrounds()[id].Texture;
     }
 }

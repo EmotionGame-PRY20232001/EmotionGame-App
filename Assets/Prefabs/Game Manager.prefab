@@ -165,7 +165,7 @@ MonoBehaviour:
         Contexts:
         - Estoy sorprendido
   <AllEmotions>k__BackingField: 000000000100000002000000030000000500000006000000
-  <SelectedEmotions>k__BackingField: 01000000060000000500000002000000
+  SelectedEmotions: 000000000300000005000000
   <ThemeCustom>k__BackingField:
     <Backgrounds>k__BackingField:
       _serializedList:

@@ -34,8 +34,7 @@ public class EmotionTeaching : MonoBehaviour
 
         if (PhotosContent != null)
         {
-            PhotosContent.NumPhotos = NumExcercises;
-            PhotosContent.LoadPhotos();
+            PhotosContent.LoadPhotos(NumExcercises);
 
             EmotionPhoto photo = PhotosContent.Photos.ElementAt(0);
             if (photo != null)

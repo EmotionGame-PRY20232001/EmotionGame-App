@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 374037634404014322}
   background: {fileID: 6132627500384278858}
-  guide: {fileID: 8478689710928394725}
+  guide: {fileID: 7857341763165577841}
   needsText: 0
   editButton: {fileID: 642314212398290076}
 --- !u!1 &6432537178014083722
@@ -505,15 +505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fdbebc9a007726498245e7cdc5163bd, type: 3}
---- !u!114 &8478689710928394725 stripped
+--- !u!114 &7857341763165577841 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8053754445483273659, guid: 6fdbebc9a007726498245e7cdc5163bd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 620345466424986065, guid: 6fdbebc9a007726498245e7cdc5163bd, type: 3}
   m_PrefabInstance: {fileID: 7318642268768463776}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5880ce7791cfd241a6021886f7e2593, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9be98ede4b9f1469af8e9300852345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8857500941672693205 stripped

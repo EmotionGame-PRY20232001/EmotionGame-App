@@ -25,7 +25,7 @@ public class ToggleTheme : ToggleCustom
 
     protected override void ChangeSelection()
     {
-        Background.ChangeBackground(Theme);
+        Background.UpdateThemeElement(Theme);
     }
     
     

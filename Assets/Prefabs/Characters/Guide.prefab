@@ -1361,8 +1361,8 @@ MonoBehaviour:
       Left: {fileID: 2269005466180484111}
       Right: {fileID: 2269005467558717568}
     Iris:
-      Left: {fileID: 0}
-      Right: {fileID: 0}
+      Left: {fileID: 2269005467154435895}
+      Right: {fileID: 2269005467420911282}
     Mouth: {fileID: 2269005466904940964}
     Shirt: {fileID: 2269005465847014238}
 --- !u!1 &2269005467558717568

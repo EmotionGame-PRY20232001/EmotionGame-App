@@ -12,8 +12,9 @@ public class EmotionObject : MonoBehaviour
     [SerializeField]
     protected bool IsRandom;
     protected Image EmotionImage;
+    [SerializeField]
     protected TMP_Text EmotionName;
-    
+
     protected virtual void Awake()
     {
         EmotionImage = gameObject.GetComponent<Image>();
@@ -23,6 +24,8 @@ public class EmotionObject : MonoBehaviour
     {
         if (IsRandom)
             LoadRandom();
+        else
+            LoadByEmotion();
     }
 
     protected void LoadRandom()

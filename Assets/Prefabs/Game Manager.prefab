@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0988f081188f04195e51d86c920358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastPlayedGame: 0
   emotionSprites:
   - {fileID: 21300000, guid: 1e835718e6b64c54b8f089549782b8de, type: 3}
   - {fileID: 21300000, guid: 4398729508647d9428bb5146bbe95a76, type: 3}
@@ -58,6 +59,7 @@ MonoBehaviour:
       Value:
         Sprite: {fileID: 21300000, guid: 1e835718e6b64c54b8f089549782b8de, type: 3}
         Name: Enojo
+        Color: {r: 0.8627451, g: 0.25882354, b: 0.25882354, a: 1}
         Faces:
         - {fileID: 21300000, guid: 22cf19d1a79969646919987b50e980e3, type: 3}
         - {fileID: 21300000, guid: d7e8b5eb7e6555c48beda02528030f4e, type: 3}
@@ -75,6 +77,7 @@ MonoBehaviour:
       Value:
         Sprite: {fileID: 21300000, guid: 4398729508647d9428bb5146bbe95a76, type: 3}
         Name: Disgusto
+        Color: {r: 0.6431373, g: 0.84313726, b: 0.3882353, a: 1}
         Faces:
         - {fileID: 21300000, guid: 9c1e79c58fa9e934f9ecd78f3a650929, type: 3}
         - {fileID: 21300000, guid: f6f2fb7063bbed049a7d93a835b11700, type: 3}
@@ -93,6 +96,7 @@ MonoBehaviour:
       Value:
         Sprite: {fileID: 21300000, guid: 21ba01ca3aa4e85499949c87c3fe5907, type: 3}
         Name: Miedo
+        Color: {r: 0.69803923, g: 0.5137255, b: 1, a: 1}
         Faces:
         - {fileID: 21300000, guid: 98be749510ac4ee4bb11754e611dde97, type: 3}
         - {fileID: 21300000, guid: 4f4f769fcb0f1e741bd670d455fd5a34, type: 3}
@@ -110,6 +114,7 @@ MonoBehaviour:
       Value:
         Sprite: {fileID: 21300000, guid: b7497e01fe6817b409f45956d1f964b2, type: 3}
         Name: "Alegr\xEDa"
+        Color: {r: 1, g: 0.75686276, b: 0.39215687, a: 1}
         Faces:
         - {fileID: 21300000, guid: 5243e969cc7a2ee47bc477a3d9e87c0a, type: 3}
         - {fileID: 21300000, guid: 35d2a3ff81d79dc4facfab80769b9b19, type: 3}
@@ -128,12 +133,14 @@ MonoBehaviour:
       Value:
         Sprite: {fileID: 21300000, guid: 81705cbf52495074397c8f6d4f28f591, type: 3}
         Name: Neutral
+        Color: {r: 0.5019608, g: 0.5019608, b: 0.56078434, a: 1}
         Faces: []
         Contexts: []
     - Key: 5
       Value:
         Sprite: {fileID: 21300000, guid: 6d149340f707d794b929d90ab4edc930, type: 3}
         Name: Tristeza
+        Color: {r: 0.3882353, g: 0.59607846, b: 0.84313726, a: 1}
         Faces:
         - {fileID: 21300000, guid: 491bf3f5e4c351c48b694c6e9a8c3957, type: 3}
         - {fileID: 21300000, guid: 574e9ab5b587bdc44b067c2e83889fad, type: 3}
@@ -151,6 +158,7 @@ MonoBehaviour:
       Value:
         Sprite: {fileID: 21300000, guid: 0623178d53eb23345a8aeee13ab28120, type: 3}
         Name: Sorpresa
+        Color: {r: 0.92941177, g: 0.8784314, b: 0.42352942, a: 1}
         Faces:
         - {fileID: 21300000, guid: f96ee01bf3ac850499d92ecf8692b95a, type: 3}
         - {fileID: 21300000, guid: 17c05330c163f6d4a81572b1d1658140, type: 3}

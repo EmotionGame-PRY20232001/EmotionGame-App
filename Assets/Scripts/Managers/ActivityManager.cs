@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ActivityManager : MonoBehaviour
+public class ActivityManager : EmotionExercise
 {
     private static ActivityManager _instance;
     public static ActivityManager Instance {  get { return _instance; } }
@@ -19,8 +19,6 @@ public class ActivityManager : MonoBehaviour
     private TMP_Text ScoreText;
     [SerializeField]
     private TMP_Text ExerciseText;
-    [SerializeField] 
-    private EmotionPhoto ExerciseImage;
     [SerializeField] 
     private int NumButtons = 4;
     [SerializeField]
@@ -35,17 +33,16 @@ public class ActivityManager : MonoBehaviour
     [SerializeField]
     private EmotionButton BtnEmotionMovePrefab;
 
-    [SerializeField]
-    public Emotion.EEmotion ExerciseEmotion { get; private set; }
-
 
     [SerializeField]
     private FERModel Model;
 
     private List<GameObject> InstantiateButtons = new List<GameObject>();
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
@@ -53,11 +50,14 @@ public class ActivityManager : MonoBehaviour
         }
 
         _instance = this;
+
+        CurrentExercise = -1;
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        SetEmotionExercises();
         UpdateScoreText();
         LoadExercise();
     }
@@ -83,76 +83,85 @@ public class ActivityManager : MonoBehaviour
 
     void LoadExercise()
     {
+        LoadCurrentExercise(CurrentExercise + 1);
         switch (Activity)
         {
-            case EActivity.Choose: LoadChooseExercise(); break;
-            case EActivity.Context: LoadContextExercise(); break;
-            case EActivity.Imitate: 
+            case EActivity.Choose:
+                LoadChooseExercise();
+                break;
+            case EActivity.Context:
+                LoadContextExercise();
+                break;
+            case EActivity.Imitate:
                 LoadImitateExercise();
-                StartCoroutine(CheckImitateEmotion());
                 break;
             default: break;
         }
     }
 
-    private void LoadChooseExercise()
+    protected override void LoadExercise(EmotionPhoto photo)
+    {
+        base.LoadExercise(photo);
+        photo?.gameObject.SetActive(false);
+    }
+
+    protected virtual void EnableCurrentExercise (bool value)
+    {
+        if (Exercises == null || CurrentExercise < 0) return;
+
+        if (Exercises.Photos.Count > CurrentExercise &&
+            Exercises.Photos[CurrentExercise] != null)
+        {
+            Exercises.Photos[CurrentExercise].gameObject.SetActive(value);
+        }
+    }
+
+    protected virtual void LoadCurrentExercise(int newCurrent)
+    {
+        EnableCurrentExercise(false);
+        CurrentExercise = newCurrent;
+        EnableCurrentExercise(true);
+        LoadCurrentEmotion();
+    }
+
+    protected virtual void LoadEmotionButtons(EmotionButton btnEmoionPrefab)
     {
         CleanUp();
+
         var gm = GameManager.Instance;
         var allEmotions = new List<Emotion.EEmotion>(gm.AllEmotions);
-        var selEmotions = new List<Emotion.EEmotion>(gm.SelectedEmotions);
-        for (int i = 0; i < NumButtons; i++)
+        allEmotions.Remove(ExerciseEmotion);
+        allEmotions = allEmotions.OrderBy(x => Random.value).ToList();
+
+        var selEmotions = allEmotions.GetRange(0, NumButtons - 1);
+        selEmotions.Add(ExerciseEmotion);
+        selEmotions = selEmotions.OrderBy(x => Random.value).ToList();
+        
+        foreach (Emotion.EEmotion emotion in selEmotions)
         {
-            Emotion.EEmotion randEmotion = allEmotions[Random.Range(0, allEmotions.Count)];
-            if (i == 0)
-            {
-                randEmotion = selEmotions[Random.Range(0, selEmotions.Count)];
-                ExerciseEmotion = randEmotion;
-            }
-            var button = Instantiate(BtnEmotionMovePrefab, AreaOfButtons.transform);
-            button.SetEmotion(randEmotion);
-            allEmotions.Remove(randEmotion);
+            var button = Instantiate(btnEmoionPrefab, AreaOfButtons.transform);
+            button.SetEmotion(emotion);
             InstantiateButtons.Add(button.gameObject);
         }
-        if (ExerciseImage != null)
-            ExerciseImage.SetPhotoEmotion(ExerciseEmotion);
+    }
+
+    private void LoadChooseExercise()
+    {
+        LoadEmotionButtons(BtnEmotionMovePrefab);
     }
 
     private void LoadContextExercise()
     {
-        CleanUp();
+        LoadEmotionButtons(BtnEmotionPrefab);
+
         var gm = GameManager.Instance;
-        var allEmotions = new List<Emotion.EEmotion>(gm.AllEmotions);
-        var selEmotions = new List<Emotion.EEmotion>(gm.SelectedEmotions);
-        var intEmotions = new List<Emotion.EEmotion>();
-        for (int i = 0; i < NumButtons; i++)
-        {
-            Emotion.EEmotion randEmotion = allEmotions[Random.Range(0, allEmotions.Count)];
-            if (i == 0)
-            {
-                randEmotion = selEmotions[Random.Range(0, selEmotions.Count)];
-                ExerciseEmotion = randEmotion;
-            }
-            intEmotions.Add(randEmotion);
-            allEmotions.Remove(randEmotion);
-        }
-        intEmotions = intEmotions.OrderBy(x => Random.value).ToList();
-        foreach (var i in intEmotions)
-        {
-            var button = Instantiate(BtnEmotionPrefab, GridOfButtons.transform);
-            button.SetEmotion(i);
-            InstantiateButtons.Add(button.gameObject);
-        }
         var contextStrings = gm.Emotions[ExerciseEmotion].Contexts;
         ExerciseText.text = contextStrings[Random.Range(0, contextStrings.Count)];
     }
 
     private void LoadImitateExercise()
     {
-        if (ExerciseImage != null)
-        {
-            ExerciseEmotion = ExerciseImage.SetPhotoEmotionFromGMSelected();
-        }
+        StartCoroutine(CheckImitateEmotion());
     }
 
     IEnumerator CheckImitateEmotion()

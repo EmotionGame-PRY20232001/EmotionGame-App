@@ -45,6 +45,7 @@ public class EmotionPhoto : MonoBehaviour
             SetPhotoEmotion(emotions[Random.Range(0, emotions.Count - 1)]);
         return PhotoEmotion;
     }
+
     public Emotion.EEmotion SetPhotoEmotionFromGMSelected()
     {
         var gm = GameManager.Instance;

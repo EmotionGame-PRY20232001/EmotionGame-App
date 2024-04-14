@@ -5,15 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class EmotionTeaching : MonoBehaviour
+public class EmotionTeaching : EmotionExercise
 {
-    public uint NumExcercises = 10;
-    protected uint CurrentExercise = 0;
-    protected Emotion.EEmotion CurrentEmotion;
-    List<Emotion.EEmotion> EmotionsToLearn;
-
-    [SerializeField]
-    protected PhotosCollection PhotosContent;
     [SerializeField]
     protected Stepper StepperCont;
     [SerializeField]
@@ -26,10 +19,9 @@ public class EmotionTeaching : MonoBehaviour
     [SerializeField]
     protected TMP_Text TextEmotion;
 
-    void Start()
+    protected override void Start()
     {
-        EmotionsToLearn = new List<Emotion.EEmotion>();
-        SetEmotionExercises();
+        base.Start();
 
         if (BtnCancel != null)
             BtnCancel.interactable = true;
@@ -37,47 +29,36 @@ public class EmotionTeaching : MonoBehaviour
             BtnFinish.interactable = false;
     }
 
-    protected void SetEmotionExercises()
+    protected override void SetEmotionExercises()
     {
-        var gm = GameManager.Instance;
-
-        if (PhotosContent != null)
-        {
-            PhotosContent.LoadPhotos(NumExcercises);
-
-            EmotionPhoto photo = PhotosContent.Photos.ElementAt(0);
-            if (photo != null)
-                CurrentEmotion = photo.PhotoEmotion;
-
-            foreach (EmotionPhoto _photo in PhotosContent.Photos)
-                LoadExercise(_photo);
-            StepperCont?.SetDefaultStep();
-        }
+        base.SetEmotionExercises();
 
         if (StepperCont != null)
         {
             StepperCont.onStepChange += OnEmotionChanged;
             StepperCont.onAllVisited += OnAllVisited;
+            StepperCont.SetDefaultStep(0);
         }
     }
 
-    public void LoadExercise(EmotionPhoto photo)
+    protected override void LoadExercise(EmotionPhoto photo)
     {
         if (photo == null) return;
         if (StepperCont != null)
             StepperCont.AddStep(photo.gameObject);
-
-        EmotionsToLearn.Add(photo.PhotoEmotion);
+        base.LoadExercise(photo);
     }
 
     public void OnEmotionChanged()
     {
-        if (StepperCont == null) return;
-        if (StepperCont.CurrentStep > EmotionsToLearn.Count) return;
+        if (StepperCont == null
+            || StepperCont.CurrentStep < 0
+            || StepperCont.CurrentStep > EmotionsToPractice.Count)
+            return;
 
-        CurrentExercise = (uint)StepperCont.CurrentStep;
-        CurrentEmotion = EmotionsToLearn.ElementAt(StepperCont.CurrentStep);
-        Emotion.Data data = GameManager.Instance.Emotions[CurrentEmotion];
+        CurrentExercise = StepperCont.CurrentStep;
+        ExerciseEmotion = EmotionsToPractice.ElementAt(StepperCont.CurrentStep);
+        Emotion.Data data = GameManager.Instance.Emotions[ExerciseEmotion];
 
         if (ImageEmotion != null)
             ImageEmotion.sprite = data.Sprite;

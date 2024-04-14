@@ -39,11 +39,12 @@ public class Stepper : MonoBehaviour
     protected RectTransform StepperContent;
 
     // Visited
-    protected uint NumVisited;
+    protected uint NumVisited = 0;
     public bool AllVisited { get; protected set; }
 
     void Awake()
     {
+        CurrentStep = -1;
         Group = gameObject.GetComponent<ToggleGroup>();
         AllVisited = false;
         LoadSteps();

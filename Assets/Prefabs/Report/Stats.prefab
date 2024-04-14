@@ -230,7 +230,6 @@ MonoBehaviour:
   GraphicsToFill: []
   GraphicsToContrast:
   - {fileID: 2597039879840480742}
-  - {fileID: 0}
 --- !u!1 &6051974519132185009
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,10 +850,6 @@ PrefabInstance:
     - target: {fileID: 5959861435447445560, guid: 3fef89d2c694aaa44b76ed32e9465d22, type: 3}
       propertyPath: m_Name
       value: BarStatHappy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140255407020375399, guid: 3fef89d2c694aaa44b76ed32e9465d22, type: 3}
-      propertyPath: EmotionObj
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6308956210706303643, guid: 3fef89d2c694aaa44b76ed32e9465d22, type: 3}
       propertyPath: m_AnchorMax.y

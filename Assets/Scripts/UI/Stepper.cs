@@ -25,8 +25,12 @@ public class Stepper : MonoBehaviour
     // To spawn
     [SerializeField]
     protected Step StepPrefab;
+
+    // Delegates
     public delegate void OnStepChange();
     public OnStepChange onStepChange;
+    public delegate void OnAllVisited();
+    public OnAllVisited onAllVisited;
 
     // To snap if many steps
     [SerializeField]
@@ -34,24 +38,18 @@ public class Stepper : MonoBehaviour
     [SerializeField]
     protected RectTransform StepperContent;
 
+    // Visited
+    protected uint NumVisited;
+    public bool AllVisited { get; protected set; }
+
     void Awake()
     {
         Group = gameObject.GetComponent<ToggleGroup>();
+        AllVisited = false;
         LoadSteps();
         AddListeners();
     }
 
-    void FillStep(Step step, uint index)
-    {
-        step.Stepper = this;
-        step.Index = index;
-
-        if (Group != null)
-        {
-            if (step.TabButton != null)
-                step.TabButton.group = Group;
-        }
-    }
 
     void LoadSteps()
     {
@@ -73,11 +71,12 @@ public class Stepper : MonoBehaviour
                 for (uint i = 0; i < Steps.Count; i++)
                 {
                     Step step = Steps.ElementAt((int)i);
-                    FillStep(step, i);
+                    step.Fill(this, i);
                 }
-                ChangeStep(0);
             }
         }
+
+        SetDefaultStep(0);
     }
 
     /// LISTENERS
@@ -141,8 +140,25 @@ public class Stepper : MonoBehaviour
     {
         if (index > Steps.Count || Steps.Count == 0) return;
         // Debug.Log(CurrentStep + (value ? " true" : " false"));
-        if (Steps.ElementAt(index) != null)
-            Steps[index].EnableStep(value);
+        if (Steps.ElementAt(index) == null) return;
+
+        bool wasntVisited = !Steps[index].WasVisited;
+        Steps[index].EnableStep(value);
+
+        if (!AllVisited)
+        {
+            if (wasntVisited && Steps[index].WasVisited)
+            {
+                NumVisited++;
+                //Debug.Log("[Stepper] NumVisited " + NumVisited);
+            }
+
+            if (NumVisited == Steps.Count)
+            {
+                AllVisited = true;
+                onAllVisited?.Invoke();
+            }
+        }
     }
     void ChangeStepByNavigation(int index)
     {
@@ -160,7 +176,14 @@ public class Stepper : MonoBehaviour
         ChangeStepByNavigation(CurrentStep + 1);
     }
 
-    //// AUTOGENERATION
+    /// AUTOGENERATION
+    public void SetDefaultStep(int step = 0)
+    {
+        if (Steps.Count > 0)
+        {
+            EnableStep(true, step);
+        }
+    }
     public void AddStep(GameObject content)
     {
         if (StepPrefab == null || StepsGroup == null)
@@ -174,10 +197,8 @@ public class Stepper : MonoBehaviour
 
         Step step = Instantiate(StepPrefab, StepsGroup.transform);
         step.TabContent = content;
-        FillStep(step, (uint)Steps.Count);
-
+        step.Fill(this, (uint)Steps.Count);
         Steps.Add(step);
-        EnableStep(true, CurrentStep);
     }
 
 

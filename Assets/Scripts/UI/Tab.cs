@@ -10,7 +10,7 @@ public class Tab : MonoBehaviour
     public GameObject TabContent;
     public Toggle TabButton { get; protected set; }
 
-    void Awake()
+    protected virtual void Awake()
     {
         TabButton = gameObject.GetComponent<Toggle>();
         

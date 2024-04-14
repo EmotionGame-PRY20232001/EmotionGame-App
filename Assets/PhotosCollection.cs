@@ -23,8 +23,15 @@ public class PhotosCollection : MonoBehaviour
     public void LoadPhotos(uint numPhotos)
     {
         FillPhotos(GetQuantityPerEmotion(numPhotos), numPhotos);
-        if (UseRandom)
-            Photos = Photos.OrderBy(x => Random.value).ToList();
+
+        if (Photos.Count > 0)
+        {
+            if (UseRandom)
+                Photos = Photos.OrderBy(x => Random.value).ToList();
+
+            if (Photos[0] != null)
+                Photos[0].gameObject.SetActive(true);
+        }
 
         if (Frame != null)
             Frame.transform.SetAsLastSibling();
@@ -99,10 +106,11 @@ public class PhotosCollection : MonoBehaviour
         return null;
     }
 
-    protected void LoadFrame()
-    {
-        if (Frame == null) return;
-        var gm = GameManager.Instance;
+    //protected void LoadFrame()
+    //{
+        //if (Frame == null) return;
+        //var gm = GameManager.Instance;
         //Frame.sprite = GameManager.Instance.GetBackgrounds()[id].Texture;
-    }
+    //}
+
 }

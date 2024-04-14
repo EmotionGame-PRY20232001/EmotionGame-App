@@ -16,6 +16,10 @@ public class EmotionTeaching : MonoBehaviour
     protected PhotosCollection PhotosContent;
     [SerializeField]
     protected Stepper StepperCont;
+    [SerializeField]
+    protected Button BtnCancel;
+    [SerializeField]
+    protected Button BtnFinish;
 
     [SerializeField]
     protected Image ImageEmotion;
@@ -26,6 +30,11 @@ public class EmotionTeaching : MonoBehaviour
     {
         EmotionsToLearn = new List<Emotion.EEmotion>();
         SetEmotionExercises();
+
+        if (BtnCancel != null)
+            BtnCancel.interactable = true;
+        if (BtnFinish != null)
+            BtnFinish.interactable = false;
     }
 
     protected void SetEmotionExercises()
@@ -40,12 +49,16 @@ public class EmotionTeaching : MonoBehaviour
             if (photo != null)
                 CurrentEmotion = photo.PhotoEmotion;
 
-            foreach(EmotionPhoto _photo in PhotosContent.Photos)
+            foreach (EmotionPhoto _photo in PhotosContent.Photos)
                 LoadExercise(_photo);
+            StepperCont?.SetDefaultStep();
         }
 
         if (StepperCont != null)
+        {
             StepperCont.onStepChange += OnEmotionChanged;
+            StepperCont.onAllVisited += OnAllVisited;
+        }
     }
 
     public void LoadExercise(EmotionPhoto photo)
@@ -70,5 +83,14 @@ public class EmotionTeaching : MonoBehaviour
             ImageEmotion.sprite = data.Sprite;
         if (TextEmotion != null)
             TextEmotion.text = data.Name;
+    }
+
+    public void OnAllVisited()
+    {
+        if (BtnCancel != null)
+            BtnCancel.interactable = false;
+
+        if (BtnFinish != null)
+            BtnFinish.interactable = true;
     }
 }

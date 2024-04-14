@@ -25,6 +25,9 @@ public class PhotosCollection : MonoBehaviour
         FillPhotos(GetQuantityPerEmotion(numPhotos), numPhotos);
         if (UseRandom)
             Photos = Photos.OrderBy(x => Random.value).ToList();
+
+        if (Frame != null)
+            Frame.transform.SetAsLastSibling();
     }
 
     protected Dictionary<Emotion.EEmotion, uint> GetQuantityPerEmotion(uint numPhotos)

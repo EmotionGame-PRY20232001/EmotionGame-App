@@ -20,10 +20,7 @@ public class UIActions : MonoBehaviour
         public static readonly string GAME_CONTEXT = "GameContext";
         public static readonly string GAME_IMITATE = "GameImitate";
         public static readonly string LEARN_EMOTIONS = "EmotionsTeaching";
-        //static readonly string  = "";
-        //static readonly string  = "";
-        //static readonly string  = "";
-        //static readonly string  = "";
+        public static readonly string LEARN_COMPLETE = "TeachingComplete";
     };
     
     public enum EGames { None, Choose, Context, Imitate, }
@@ -94,5 +91,9 @@ public class UIActions : MonoBehaviour
     public static void GoToLearnEmotions()
     {
         SceneManager.LoadScene(Scenes.LEARN_EMOTIONS);
+    }
+    public static void GoToLearnComplete()
+    {
+        SceneManager.LoadScene(Scenes.LEARN_COMPLETE);
     }
 }

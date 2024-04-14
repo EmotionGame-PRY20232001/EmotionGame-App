@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Learn/EmotionsTeaching.unity
     guid: fecc7c33177e5044b952113e00f5cd54
+  - enabled: 1
+    path: Assets/Scenes/Learn/TeachingComplete.unity
+    guid: ab14e48cbf565ae4f88eeb3e2fae674c
   m_configObjects: {}

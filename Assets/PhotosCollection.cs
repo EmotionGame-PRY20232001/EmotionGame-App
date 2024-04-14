@@ -79,13 +79,16 @@ public class PhotosCollection : MonoBehaviour
 
             if (faceImages.Count < q)
             {
-                Debug.LogWarning("[PhotosCollection] " + emotion + " has less face Images " + q + " . !");
+                Debug.LogWarning("[PhotosCollection] " + emotion + " has less face Images " + q + "!");
                 numPhotos = (uint)(numPhotos - (q - faceImages.Count));
                 q = faceImages.Count;
+
+                if (q == 0)
+                    continue;
             }
 
             faceImages = faceImages.OrderBy(x => Random.value).ToList();
-            faceImages = faceImages.GetRange(0, (int)emotionExercises[emotion]);
+            faceImages = faceImages.GetRange(0, q);
             foreach (Sprite sprite in faceImages)
                 LoadPhoto(emotion, sprite);
         }

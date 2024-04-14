@@ -72,6 +72,14 @@ PrefabInstance:
       value: 0.22745098
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontSizeBase
       value: 40
       objectReference: {fileID: 0}
@@ -80,8 +88,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3481198651253753787, guid: f23d6982077924c49887305fc2b33808, type: 2}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4286009914
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5670995149775772912, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Sprite
@@ -90,6 +106,22 @@ PrefabInstance:
     - target: {fileID: 6057056601756438814, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: Tooltip
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189499919963483220, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_FlexibleWidth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189499919963483220, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_FlexibleHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189499919963483220, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_PreferredHeight
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015502060755684100, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7015502060755684100, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_AnchorMax.y
@@ -101,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7015502060755684100, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7127831596675480592, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_SizeDelta.x

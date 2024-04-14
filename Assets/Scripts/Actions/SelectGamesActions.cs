@@ -21,7 +21,7 @@ public class SelectGamesActions : MonoBehaviour
             {
                 PopUpEmotions.onAccept += EmotionToggles.SaveEmotionsChecked;
             }
-            PopUpEmotions.onAccept += OpenSelectedGame;
+            PopUpEmotions.onAccept += SaveSelectedGame;
         }
     }
 
@@ -38,21 +38,8 @@ public class SelectGamesActions : MonoBehaviour
         GameSelected = UIActions.EGames.Imitate;
     }
 
-    public void OpenSelectedGame()
+    public void SaveSelectedGame()
     {
-        switch (GameSelected)
-		{
-            case UIActions.EGames.Choose:
-				UIActions.GoToChooseGame();
-                break;
-            case UIActions.EGames.Context:
-				UIActions.GoToContextGame();
-                break;
-            case UIActions.EGames.Imitate:
-				UIActions.GoToImitateGame();
-                break;
-            default:
-                break;
-        }
+        GameManager.Instance.LastPlayedGame = GameSelected;
     }
 }

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     // [SerializeField]
     public Player currentPlayer;
+    public UIActions.EGames LastPlayedGame;
+
     [SerializeField]
     private List<Sprite> emotionSprites;
     [field:SerializeField][SerializedDictionary("Emotion", "Data")]

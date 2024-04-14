@@ -32,7 +32,7 @@ public class EmotionExercise : MonoBehaviour
         if (Exercises != null)
         {
             Exercises.LoadPhotos(NumExcercises);
-
+            NumExcercises = (uint)Exercises.Photos.Count;
             foreach (EmotionPhoto _photo in Exercises.Photos)
                 LoadExercise(_photo);
         }
@@ -40,13 +40,13 @@ public class EmotionExercise : MonoBehaviour
 
     protected virtual void LoadExercise(EmotionPhoto photo)
     {
-        if (photo == null) return;
-        EmotionsToPractice.Add(photo.PhotoEmotion);
+        if (photo != null)
+            EmotionsToPractice.Add(photo.PhotoEmotion);
     }
 
     protected virtual void LoadCurrentEmotion()
     {
-        if (CurrentExercise < EmotionsToPractice.Count) return;
+        if (CurrentExercise >= EmotionsToPractice.Count) return;
         ExerciseEmotion = EmotionsToPractice.ElementAt(CurrentExercise);
 
         //EmotionPhoto photo = Exercises.Photos.ElementAt(CurrentExercise);

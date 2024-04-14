@@ -21,6 +21,7 @@ public class UIActions : MonoBehaviour
         public static readonly string GAME_IMITATE = "GameImitate";
         public static readonly string LEARN_EMOTIONS = "EmotionsTeaching";
         public static readonly string LEARN_COMPLETE = "TeachingComplete";
+        public static readonly string GAME_COMPLETE = "GameComplete";
     };
     
     public enum EGames { None, Choose, Context, Imitate, }
@@ -68,7 +69,24 @@ public class UIActions : MonoBehaviour
 
 
     ////======== GO TO GAME SCREENS ========////
-
+    public void GoToLastGame()
+    {
+        EGames GameSelected = GameManager.Instance.LastPlayedGame;
+        switch (GameSelected)
+		{
+            case EGames.Choose:
+				GoToChooseGame();
+                break;
+            case EGames.Context:
+				GoToContextGame();
+                break;
+            case EGames.Imitate:
+				GoToImitateGame();
+                break;
+            default:
+                break;
+        }
+    }
     public static void GoToGameSelection()
     {
         SceneManager.LoadScene(Scenes.SELECT_GAMES);
@@ -88,6 +106,10 @@ public class UIActions : MonoBehaviour
     {
         SceneManager.LoadScene(Scenes.GAME_IMITATE);
     }
+    public static void GoToGameComplete()
+    {
+        SceneManager.LoadScene(Scenes.GAME_COMPLETE);
+    }
     public static void GoToLearnEmotions()
     {
         SceneManager.LoadScene(Scenes.LEARN_EMOTIONS);
@@ -96,4 +118,5 @@ public class UIActions : MonoBehaviour
     {
         SceneManager.LoadScene(Scenes.LEARN_COMPLETE);
     }
+
 }

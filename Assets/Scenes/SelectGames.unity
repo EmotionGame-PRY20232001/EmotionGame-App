@@ -1773,6 +1773,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -56
       objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1456743436}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: GoToLastGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UIActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8878228691677210827, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

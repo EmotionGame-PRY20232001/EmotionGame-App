@@ -83,6 +83,12 @@ public class ActivityManager : EmotionExercise
 
     void LoadExercise()
     {
+        if (CurrentExercise == NumExcercises - 1)
+        {
+            UIActions.GoToGameComplete();
+            return;
+        }
+
         LoadCurrentExercise(CurrentExercise + 1);
         switch (Activity)
         {
@@ -171,7 +177,8 @@ public class ActivityManager : EmotionExercise
             if (Model.PredictedEmotion == ExerciseEmotion)
             {
                 Debug.Log("Sí es");
-                LoadImitateExercise();
+                //LoadImitateExercise();
+                Good();
             }
             yield return null;
         }

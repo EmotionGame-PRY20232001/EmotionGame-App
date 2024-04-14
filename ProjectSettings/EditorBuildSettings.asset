@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Learn/TeachingComplete.unity
     guid: ab14e48cbf565ae4f88eeb3e2fae674c
+  - enabled: 1
+    path: Assets/Scenes/Games/GameComplete.unity
+    guid: 661439a218785724a801e3d0c68db678
   m_configObjects: {}

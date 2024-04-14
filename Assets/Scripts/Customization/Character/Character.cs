@@ -86,7 +86,7 @@ public class Character : MonoBehaviour
         Customization.HairCut = hairCut;
         Sprite _hairCut = hairCut == EHairCut.None ? null :
                                         GameManager.Instance.CharacterCustom.Hairs[Customization.HairColor].HairCuts[hairCut];
-        UIutils.SetImage(Parts.HairBack, _hairCut);
+        Utils.SetImage(Parts.HairBack, _hairCut);
     }
 
     public EHairColor GetHairColor() { return Customization.HairColor; }
@@ -97,16 +97,16 @@ public class Character : MonoBehaviour
         if (Customization.HairCut != EHairCut.None)
         {
             Sprite hairBack = GameManager.Instance.CharacterCustom.Hairs[hairColor].HairCuts[Customization.HairCut];
-            UIutils.SetImage(Parts.HairBack, hairBack);
+            Utils.SetImage(Parts.HairBack, hairBack);
         }
 
         Sprite _eyelashes = GameManager.Instance.CharacterCustom.Hairs[hairColor].Eyelashes;
-        UIutils.SetImage(Parts.Eyelashes.Left, _eyelashes);
-        UIutils.SetImage(Parts.Eyelashes.Right, _eyelashes);
+        Utils.SetImage(Parts.Eyelashes.Left, _eyelashes);
+        Utils.SetImage(Parts.Eyelashes.Right, _eyelashes);
 
         Sprite _eyebrows = GameManager.Instance.CharacterCustom.Hairs[hairColor].Eyebrow;
-        UIutils.SetImage(Parts.Eyebrow.Left, _eyebrows);
-        UIutils.SetImage(Parts.Eyebrow.Right, _eyebrows);
+        Utils.SetImage(Parts.Eyebrow.Left, _eyebrows);
+        Utils.SetImage(Parts.Eyebrow.Right, _eyebrows);
     }
 
     public EEyeColor GetEyeColor() { return Customization.EyeColor; }
@@ -114,8 +114,8 @@ public class Character : MonoBehaviour
     {
         Customization.EyeColor = eyeColor;
         Sprite _iris = GameManager.Instance.CharacterCustom.EyeColors[eyeColor];
-        UIutils.SetImage(Parts.Iris.Left, _iris);
-        UIutils.SetImage(Parts.Iris.Right, _iris);
+        Utils.SetImage(Parts.Iris.Left, _iris);
+        Utils.SetImage(Parts.Iris.Right, _iris);
     }
 
     public ESkinColor GetSkinColor() { return Customization.SkinColor; }
@@ -123,7 +123,7 @@ public class Character : MonoBehaviour
     {
         Customization.SkinColor = skinColor;
         Sprite _skin = GameManager.Instance.CharacterCustom.SkinColors[skinColor];
-        UIutils.SetImage(Parts.Body, _skin);
+        Utils.SetImage(Parts.Body, _skin);
     }
 
     public EShirt GetShirt() { return Customization.Shirt; }
@@ -131,7 +131,7 @@ public class Character : MonoBehaviour
     {
         Customization.Shirt = shirt;
         Sprite _shirt = GameManager.Instance.CharacterCustom.Shirts[shirt];
-        UIutils.SetImage(Parts.Shirt, _shirt);
+        Utils.SetImage(Parts.Shirt, _shirt);
     }
 
     public string GetJSON()

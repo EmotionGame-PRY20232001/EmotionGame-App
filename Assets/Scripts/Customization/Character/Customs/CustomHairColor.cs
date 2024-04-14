@@ -35,14 +35,14 @@ public class CustomHairColor : CustomHair
     {
         if (_hairCut == Character.EHairCut.None)
         {
-            UIutils.SetImage(HairBack, null);
+            Utils.SetImage(HairBack, null);
             return;
         }
 
         GameManager.CustomHair _hair = GameManager.Instance.CharacterCustom.Hairs[HairColor];
 
         if (HairBack != null)
-            UIutils.SetImage(HairBack, _hair.HairCuts[_hairCut]);
+            Utils.SetImage(HairBack, _hair.HairCuts[_hairCut]);
 
         // if (HairBack != null)
         //     HairBack.sprite = GameManager.Instance.CharacterCustom.HairCuts[_hairCut];

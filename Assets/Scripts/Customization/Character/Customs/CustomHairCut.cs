@@ -39,7 +39,7 @@ public class CustomHairCut : CustomHair
             HairEye.color = _hair.Color;
 
         if (HairBack != null)
-            UIutils.SetImage(HairBack, HairCut == Character.EHairCut.None ? null : _hair.HairCuts[HairCut]);
+            Utils.SetImage(HairBack, HairCut == Character.EHairCut.None ? null : _hair.HairCuts[HairCut]);
             // HairBack.color = _hair.Color;
     }
 

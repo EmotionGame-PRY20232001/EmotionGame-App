@@ -109,9 +109,8 @@ public class ActivityManager : MonoBehaviour
                 randEmotion = selEmotions[Random.Range(0, selEmotions.Count)];
                 ExerciseEmotion = randEmotion;
             }
-            var emoSprite = gm.Emotions[randEmotion].Sprite;
             var button = Instantiate(BtnEmotionMovePrefab, AreaOfButtons.transform);
-            button.SetButton(emoSprite, randEmotion);
+            button.SetEmotion(randEmotion);
             allEmotions.Remove(randEmotion);
             InstantiateButtons.Add(button.gameObject);
         }
@@ -140,9 +139,8 @@ public class ActivityManager : MonoBehaviour
         intEmotions = intEmotions.OrderBy(x => Random.value).ToList();
         foreach (var i in intEmotions)
         {
-            var emoSprite = gm.Emotions[i].Sprite;
             var button = Instantiate(BtnEmotionPrefab, GridOfButtons.transform);
-            button.SetButton(emoSprite, i);
+            button.SetEmotion(i);
             InstantiateButtons.Add(button.gameObject);
         }
         var contextStrings = gm.Emotions[ExerciseEmotion].Contexts;

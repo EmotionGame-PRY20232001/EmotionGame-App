@@ -58,7 +58,7 @@ public class EmotionTeaching : EmotionExercise
 
         CurrentExercise = StepperCont.CurrentStep;
         ExerciseEmotion = EmotionsToPractice.ElementAt(StepperCont.CurrentStep);
-        Emotion.Data data = GameManager.Instance.Emotions[ExerciseEmotion];
+        Exercise.Data data = GameManager.Instance.Emotions[ExerciseEmotion];
 
         if (ImageEmotion != null)
             ImageEmotion.sprite = data.Sprite;

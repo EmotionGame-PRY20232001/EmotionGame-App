@@ -37,9 +37,9 @@ public class PhotosCollection : MonoBehaviour
             Frame.transform.SetAsLastSibling();
     }
 
-    protected Dictionary<Emotion.EEmotion, uint> GetQuantityPerEmotion(uint numPhotos)
+    protected Dictionary<Exercise.EEmotion, uint> GetQuantityPerEmotion(uint numPhotos)
     {
-        Dictionary<Emotion.EEmotion, uint> emotionExercises = new Dictionary<Emotion.EEmotion, uint>();
+        Dictionary<Exercise.EEmotion, uint> emotionExercises = new Dictionary<Exercise.EEmotion, uint>();
         var gm = GameManager.Instance;
         uint numEmotions = (uint)(gm.SelectedEmotions.Count);
         if (numEmotions == 0)
@@ -49,7 +49,7 @@ public class PhotosCollection : MonoBehaviour
         }
         uint numPerEmotion = numPhotos / numEmotions;
 
-        foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
+        foreach (Exercise.EEmotion emotion in gm.SelectedEmotions)
         {
             emotionExercises[emotion] = numPerEmotion;
         }
@@ -61,7 +61,7 @@ public class PhotosCollection : MonoBehaviour
 
             for (int i = 0; i < aux; i++)
             {
-                Emotion.EEmotion emotion = emotions.ElementAt(i);
+                Exercise.EEmotion emotion = emotions.ElementAt(i);
                 emotionExercises[emotion] += 1;
             }
         }
@@ -69,10 +69,10 @@ public class PhotosCollection : MonoBehaviour
         return emotionExercises;
     }
 
-    protected void FillPhotos(Dictionary<Emotion.EEmotion, uint> emotionExercises, uint numPhotos)
+    protected void FillPhotos(Dictionary<Exercise.EEmotion, uint> emotionExercises, uint numPhotos)
     {
         var gm = GameManager.Instance;
-        foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
+        foreach (Exercise.EEmotion emotion in gm.SelectedEmotions)
         {
             List<Sprite> faceImages = gm.Emotions[emotion].Faces;
             int q = (int)emotionExercises[emotion];
@@ -94,7 +94,7 @@ public class PhotosCollection : MonoBehaviour
         }
     }
 
-    protected EmotionPhoto LoadPhoto(Emotion.EEmotion emotion, Sprite sprite)
+    protected EmotionPhoto LoadPhoto(Exercise.EEmotion emotion, Sprite sprite)
     {
         if (PhotoPrefab != null)
         {

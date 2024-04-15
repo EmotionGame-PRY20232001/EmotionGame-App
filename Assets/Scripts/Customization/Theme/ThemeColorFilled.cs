@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
+[DisallowMultipleComponent]
 public class ThemeColorFilled : MonoBehaviour
 {
     public Theme.CustomPalette DefaultTheme;

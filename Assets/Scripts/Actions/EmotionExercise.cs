@@ -10,15 +10,15 @@ public class EmotionExercise : MonoBehaviour
     public uint NumExcercises = 10;
     protected int CurrentExercise = 0;
     [SerializeField]
-    public Emotion.EEmotion ExerciseEmotion { get; protected set; }
-    protected List<Emotion.EEmotion> EmotionsToPractice;
+    public Exercise.EEmotion ExerciseEmotion { get; protected set; }
+    protected List<Exercise.EEmotion> EmotionsToPractice;
 
     [SerializeField]
     protected PhotosCollection Exercises;
 
     protected virtual void Awake()
     {
-        EmotionsToPractice = new List<Emotion.EEmotion>();
+        EmotionsToPractice = new List<Exercise.EEmotion>();
     }
 
     protected virtual void Start()

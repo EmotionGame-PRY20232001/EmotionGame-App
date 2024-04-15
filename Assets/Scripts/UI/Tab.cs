@@ -14,14 +14,14 @@ public class Tab : MonoBehaviour
     {
         TabButton = gameObject.GetComponent<Toggle>();
         
+    }
+
+    protected virtual void Start()
+    {
+        //UpdateActive(TabButton);
         TabButton.onValueChanged.AddListener(delegate {
             UpdateActive(TabButton);
         });
-    }
-
-    void Start()
-    {
-        UpdateActive(TabButton);
     }
 
     protected virtual void UpdateActive(Toggle change)

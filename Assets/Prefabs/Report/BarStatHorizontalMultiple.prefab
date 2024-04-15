@@ -292,6 +292,10 @@ PrefabInstance:
       propertyPath: CurrEmotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
+      propertyPath: <CurrEmotion>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
 --- !u!224 &100934148485110639 stripped
@@ -396,6 +400,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
       propertyPath: CurrEmotion
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
+      propertyPath: <CurrEmotion>k__BackingField
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -752,6 +760,10 @@ PrefabInstance:
       propertyPath: CurrEmotion
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
+      propertyPath: <CurrEmotion>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
 --- !u!224 &5612445087068888865 stripped
@@ -858,6 +870,10 @@ PrefabInstance:
       propertyPath: CurrEmotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
+      propertyPath: <CurrEmotion>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
 --- !u!224 &8433781101107402350 stripped
@@ -962,6 +978,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
       propertyPath: CurrEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
+      propertyPath: <CurrEmotion>k__BackingField
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []

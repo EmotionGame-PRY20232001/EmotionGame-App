@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[DisallowMultipleComponent]
 [RequireComponent(typeof(Image))]
 public class EmotionObject : MonoBehaviour
 {
     [field:SerializeField]
-    public Emotion.EEmotion CurrEmotion { get; protected set; }
+    public Exercise.EEmotion CurrEmotion { get; protected set; }
     [SerializeField]
     protected bool IsRandom;
     protected Image EmotionImage;
@@ -32,8 +33,8 @@ public class EmotionObject : MonoBehaviour
     {
         if (!IsRandom) return;
 
-        int cant = System.Enum.GetNames(typeof(Emotion.EEmotion)).Length;
-        CurrEmotion = (Emotion.EEmotion)Random.Range(0, cant - 1);
+        int cant = System.Enum.GetNames(typeof(Exercise.EEmotion)).Length;
+        CurrEmotion = (Exercise.EEmotion)Random.Range(0, cant - 1);
         Debug.Log("[EmotionObject] Loading random: " + CurrEmotion);
         LoadByEmotion();
     }
@@ -42,14 +43,14 @@ public class EmotionObject : MonoBehaviour
     {
         if (GameManager.Instance != null && EmotionImage != null)
         {
-            Emotion.Data emoData = GameManager.Instance.Emotions[CurrEmotion];
+            Exercise.Data emoData = GameManager.Instance.Emotions[CurrEmotion];
             EmotionImage.sprite = emoData.Sprite;
             if (EmotionName != null)
                 EmotionName.text = emoData.Name;
         }
     }
 
-    public void SetEmotion(Emotion.EEmotion emotion)
+    public void SetEmotion(Exercise.EEmotion emotion)
     {
         CurrEmotion = emotion;
         LoadByEmotion();

@@ -9,9 +9,9 @@ public class EmotionPhoto : MonoBehaviour
     protected Image Photo; //or RawImage
     //[SerializeField]
     //protected Image Frame;
-    public Emotion.EEmotion PhotoEmotion { get; protected set; }
+    public Exercise.EEmotion PhotoEmotion { get; protected set; }
 
-    public void SetPhotoEmotion(Emotion.EEmotion emotion, Sprite photo = null)
+    public void SetPhotoEmotion(Exercise.EEmotion emotion, Sprite photo = null)
     {
         PhotoEmotion = emotion;
         if (photo == null)
@@ -34,19 +34,19 @@ public class EmotionPhoto : MonoBehaviour
         }
     }
 
-    public Emotion.EEmotion SetPhotoEmotion(List<Emotion.EEmotion> emotions)
+    public Exercise.EEmotion SetPhotoEmotion(List<Exercise.EEmotion> emotions)
     {
         if (emotions.Count == 0)
         {
             Debug.Log("[EmotionPhoto] Empty Emotion list");
-            PhotoEmotion = Emotion.EEmotion.Neutral;
+            PhotoEmotion = Exercise.EEmotion.Neutral;
         }
         else
             SetPhotoEmotion(emotions[Random.Range(0, emotions.Count - 1)]);
         return PhotoEmotion;
     }
 
-    public Emotion.EEmotion SetPhotoEmotionFromGMSelected()
+    public Exercise.EEmotion SetPhotoEmotionFromGMSelected()
     {
         var gm = GameManager.Instance;
         return SetPhotoEmotion(gm.SelectedEmotions);

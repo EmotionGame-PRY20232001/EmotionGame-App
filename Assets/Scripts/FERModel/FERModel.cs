@@ -29,7 +29,7 @@ public class FERModel : MonoBehaviour
     private string[] emotions = { "Enojo", "Disgusto", "Miedo", "Feliz", "Neutral", "Triste", "Sorpresa" };
 
     [field: SerializeField]
-    public Emotion.EEmotion PredictedEmotion { get; private set; }
+    public Exercise.EEmotion PredictedEmotion { get; private set; }
 
     private void Awake()
     {
@@ -68,7 +68,7 @@ public class FERModel : MonoBehaviour
         int maxIndex = output.ToList().IndexOf(maxValue);
 
         var gm = GameManager.Instance;
-        PredictedEmotion = (Emotion.EEmotion)maxIndex;
+        PredictedEmotion = (Exercise.EEmotion)maxIndex;
         emocionText.text = gm.Emotions[PredictedEmotion].Name;
         emocionSprite.sprite = gm.Emotions[PredictedEmotion].Sprite;
     }

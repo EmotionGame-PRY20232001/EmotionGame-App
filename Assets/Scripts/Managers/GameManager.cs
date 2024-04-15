@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<Sprite> emotionSprites;
     [field:SerializeField][SerializedDictionary("Emotion", "Data")]
-    public SerializedDictionary<Emotion.EEmotion, Emotion.Data> Emotions { get; protected set; }
+    public SerializedDictionary<Exercise.EEmotion, Exercise.Data> Emotions { get; protected set; }
 
     [field:SerializeField]
-    public List<Emotion.EEmotion> AllEmotions { get; private set; }
+    public List<Exercise.EEmotion> AllEmotions { get; private set; }
     [field: SerializeField]
-    public List<Emotion.EEmotion> SelectedEmotions;
+    public List<Exercise.EEmotion> SelectedEmotions;
     
     [field:SerializeField]
     public CustomThemes ThemeCustom { get; private set; }

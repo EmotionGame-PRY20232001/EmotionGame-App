@@ -135,7 +135,7 @@ public class ActivityManager : EmotionExercise
         CleanUp();
 
         var gm = GameManager.Instance;
-        var allEmotions = new List<Emotion.EEmotion>(gm.AllEmotions);
+        var allEmotions = new List<Exercise.EEmotion>(gm.AllEmotions);
         allEmotions.Remove(ExerciseEmotion);
         allEmotions = allEmotions.OrderBy(x => Random.value).ToList();
 
@@ -143,7 +143,7 @@ public class ActivityManager : EmotionExercise
         selEmotions.Add(ExerciseEmotion);
         selEmotions = selEmotions.OrderBy(x => Random.value).ToList();
         
-        foreach (Emotion.EEmotion emotion in selEmotions)
+        foreach (Exercise.EEmotion emotion in selEmotions)
         {
             var button = Instantiate(btnEmoionPrefab, AreaOfButtons.transform);
             button.SetEmotion(emotion);

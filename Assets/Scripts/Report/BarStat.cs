@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[DisallowMultipleComponent]
 public class BarStat : MonoBehaviour
 {
     public float Absolute { get; protected set; }
@@ -21,7 +22,7 @@ public class BarStat : MonoBehaviour
     [SerializeField]
     protected EmotionObject EmotionObj;
     [field:SerializeField]
-    public Emotion.EEmotion CurrEmotion { get; protected set; }
+    public Exercise.EEmotion CurrEmotion { get; protected set; }
 
     protected void Start()
     {

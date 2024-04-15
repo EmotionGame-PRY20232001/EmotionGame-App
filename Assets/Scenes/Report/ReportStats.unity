@@ -176,6 +176,7 @@ MonoBehaviour:
   CurrentTabName: {fileID: 1358789798}
   CurrentGameName: {fileID: 1147456759}
   CurrentDateText: {fileID: 268621652}
+  <CurrentGame>k__BackingField: 0
 --- !u!1 &57186178
 GameObject:
   m_ObjectHideFlags: 0

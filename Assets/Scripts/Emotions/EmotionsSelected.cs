@@ -21,7 +21,7 @@ public class EmotionsSelected : MonoBehaviour
     {
         if (GameManager.Instance == null || Container == null) return;
         
-        foreach (Emotion.EEmotion emo in GameManager.Instance.SelectedEmotions)
+        foreach (Exercise.EEmotion emo in GameManager.Instance.SelectedEmotions)
         {
             var emotionObj = Instantiate(EmotionPrefab, Container);
             emotionObj.SetEmotion(emo);

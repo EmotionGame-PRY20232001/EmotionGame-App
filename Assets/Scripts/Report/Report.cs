@@ -1,17 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Report : MonoBehaviour
+public abstract class Report : MonoBehaviour
 {
     [SerializeField]
     protected ReportManager Manager;
     [SerializeField]
     protected string Name;
+    [SerializeField]
+    protected Button ButtonAux;
+    //Filter
+    //action button (download|help)
 
-    protected void Start()
+
+    protected virtual void Start()
     {
         if (Manager != null)
             Manager.SetReportName(Name);
     }
+
+    protected virtual void OnEnable()
+    {
+        if (ButtonAux != null)
+            ButtonAux.gameObject.SetActive(true);
+    }
+
+    protected virtual void OnDisable()
+    {
+        if (ButtonAux != null)
+            ButtonAux.gameObject.SetActive(false);
+    }
+
+    protected abstract void OnFilerDates(List<System.DateTime> dates);
+
+    protected abstract void OnGameToggleChanged(UIActions.EGame game);
 }

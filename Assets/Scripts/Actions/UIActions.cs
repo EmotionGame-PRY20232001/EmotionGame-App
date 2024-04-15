@@ -24,7 +24,7 @@ public class UIActions : MonoBehaviour
         public static readonly string GAME_COMPLETE = "GameComplete";
     };
     
-    public enum EGames { None, Choose, Context, Imitate, }
+    public enum EGame { None, Choose, Context, Imitate, }
 
     private void Awake()
     {
@@ -71,16 +71,16 @@ public class UIActions : MonoBehaviour
     ////======== GO TO GAME SCREENS ========////
     public void GoToLastGame()
     {
-        EGames GameSelected = GameManager.Instance.LastPlayedGame;
+        EGame GameSelected = GameManager.Instance.LastPlayedGame;
         switch (GameSelected)
 		{
-            case EGames.Choose:
+            case EGame.Choose:
 				GoToChooseGame();
                 break;
-            case EGames.Context:
+            case EGame.Context:
 				GoToContextGame();
                 break;
-            case EGames.Imitate:
+            case EGame.Imitate:
 				GoToImitateGame();
                 break;
             default:

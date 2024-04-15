@@ -19,7 +19,7 @@ public class ReportManager : MonoBehaviour
 
     /// Currents
     protected Player CurrentPlayer = null;
-    protected UIActions.EGames CurrentGame = UIActions.EGames.None;
+    protected UIActions.EGame CurrentGame = UIActions.EGame.None;
     protected List<DateTime> SelectedDates = new List<DateTime>();
 
     protected void Start()

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Exercise : MonoBehaviour
 {
     public enum EEmotion { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
-    
+    public enum EGame { None, Choose, Context, Imitate, }
+
     // [System.Flags]
     // public enum EFEmotions
     // {
@@ -17,7 +18,7 @@ public class Exercise : MonoBehaviour
     //     Surprise = 1 << 4
     // }
 
-    
+
     [System.Serializable]
     public struct Data
     {

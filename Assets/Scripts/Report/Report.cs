@@ -35,5 +35,15 @@ public abstract class Report : MonoBehaviour
 
     protected abstract void OnFilerDates(List<System.DateTime> dates);
 
-    protected abstract void OnGameToggleChanged(UIActions.EGame game);
+    protected abstract void OnGameToggleChanged(Exercise.EGame game);
+
+    protected void OnLoad(List<System.DateTime> dates, Exercise.EGame game)
+    {
+    }
+
+
+    //protected abstract void OnGameChoose();
+    //protected abstract void OnGameContext();
+    //protected abstract void OnGameImitate();
+    //protected abstract void OnGameAll();
 }

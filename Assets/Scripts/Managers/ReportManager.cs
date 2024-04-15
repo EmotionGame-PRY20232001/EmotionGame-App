@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 using TMPro;
 
 public class ReportManager : MonoBehaviour
@@ -19,8 +19,16 @@ public class ReportManager : MonoBehaviour
 
     /// Currents
     protected Player CurrentPlayer = null;
-    protected UIActions.EGame CurrentGame = UIActions.EGame.None;
-    protected List<DateTime> SelectedDates = new List<DateTime>();
+    [field: SerializeField]
+    public Exercise.EGame CurrentGame { get; protected set; }
+    [field:SerializeField]
+    public List<DateTime> SelectedDates { get; protected set; }
+
+    protected void Awake()
+    {
+        CurrentGame = Exercise.EGame.None;
+        SelectedDates = new List<DateTime>();
+    }
 
     protected void Start()
     {

@@ -20,8 +20,8 @@ public class BarStat : MonoBehaviour
     protected TMP_Text PercentText;
     [SerializeField]
     protected EmotionObject EmotionObj;
-    [SerializeField]
-    protected Emotion.EEmotion CurrEmotion;
+    [field:SerializeField]
+    public Emotion.EEmotion CurrEmotion { get; protected set; }
 
     protected void Start()
     {

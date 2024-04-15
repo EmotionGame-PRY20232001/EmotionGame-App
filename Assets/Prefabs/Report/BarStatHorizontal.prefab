@@ -59,7 +59,7 @@ MonoBehaviour:
   AbsoluteText: {fileID: 5607256994666882151}
   PercentText: {fileID: 4433523403580134408}
   EmotionObj: {fileID: 0}
-  CurrEmotion: 4
+  <CurrEmotion>k__BackingField: 4
 --- !u!222 &6479430143311117569
 CanvasRenderer:
   m_ObjectHideFlags: 0

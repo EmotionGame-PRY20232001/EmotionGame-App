@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2751557727101836236}
   - component: {fileID: 5462643860227275221}
   - component: {fileID: 3847856146948192804}
+  - component: {fileID: 7157488804510490402}
   m_Layer: 5
   m_Name: BarStatHorizontalMultiple
   m_TagString: Untagged
@@ -86,6 +87,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &7157488804510490402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380374395886409128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66620e0f87e7f54f86af8a57df037d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bars: []
+  <Total>k__BackingField: 0
+  <Maximum>k__BackingField: 0
+  EmotionObj: {fileID: 9152652495584287656}
 --- !u!1 &1860142598671487313
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +532,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5771466049883439453, guid: ca5fcc848f65cd34d951f7ac88fe8d63, type: 3}
   m_PrefabInstance: {fileID: 1508413283105114411}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9152652495584287656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7776086050351534723, guid: ca5fcc848f65cd34d951f7ac88fe8d63, type: 3}
+  m_PrefabInstance: {fileID: 1508413283105114411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4969344131310651509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d270a1be6b916a0468e28c5e82290308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4461371000423845097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -612,6 +640,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
       propertyPath: CurrEmotion
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202771113514197825, guid: a53be66e54c957b47908fb900bc9fb6d, type: 3}
+      propertyPath: <CurrEmotion>k__BackingField
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []

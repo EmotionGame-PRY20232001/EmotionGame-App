@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
 
     // [SerializeField]
     public Player currentPlayer;
-    public UIActions.EGame LastPlayedGame;
+    public Exercise.EGame LastPlayedGame;
 
     [SerializeField]
     private List<Sprite> emotionSprites;
     [field:SerializeField][SerializedDictionary("Emotion", "Data")]
-    public SerializedDictionary<Exercise.EEmotion, Exercise.Data> Emotions { get; protected set; }
+    public SerializedDictionary<Exercise.EEmotion, Exercise.Emotion> Emotions { get; protected set; }
 
     [field:SerializeField]
     public List<Exercise.EEmotion> AllEmotions { get; private set; }

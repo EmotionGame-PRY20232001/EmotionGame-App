@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SQLite;
 
+[System.Serializable]
 public class Exercise : MonoBehaviour
 {
     public enum EEmotion { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
@@ -20,7 +22,7 @@ public class Exercise : MonoBehaviour
 
 
     [System.Serializable]
-    public struct Data
+    public struct Emotion
     {
         public Sprite Sprite;
         public string Name;
@@ -28,4 +30,22 @@ public class Exercise : MonoBehaviour
         public List<Sprite> Faces;
         public List<string> Contexts;
     }
+
+    [System.Serializable]
+    public struct Activity
+    {
+        public EGame Game;
+        public string Name;
+        public Sprite Sprite;
+    }
+
+
+    // ID
+    [AutoIncrement, PrimaryKey]
+    public int Id { get; set; }
+    EGame Game { get; set; }
+    EEmotion CorrectEmotion { get; set; }
+    string ImageName { get; set; }
+    string Text { get; set; }
+
 }

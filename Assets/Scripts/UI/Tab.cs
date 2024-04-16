@@ -18,7 +18,7 @@ public class Tab : MonoBehaviour
 
     protected virtual void Start()
     {
-        //UpdateActive(TabButton);
+        UpdateActive(TabButton);
         TabButton.onValueChanged.AddListener(delegate {
             UpdateActive(TabButton);
         });

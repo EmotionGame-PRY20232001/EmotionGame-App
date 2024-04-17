@@ -25,6 +25,7 @@ public class Exercise : MonoBehaviour
     public struct Emotion
     {
         public Sprite Sprite;
+        public Sprite Icon;
         public string Name;
         public Color Color;
         public List<Sprite> Faces;

@@ -39,6 +39,7 @@ public class Stepper : MonoBehaviour
     protected RectTransform StepperContent;
 
     // Visited
+    // [SerializeField]
     protected uint NumVisited = 0;
     public bool AllVisited { get; protected set; }
 
@@ -106,6 +107,7 @@ public class Stepper : MonoBehaviour
         {
             EnableButton(ButtonPrev, false);
             EnableButton(ButtonNext, false);
+            return;
         }
         if (CurrentStep == 0)
         {
@@ -183,6 +185,7 @@ public class Stepper : MonoBehaviour
         if (Steps.Count > 0)
         {
             EnableStep(true, step);
+            NumVisited = 1;
         }
     }
     public void AddStep(GameObject content)

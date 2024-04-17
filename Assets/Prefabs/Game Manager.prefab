@@ -57,7 +57,8 @@ MonoBehaviour:
     _serializedList:
     - Key: 0
       Value:
-        Sprite: {fileID: 21300000, guid: 1e835718e6b64c54b8f089549782b8de, type: 3}
+        Sprite: {fileID: 666613745, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        Icon: {fileID: 609258408, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Enojo
         Color: {r: 0.8627451, g: 0.25882354, b: 0.25882354, a: 1}
         Faces:
@@ -75,7 +76,8 @@ MonoBehaviour:
         - Estoy Enojado
     - Key: 1
       Value:
-        Sprite: {fileID: 21300000, guid: 4398729508647d9428bb5146bbe95a76, type: 3}
+        Sprite: {fileID: -998181477, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        Icon: {fileID: 758650527, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Disgusto
         Color: {r: 0.6431373, g: 0.84313726, b: 0.3882353, a: 1}
         Faces:
@@ -94,7 +96,8 @@ MonoBehaviour:
         - Estoy Disgustado
     - Key: 2
       Value:
-        Sprite: {fileID: 21300000, guid: 21ba01ca3aa4e85499949c87c3fe5907, type: 3}
+        Sprite: {fileID: -1882428128, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        Icon: {fileID: -18022195, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Miedo
         Color: {r: 0.69803923, g: 0.5137255, b: 1, a: 1}
         Faces:
@@ -112,7 +115,8 @@ MonoBehaviour:
         - Tengo Miedo
     - Key: 3
       Value:
-        Sprite: {fileID: 21300000, guid: b7497e01fe6817b409f45956d1f964b2, type: 3}
+        Sprite: {fileID: 1645556497, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        Icon: {fileID: 1414836059, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: "Alegr\xEDa"
         Color: {r: 1, g: 0.75686276, b: 0.39215687, a: 1}
         Faces:
@@ -131,14 +135,16 @@ MonoBehaviour:
         - Estoy Feliz
     - Key: 4
       Value:
-        Sprite: {fileID: 21300000, guid: 81705cbf52495074397c8f6d4f28f591, type: 3}
+        Sprite: {fileID: -1372906000, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        Icon: {fileID: -2113113487, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Neutral
         Color: {r: 0.5019608, g: 0.5019608, b: 0.56078434, a: 1}
         Faces: []
         Contexts: []
     - Key: 5
       Value:
-        Sprite: {fileID: 21300000, guid: 6d149340f707d794b929d90ab4edc930, type: 3}
+        Sprite: {fileID: 1149953155, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        Icon: {fileID: 1704793173, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Tristeza
         Color: {r: 0.3882353, g: 0.59607846, b: 0.84313726, a: 1}
         Faces:
@@ -156,7 +162,8 @@ MonoBehaviour:
         - Estoy Triste
     - Key: 6
       Value:
-        Sprite: {fileID: 21300000, guid: 0623178d53eb23345a8aeee13ab28120, type: 3}
+        Sprite: {fileID: 1216188834, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        Icon: {fileID: -1891217312, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Sorpresa
         Color: {r: 0.92941177, g: 0.8784314, b: 0.42352942, a: 1}
         Faces:

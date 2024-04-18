@@ -44,6 +44,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: GraphicsToContrast.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: GraphicsToContrast.Array.data[0]
+      value: 
+      objectReference: {fileID: 3479569032895204293}
+    - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: GraphicsToContrast.Array.data[1]
       value: 
       objectReference: {fileID: 3479569032895204293}
@@ -145,11 +153,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976179, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 88
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976179, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 88
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800619235907, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Name

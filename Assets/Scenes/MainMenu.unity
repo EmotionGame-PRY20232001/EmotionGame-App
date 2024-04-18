@@ -651,7 +651,7 @@ PrefabInstance:
     - target: {fileID: 4078013016355555073, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ffcccd493a2d06440ab3198879c5f2ab, type: 3}
+      objectReference: {fileID: 21300000, guid: 809e912df49639f44a254f7e92b59c32, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
 --- !u!224 &610279693 stripped
@@ -1911,14 +1911,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn Theme Layout
       objectReference: {fileID: 0}
-    - target: {fileID: 1316602267703149570, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 94e3f0cc81eed1a478ba9fd149de5aae, type: 3}
     - target: {fileID: 3479569032895204293, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
       propertyPath: m_text
       value: TEMA
       objectReference: {fileID: 0}
+    - target: {fileID: 6336631034368480754, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: GraphicsToContrast.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336631034368480754, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: GraphicsToContrast.Array.data[0]
+      value: 
+      objectReference: {fileID: 1971727858}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
 --- !u!224 &1971727857 stripped
@@ -1926,6 +1930,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1316602266057043250, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
   m_PrefabInstance: {fileID: 1971727856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1971727858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3479569032895204293, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+  m_PrefabInstance: {fileID: 1971727856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2091702263
 PrefabInstance:
   m_ObjectHideFlags: 0

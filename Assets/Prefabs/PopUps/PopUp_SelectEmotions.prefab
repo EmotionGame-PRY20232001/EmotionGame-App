@@ -957,6 +957,10 @@ PrefabInstance:
       propertyPath: ColorContrast.r
       value: 0.3301887
       objectReference: {fileID: 0}
+    - target: {fileID: 4260441201082494294, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
+      propertyPath: m_text
+      value: "\xA1Inicia!"
+      objectReference: {fileID: 0}
     - target: {fileID: 4260441201082494295, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1023,12 +1027,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260441201360106329, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 466
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260441201360106329, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4260441202000108137, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4444e9044afd32741b7c0e22141c9abe, type: 3}
     - target: {fileID: 4260441202000108142, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

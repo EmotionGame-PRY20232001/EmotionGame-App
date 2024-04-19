@@ -35,12 +35,34 @@ public class Character : MonoBehaviour
 
         public static Custom GetDefault()
         {
-            var custom = new Custom();
+            Custom custom = new Custom();
             custom.SkinColor   = ESkinColor.Medium;
             custom.EyeColor    = EEyeColor.Dark;
             custom.HairColor   = EHairColor.Black;
             custom.HairCut     = EHairCut.Medium;
             custom.Shirt       = EShirt.Calm;
+            return custom;
+        }
+
+        public static Custom GetRandom()
+        {
+            Custom custom = new Custom();
+            
+            int cant = System.Enum.GetNames(typeof(ESkinColor)).Length;
+            custom.SkinColor = (ESkinColor)Random.Range(0, cant - 1);
+            
+            cant = System.Enum.GetNames(typeof(ESkinColor)).Length;
+            custom.EyeColor = (EEyeColor)Random.Range(0, cant - 1);
+            
+            cant = System.Enum.GetNames(typeof(EHairColor)).Length;
+            custom.HairColor = (EHairColor)Random.Range(0, cant - 1);
+            
+            cant = System.Enum.GetNames(typeof(EHairCut)).Length;
+            custom.HairCut = (EHairCut)Random.Range(0, cant - 1);
+            
+            cant = System.Enum.GetNames(typeof(EShirt)).Length;
+            custom.Shirt = (EShirt)Random.Range(0, cant - 1);
+
             return custom;
         }
     }

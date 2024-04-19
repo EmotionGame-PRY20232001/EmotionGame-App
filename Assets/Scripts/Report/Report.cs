@@ -35,9 +35,9 @@ public abstract class Report : MonoBehaviour
 
     protected abstract void OnFilerDates(List<System.DateTime> dates);
 
-    protected abstract void OnGameToggleChanged(Exercise.EGame game);
+    protected abstract void OnGameToggleChanged(Exercise.EActivity game);
 
-    protected void OnLoad(List<System.DateTime> dates, Exercise.EGame game)
+    protected void OnLoad(List<System.DateTime> dates, Exercise.EActivity game)
     {
     }
 

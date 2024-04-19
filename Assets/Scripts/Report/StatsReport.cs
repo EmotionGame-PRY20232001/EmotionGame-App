@@ -11,7 +11,7 @@ public class StatsReport : Report
     {
     }
 
-    protected override void OnGameToggleChanged(Exercise.EGame game)
+    protected override void OnGameToggleChanged(Exercise.EActivity game)
     {
     }
 

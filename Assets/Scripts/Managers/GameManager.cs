@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     // [SerializeField]
     public Player currentPlayer;
-    public Exercise.EGame LastPlayedGame;
+    public Exercise.EActivity LastPlayedGame;
 
     [SerializeField]
     private List<Sprite> emotionSprites;

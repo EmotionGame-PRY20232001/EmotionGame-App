@@ -69,16 +69,16 @@ public class UIActions : MonoBehaviour
     ////======== GO TO GAME SCREENS ========////
     public void GoToLastGame()
     {
-        Exercise.EGame GameSelected = GameManager.Instance.LastPlayedGame;
+        Exercise.EActivity GameSelected = GameManager.Instance.LastPlayedGame;
         switch (GameSelected)
 		{
-            case Exercise.EGame.Choose:
+            case Exercise.EActivity.Choose:
 				GoToChooseGame();
                 break;
-            case Exercise.EGame.Context:
+            case Exercise.EActivity.Context:
 				GoToContextGame();
                 break;
-            case Exercise.EGame.Imitate:
+            case Exercise.EActivity.Imitate:
 				GoToImitateGame();
                 break;
             default:

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SelectGamesActions : MonoBehaviour
 {
-    protected Exercise.EGame GameSelected = Exercise.EGame.None;
+    protected Exercise.EActivity GameSelected = Exercise.EActivity.None;
     [SerializeField]
     protected PopUp PopUpEmotions;
     [SerializeField]
@@ -27,15 +27,15 @@ public class SelectGamesActions : MonoBehaviour
 
 	public void SelectGameChoose()
     {
-        GameSelected = Exercise.EGame.Choose;
+        GameSelected = Exercise.EActivity.Choose;
     }
     public void SelectGameContext()
     {
-        GameSelected = Exercise.EGame.Context;
+        GameSelected = Exercise.EActivity.Context;
     }
     public void SelectGameImitate()
     {
-        GameSelected = Exercise.EGame.Imitate;
+        GameSelected = Exercise.EActivity.Imitate;
     }
 
     public void SaveSelectedGame()

@@ -7,7 +7,7 @@ using SQLite;
 public class Exercise : MonoBehaviour
 {
     public enum EEmotion { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
-    public enum EGame { None, Choose, Context, Imitate, }
+    public enum EActivity { None, Choose, Context, Imitate }
 
     // [System.Flags]
     // public enum EFEmotions
@@ -35,7 +35,7 @@ public class Exercise : MonoBehaviour
     [System.Serializable]
     public struct Activity
     {
-        public EGame Game;
+        public EActivity Game;
         public string Name;
         public Sprite Sprite;
     }
@@ -44,7 +44,7 @@ public class Exercise : MonoBehaviour
     // ID
     [AutoIncrement, PrimaryKey]
     public int Id { get; set; }
-    EGame Game { get; set; }
+    EActivity Game { get; set; }
     EEmotion CorrectEmotion { get; set; }
     string ImageName { get; set; }
     string Text { get; set; }

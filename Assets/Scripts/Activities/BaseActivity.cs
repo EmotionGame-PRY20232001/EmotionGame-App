@@ -6,36 +6,28 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ActivityManager : EmotionExercise
+public class BaseActivity : EmotionExercise
 {
-    private static ActivityManager _instance;
-    public static ActivityManager Instance {  get { return _instance; } }
+    private static BaseActivity _instance;
+    public static BaseActivity Instance {  get { return _instance; } }
 
-    private enum EActivity { Choose, Context, Imitate }
 
-    [SerializeField] 
-    private EActivity Activity;
+    [SerializeField]
+    protected Exercise.EActivity Activity;
     [SerializeField]
     private TMP_Text ScoreText;
-    [SerializeField]
-    private TMP_Text ExerciseText;
     [SerializeField] 
     private int NumButtons = 4;
     [SerializeField]
     private int Score;
 
     [SerializeField]
-    private GameObject AreaOfButtons;
+    protected GameObject AreaOfButtons;
     [SerializeField]
-    private GameObject GridOfButtons;
-    [SerializeField]
-    private EmotionButton BtnEmotionPrefab;
-    [SerializeField]
-    private EmotionButton BtnEmotionMovePrefab;
+    protected EmotionButton BtnEmotionPrefab;
 
-
-    [SerializeField]
-    private FERModel Model;
+    protected readonly int GoodScore = 10;
+    protected readonly int BadScore = 5;
 
     private List<GameObject> InstantiateButtons = new List<GameObject>();
 
@@ -64,24 +56,25 @@ public class ActivityManager : EmotionExercise
 
     private void CleanUp()
     {
-        foreach (var go in InstantiateButtons) Destroy(go);
+        foreach (var go in InstantiateButtons)
+            Destroy(go);
     }
 
     public void Good()
     {
-        Score += 10;
+        Score += GoodScore;
         UpdateScoreText();
         LoadExercise();
     }
     
     public void Bad()
     {
-        if (Score >= 5) Score -= 5;
+        if (Score >= BadScore) Score -= BadScore;
         UpdateScoreText();
         LoadExercise();
     }
 
-    void LoadExercise()
+    protected virtual void LoadExercise()
     {
         if (CurrentExercise == NumExcercises - 1)
         {
@@ -90,19 +83,6 @@ public class ActivityManager : EmotionExercise
         }
 
         LoadCurrentExercise(CurrentExercise + 1);
-        switch (Activity)
-        {
-            case EActivity.Choose:
-                LoadChooseExercise();
-                break;
-            case EActivity.Context:
-                LoadContextExercise();
-                break;
-            case EActivity.Imitate:
-                LoadImitateExercise();
-                break;
-            default: break;
-        }
     }
 
     protected override void LoadExercise(EmotionPhoto photo)
@@ -148,39 +128,6 @@ public class ActivityManager : EmotionExercise
             var button = Instantiate(btnEmoionPrefab, AreaOfButtons.transform);
             button.SetEmotion(emotion);
             InstantiateButtons.Add(button.gameObject);
-        }
-    }
-
-    private void LoadChooseExercise()
-    {
-        LoadEmotionButtons(BtnEmotionMovePrefab);
-    }
-
-    private void LoadContextExercise()
-    {
-        LoadEmotionButtons(BtnEmotionPrefab);
-
-        var gm = GameManager.Instance;
-        var contextStrings = gm.Emotions[ExerciseEmotion].Contexts;
-        ExerciseText.text = contextStrings[Random.Range(0, contextStrings.Count)];
-    }
-
-    private void LoadImitateExercise()
-    {
-        StartCoroutine(CheckImitateEmotion());
-    }
-
-    IEnumerator CheckImitateEmotion()
-    {
-        while (true)
-        {
-            if (Model.PredictedEmotion == ExerciseEmotion)
-            {
-                Debug.Log("Sí es");
-                //LoadImitateExercise();
-                Good();
-            }
-            yield return null;
         }
     }
 

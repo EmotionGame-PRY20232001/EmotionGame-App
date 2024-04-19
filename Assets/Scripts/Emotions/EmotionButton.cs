@@ -21,10 +21,10 @@ public class EmotionButton : EmotionObject
 
     public void PressButton()
     {
-        if (ActivityManager.Instance != null)
+        if (BaseActivity.Instance != null)
         {
-            if (CurrEmotion == ActivityManager.Instance.ExerciseEmotion) ActivityManager.Instance.Good();
-            else ActivityManager.Instance.Bad();
+            if (CurrEmotion == BaseActivity.Instance.ExerciseEmotion) BaseActivity.Instance.Good();
+            else BaseActivity.Instance.Bad();
         }
     }
 

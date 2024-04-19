@@ -9,9 +9,5 @@ public class ChooseActivity : BaseActivity
         base.Awake();
         Activity = Exercise.EActivity.Choose;
     }
-    protected override void LoadExercise()
-    {
-        base.LoadExercise();
-        LoadEmotionButtons(BtnEmotionPrefab);
-    }
+
 }

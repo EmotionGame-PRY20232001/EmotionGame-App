@@ -12,6 +12,9 @@ public class ImitateActivity : BaseActivity
         base.LoadExercise();
         StartCoroutine(CheckImitateEmotion());
     }
+
+    protected override void LoadEmotionButtons() { }
+
     IEnumerator CheckImitateEmotion()
     {
         while (true)

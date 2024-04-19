@@ -83,6 +83,8 @@ public class BaseActivity : EmotionExercise
         }
 
         LoadCurrentExercise(CurrentExercise + 1);
+
+        LoadEmotionButtons();
     }
 
     protected override void LoadExercise(EmotionPhoto photo)
@@ -110,7 +112,7 @@ public class BaseActivity : EmotionExercise
         LoadCurrentEmotion();
     }
 
-    protected virtual void LoadEmotionButtons(EmotionButton btnEmoionPrefab)
+    protected virtual void LoadEmotionButtons()
     {
         CleanUp();
 
@@ -125,7 +127,7 @@ public class BaseActivity : EmotionExercise
         
         foreach (Exercise.EEmotion emotion in selEmotions)
         {
-            var button = Instantiate(btnEmoionPrefab, AreaOfButtons.transform);
+            var button = Instantiate(BtnEmotionPrefab, AreaOfButtons.transform);
             button.SetEmotion(emotion);
             InstantiateButtons.Add(button.gameObject);
         }

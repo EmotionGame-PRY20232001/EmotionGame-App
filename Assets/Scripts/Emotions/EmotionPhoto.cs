@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// TODO: Rename to Exercise?
 public class EmotionPhoto : MonoBehaviour
 {
+    public Exercise.EEmotion PhotoEmotion { get; protected set; }
     [SerializeField]
     protected Image Photo; //or RawImage
     //[SerializeField]
     //protected Image Frame;
-    public Exercise.EEmotion PhotoEmotion { get; protected set; }
 
+    /// PHOTOS
     public void SetPhotoEmotion(Exercise.EEmotion emotion, Sprite photo = null)
     {
         PhotoEmotion = emotion;
@@ -51,4 +53,9 @@ public class EmotionPhoto : MonoBehaviour
         var gm = GameManager.Instance;
         return SetPhotoEmotion(gm.SelectedEmotions);
     }
+
+
+    /// CONTEXTS
+    public virtual void SetContextEmotion(Exercise.EEmotion emotion, string text) {}
+
 }

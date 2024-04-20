@@ -410,6 +410,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BtnMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1316602267703149570, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c18384a92b4b614ab0e1c77be50fdc3, type: 3}
     - target: {fileID: 3479569032895204293, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
       propertyPath: m_text
       value: "Volver al men\xFA"

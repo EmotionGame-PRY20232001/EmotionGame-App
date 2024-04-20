@@ -1378,7 +1378,7 @@ PrefabInstance:
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ca6947cb66f6d8a4584aa1fc5f1af021, type: 3}
+      objectReference: {fileID: 21300000, guid: 245618664cf448444b46c1e4b1aa9de9, type: 3}
     - target: {fileID: 7506513800619235907, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Name
       value: Cancel Button

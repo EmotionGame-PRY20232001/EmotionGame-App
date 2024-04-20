@@ -207,8 +207,8 @@ MonoBehaviour:
   Tooltip: {fileID: 0}
   IconThumb:
     ImageT: {fileID: 157942021010491304}
-    SpriteOn: {fileID: 21300000, guid: 1f9477837374d5146a60ed5e9a401d0b, type: 3}
-    SpriteOff: {fileID: 21300000, guid: ca6947cb66f6d8a4584aa1fc5f1af021, type: 3}
+    SpriteOn: {fileID: 21300000, guid: 469096a1d1cda1246a1f6a3d6e77e326, type: 3}
+    SpriteOff: {fileID: 21300000, guid: 245618664cf448444b46c1e4b1aa9de9, type: 3}
   IconTrack:
     Img: {fileID: 799029825503159292}
     Rect: {fileID: 769416818641132064}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1f9477837374d5146a60ed5e9a401d0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 469096a1d1cda1246a1f6a3d6e77e326, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca6947cb66f6d8a4584aa1fc5f1af021, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 245618664cf448444b46c1e4b1aa9de9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

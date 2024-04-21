@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StepsGroup: {fileID: 6485312503757021846}
+  ContentGroup: {fileID: 0}
   ButtonPrev: {fileID: 2209478968236694938}
   ButtonNext: {fileID: 3496507575310958813}
   <CurrentStep>k__BackingField: 0
@@ -283,6 +284,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1209584951655408915}
     m_Modifications:
     - target: {fileID: 1035878075568864339, guid: 5fab81c128ed2884ead3a3abaee65122, type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035878075568864339, guid: 5fab81c128ed2884ead3a3abaee65122, type: 3}
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 8023307425118126492}
@@ -290,6 +295,10 @@ PrefabInstance:
       propertyPath: Stepper
       value: 
       objectReference: {fileID: 2547027511284900261}
+    - target: {fileID: 3897992380038586406, guid: 5fab81c128ed2884ead3a3abaee65122, type: 3}
+      propertyPath: StepImage
+      value: 
+      objectReference: {fileID: 6956226238265322150}
     - target: {fileID: 5593562569911342186, guid: 5fab81c128ed2884ead3a3abaee65122, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -380,6 +389,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fab81c128ed2884ead3a3abaee65122, type: 3}
+--- !u!114 &6956226238265322150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6166256138700286345, guid: 5fab81c128ed2884ead3a3abaee65122, type: 3}
+  m_PrefabInstance: {fileID: 3826805835212981039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8699784757417842501 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5593562569911342186, guid: 5fab81c128ed2884ead3a3abaee65122, type: 3}
@@ -396,14 +416,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Siguiente
       objectReference: {fileID: 0}
-    - target: {fileID: 7506513800113976179, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e4c7bf6dc03ad9249a75fe70fb580fba, type: 3}
+      objectReference: {fileID: 21300000, guid: 6b12685bdda5c4e4d8a04782fc1bd060, type: 3}
     - target: {fileID: 7506513800619235907, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Name
       value: NextButton

@@ -78,13 +78,22 @@ public class BaseActivity : EmotionExercise
     {
         if (CurrentExercise == NumExcercises - 1)
         {
-            UIActions.GoToGameComplete();
+            StopCurrentExercise();
+            OnLastExercise();
             return;
         }
 
+        StopCurrentExercise();
         LoadCurrentExercise(CurrentExercise + 1);
 
         LoadEmotionButtons();
+    }
+
+    protected virtual void StopCurrentExercise() { }
+
+    protected virtual void OnLastExercise()
+    {
+        UIActions.GoToGameComplete();
     }
 
     protected override void LoadExercise(EmotionPhoto photo)

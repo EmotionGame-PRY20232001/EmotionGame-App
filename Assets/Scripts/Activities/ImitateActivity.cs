@@ -6,11 +6,16 @@ public class ImitateActivity : BaseActivity
 {
     [SerializeField]
     private FERModel Model;
-
-    protected override void LoadExercise()
+    protected override void LoadCurrentExercise(int newCurrent)
     {
-        base.LoadExercise();
+        base.LoadCurrentExercise(newCurrent);
         StartCoroutine(CheckImitateEmotion());
+    }
+
+    protected override void StopCurrentExercise()
+    {
+        base.StopCurrentExercise();
+        StopCoroutine(CheckImitateEmotion());
     }
 
     protected override void LoadEmotionButtons() { }
@@ -25,7 +30,7 @@ public class ImitateActivity : BaseActivity
                 //LoadImitateExercise();
                 Good();
             }
-            yield return null;
+            yield return new WaitForSeconds(0.3f);
         }
     }
 }

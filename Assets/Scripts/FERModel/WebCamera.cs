@@ -69,7 +69,7 @@ public class WebCamera : MonoBehaviour
             Mat webImage = OpenCvSharp.Unity.TextureToMat(finalTexture);
             FindNewFace(webImage);
             Display(webImage);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.3f);
         }
     }
 

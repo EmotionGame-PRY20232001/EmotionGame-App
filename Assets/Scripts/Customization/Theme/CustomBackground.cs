@@ -1,19 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(RawImage))]
+[RequireComponent(typeof(Image))]
 public class CustomBackground : ThemeElement
 {
-    RawImage image;
+    Image image; //RawImage
 
     protected void Awake()
     {
-        image = GetComponent<RawImage>();
+        image = GetComponent<Image>();
     }
 
     protected override void UpdateThemeElement()
     {
         if (image != null)
-            image.texture = GameManager.Instance.GetBackgrounds()[Id].Texture;
+            image.sprite = GameManager.Instance.GetBackgrounds()[Id].Texture; //texture
     }
 }

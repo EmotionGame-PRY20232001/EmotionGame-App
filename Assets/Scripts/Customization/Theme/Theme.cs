@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Theme : MonoBehaviour
 {
-    public enum EBackground { Main, Space, Clouds, Forest, Underwater, }
+    public enum EBackground { Main, Space, Forest, Diamonds, } //Clouds, Underwater
     public enum ETheme { Warm, Cold, }
     public enum ETypes { Primary, Accent, Paper, Danger, None }
     public enum ELightness { Main, Light, Dark, Disabled }
@@ -55,10 +55,12 @@ public class Theme : MonoBehaviour
         [field:SerializeField]
         public string Name { get; private set; }
         [field:SerializeField]
-        public Texture Texture { get; private set; }
-        [field:SerializeField]
-        public Sprite Thumbnail { get; private set; }
-        [field:SerializeField]
+        public Sprite Texture { get; private set; }
+        //[field:SerializeField]
+        //public Sprite Thumbnail { get; private set; }
+        [field: SerializeField]
         public Sprite Frame { get; private set; }
+        [field:SerializeField]
+        public Sprite Mirror { get; private set; }
     }
 }

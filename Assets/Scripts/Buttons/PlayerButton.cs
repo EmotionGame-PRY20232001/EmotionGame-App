@@ -24,7 +24,7 @@ public class PlayerButton : MonoBehaviour
     {
         playerReference = player;
         nameText.text = player.Name;
-        background.sprite = GameManager.Instance.GetBackgrounds()[(Theme.EBackground)player.BackgroundId].Thumbnail;
+        background.sprite = GameManager.Instance.GetBackgrounds()[(Theme.EBackground)player.BackgroundId].Texture;
         guide.SetByJson(player.GuideJSON);
         needsText = player.NeedsText;
     }

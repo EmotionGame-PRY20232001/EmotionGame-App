@@ -37,7 +37,7 @@ public class ToggleTheme : ToggleCustom
     public void LoadData(Theme.EBackground bg, Theme.CustomBackground data)
     {
         Theme = bg;
-        thumbnail.sprite = data.Thumbnail;
+        thumbnail.sprite = data.Texture;
         txtName.text = data.Name;
     }
 }

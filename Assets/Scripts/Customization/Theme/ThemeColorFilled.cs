@@ -7,12 +7,13 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class ThemeColorFilled : MonoBehaviour
 {
+    protected Theme.ETheme CurrentTheme = Theme.ETheme.Neutral;
     public Theme.CustomPalette DefaultTheme;
     //PrimaryColor | 96D0FF 150, 208, 255, 255 | 4E5A60
     //AccentColor | FEE456 254, 228, 86, 255 | 7C4E39
     //PaperColor | FFF7EE 255, 247, 238, 255
     //DangerColor | FFC1BF 255, 193, 191, 255
-    
+
     // Settings
     [SerializeField]
     protected Theme.ETypes FillType = Theme.ETypes.Primary;
@@ -35,8 +36,23 @@ public class ThemeColorFilled : MonoBehaviour
 
     protected void Start()
     {
+        LoadDefault();
         UpdateColors();
         UpdateFillType();
+    }
+
+    protected void LoadDefault()
+    {
+        var gm = GameManager.Instance;
+        if (gm == null) return;
+
+        if (gm.IsPlayerActive())
+        {
+            var player = gm.GetCurrentPlayer();
+            Theme.EBackground currentBg = (Theme.EBackground)player.BackgroundId;
+            CurrentTheme = gm.GetBackgrounds()[currentBg].Theme;
+        }
+        DefaultTheme = gm.ThemeCustom.Themes[CurrentTheme];
     }
 
     protected void UpdateColors()

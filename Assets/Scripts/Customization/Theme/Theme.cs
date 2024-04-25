@@ -6,7 +6,7 @@ using UnityEngine;
 public class Theme : MonoBehaviour
 {
     public enum EBackground { Main, Space, Forest, Diamonds, } //Clouds, Underwater
-    public enum ETheme { Warm, Cold, }
+    public enum ETheme { Warm, Cold, Neutral, }
     public enum ETypes { Primary, Accent, Paper, Danger, None }
     public enum ELightness { Main, Light, Dark, Disabled }
     
@@ -62,5 +62,7 @@ public class Theme : MonoBehaviour
         public Sprite Frame { get; private set; }
         [field:SerializeField]
         public Sprite Mirror { get; private set; }
+        [field:SerializeField]
+        public ETheme Theme { get; private set; }
     }
 }

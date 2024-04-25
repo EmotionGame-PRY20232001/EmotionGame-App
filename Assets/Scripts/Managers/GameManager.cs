@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         //if on Player select menu then true else false
         if (currentPlayer == null) return false;
-        return currentPlayer.Id != -1;
+        return currentPlayer.Id != -1 && currentPlayer.Name != null;
     }
     
     public void SetCurrentPlayerTheme(Theme.EBackground selectedBg)

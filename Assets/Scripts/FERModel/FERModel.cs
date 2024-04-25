@@ -11,11 +11,9 @@ public class FERModel : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI emocionText;
     [SerializeField]
-    private Image emocionSprite;
+    private Image emocionSpriteColor;
     [SerializeField]
-    private RawImage faceImage;
-    [SerializeField]
-    private Material grayMaterial;
+    private Image emocionSpriteGray;
     [SerializeField]
     private ComputeShader compute;
     [SerializeField, FilePopup("*.tflite")]
@@ -33,7 +31,6 @@ public class FERModel : MonoBehaviour
 
     private void Awake()
     {
-        faceImage.material = grayMaterial;
         modelFile = FileUtil.LoadFile(filePath);
 
         var options = new InterpreterOptions()
@@ -45,13 +42,12 @@ public class FERModel : MonoBehaviour
         inputBuffer = new ComputeBuffer(48 * 48, sizeof(float));
     }
 
-    public void ChangeSprite(Texture2D texture)
-    {
-        faceImage.texture = texture;
-        ExecuteModel();
-    }
+    //public void ChangeSprite(Texture2D texture)
+    //{
+    //    ExecuteModel();
+    //}
 
-    public void ExecuteModel()
+    public void Execute(RawImage faceImage)
     {
         compute.SetTexture(0, "InputTexture", faceImage.texture);
         compute.SetBuffer(0, "OutputTensor", inputBuffer);
@@ -70,7 +66,8 @@ public class FERModel : MonoBehaviour
         var gm = GameManager.Instance;
         PredictedEmotion = (Exercise.EEmotion)maxIndex;
         emocionText.text = gm.Emotions[PredictedEmotion].Name;
-        emocionSprite.sprite = gm.Emotions[PredictedEmotion].Sprite;
+        emocionSpriteColor.sprite = gm.Emotions[PredictedEmotion].SpriteColor;
+        emocionSpriteGray.sprite = gm.Emotions[PredictedEmotion].SpriteGray;
     }
 
     private void OnDestroy()

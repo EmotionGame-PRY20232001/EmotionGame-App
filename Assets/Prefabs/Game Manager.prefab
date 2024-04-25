@@ -57,7 +57,8 @@ MonoBehaviour:
     _serializedList:
     - Key: 0
       Value:
-        Sprite: {fileID: 666613745, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteColor: {fileID: 666613745, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteGray: {fileID: 1881057165, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Icon: {fileID: 609258408, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Enojo
         Color: {r: 0.8627451, g: 0.25882354, b: 0.25882354, a: 1}
@@ -78,7 +79,8 @@ MonoBehaviour:
         - "\xA1No quiero hablar contigo ahora mismo, d\xE9jame tranquilo!"
     - Key: 1
       Value:
-        Sprite: {fileID: -998181477, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteColor: {fileID: -998181477, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteGray: {fileID: 356230798, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Icon: {fileID: 758650527, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Asco
         Color: {r: 0.6431373, g: 0.84313726, b: 0.3882353, a: 1}
@@ -100,7 +102,8 @@ MonoBehaviour:
         - No puedo soportar el olor
     - Key: 2
       Value:
-        Sprite: {fileID: -1882428128, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteColor: {fileID: -1882428128, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteGray: {fileID: -1388256324, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Icon: {fileID: -18022195, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Miedo
         Color: {r: 0.69803923, g: 0.5137255, b: 1, a: 1}
@@ -121,7 +124,8 @@ MonoBehaviour:
         - Me tiemblan las manos, estoy sudando.
     - Key: 3
       Value:
-        Sprite: {fileID: 1645556497, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteColor: {fileID: 1645556497, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteGray: {fileID: 446919606, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Icon: {fileID: 1414836059, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: "Alegr\xEDa"
         Color: {r: 1, g: 0.75686276, b: 0.39215687, a: 1}
@@ -143,7 +147,8 @@ MonoBehaviour:
         - "Mi coraz\xF3n late de emoci\xF3n."
     - Key: 4
       Value:
-        Sprite: {fileID: -1372906000, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteColor: {fileID: -1372906000, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteGray: {fileID: 1882270126, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Icon: {fileID: -2113113487, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Neutral
         Color: {r: 0.5019608, g: 0.5019608, b: 0.56078434, a: 1}
@@ -151,7 +156,8 @@ MonoBehaviour:
         Contexts: []
     - Key: 5
       Value:
-        Sprite: {fileID: 1149953155, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteColor: {fileID: 1149953155, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteGray: {fileID: 959329871, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Icon: {fileID: 1704793173, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Tristeza
         Color: {r: 0.3882353, g: 0.59607846, b: 0.84313726, a: 1}
@@ -172,7 +178,8 @@ MonoBehaviour:
         - "No puedo contener las l\xE1grimas."
     - Key: 6
       Value:
-        Sprite: {fileID: 1216188834, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteColor: {fileID: 1216188834, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
+        SpriteGray: {fileID: -1634071765, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Icon: {fileID: -1891217312, guid: 3eb386ab8ee697d468bd37de2053b4d4, type: 3}
         Name: Sorpresa
         Color: {r: 0.92941177, g: 0.8784314, b: 0.42352942, a: 1}

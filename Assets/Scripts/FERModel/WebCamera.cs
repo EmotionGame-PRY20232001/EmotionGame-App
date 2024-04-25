@@ -4,13 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class WebCamera : MonoBehaviour
 {
     [SerializeField]
     private RawImage rawImage;
     [SerializeField]
-    private FERModel liteTest;
+    private RawImage faceImage;
+    [SerializeField]
+    private Material grayMaterial;
+    [SerializeField]
+    private FERModel ferModel;
     [SerializeField]
     private TextAsset haarCascasde;
 
@@ -20,6 +25,14 @@ public class WebCamera : MonoBehaviour
     private OpenCvSharp.Rect myFace;
     private Texture2D finalTexture;
     private Texture2D smallTexture;
+
+    public bool isRunning;
+
+    private void Awake()
+    {
+        faceImage.material = grayMaterial;
+        isRunning = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -47,13 +60,18 @@ public class WebCamera : MonoBehaviour
         cascade = new CascadeClassifier();
         if (!cascade.Read(storageFaces.GetFirstTopLevelNode()))
             throw new System.Exception("FaceProcessor.Initialize: Failed to load faces cascade classifier");
-
-        StartCoroutine(EmotionRoutine());
     }
 
-    private void SceneManager_sceneUnloaded(Scene arg0)
+    public void StartEmotionCoroutine()
     {
-        throw new System.NotImplementedException();
+        isRunning = true;
+        StartCoroutine("EmotionRoutine");
+    }
+
+    public void  StopEmotionCoroutine()
+    {
+        isRunning = false;
+        StopCoroutine("EmotionRoutine");
     }
 
     private IEnumerator EmotionRoutine()
@@ -105,7 +123,8 @@ public class WebCamera : MonoBehaviour
             }
 
             Scale(smallTexture, 48, 48);
-            liteTest.ChangeSprite(smallTexture);
+            faceImage.texture = smallTexture;
+            ferModel.Execute(faceImage);
         }
     }
 

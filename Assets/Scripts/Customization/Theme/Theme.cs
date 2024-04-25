@@ -63,6 +63,8 @@ public class Theme : MonoBehaviour
         [field:SerializeField]
         public Sprite Mirror { get; private set; }
         [field:SerializeField]
+        public Sprite SpeechTail { get; private set; }
+        [field:SerializeField]
         public ETheme Theme { get; private set; }
     }
 }

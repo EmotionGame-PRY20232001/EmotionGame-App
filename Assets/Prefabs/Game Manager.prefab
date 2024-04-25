@@ -210,6 +210,7 @@ MonoBehaviour:
           <Texture>k__BackingField: {fileID: 21300000, guid: f086a48b8c88c72409f9f7cd12c40d30, type: 3}
           <Frame>k__BackingField: {fileID: 21300000, guid: b19aebe1157fe1f4398d524e5dbf05c3, type: 3}
           <Mirror>k__BackingField: {fileID: 21300000, guid: 21653b3eb958faa4cb8a438dc214c85b, type: 3}
+          <SpeechTail>k__BackingField: {fileID: 21300000, guid: ff2a7d4296d9a904684a47b65438126c, type: 3}
           <Theme>k__BackingField: 0
       - Key: 3
         Value:
@@ -217,6 +218,7 @@ MonoBehaviour:
           <Texture>k__BackingField: {fileID: 21300000, guid: cc80a32529e92024c92102f17c609008, type: 3}
           <Frame>k__BackingField: {fileID: 21300000, guid: ad8d9dc72a3f4d441b41a14ca12e4696, type: 3}
           <Mirror>k__BackingField: {fileID: 21300000, guid: 20420df9f4780d04296281828c2b6cc6, type: 3}
+          <SpeechTail>k__BackingField: {fileID: 21300000, guid: d6be733810eaaec4cb9f6c1510a926d5, type: 3}
           <Theme>k__BackingField: 1
       - Key: 1
         Value:
@@ -224,6 +226,7 @@ MonoBehaviour:
           <Texture>k__BackingField: {fileID: 21300000, guid: 31b2dfeaddd02374588de1b28b9fcae7, type: 3}
           <Frame>k__BackingField: {fileID: 21300000, guid: 971efd3aba3493448a0c50f1d2be1fbb, type: 3}
           <Mirror>k__BackingField: {fileID: 21300000, guid: 25dfa130a8286db498296f279b2a04dd, type: 3}
+          <SpeechTail>k__BackingField: {fileID: 21300000, guid: 4f8f7457e8a0405439e6eedeaee940c1, type: 3}
           <Theme>k__BackingField: 1
       - Key: 2
         Value:
@@ -231,6 +234,7 @@ MonoBehaviour:
           <Texture>k__BackingField: {fileID: 21300000, guid: 4f8c3493fcce2ce46973ea9a7aca22b7, type: 3}
           <Frame>k__BackingField: {fileID: 21300000, guid: e3b834781fe8c144cb0ec9cff76bae98, type: 3}
           <Mirror>k__BackingField: {fileID: 21300000, guid: 2d91aa778f93f7747802e997338ee67b, type: 3}
+          <SpeechTail>k__BackingField: {fileID: 21300000, guid: 0b52888f100f5d4499d8bad46ed3096b, type: 3}
           <Theme>k__BackingField: 0
     <Themes>k__BackingField:
       _serializedList:

@@ -24,7 +24,8 @@ public class Exercise : MonoBehaviour
     [System.Serializable]
     public struct Emotion
     {
-        public Sprite Sprite;
+        public Sprite SpriteColor;
+        public Sprite SpriteGray;
         public Sprite Icon;
         public string Name;
         public Color Color;

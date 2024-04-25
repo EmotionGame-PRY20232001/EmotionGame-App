@@ -61,7 +61,7 @@ public class EmotionTeaching : EmotionExercise
         Exercise.Emotion data = GameManager.Instance.Emotions[ExerciseEmotion];
 
         if (ImageEmotion != null)
-            ImageEmotion.sprite = data.Sprite;
+            ImageEmotion.sprite = data.SpriteColor;
         if (TextEmotion != null)
             TextEmotion.text = data.Name;
     }

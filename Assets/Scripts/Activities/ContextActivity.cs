@@ -9,6 +9,8 @@ public class ContextActivity : BaseActivity
     private TMP_Text ExerciseText;
     [SerializeField]
     private Character Speecher;
+    [SerializeField]
+    private CharacterExpressions Expressions;
 
     protected override void LoadCurrentEmotion()
     {
@@ -18,7 +20,7 @@ public class ContextActivity : BaseActivity
         EmotionContext ctx = (EmotionContext) Exercises.Photos[CurrentExercise];
         if (ctx == null) return;
 
-        if (ExerciseText)
+        if (ExerciseText != null)
         {
             //var gm = GameManager.Instance;
             //var contextStrings = gm.Emotions[ExerciseEmotion].Contexts;
@@ -26,9 +28,13 @@ public class ContextActivity : BaseActivity
             ExerciseText.text = ctx.Text;
         }
 
-        if (Speecher)
+        if (Speecher != null)
         {
             Speecher.ChangeCustomization(ctx.RndCharacter);
+        }
+        if (Expressions != null)
+        {
+            Expressions.PlayEmotion(ctx.PhotoEmotion);
         }
     }
 

@@ -9,6 +9,8 @@ public class ImitateActivity : BaseActivity
     private WebCamera webCam;
     [SerializeField]
     private FERModel Model;
+    [SerializeField] 
+    private float fillVelocity;
     [SerializeField]
     private Image emotionImageColor;
     [SerializeField]
@@ -45,7 +47,7 @@ public class ImitateActivity : BaseActivity
             {
                 if (lastEmotion != Model.PredictedEmotion) emotionImageColor.fillAmount = 0;
                 if (Model.PredictedEmotion != Exercise.EEmotion.Neutral)
-                    emotionImageColor.fillAmount += 0.5f * Time.deltaTime;
+                    emotionImageColor.fillAmount += fillVelocity * Time.deltaTime;
                 if (emotionImageColor.fillAmount == 1)
                 {
                     webCam.StopEmotionCoroutine();

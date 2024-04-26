@@ -868,4 +868,4 @@ MonoBehaviour:
   NumButtons: 4
   Score: 0
   AreaOfButtons: {fileID: 1408188143}
-  BtnEmotionPrefab: {fileID: 4739876699862633458, guid: 29a1b7ba81be77f449c4e98ad989f649, type: 3}
+  BtnEmotionPrefab: {fileID: -7617381012138773316, guid: 36639c2718e0ac44ea0ac86fe5024cc8, type: 3}

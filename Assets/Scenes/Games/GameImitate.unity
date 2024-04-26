@@ -1054,6 +1054,7 @@ MonoBehaviour:
   BtnEmotionPrefab: {fileID: 0}
   webCam: {fileID: 797313966}
   Model: {fileID: 1193357732}
+  fillVelocity: 0.45
   emotionImageColor: {fileID: 1408882083}
   emotionImageGray: {fileID: 1008409321}
 --- !u!1 &1180238815

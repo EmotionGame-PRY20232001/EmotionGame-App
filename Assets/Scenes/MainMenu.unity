@@ -409,6 +409,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: fcc9607fcb7bc254f8b739a6ca7a02fb, type: 3}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: layoutGroup
+      value: 
+      objectReference: {fileID: 584656873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
 --- !u!224 &141636392 stripped
@@ -764,6 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayoutToForce: {fileID: 57186182}
+  horizLayoutGroup: {fileID: 584656873}
 --- !u!224 &593822889 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4111120440641079630, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
@@ -2211,6 +2216,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 959f599747a078b4da2763e72f083a7a, type: 3}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: layoutGroup
+      value: 
+      objectReference: {fileID: 584656873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
 --- !u!224 &1973111264 stripped
@@ -2321,6 +2330,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 443b318d5371e2c40a9b4a3d81808d02, type: 3}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: layoutGroup
+      value: 
+      objectReference: {fileID: 584656873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
 --- !u!224 &1984669042 stripped
@@ -2537,5 +2550,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameToggle_Learn
       objectReference: {fileID: 0}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: layoutGroup
+      value: 
+      objectReference: {fileID: 584656873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}

@@ -12,6 +12,8 @@ public class BigToggle : MonoBehaviour
     protected RectTransform PreviewRect;
     [SerializeField]
     protected CanvasGroup PreviewCanvas;
+    [SerializeField]
+    protected HorizontalLayoutGroup layoutGroup;
     
     public Toggle ToggleComp { get; protected set; }
     protected RectTransform Rect;
@@ -53,6 +55,16 @@ public class BigToggle : MonoBehaviour
             OnToggleDisabled();
         }
         wasOn = ToggleComp.isOn;
+
+        if (layoutGroup != null)
+        {
+            layoutGroup.CalculateLayoutInputHorizontal();
+            // https://forum.unity.com/threads/force-immediate-layout-update.372630/
+//             horizLayoutGroup.CalculateLayoutInputHorizontal();
+// horizLayoutGroup.CalculateLayoutInputVertical();
+// horizLayoutGroup.SetLayoutHorizontal();
+// horizLayoutGroup.SetLayoutVertical();
+        }
     }
 
     protected virtual void OnToggleEnabled()

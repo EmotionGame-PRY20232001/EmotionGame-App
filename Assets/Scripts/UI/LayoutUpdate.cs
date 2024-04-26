@@ -7,10 +7,14 @@ public class LayoutUpdate : MonoBehaviour
 {
     [SerializeField]
     protected RectTransform LayoutToForce;
+    [SerializeField]
+    protected HorizontalLayoutGroup horizLayoutGroup;
 
     void Start()
     {
         if(LayoutToForce != null)
             LayoutRebuilder.ForceRebuildLayoutImmediate(LayoutToForce);
+
+        horizLayoutGroup.CalculateLayoutInputHorizontal();
     }
 }

@@ -31,6 +31,11 @@ public class UIActions : MonoBehaviour
         // if (guideImage) guideImage.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
     }
 
+    private static bool CheckPauseStatus()
+    {
+        return Time.timeScale == 0;
+    }
+
 
     ////========  ========////
 
@@ -42,6 +47,7 @@ public class UIActions : MonoBehaviour
 
     public static void GoToMainMenu()
     {
+        if (CheckPauseStatus()) GameManager.Instance.ResumeGame();
         SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
 

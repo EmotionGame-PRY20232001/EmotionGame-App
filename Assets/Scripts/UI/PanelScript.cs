@@ -15,6 +15,8 @@ public class PanelScript : MonoBehaviour
     private TMP_InputField nameInputText;
     [SerializeField]
     private Toggle needsText;
+    [SerializeField]
+    private Button checkButton;
 
     [SerializeField]
     private PopUp popUp;
@@ -48,6 +50,15 @@ public class PanelScript : MonoBehaviour
             default: break;
         }
         // popUp.onOpen += RefreshPlayerPanel;
+    }
+
+    private void Update()
+    {
+        if (checkButton != null)
+        {
+            if (nameInputText.text.Length < 2) checkButton.interactable = false;
+            else checkButton.interactable = true;
+        }   
     }
 
     // public void ClosePlayerPanel()

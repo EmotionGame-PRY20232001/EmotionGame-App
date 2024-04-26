@@ -122,4 +122,14 @@ public class GameManager : MonoBehaviour
         [field:SerializeField][SerializedDictionary("Haircut", "Sprite")]
         public SerializedDictionary<Character.EHairCut, Sprite> HairCuts { get; private set; }
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 }

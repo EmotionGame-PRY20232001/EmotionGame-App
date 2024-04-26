@@ -2,24 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmotionButtonMovement : MonoBehaviour
+public class EmotionButtonMovement : EmotionButton
 {
     [SerializeField] 
     private RectTransform CanvasRectTransform;
     [SerializeField]
     protected int Velocity;
     protected RectTransform RectTransform;
-    protected Vector2 Dir;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         RectTransform = GetComponent<RectTransform>();
         CanvasRectTransform = GameObject.Find("AreaOfButtons").GetComponent<RectTransform>();
-    }
-
-    private void Start()
-    {
-        Dir = Random.insideUnitCircle.normalized;
     }
 
     private void Update()

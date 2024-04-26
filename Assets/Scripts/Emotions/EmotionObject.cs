@@ -15,6 +15,7 @@ public class EmotionObject : MonoBehaviour
     protected Image EmotionImage;
     [SerializeField]
     protected TMP_Text EmotionName;
+    protected Vector2 Dir;
 
     protected virtual void Awake()
     {
@@ -50,10 +51,19 @@ public class EmotionObject : MonoBehaviour
         }
     }
 
-    public void SetEmotion(Exercise.EEmotion emotion)
+    public void SetEmotion(Exercise.EEmotion emotion, int num)
     {
         CurrEmotion = emotion;
         LoadByEmotion();
+        switch (num)
+        {
+            case 0: Dir = new Vector2(Random.Range(0.1f, 1.0f), Random.Range(0.1f, 1.0f)).normalized; break;
+            case 1: Dir = new Vector2(Random.Range(0.1f, 1.0f), Random.Range(-1.0f, -0.1f)).normalized; break;
+            case 2: Dir = new Vector2(Random.Range(-1.0f, -0.1f), Random.Range(-1.0f, -0.1f)).normalized; break;
+            case 3: Dir = new Vector2(Random.Range(-1.0f, -0.1f), Random.Range(0.1f, 1.0f)).normalized; break;
+            default: break;
+        }
+        //Dir = Random.insideUnitCircle.normalized;
     }
 
 }

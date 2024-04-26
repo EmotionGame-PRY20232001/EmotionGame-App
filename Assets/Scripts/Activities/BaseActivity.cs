@@ -133,11 +133,11 @@ public class BaseActivity : EmotionExercise
         var selEmotions = allEmotions.GetRange(0, NumButtons - 1);
         selEmotions.Add(ExerciseEmotion);
         selEmotions = selEmotions.OrderBy(x => Random.value).ToList();
-        
-        foreach (Exercise.EEmotion emotion in selEmotions)
+
+        for (int i = 0; i < selEmotions.Count; i++)
         {
             var button = Instantiate(BtnEmotionPrefab, AreaOfButtons.transform);
-            button.SetEmotion(emotion);
+            button.SetEmotion(selEmotions[i], i);
             InstantiateButtons.Add(button.gameObject);
         }
     }

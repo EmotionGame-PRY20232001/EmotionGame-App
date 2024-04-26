@@ -133,6 +133,9 @@ public class Stepper : MonoBehaviour
         CurrentStep = index;
         UpdateNavigationButtons();
 
+        // ChangeStep is called before updating WasVisited
+        CheckIfVisited(Steps[index].WasVisited);
+
         RectTransform target = Steps[index].gameObject.GetComponent<RectTransform>();
         SnapTo(target);
 
@@ -142,26 +145,10 @@ public class Stepper : MonoBehaviour
     void EnableStep(bool value, int index)
     {
         if (index > Steps.Count || Steps.Count == 0) return;
-        // Debug.Log(CurrentStep + (value ? " true" : " false"));
+        //Debug.Log("[Stepper]" + CurrentStep + (value ? " true" : " false"));
         if (Steps.ElementAt(index) == null) return;
 
-        bool wasntVisited = !Steps[index].WasVisited;
         Steps[index].EnableStep(value);
-
-        if (!AllVisited)
-        {
-            if (wasntVisited && Steps[index].WasVisited)
-            {
-                NumVisited++;
-                //Debug.Log("[Stepper] NumVisited " + NumVisited);
-            }
-
-            if (NumVisited == Steps.Count)
-            {
-                AllVisited = true;
-                onAllVisited?.Invoke();
-            }
-        }
     }
     void ChangeStepByNavigation(int index)
     {
@@ -177,6 +164,24 @@ public class Stepper : MonoBehaviour
     {
         if (CurrentStep == Steps.Count - 1) { return; }
         ChangeStepByNavigation(CurrentStep + 1);
+    }
+
+    void CheckIfVisited(bool wasVisited)
+    {
+        if (!AllVisited)
+        {
+            if (!wasVisited)
+            {
+                NumVisited++;
+                //Debug.Log("[Stepper] NumVisited " + NumVisited);
+            }
+
+            if (NumVisited == Steps.Count)
+            {
+                AllVisited = true;
+                onAllVisited?.Invoke();
+            }
+        }
     }
 
     /// AUTOGENERATION

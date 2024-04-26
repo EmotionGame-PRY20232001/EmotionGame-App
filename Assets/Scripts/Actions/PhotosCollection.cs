@@ -57,12 +57,12 @@ public class PhotosCollection : MonoBehaviour
             emotionExercises[emotion] = numPerEmotion;
         }
 
-        if (numPhotos % numEmotions != 0)
+        uint reminder = numPhotos % numEmotions;
+        if (reminder != 0)
         {
-            uint aux = numPhotos - (numEmotions * numPerEmotion);
             var emotions = gm.SelectedEmotions.OrderBy(x => Random.value).ToList();
 
-            for (int i = 0; i < aux; i++)
+            for (int i = 0; i < reminder; i++)
             {
                 Exercise.EEmotion emotion = emotions.ElementAt(i);
                 emotionExercises[emotion] += 1;
@@ -125,6 +125,7 @@ public class PhotosCollection : MonoBehaviour
         if (PhotoPrefab == null) return null;
         var photo = Instantiate(PhotoPrefab, transform);
         photo.SetPhotoEmotion(emotion, sprite);
+        photo.gameObject.SetActive(false);
         Photos.Add(photo);
         return photo;
     }

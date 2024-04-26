@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectTheme.unity
     guid: dccb955aae43e4c4fb57dc298adb6230
   - enabled: 1
-    path: Assets/Scenes/Games/SelectGames.unity
+    path: Assets/Scenes/TestingDelete/SelectGames.unity
     guid: e85310dbb05853040a4c0d51760a8230
   - enabled: 1
     path: Assets/Scenes/Learn/EmotionsTeaching.unity

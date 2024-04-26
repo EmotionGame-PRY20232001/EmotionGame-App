@@ -15,7 +15,7 @@ public class UIActions : MonoBehaviour
         public static readonly string PLAYER_SELECT = "PlayerSelect";
         public static readonly string MAIN_MENU = "MainMenu";
         public static readonly string SELECT_THEME = "SelectTheme";
-        public static readonly string SELECT_GAMES = "SelectGames";
+        //public static readonly string SELECT_GAMES = "SelectGames";
         public static readonly string GAME_CHOOSE = "GameChoose";
         public static readonly string GAME_CONTEXT = "GameContext";
         public static readonly string GAME_IMITATE = "GameImitate";
@@ -72,6 +72,9 @@ public class UIActions : MonoBehaviour
         Exercise.EActivity GameSelected = GameManager.Instance.LastPlayedGame;
         switch (GameSelected)
 		{
+            case Exercise.EActivity.Learn:
+				GoToLearnEmotions();
+                break;
             case Exercise.EActivity.Choose:
 				GoToChooseGame();
                 break;
@@ -85,10 +88,10 @@ public class UIActions : MonoBehaviour
                 break;
         }
     }
-    public static void GoToGameSelection()
-    {
-        SceneManager.LoadScene(Scenes.SELECT_GAMES);
-    }
+    //public static void GoToGameSelection()
+    //{
+    //    SceneManager.LoadScene(Scenes.SELECT_GAMES);
+    //}
 
     public static void GoToChooseGame()
     {

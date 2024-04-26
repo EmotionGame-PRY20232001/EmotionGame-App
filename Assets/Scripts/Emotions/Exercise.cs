@@ -7,7 +7,7 @@ using SQLite;
 public class Exercise : MonoBehaviour
 {
     public enum EEmotion { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
-    public enum EActivity { None, Choose, Context, Imitate }
+    public enum EActivity { None, Learn, Choose, Context, Imitate }
 
     // [System.Flags]
     // public enum EFEmotions

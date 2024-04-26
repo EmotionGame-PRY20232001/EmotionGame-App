@@ -15,8 +15,12 @@ public class BigToggle : MonoBehaviour
     protected CanvasGroup PreviewCanvas;
     [SerializeField]
     protected RectTransform LayoutRect;
+
+    //TODO: Inheritance
     [SerializeField]
     protected TMP_Text Text;
+    [SerializeField]
+    protected Exercise.EActivity Activity;
 
     public Toggle ToggleComp { get; protected set; }
     protected RectTransform Rect;
@@ -85,9 +89,7 @@ public class BigToggle : MonoBehaviour
             LeanTween.alpha(IconRect.gameObject, 0.0f, TransitionTime/2).setOnComplete(OnIconHidden);
         }
 
-        // Update Text
-        if (Text != null)
-            Text.text = Name;
+        OnActivitySelected();
     }
 
     protected virtual void OnToggleDisabled()
@@ -133,5 +135,16 @@ public class BigToggle : MonoBehaviour
     {
         PreviewRect.gameObject.SetActive(false);
         //TODO: animation stop
+    }
+
+    protected virtual void OnActivitySelected()
+    {
+        // Update Text
+        if (Text != null)
+            Text.text = "¡" + Name + "!";
+
+        var gm = GameManager.Instance;
+        if (gm != null)
+            gm.LastPlayedGame = Activity;
     }
 }

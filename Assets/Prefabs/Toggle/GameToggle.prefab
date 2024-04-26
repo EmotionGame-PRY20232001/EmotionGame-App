@@ -230,7 +230,9 @@ MonoBehaviour:
   IconRect: {fileID: 4111120440706103652}
   PreviewRect: {fileID: 4111120439875193603}
   PreviewCanvas: {fileID: 6663581582324658726}
-  layoutGroup: {fileID: 0}
+  LayoutRect: {fileID: 0}
+  Text: {fileID: 0}
+  Name: 
   TransitionTime: 0.25
   IconGrowFactor: 1.5
 --- !u!1 &4111120440706103653
@@ -326,15 +328,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2269005467538478709, guid: 4648afbdc1385f24c86aa7e656af8e00, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2269005467538478709, guid: 4648afbdc1385f24c86aa7e656af8e00, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2269005467538478709, guid: 4648afbdc1385f24c86aa7e656af8e00, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2269005467538478709, guid: 4648afbdc1385f24c86aa7e656af8e00, type: 3}
       propertyPath: m_LocalPosition.x

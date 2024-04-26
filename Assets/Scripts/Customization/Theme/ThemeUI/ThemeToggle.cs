@@ -82,7 +82,6 @@ public class ThemeToggle : ThemeButton
 
     protected virtual void ToggleValueChanged(Toggle toggle)
     {
-        m_Toggle.isOn = toggle.isOn;
         ChangeState(SelectionState.Normal, false);
     }
 

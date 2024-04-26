@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8439775201753883570
 RectTransform:
   m_ObjectHideFlags: 0
@@ -317,14 +317,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8439775202698395775}
     m_Modifications:
-    - target: {fileID: 475753600282842790, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
-      propertyPath: m_IsOn
-      value: 1
+    - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: ColorFill.a
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 376020309679398812, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 475753600282842790, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 8439775202698395774}
+    - target: {fileID: 2358393386963906644, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2638803878648128633, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Name
       value: TabButton_1
@@ -412,6 +420,10 @@ PrefabInstance:
     - target: {fileID: 3241603454715961383, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951923076788295615, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}

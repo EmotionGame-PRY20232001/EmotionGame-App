@@ -14,12 +14,14 @@ public class Tab : MonoBehaviour
     protected virtual void Awake()
     {
         TabButton = gameObject.GetComponent<Toggle>();
-        
+        //wasOn = !TabButton.isOn;
+        Debug.Log(name + " Awake \twason " + wasOn + "\t isON " + TabButton.isOn);
     }
 
     protected virtual void Start()
     {
         UpdateActive(TabButton);
+
         TabButton.onValueChanged.AddListener(delegate {
             UpdateActive(TabButton);
         });
@@ -30,7 +32,10 @@ public class Tab : MonoBehaviour
         if (TabButton == null || TabContent == null ||
             wasOn == TabButton.isOn)
             return;
-        
+
+        Debug.Log(name + " UpdateActive \twasOn " + wasOn + "\t isON " + TabButton.isOn);
+
         TabContent.SetActive(TabButton.isOn);
+        wasOn = TabButton.isOn;
     }
 }

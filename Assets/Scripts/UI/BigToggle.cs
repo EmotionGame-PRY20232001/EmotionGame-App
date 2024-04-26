@@ -36,6 +36,7 @@ public class BigToggle : MonoBehaviour
     {
         ToggleComp = gameObject.GetComponent<Toggle>();
         Rect = gameObject.GetComponent<RectTransform>();
+        //wasOn = !ToggleComp.isOn;
     }
 
     void Start()

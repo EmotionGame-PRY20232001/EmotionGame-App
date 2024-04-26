@@ -144,6 +144,6 @@ public class BaseActivity : EmotionExercise
 
     private void UpdateScoreText()
     {
-        ScoreText.text = "Score: " + Score;
+        ScoreText.text = "Puntaje: " + Score;
     }
 }

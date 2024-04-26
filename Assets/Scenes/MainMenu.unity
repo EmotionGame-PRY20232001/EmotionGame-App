@@ -410,9 +410,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: fcc9607fcb7bc254f8b739a6ca7a02fb, type: 3}
     - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Name
+      value: Imita
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Text
+      value: 
+      objectReference: {fileID: 2091702265}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: LayoutRect
+      value: 
+      objectReference: {fileID: 584656872}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
       propertyPath: layoutGroup
       value: 
-      objectReference: {fileID: 584656873}
+      objectReference: {fileID: 584656872}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
 --- !u!224 &141636392 stripped
@@ -684,7 +696,6 @@ GameObject:
   - component: {fileID: 584656872}
   - component: {fileID: 584656874}
   - component: {fileID: 584656873}
-  - component: {fileID: 584656875}
   m_Layer: 5
   m_Name: Activities
   m_TagString: Untagged
@@ -713,8 +724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 448}
-  m_SizeDelta: {x: -128, y: 480}
+  m_AnchoredPosition: {x: 0, y: 480}
+  m_SizeDelta: {x: -64, y: 384}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &584656873
 MonoBehaviour:
@@ -734,7 +745,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 7
-  m_Spacing: 32
+  m_Spacing: 16
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -755,20 +766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 0
---- !u!114 &584656875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584656871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f081b3b9fcd84e64882f474e8ad822d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LayoutToForce: {fileID: 57186182}
-  horizLayoutGroup: {fileID: 584656873}
 --- !u!224 &593822889 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4111120440641079630, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
@@ -2217,9 +2214,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 959f599747a078b4da2763e72f083a7a, type: 3}
     - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Name
+      value: Reconoce
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Text
+      value: 
+      objectReference: {fileID: 2091702265}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: LayoutRect
+      value: 
+      objectReference: {fileID: 584656872}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
       propertyPath: layoutGroup
       value: 
-      objectReference: {fileID: 584656873}
+      objectReference: {fileID: 584656872}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
 --- !u!224 &1973111264 stripped
@@ -2331,9 +2340,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 443b318d5371e2c40a9b4a3d81808d02, type: 3}
     - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Name
+      value: Reacciona
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Text
+      value: 
+      objectReference: {fileID: 2091702265}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: LayoutRect
+      value: 
+      objectReference: {fileID: 584656872}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
       propertyPath: layoutGroup
       value: 
-      objectReference: {fileID: 584656873}
+      objectReference: {fileID: 584656872}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
 --- !u!224 &1984669042 stripped
@@ -2363,18 +2384,18 @@ PrefabInstance:
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1456743436}
+      objectReference: {fileID: 1620904601}
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToGameSelection
+      value: Open
       objectReference: {fileID: 0}
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIActions, Assembly-CSharp
+      value: PopUp, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2443,6 +2464,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4078013014713609777, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
   m_PrefabInstance: {fileID: 2091702263}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2091702265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+  m_PrefabInstance: {fileID: 2091702263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4111120441192959463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2551,8 +2583,20 @@ PrefabInstance:
       value: GameToggle_Learn
       objectReference: {fileID: 0}
     - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Name
+      value: Aprende
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: Text
+      value: 
+      objectReference: {fileID: 2091702265}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
+      propertyPath: LayoutRect
+      value: 
+      objectReference: {fileID: 584656872}
+    - target: {fileID: 6318938443983255768, guid: eeeffd469b109154f8336aee9df5a616, type: 3}
       propertyPath: layoutGroup
       value: 
-      objectReference: {fileID: 584656873}
+      objectReference: {fileID: 584656872}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeeffd469b109154f8336aee9df5a616, type: 3}

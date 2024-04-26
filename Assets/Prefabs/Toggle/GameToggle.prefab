@@ -230,7 +230,8 @@ MonoBehaviour:
   IconRect: {fileID: 4111120440706103652}
   PreviewRect: {fileID: 4111120439875193603}
   PreviewCanvas: {fileID: 6663581582324658726}
-  TransitionTime: 0.5
+  layoutGroup: {fileID: 0}
+  TransitionTime: 0.25
   IconGrowFactor: 1.5
 --- !u!1 &4111120440706103653
 GameObject:

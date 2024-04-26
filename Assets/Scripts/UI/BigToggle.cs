@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Toggle))]
 public class BigToggle : MonoBehaviour
@@ -13,11 +14,14 @@ public class BigToggle : MonoBehaviour
     [SerializeField]
     protected CanvasGroup PreviewCanvas;
     [SerializeField]
-    protected HorizontalLayoutGroup layoutGroup;
-    
+    protected RectTransform LayoutRect;
+    [SerializeField]
+    protected TMP_Text Text;
+
     public Toggle ToggleComp { get; protected set; }
     protected RectTransform Rect;
     
+    public string Name;
     [SerializeField]
     protected float TransitionTime = 0.5f;
     [SerializeField]
@@ -55,16 +59,6 @@ public class BigToggle : MonoBehaviour
             OnToggleDisabled();
         }
         wasOn = ToggleComp.isOn;
-
-        if (layoutGroup != null)
-        {
-            layoutGroup.CalculateLayoutInputHorizontal();
-            // https://forum.unity.com/threads/force-immediate-layout-update.372630/
-//             horizLayoutGroup.CalculateLayoutInputHorizontal();
-// horizLayoutGroup.CalculateLayoutInputVertical();
-// horizLayoutGroup.SetLayoutHorizontal();
-// horizLayoutGroup.SetLayoutVertical();
-        }
     }
 
     protected virtual void OnToggleEnabled()
@@ -72,7 +66,7 @@ public class BigToggle : MonoBehaviour
         // Change container size
         if (Rect != null && PreviewRect != null)
         {
-            LeanTween.size(Rect, PreviewRect.sizeDelta, TransitionTime);
+            LeanTween.size(Rect, PreviewRect.sizeDelta, TransitionTime).setOnUpdate(OnRectTransform);
         }
 
         // Show preview
@@ -90,6 +84,10 @@ public class BigToggle : MonoBehaviour
             // Fade icon
             LeanTween.alpha(IconRect.gameObject, 0.0f, TransitionTime/2).setOnComplete(OnIconHidden);
         }
+
+        // Update Text
+        if (Text != null)
+            Text.text = Name;
     }
 
     protected virtual void OnToggleDisabled()
@@ -115,6 +113,15 @@ public class BigToggle : MonoBehaviour
             // Fade icon
             LeanTween.alpha(IconRect.gameObject, 1.0f, TransitionTime/2);
         }
+    }
+
+    protected virtual void OnRectTransform(float value) //IEnumerator
+    {
+        if (!ToggleComp.isOn || LayoutRect == null)
+            return; // yield return null;
+
+        // https://forum.unity.com/threads/force-immediate-layout-update.372630/
+        LayoutRebuilder.ForceRebuildLayoutImmediate(LayoutRect);
     }
 
     protected virtual void OnIconHidden()

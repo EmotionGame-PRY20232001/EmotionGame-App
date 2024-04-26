@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8169502baf45bb14690fec5523bda093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumExcercises: 10
+  NumExcercises: 15
   Exercises: {fileID: 744207308343788984}
   Activity: 1
   ScoreText: {fileID: 744207308343788985}

@@ -36,6 +36,11 @@ public class ThemeColorFilled : MonoBehaviour
 
     protected void Start()
     {
+        LoadPlayerTheme();
+    }
+
+    public void LoadPlayerTheme()
+    {
         LoadDefault();
         UpdateColors();
         UpdateFillType();

@@ -103,6 +103,8 @@ public class ThemeButton : MonoBehaviour
     ////////==== State ====////////
     protected virtual void ChangeState(SelectionState state, bool instant)
     {
+        if (state != SelectionState.Normal && CurrentState == state) return;
+
         CurrentState = state;
         float time = instant ? 0.0f : TransitionTime;
 
@@ -185,6 +187,6 @@ public class ThemeButton : MonoBehaviour
         Highlighted = 1,
         Pressed = 2,
         Selected = 3,
-        Disabled = 4
+        Disabled = 4,
     }
 }

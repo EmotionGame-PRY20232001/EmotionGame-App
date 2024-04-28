@@ -11,10 +11,16 @@ public class ThemeLayout : MonoBehaviour
     private ToggleGroup toggleGroup;
     [SerializeField]
     private GameObject themeTogglePrefab;
+    private ThemeColorFilled[] ThemeElements;
 
     private void Awake()
     {
         LoadPrefabs();
+    }
+
+    protected void Start()
+    {
+        ThemeElements = GetComponentsInChildren<ThemeColorFilled>();
     }
 
     protected void LoadPrefabs()
@@ -32,6 +38,16 @@ public class ThemeLayout : MonoBehaviour
 
     public void ApplySelection()
     {
-        GameManager.Instance.SetCurrentPlayerTheme(Background.Id);
+        var gm = GameManager.Instance;
+        gm.SetCurrentPlayerTheme(Background.Id);
+
+        if (ThemeElements != null && ThemeElements.Length > 0)
+        {
+            foreach(ThemeColorFilled tcf in ThemeElements)
+            {
+                if (tcf != null)
+                    tcf.LoadPlayerTheme();
+            }
+        }
     }
 }

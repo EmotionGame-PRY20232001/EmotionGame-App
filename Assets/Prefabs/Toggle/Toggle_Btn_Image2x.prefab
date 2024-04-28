@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284504654
-  m_fontColor: {r: 0.30588236, g: 0.3529412, b: 0.3764706, a: 1}
+    rgba: 4283256916
+  m_fontColor: {r: 0.3301887, g: 0.31402695, b: 0.3005963, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -143,6 +143,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: ColorFill.a
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: ColorFill.b
       value: 0.8862745
       objectReference: {fileID: 0}
@@ -166,6 +170,14 @@ PrefabInstance:
       propertyPath: ColorContrast.r
       value: 0.3301887
       objectReference: {fileID: 0}
+    - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: GraphicsToContrast.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: GraphicsToContrast.Array.data[0]
+      value: 
+      objectReference: {fileID: 999972873450500937}
     - target: {fileID: 475753600282842790, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_IsOn
       value: 0
@@ -177,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 1823159793283517904, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358393386963906644, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2358393386963906644, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Color.b
@@ -353,6 +369,10 @@ PrefabInstance:
     - target: {fileID: 4646975095159536521, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951923076788295615, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8951923076788295615, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Color.b

@@ -837,7 +837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219273209267558831, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9051373508940078679, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Sprite
@@ -938,6 +938,10 @@ PrefabInstance:
     - target: {fileID: 4504854573942083374, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_text
       value: "Gu\xEDa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219273209267558831, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 9051373508940078679, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_Sprite
@@ -1411,12 +1415,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1887643700}
     m_Modifications:
     - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: FillType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: ColorFill.a
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 376020309679398812, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 475753600282842790, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: m_Group
@@ -4475,6 +4483,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1887643700}
     m_Modifications:
     - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
+      propertyPath: FillType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 99981472957676717, guid: de323a35a6ee8524385a6fa7d234985f, type: 3}
       propertyPath: ColorFill.a
       value: 0.5
       objectReference: {fileID: 0}
@@ -5063,7 +5075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8077204480369610000, guid: ed3da502ba782bb4796a4ca89f162aa4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 8339027912575599658, guid: ed3da502ba782bb4796a4ca89f162aa4, type: 3}
       propertyPath: m_IsOn

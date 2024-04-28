@@ -20,7 +20,7 @@ public class ThemeLayout : MonoBehaviour
 
     protected void Start()
     {
-        ThemeElements = GetComponentsInChildren<ThemeColorFilled>();
+        ThemeElements = GameObject.FindObjectsOfType<ThemeColorFilled>();
     }
 
     protected void LoadPrefabs()
@@ -31,8 +31,21 @@ public class ThemeLayout : MonoBehaviour
             var instance = Instantiate(themeTogglePrefab, transform);
             instance.GetComponent<Toggle>().group = toggleGroup;
             ToggleTheme themeToggle = instance.GetComponent<ToggleTheme>();
-            themeToggle.Background = Background;
+            themeToggle.Layout = this;
             themeToggle.LoadData(bg.Key, bg.Value);
+        }
+    }
+
+    public void ChangeSelection(Theme.EBackground _theme)
+    {
+        Background.UpdateThemeElement(_theme);
+        if (ThemeElements != null && ThemeElements.Length > 0)
+        {
+            foreach (ThemeColorFilled tcf in ThemeElements)
+            {
+                if (tcf != null)
+                    tcf.LoadPlayerTheme(_theme);
+            }
         }
     }
 
@@ -40,14 +53,5 @@ public class ThemeLayout : MonoBehaviour
     {
         var gm = GameManager.Instance;
         gm.SetCurrentPlayerTheme(Background.Id);
-
-        if (ThemeElements != null && ThemeElements.Length > 0)
-        {
-            foreach(ThemeColorFilled tcf in ThemeElements)
-            {
-                if (tcf != null)
-                    tcf.LoadPlayerTheme();
-            }
-        }
     }
 }

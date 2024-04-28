@@ -67,7 +67,12 @@ public class UIActions : MonoBehaviour
             Debug.Log("Current player is null");
             return;
         }
-        DBManager.Instance.UpdatePlayerToDb(player);
+        if (DBManager.Instance != null)
+            DBManager.Instance.UpdatePlayerToDb(player);
+        else
+        {
+            Debug.LogWarning("DBManager.Instance is null");
+        }
         GoToMainMenu();
     }
 

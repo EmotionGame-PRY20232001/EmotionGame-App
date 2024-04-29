@@ -68,6 +68,10 @@ public class ThemeColorFilled : MonoBehaviour
             Theme.EBackground currentBg = (Theme.EBackground)player.BackgroundId;
             LoadByBgId(currentBg);
         }
+        else
+        {
+            DefaultTheme = gm.ThemeCustom.Themes[CurrentTheme];
+        }
     }
 
     protected void UpdateColors()

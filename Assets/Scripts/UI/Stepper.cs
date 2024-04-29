@@ -190,7 +190,7 @@ public class Stepper : MonoBehaviour
         if (Steps.Count > 0)
         {
             EnableStep(true, step);
-            NumVisited = 1;
+            //NumVisited = 1;
         }
     }
     public void AddStep(GameObject content)

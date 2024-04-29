@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 966786734595905116}
   - component: {fileID: 966786734595905114}
   m_Layer: 5
-  m_Name: Frame
+  m_Name: TopObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,4 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseRandom: 1
   PhotoPrefab: {fileID: 2849806394928128738, guid: fa76d3db034cae446922a7482b1190bc, type: 3}
-  Frame: {fileID: 966786734595905116}
+  TopObject: {fileID: 966786734595905118}
+  UseFaces: 1

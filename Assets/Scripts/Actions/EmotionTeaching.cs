@@ -15,9 +15,7 @@ public class EmotionTeaching : EmotionExercise
     protected Button BtnFinish;
 
     [SerializeField]
-    protected Image ImageEmotion;
-    [SerializeField]
-    protected TMP_Text TextEmotion;
+    protected EmotionObject Emotion;
 
     protected override void Start()
     {
@@ -58,12 +56,9 @@ public class EmotionTeaching : EmotionExercise
 
         CurrentExercise = StepperCont.CurrentStep;
         ExerciseEmotion = EmotionsToPractice.ElementAt(StepperCont.CurrentStep);
-        Exercise.Emotion data = GameManager.Instance.Emotions[ExerciseEmotion];
 
-        if (ImageEmotion != null)
-            ImageEmotion.sprite = data.SpriteColor;
-        if (TextEmotion != null)
-            TextEmotion.text = data.Name;
+        if (Emotion != null)
+            Emotion.SetEmotion(ExerciseEmotion);
     }
 
     public void OnAllVisited()

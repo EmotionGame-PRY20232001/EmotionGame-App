@@ -11,7 +11,7 @@ public class PhotosCollection : MonoBehaviour
     [SerializeField]
     protected EmotionPhoto PhotoPrefab;
     [SerializeField]
-    protected Image Frame;
+    protected GameObject TopObject;
     [SerializeField]
     [Tooltip("Else use text")]
     protected bool UseFaces = true;
@@ -36,8 +36,8 @@ public class PhotosCollection : MonoBehaviour
                 Photos[0].gameObject.SetActive(true);
         }
 
-        if (Frame != null)
-            Frame.transform.SetAsLastSibling();
+        if (TopObject != null)
+            TopObject.transform.SetAsLastSibling();
     }
 
     protected Dictionary<Exercise.EEmotion, uint> GetQuantityPerEmotion(uint numPhotos)

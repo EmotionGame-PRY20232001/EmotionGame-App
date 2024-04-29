@@ -17,6 +17,11 @@ public class BarChart : MonoBehaviour
     public float Maximum { get; protected set; }
     //public string Title;
 
+    protected virtual void Awake()
+    {
+        EmotionBars = new Dictionary<Exercise.EEmotion, BarStat>();
+    }
+
     protected virtual void Start()
     {
         LoadBars();
@@ -28,7 +33,10 @@ public class BarChart : MonoBehaviour
         Bars = GetComponentsInChildren<BarStat>();
         if (Bars == null) return;
         foreach (BarStat barStat in Bars)
-            EmotionBars[barStat.CurrEmotion] = barStat;
+        {
+            if (barStat != null)
+                EmotionBars[barStat.CurrEmotion] = barStat;
+        }
     }
 
     public virtual void LoadStats(Dictionary<Exercise.EEmotion, float> EmotionValues)

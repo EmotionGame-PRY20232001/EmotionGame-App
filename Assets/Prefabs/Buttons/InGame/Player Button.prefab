@@ -149,6 +149,7 @@ MonoBehaviour:
   guide: {fileID: 7857341763165577841}
   needsText: 0
   editButton: {fileID: 642314212398290076}
+  playerButton: {fileID: 1961386317068847918}
 --- !u!1001 &2270587346372357701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,6 +280,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1961386317068847918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 340726971073176939, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+  m_PrefabInstance: {fileID: 2270587346372357701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29d9164c43c08d40bd4e4c3226f95ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2817771303330621762 stripped

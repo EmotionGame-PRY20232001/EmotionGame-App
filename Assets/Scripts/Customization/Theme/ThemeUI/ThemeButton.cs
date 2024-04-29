@@ -84,6 +84,9 @@ public class ThemeButton : MonoBehaviour
     [SerializeField]
     protected CanvasGroup Tooltip;
 
+    public delegate void OnNormalState();
+    public OnNormalState onNormalState;
+
     ////////==== Unity ====////////
     protected virtual void Awake()
     {
@@ -112,6 +115,7 @@ public class ThemeButton : MonoBehaviour
         {
             case SelectionState.Normal:
                 PlayAnimationNormal(time);
+                onNormalState?.Invoke();
                 break;
             case SelectionState.Highlighted:
                 PlayAnimationHighlighted(time);

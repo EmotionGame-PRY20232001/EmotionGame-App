@@ -983,6 +983,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1316602266057043251, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316602266057043251, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316602266057043251, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1456743436}
+    - target: {fileID: 1316602266057043251, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316602266057043251, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToReport
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316602266057043251, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316602266057043251, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1316602266057043253, guid: 04872c53c12dc1a46a811dbb149767b9, type: 3}
       propertyPath: m_Name
       value: Btn Report Layout

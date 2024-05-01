@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ToggleTheme : ToggleCustom
 {
-    public CustomBackground Background { protected get; set; }
+    public ThemeLayout Layout { protected get; set; }
     
     [field:SerializeField]
     public Theme.EBackground Theme { get; private set; }
@@ -25,7 +25,7 @@ public class ToggleTheme : ToggleCustom
 
     protected override void ChangeSelection()
     {
-        Background.UpdateThemeElement(Theme);
+        Layout.ChangeSelection(Theme);
     }
     
     

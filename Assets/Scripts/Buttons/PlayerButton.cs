@@ -17,8 +17,18 @@ public class PlayerButton : MonoBehaviour
     private bool needsText;
     [SerializeField]
     private GameObject editButton;
+    [SerializeField]
+    protected ThemeButton playerButton;
 
     private Player playerReference;
+
+    void Start()
+    {
+        if (playerButton != null)
+        {
+            playerButton.onNormalState += DesactivateEdit;
+        }
+    }
 
     public void ButtonInstantiate(Player player)
     {
@@ -37,6 +47,14 @@ public class PlayerButton : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
         editButton.SetActive(true);
+    }
+
+    public void DesactivateEdit()
+    {
+        if (editButton != null && editButton.activeSelf)
+        {
+            editButton.SetActive(false);
+        }
     }
 
     public void OpenEditPlayerPanel()

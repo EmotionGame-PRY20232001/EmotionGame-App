@@ -41,6 +41,22 @@ public class ThemeColorFilled : MonoBehaviour
         UpdateFillType();
     }
 
+    public void LoadPlayerTheme(Theme.EBackground bgId)
+    {
+        LoadByBgId(bgId);
+        UpdateColors();
+        UpdateFillType();
+    }
+
+    protected void LoadByBgId(Theme.EBackground bgId)
+    {
+        var gm = GameManager.Instance;
+        if (gm == null) return;
+
+        CurrentTheme = gm.GetBackgrounds()[bgId].Theme;
+        DefaultTheme = gm.ThemeCustom.Themes[CurrentTheme];
+    }
+
     protected void LoadDefault()
     {
         var gm = GameManager.Instance;
@@ -50,9 +66,12 @@ public class ThemeColorFilled : MonoBehaviour
         {
             var player = gm.GetCurrentPlayer();
             Theme.EBackground currentBg = (Theme.EBackground)player.BackgroundId;
-            CurrentTheme = gm.GetBackgrounds()[currentBg].Theme;
+            LoadByBgId(currentBg);
         }
-        DefaultTheme = gm.ThemeCustom.Themes[CurrentTheme];
+        else
+        {
+            DefaultTheme = gm.ThemeCustom.Themes[CurrentTheme];
+        }
     }
 
     protected void UpdateColors()

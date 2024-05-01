@@ -22,6 +22,7 @@ public class UIActions : MonoBehaviour
         public static readonly string LEARN_EMOTIONS = "EmotionsTeaching";
         public static readonly string LEARN_COMPLETE = "TeachingComplete";
         public static readonly string GAME_COMPLETE = "GameComplete";
+        public static readonly string REPORT = "ReportStats";
     };
     
     private void Awake()
@@ -67,7 +68,12 @@ public class UIActions : MonoBehaviour
             Debug.Log("Current player is null");
             return;
         }
-        DBManager.Instance.UpdatePlayerToDb(player);
+        if (DBManager.Instance != null)
+            DBManager.Instance.UpdatePlayerToDb(player);
+        else
+        {
+            Debug.LogWarning("DBManager.Instance is null");
+        }
         GoToMainMenu();
     }
 
@@ -124,6 +130,11 @@ public class UIActions : MonoBehaviour
     public static void GoToLearnComplete()
     {
         SceneManager.LoadScene(Scenes.LEARN_COMPLETE);
+    }
+    
+    public static void GoToReport()
+    {
+        SceneManager.LoadScene(Scenes.REPORT);
     }
 
 }

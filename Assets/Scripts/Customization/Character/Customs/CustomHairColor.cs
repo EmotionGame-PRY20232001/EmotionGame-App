@@ -51,7 +51,13 @@ public class CustomHairColor : CustomHair
     protected override void ChangeSelection()
     {
         Customization.SetHairColor(HairColor);
-        foreach (CustomHairCut _hairCut in HairCuts)
-            _hairCut.SetHairColor(HairColor);
+        if (HairCuts != null)
+        {
+            foreach (CustomHairCut _hairCut in HairCuts)
+            {
+                if (_hairCut != null)
+                    _hairCut.SetHairColor(HairColor);
+            }
+        }
     }
 }

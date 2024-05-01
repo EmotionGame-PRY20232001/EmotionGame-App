@@ -51,10 +51,12 @@ public class EmotionObject : MonoBehaviour
         }
     }
 
-    public void SetEmotion(Exercise.EEmotion emotion, int num)
+    public void SetEmotion(Exercise.EEmotion emotion, int num = -1)
     {
         CurrEmotion = emotion;
         LoadByEmotion();
+
+        if (num == -1) return;
         switch (num)
         {
             case 0: Dir = new Vector2(Random.Range(0.1f, 1.0f), Random.Range(0.1f, 1.0f)).normalized; break;

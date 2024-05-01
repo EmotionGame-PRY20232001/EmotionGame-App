@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd7f36fadd4d134f9ee8f6b1e091269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumExcercises: 15
+  NumExcercises: 10
   Exercises: {fileID: 1141103033}
   Activity: 3
   ScoreText: {fileID: 1141103034}

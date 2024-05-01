@@ -21,12 +21,12 @@ public class ImitateActivity : BaseActivity
     protected override void Start()
     {
         base.Start();
-        StartCoroutine("CheckImitateEmotion");
     }
 
     protected override void LoadCurrentExercise(int newCurrent)
     {
         base.LoadCurrentExercise(newCurrent);
+        StartCoroutine("CheckImitateEmotion");
         webCam.StartEmotionCoroutine();
         //StartCoroutine(CheckImitateEmotion());
     }
@@ -34,6 +34,8 @@ public class ImitateActivity : BaseActivity
     protected override void StopCurrentExercise()
     {
         base.StopCurrentExercise();
+        webCam.StopEmotionCoroutine();
+        StopCoroutine("CheckImitateEmotion");
         //StopCoroutine(CheckImitateEmotion());
     }
 
@@ -51,7 +53,7 @@ public class ImitateActivity : BaseActivity
                 if (emotionImageColor.fillAmount == 1)
                 {
                     webCam.StopEmotionCoroutine();
-                    yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.5f);
                     emotionImageColor.fillAmount = 0;
                     if (Model.PredictedEmotion == ExerciseEmotion) Good();
                     else Bad();

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using System.Data;
 
 public class WebCamera : MonoBehaviour
 {

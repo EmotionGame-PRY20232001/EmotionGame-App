@@ -55,12 +55,22 @@ public class WebCamera : MonoBehaviour
         rawImage.transform.Rotate(Vector3.forward, 90);
 #endif
         rawImage.texture = webCamTexture;
-        webCamTexture.Play();
+        PlayCamera();
 
         FileStorage storageFaces = new FileStorage(haarCascasde.text, FileStorage.Mode.Read | FileStorage.Mode.Memory);
         cascade = new CascadeClassifier();
         if (!cascade.Read(storageFaces.GetFirstTopLevelNode()))
             throw new System.Exception("FaceProcessor.Initialize: Failed to load faces cascade classifier");
+    }
+
+    public void PlayCamera()
+    {
+        webCamTexture.Play();
+    }
+
+    public void PauseCamera()
+    {
+        webCamTexture.Pause();
     }
 
     public void StartEmotionCoroutine()
@@ -88,7 +98,7 @@ public class WebCamera : MonoBehaviour
             Mat webImage = OpenCvSharp.Unity.TextureToMat(finalTexture);
             FindNewFace(webImage);
             Display(webImage);
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.35f);
         }
     }
 

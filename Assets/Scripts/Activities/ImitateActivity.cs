@@ -13,8 +13,6 @@ public class ImitateActivity : BaseActivity
     private float fillVelocity;
     [SerializeField]
     private Image emotionImageColor;
-    [SerializeField]
-    private Image emotionImageGray;
 
     private Exercise.EEmotion lastEmotion;
 
@@ -23,44 +21,61 @@ public class ImitateActivity : BaseActivity
         base.Start();
     }
 
+    private void Update()
+    {
+        if (webCam.isRunning)
+        {
+            lastEmotion = Model.PredictedEmotion;
+        }
+    }
+
     protected override void LoadCurrentExercise(int newCurrent)
     {
         base.LoadCurrentExercise(newCurrent);
-        StartCoroutine("CheckImitateEmotion");
         webCam.StartEmotionCoroutine();
-        //StartCoroutine(CheckImitateEmotion());
     }
 
     protected override void StopCurrentExercise()
     {
         base.StopCurrentExercise();
         webCam.StopEmotionCoroutine();
-        StopCoroutine("CheckImitateEmotion");
-        //StopCoroutine(CheckImitateEmotion());
     }
 
     protected override void LoadEmotionButtons() { }
 
-    IEnumerator CheckImitateEmotion()
+    public void TakePhoto()
     {
-        while (true)
-        {
-            if (webCam.isRunning)
-            {
-                if (lastEmotion != Model.PredictedEmotion) emotionImageColor.fillAmount = 0;
-                if (Model.PredictedEmotion != Exercise.EEmotion.Neutral)
-                    emotionImageColor.fillAmount += fillVelocity * Time.deltaTime;
-                if (emotionImageColor.fillAmount == 1)
-                {
-                    webCam.StopEmotionCoroutine();
-                    yield return new WaitForSeconds(0.5f);
-                    emotionImageColor.fillAmount = 0;
-                    if (Model.PredictedEmotion == ExerciseEmotion) Good();
-                    else Bad();
-                }
-                lastEmotion = Model.PredictedEmotion;
-            }
-            yield return null;
-        }
+        webCam.StopEmotionCoroutine();
+        webCam.PauseCamera();
     }
+
+    public void CheckExercise()
+    {
+        if (Model.PredictedEmotion == ExerciseEmotion) Good();
+        else Bad();
+        webCam.PlayCamera();
+    }
+
+    //IEnumerator CheckImitateEmotion()
+    //{
+    //    while (true)
+    //    {
+    //        if (webCam.isRunning)
+    //        {
+    //            if (lastEmotion != Model.PredictedEmotion) emotionImageColor.fillAmount = 0;
+    //            if (Model.PredictedEmotion != Exercise.EEmotion.Neutral)
+    //                emotionImageColor.fillAmount += fillVelocity * Time.deltaTime;
+    //            if (emotionImageColor.fillAmount == 1)
+    //            {
+    //                webCam.StopEmotionCoroutine();
+    //                yield return new WaitForSeconds(0.5f);
+    //                emotionImageColor.fillAmount = 0;
+    //                if (Model.PredictedEmotion == ExerciseEmotion) Good();
+    //                else Bad();
+    //            }
+    //            lastEmotion = Model.PredictedEmotion;
+    //        }
+    //        yield return null;
+    //    }
+    //}
 }

@@ -13,8 +13,6 @@ public class FERModel : MonoBehaviour
     [SerializeField]
     private Image emocionSpriteColor;
     [SerializeField]
-    private Image emocionSpriteGray;
-    [SerializeField]
     private ComputeShader compute;
     [SerializeField, FilePopup("*.tflite")]
     private string filePath = "FerModel.tflite";
@@ -67,7 +65,6 @@ public class FERModel : MonoBehaviour
         PredictedEmotion = (Exercise.EEmotion)maxIndex;
         emocionText.text = gm.Emotions[PredictedEmotion].Name;
         emocionSpriteColor.sprite = gm.Emotions[PredictedEmotion].SpriteColor;
-        emocionSpriteGray.sprite = gm.Emotions[PredictedEmotion].SpriteGray;
     }
 
     private void OnDestroy()

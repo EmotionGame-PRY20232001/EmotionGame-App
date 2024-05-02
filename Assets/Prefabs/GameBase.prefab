@@ -1213,6 +1213,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechBubble
       objectReference: {fileID: 0}
+    - target: {fileID: 3780531684856346481, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531684856346481, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -240
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531684924749990, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685201628520, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685201628521, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685201628521, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685323104356, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685323104356, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685323104356, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685323104362, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531685323104363, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_ShowMaskGraphic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531686291637540, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780531686546873115, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48
+      objectReference: {fileID: 0}
     - target: {fileID: 5025476903646784164, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

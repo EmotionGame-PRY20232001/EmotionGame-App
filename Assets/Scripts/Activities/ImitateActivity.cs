@@ -11,8 +11,20 @@ public class ImitateActivity : BaseActivity
     private FERModel Model;
     [SerializeField] 
     private float fillVelocity;
+
     [SerializeField]
     private Image emotionImageColor;
+    [SerializeField]
+    private GameObject BtnCameraImgCheck;
+    [SerializeField]
+    private GameObject BtnCameraImgReset;
+    [SerializeField]
+    private Button BtnReady;
+    [SerializeField]
+    private GameObject BtnReadyImgEmotion;
+    [SerializeField]
+    private RawImage RawImgPhoto;
+    protected bool IsFirstPhoto;
 
     private Exercise.EEmotion lastEmotion;
 
@@ -41,12 +53,47 @@ public class ImitateActivity : BaseActivity
         webCam.StopEmotionCoroutine();
     }
 
-    protected override void LoadEmotionButtons() { }
+    private void ShowBtnCameraCheck(bool value)
+    {
+        if (BtnCameraImgCheck != null)
+            BtnCameraImgCheck.SetActive(value);
+        if (BtnCameraImgReset != null)
+            BtnCameraImgReset.SetActive(!value);
+    }
+
+    protected override void LoadEmotionButtons()
+    {
+        // Setting defaults for Emotion and Ready Button
+        ShowBtnCameraCheck(true);
+        IsFirstPhoto = true;
+
+        if (BtnReady != null)
+            BtnReady.interactable = false;
+        if (RawImgPhoto != null)
+            RawImgPhoto.color = Color.clear;
+        if (BtnReadyImgEmotion != null)
+            BtnReadyImgEmotion.SetActive(false);
+    }
 
     public void TakePhoto()
     {
         webCam.StopEmotionCoroutine();
         webCam.PauseCamera();
+
+        if (IsFirstPhoto)
+        {
+            ShowBtnCameraCheck(false);
+            if (BtnReady != null)
+                BtnReady.interactable = true;
+            if (RawImgPhoto != null)
+                RawImgPhoto.color = Color.white;
+            if (BtnReadyImgEmotion != null)
+                BtnReadyImgEmotion.SetActive(true);
+            IsFirstPhoto = false;
+        }
+
+        if (RawImgPhoto != null)
+            RawImgPhoto.texture = webCam.rawImage.texture;
     }
 
     public void CheckExercise()

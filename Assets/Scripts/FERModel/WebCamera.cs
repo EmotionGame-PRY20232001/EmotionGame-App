@@ -9,8 +9,8 @@ using System.Data;
 
 public class WebCamera : MonoBehaviour
 {
-    [SerializeField]
-    private RawImage rawImage;
+    [field:SerializeField]
+    public RawImage rawImage { get; private set; }
     [SerializeField]
     private RawImage faceImage;
     [SerializeField]

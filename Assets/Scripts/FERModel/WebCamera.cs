@@ -51,8 +51,13 @@ public class WebCamera : MonoBehaviour
             }
         }
 
+#if UNITY_EDITOR
+        GetComponent<RectTransform>().localScale = new Vector3(-1f, 1f, 1f);
+#endif
+
 #if UNITY_ANDROID && !UNITY_EDITOR
         rawImage.transform.Rotate(Vector3.forward, 90);
+        rawImage.transform.Rotate(Vector3.right, 180);
 #endif
         rawImage.texture = webCamTexture;
         PlayCamera();

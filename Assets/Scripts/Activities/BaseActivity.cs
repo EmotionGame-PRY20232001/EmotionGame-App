@@ -126,11 +126,13 @@ public class BaseActivity : EmotionExercise
         CleanUp();
 
         var gm = GameManager.Instance;
-        var allEmotions = new List<Exercise.EEmotion>(gm.AllEmotions);
-        allEmotions.Remove(ExerciseEmotion);
-        allEmotions = allEmotions.OrderBy(x => Random.value).ToList();
+        var selEmotions = new List<Exercise.EEmotion>(gm.SelectedEmotions); //AllEmotions allEmotions
+        selEmotions.Remove(ExerciseEmotion);
+        selEmotions = selEmotions.OrderBy(x => Random.value).ToList();
 
-        var selEmotions = allEmotions.GetRange(0, NumButtons - 1);
+        if (selEmotions.Count >= NumButtons)
+            selEmotions = selEmotions.GetRange(0, NumButtons - 1);
+
         selEmotions.Add(ExerciseEmotion);
         selEmotions = selEmotions.OrderBy(x => Random.value).ToList();
 

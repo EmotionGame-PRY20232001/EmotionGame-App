@@ -8,6 +8,24 @@ public class Exercise : MonoBehaviour
 {
     public enum EEmotion { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
     public enum EActivity { None, Learn, Choose, Context, Imitate }
+    
+    [System.Flags]
+    public enum EEmotions
+    {
+        Neutral = 0,
+        Anger   = 1 << 0,
+        Disgust = 1 << 1,
+        Fear    = 1 << 2,
+        Happy   = 1 << 3,
+        Sad     = 1 << 4,
+        Surprise = 1 << 5,
+
+        //Combinations
+        Easy = Happy | Sad,
+        Medium = Easy | Anger | Surprise,
+        Hard = Medium | Fear | Disgust, //All
+    }
+
 
     // [System.Flags]
     // public enum EFEmotions

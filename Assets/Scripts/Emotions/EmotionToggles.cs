@@ -14,9 +14,6 @@ public class EmotionToggles : MonoBehaviour
     [field:SerializeField][SerializedDictionary("Emotion", "Toggle")]
     public SerializedDictionary<Exercise.EEmotion, Toggle> Emotions { get; protected set; }
 
-    void Awake()
-    {
-    }
 
     public void SaveEmotionsChecked()
     {
@@ -36,4 +33,16 @@ public class EmotionToggles : MonoBehaviour
         var gm = GameManager.Instance;
         gm.SelectedEmotions = emotions;
     }
+
+    protected void SaveSelectedGame(Exercise.EActivity activity)
+    {
+        var gm = GameManager.Instance;
+        if (gm != null)
+            gm.LastPlayedGame = activity;
+    }
+
+    public void SaveLearn()     { SaveSelectedGame(Exercise.EActivity.Learn); }
+    public void SaveChoose()    { SaveSelectedGame(Exercise.EActivity.Choose); }
+    public void SaveContext()   { SaveSelectedGame(Exercise.EActivity.Context); }
+    public void SaveImitate()   { SaveSelectedGame(Exercise.EActivity.Imitate); }
 }

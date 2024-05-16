@@ -507,3 +507,40 @@ MonoBehaviour:
         Value: {fileID: 21300000, guid: 106f602125f0cae4d8464fcd080fa1f5, type: 3}
       - Key: 4
         Value: {fileID: 21300000, guid: 6866dc7278186ce4eac3743ac73e1b42, type: 3}
+  <SfxsCustom>k__BackingField:
+    <ButtonSfxs>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 8300000, guid: 9154b3c462aaa9f49b11020f0004fada, type: 3}
+      - Key: 1
+        Value: {fileID: 8300000, guid: 1544bc38cf4ba8f42a46d8cbe2d51a78, type: 3}
+      - Key: 2
+        Value: {fileID: 8300000, guid: e1f7cf53b25dba84b93f64f3cfd436ab, type: 3}
+      - Key: 3
+        Value: {fileID: 8300000, guid: 8ff9e3707883ce34ebcebd2b6120f138, type: 3}
+      - Key: 4
+        Value: {fileID: 8300000, guid: ee6c445c4c6e10344a368eccb2eada16, type: 3}
+      - Key: 5
+        Value: {fileID: 8300000, guid: 9b2b625b3cf2e9843a962680fe80445a, type: 3}
+      - Key: 6
+        Value: {fileID: 8300000, guid: 8d54ec1d24d0c014dac369a8bebb3d23, type: 3}
+      - Key: 7
+        Value: {fileID: 8300000, guid: 1ce587c35a56abf41a1144d0a72ca0d5, type: 3}
+      - Key: 8
+        Value: {fileID: 8300000, guid: 0711bfaffb4ad364288236dffb576733, type: 3}
+      - Key: 9
+        Value: {fileID: 8300000, guid: 5c0163b7847707d498dceed36f4e9f82, type: 3}
+      - Key: 10
+        Value: {fileID: 8300000, guid: 2d7b20f3632b3634e8d60da2c8e69e2f, type: 3}
+    <GameSfxs>k__BackingField:
+      _serializedList:
+      - Key: 0
+        Value: {fileID: 8300000, guid: d03b2eb126b57714a9d424db63d0818b, type: 3}
+      - Key: 1
+        Value: {fileID: 8300000, guid: b43c234731fa6ba48ad9f07c693dcef5, type: 3}
+      - Key: 3
+        Value: {fileID: 8300000, guid: ac55434b5c97ee14ea0183875464a591, type: 3}
+      - Key: 4
+        Value: {fileID: 8300000, guid: 2d7b20f3632b3634e8d60da2c8e69e2f, type: 3}
+      - Key: 2
+        Value: {fileID: 8300000, guid: 54c32e547a9dbd340a916291f861209d, type: 3}

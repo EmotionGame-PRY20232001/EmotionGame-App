@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(ThemeColorFilled))]
+[RequireComponent(typeof(AudioSource))]
 //public class ThemeButton : Button
 //{
 
@@ -84,6 +85,11 @@ public class ThemeButton : MonoBehaviour
     [SerializeField]
     protected CanvasGroup Tooltip;
 
+    //---- Tooltip ----//
+    protected AudioSource AudioSrc;
+    [SerializeField]
+    protected AudioSrcs.ESfxButton SfxType = AudioSrcs.ESfxButton.Regular;
+
     public delegate void OnNormalState();
     public OnNormalState onNormalState;
 
@@ -91,6 +97,7 @@ public class ThemeButton : MonoBehaviour
     protected virtual void Awake()
     {
         ThemeColor = gameObject.GetComponent<ThemeColorFilled>();
+        AudioSrc = gameObject.GetComponent<AudioSource>();
     }
 
     protected virtual void Start()
@@ -100,7 +107,20 @@ public class ThemeButton : MonoBehaviour
             DefaultShadowSize = ShadowRect.sizeDelta;
         }
 
+        LoadSfx();
         ChangeState(SelectionState.Normal, true);
+    }
+
+
+    ////////==== Sfx ====////////
+    protected virtual void LoadSfx()
+    {
+        if (AudioSrc != null && GameManager.Instance != null)
+        {
+            var gmsfxs = GameManager.Instance.SfxsCustom.ButtonSfxs;
+            if (gmsfxs.ContainsKey(SfxType))
+                AudioSrc.clip = gmsfxs[SfxType];
+        }
     }
 
     ////////==== State ====////////
@@ -169,6 +189,7 @@ public class ThemeButton : MonoBehaviour
     protected virtual void PlayAnimationPressed(float time)
     {
         ThemeColor?.OnLightnessChange(Theme.ELightness.Dark, time);
+        AudioSrc?.Play();
         FadeTooltop(true, time);
         OnSetActiveAnimation(true, time);
     }
@@ -192,5 +213,10 @@ public class ThemeButton : MonoBehaviour
         Pressed = 2,
         Selected = 3,
         Disabled = 4,
+    }
+
+    ~ThemeButton()
+    {
+        LeanTween.cancel(gameObject);
     }
 }

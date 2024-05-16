@@ -121,6 +121,8 @@ public class ThemeToggle : ThemeButton
 
     protected override void OnSetActiveAnimation(bool isActive, float time)
     {
+        if (isActive)
+            AudioSrc?.Play();
         ToggleIconSprite(isActive);
     }
     protected virtual void ToggleIconSprite(bool isActive)

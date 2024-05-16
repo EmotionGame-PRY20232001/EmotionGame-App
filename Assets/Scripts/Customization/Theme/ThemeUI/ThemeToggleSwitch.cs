@@ -30,8 +30,11 @@ public class ThemeToggleSwitch : ThemeToggle
     // < OFF | ON >
     protected override void OnSetActiveAnimation(bool isActive, float time)
     {
-        base.OnSetActiveAnimation(isActive, time);
+        SfxType = isActive ? AudioSrcs.ESfxButton.On : AudioSrcs.ESfxButton.Off;
+        LoadSfx();
+        AudioSrc?.Play();
 
+        ToggleIconSprite(isActive);
         float moveX = isActive ? TrackThumbDiff : 0.0f;
 
         //Track = Shadow | Thumb = Up

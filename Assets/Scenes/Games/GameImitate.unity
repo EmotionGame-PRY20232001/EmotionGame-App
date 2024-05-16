@@ -2102,6 +2102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1866316243}
     m_Modifications:
+    - target: {fileID: 340726971073176939, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: SfxType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_text
       value: Listo

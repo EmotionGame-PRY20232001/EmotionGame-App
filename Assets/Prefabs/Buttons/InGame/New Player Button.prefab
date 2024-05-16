@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5846278747022207185, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846278747022207185, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846278747022207185, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578989458405676029, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578989458405676029, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578989458405676029, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6638598362119371922, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -71,6 +95,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3a87dff1198d772469ebd57aa10cff0f, type: 3}
+    - target: {fileID: 7506513800113976180, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.b
+      value: 0.22352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513800113976180, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.g
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513800113976180, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4862745
+      objectReference: {fileID: 0}
     - target: {fileID: 7506513800619235907, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: m_Name
       value: New Player Button
@@ -215,8 +251,52 @@ PrefabInstance:
       propertyPath: m_text
       value: Nuevo jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 7506513801400681547, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.22352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513801400681547, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513801400681547, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.4862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506513801400681547, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281945724
+      objectReference: {fileID: 0}
     - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: FillType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: ColorFill.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: ColorFill.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: ColorFill.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: ColorContrast.b
+      value: 0.22352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: ColorContrast.g
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: ColorContrast.r
+      value: 0.4862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452837821879448640, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: SfxType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

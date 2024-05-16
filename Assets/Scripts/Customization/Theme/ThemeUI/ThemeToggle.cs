@@ -83,6 +83,13 @@ public class ThemeToggle : ThemeButton
     protected virtual void ToggleValueChanged(Toggle toggle)
     {
         ChangeState(SelectionState.Normal, false);
+        PlaySfx(toggle.isOn);
+    }
+
+    protected virtual void PlaySfx(bool isOn)
+    {
+        if (isOn)
+            AudioSrc?.Play();
     }
 
     protected virtual void CalcTrackThumDiff() { }
@@ -121,8 +128,6 @@ public class ThemeToggle : ThemeButton
 
     protected override void OnSetActiveAnimation(bool isActive, float time)
     {
-        if (isActive)
-            AudioSrc?.Play();
         ToggleIconSprite(isActive);
     }
     protected virtual void ToggleIconSprite(bool isActive)

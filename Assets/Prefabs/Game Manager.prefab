@@ -265,7 +265,7 @@ MonoBehaviour:
               <Background>k__BackingField: {r: 1, g: 0.78431374, b: 0.22352941, a: 1}
               <Shape>k__BackingField: {r: 0.20784314, g: 0.15686275, b: 0.14117648, a: 1}
             <Disabled>k__BackingField:
-              <Background>k__BackingField: {r: 0.24705882, g: 0.29803923, b: 0.34117648, a: 1}
+              <Background>k__BackingField: {r: 0.35439655, g: 0.3872745, b: 0.41509432, a: 1}
               <Shape>k__BackingField: {r: 0.6117647, g: 0.6627451, b: 0.7254902, a: 1}
           <Paper>k__BackingField:
             <Light>k__BackingField:
@@ -531,7 +531,7 @@ MonoBehaviour:
       - Key: 9
         Value: {fileID: 8300000, guid: 5c0163b7847707d498dceed36f4e9f82, type: 3}
       - Key: 10
-        Value: {fileID: 8300000, guid: 2d7b20f3632b3634e8d60da2c8e69e2f, type: 3}
+        Value: {fileID: 8300000, guid: b3d0350b5cefe08448cb49b364b57423, type: 3}
     <GameSfxs>k__BackingField:
       _serializedList:
       - Key: 0

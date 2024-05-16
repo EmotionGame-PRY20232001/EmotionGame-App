@@ -738,6 +738,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9490196
       objectReference: {fileID: 0}
+    - target: {fileID: 6057056601756438814, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: SfxType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1172,6 +1176,10 @@ PrefabInstance:
     - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: ColorContrast.r
       value: 0.4862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452837821879448640, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: SfxType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3596566105984517428, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}

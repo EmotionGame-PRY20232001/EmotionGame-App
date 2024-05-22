@@ -6,6 +6,6 @@ public class NewPlayerButton : MonoBehaviour
 {
     public void OpenNewPlayerPanel()
     {
-        UIManager.Instance.ShowPanelTemplate("New Player");
+        UIManager.Instance.ShowPanelTemplate(PanelScript.PanelType.NewPlayer);
     }
 }

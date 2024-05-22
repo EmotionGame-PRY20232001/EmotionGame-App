@@ -23,11 +23,12 @@ public class PanelScript : MonoBehaviour
 
     private Player playerRef;
 
-    private enum PanelType
+    public enum PanelType
     {
         NewPlayer,
         EditPlayer,
-        DeletePlayer
+        DeletePlayer,
+        ChooseEmotions,
     }
 
     public void Awake()
@@ -56,9 +57,16 @@ public class PanelScript : MonoBehaviour
     {
         if (checkButton != null)
         {
-            if (nameInputText.text.Length < 2) checkButton.interactable = false;
-            else checkButton.interactable = true;
-        }   
+            switch (panelType)
+            {
+                case PanelType.NewPlayer:
+                case PanelType.EditPlayer:
+                    if (nameInputText.text.Length < 2) checkButton.interactable = false;
+                    else checkButton.interactable = true;
+                    break;
+                default: break;
+            }
+        }
     }
 
     // public void ClosePlayerPanel()
@@ -106,12 +114,12 @@ public class PanelScript : MonoBehaviour
         playerRef = null;
         RefreshPlayerPanel();
         // gameObject.SetActive(false);
-        UIManager.Instance.ClosePanel("Edit Player");
+        UIManager.Instance.ClosePanel(PanelType.EditPlayer);
     }
 
     public void OpenDeletePlayerPanel()
     {
-        UIManager.Instance.ShowPanelTemplate("Delete Player", playerRef);
+        UIManager.Instance.ShowPanelTemplate(PanelType.DeletePlayer, playerRef);
     }
 
     public void GetPlayerInfo(Player player)
@@ -126,6 +134,9 @@ public class PanelScript : MonoBehaviour
                 break;
             case PanelType.DeletePlayer:
                 nameText.text = "Está por eliminar a\n" + player.Name;
+                break;
+            case PanelType.ChooseEmotions:
+                // Read selected player emotions
                 break;
             default: break;
         }
@@ -146,6 +157,9 @@ public class PanelScript : MonoBehaviour
                 break;
             case PanelType.DeletePlayer:
                 nameText.text = string.Empty;
+                break;
+            case PanelType.ChooseEmotions:
+                // Select all emotions by default
                 break;
             default: break;
         }

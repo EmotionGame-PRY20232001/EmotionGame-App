@@ -427,7 +427,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -617,6 +617,7 @@ MonoBehaviour:
   ShadowRect: {fileID: 3119303371350093029}
   UpRect: {fileID: 7127831596675480592}
   Tooltip: {fileID: 852532659512953554}
+  SfxType: 0
 --- !u!1 &7658228503439105452
 GameObject:
   m_ObjectHideFlags: 0

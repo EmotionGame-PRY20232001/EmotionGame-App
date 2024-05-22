@@ -16,7 +16,7 @@ public class PlayerButton : MonoBehaviour
     [SerializeField]
     private bool needsText;
     [SerializeField]
-    private GameObject editButton;
+    private GameObject optionsContainer;
     [SerializeField]
     protected ThemeButton playerButton;
 
@@ -26,7 +26,7 @@ public class PlayerButton : MonoBehaviour
     {
         if (playerButton != null)
         {
-            playerButton.onNormalState += DesactivateEdit;
+            playerButton.onNormalState += DesactivateOptions;
         }
     }
 
@@ -39,26 +39,39 @@ public class PlayerButton : MonoBehaviour
         needsText = player.NeedsText;
     }
 
-    public void ActivateEdit()
+    public void ActivateOptions()
     {
-        if (editButton.activeSelf)
+        if (optionsContainer.activeSelf)
         {
             GameManager.Instance.SetCurrentPlayer(playerReference);
             SceneManager.LoadScene("MainMenu");
         }
-        editButton.SetActive(true);
+        optionsContainer.SetActive(true);
     }
 
-    public void DesactivateEdit()
+    public void DesactivateOptions()
     {
-        if (editButton != null && editButton.activeSelf)
+        if (optionsContainer != null && optionsContainer.activeSelf)
         {
-            editButton.SetActive(false);
+            optionsContainer.SetActive(false);
         }
     }
 
+
+    //// Options
     public void OpenEditPlayerPanel()
     {
-        UIManager.Instance.ShowPanelTemplate("Edit Player", playerReference);
+        UIManager.Instance.ShowPanelTemplate(PanelScript.PanelType.EditPlayer, playerReference);
+    }
+
+    public void OpenReport()
+    {
+        GameManager.Instance.SetCurrentPlayer(playerReference);
+        UIActions.GoToReport();
+    }
+
+    public void ChooseEmotions()
+    {
+        UIManager.Instance.ShowPanelTemplate(PanelScript.PanelType.ChooseEmotions, playerReference);
     }
 }

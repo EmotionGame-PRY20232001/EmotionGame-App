@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject newPlayerButton2;
     [SerializedDictionary("Name", "Game Object")]
-    public SerializedDictionary<string, GameObject> templates;
+    public SerializedDictionary<PanelScript.PanelType, GameObject> templates;
 
     private GameObject scrollViewRef;
     private GameObject newPlayerButtonRef;
@@ -37,19 +37,25 @@ public class UIManager : MonoBehaviour
         RefreshSelectPlayerMenu();
     }
 
-    public void ShowPanelTemplate(string panelName, Player player = null)
+    public void ShowPanelTemplate(PanelScript.PanelType panelType, Player player = null)
     {
-        var template = templates[panelName];
+        var template = templates[panelType];
+        if (template == null) { return; }
+
         template.SetActive(true);
-        if (panelName.Equals("Edit Player") || panelName.Equals("Delete Player"))
+        if (panelType == PanelScript.PanelType.EditPlayer ||
+            panelType == PanelScript.PanelType.DeletePlayer ||
+            panelType == PanelScript.PanelType.ChooseEmotions)
         {
             template.GetComponent<PanelScript>().GetPlayerInfo(player);
         }
     }
 
-    public void ClosePanel(string panelName)
+    public void ClosePanel(PanelScript.PanelType panelType)
     {
-        templates[panelName].GetComponent<PopUp>().Close();
+        var template = templates[panelType];
+        if (template == null) { return; }
+        template.GetComponent<PopUp>().Close();
     }
 
     public void RefreshSelectPlayerMenu()

@@ -381,6 +381,10 @@ PrefabInstance:
       propertyPath: GraphicsToContrast.Array.data[0]
       value: 
       objectReference: {fileID: 5543626171126086222}
+    - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_text
+      value: Emociones
+      objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -538,6 +542,10 @@ PrefabInstance:
       propertyPath: GraphicsToContrast.Array.data[0]
       value: 
       objectReference: {fileID: 4002100834726638365}
+    - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: m_text
+      value: Reporte
+      objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Sprite
       value: 

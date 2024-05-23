@@ -17,6 +17,8 @@ public class PanelScript : MonoBehaviour
     private Toggle needsText;
     [SerializeField]
     private Button checkButton;
+    [SerializeField]
+    private EmotionToggles emotionToggles;
 
     [SerializeField]
     private PopUp popUp;
@@ -122,6 +124,16 @@ public class PanelScript : MonoBehaviour
         UIManager.Instance.ShowPanelTemplate(PanelType.DeletePlayer, playerRef);
     }
 
+    public void SaveEmotionsCheckOnDB()
+    {
+        Exercise.EEmotions emotionsChecked = emotionToggles?.GetEmotionsFlagSelected() ?? Exercise.EEmotions.Neutral;
+        playerRef.EmotionsLearned = (int)emotionsChecked;
+        Debug.Log("PanelScript: SaveEmotionsCheckOnDB: " + emotionsChecked);
+        DBManager.Instance.UpdatePlayerToDb(playerRef);
+        GameManager.Instance.SetCurrentPlayer(playerRef);
+        UIActions.GoToMainMenu();
+    }
+
     public void GetPlayerInfo(Player player)
     {
         playerRef = player;
@@ -137,6 +149,7 @@ public class PanelScript : MonoBehaviour
                 break;
             case PanelType.ChooseEmotions:
                 // Read selected player emotions
+                emotionToggles?.LoadEmotionToggles((Exercise.EEmotions)player.EmotionsLearned);
                 break;
             default: break;
         }
@@ -160,6 +173,7 @@ public class PanelScript : MonoBehaviour
                 break;
             case PanelType.ChooseEmotions:
                 // Select all emotions by default
+                emotionToggles?.LoadEmotionToggles(Exercise.EEmotions.Neutral);
                 break;
             default: break;
         }

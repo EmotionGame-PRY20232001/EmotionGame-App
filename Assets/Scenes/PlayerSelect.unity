@@ -1142,6 +1142,58 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -56
       objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2096114935}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 787673408}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 787673406}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveEmotionsChecked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveEmotionsCheckOnDB
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Accept
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EmotionToggles, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PanelScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PopUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8878228691677210827, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1237,6 +1289,7 @@ MonoBehaviour:
   nameInputText: {fileID: 0}
   needsText: {fileID: 0}
   checkButton: {fileID: 787673405}
+  emotionToggles: {fileID: 2096114935}
   popUp: {fileID: 787673406}
 --- !u!1001 &977109990
 PrefabInstance:
@@ -1415,7 +1468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7851707059256198717, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7851707059256198717, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1622,6 +1675,7 @@ MonoBehaviour:
   nameInputText: {fileID: 7407492379224902295}
   needsText: {fileID: 3686723286779304943}
   checkButton: {fileID: 1066387520}
+  emotionToggles: {fileID: 0}
   popUp: {fileID: 0}
 --- !u!1001 &1000785784
 PrefabInstance:
@@ -2052,7 +2106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7851707059256198717, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7851707059256198717, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2274,6 +2328,7 @@ MonoBehaviour:
   nameInputText: {fileID: 445489395}
   needsText: {fileID: 1709342565}
   checkButton: {fileID: 1940051784}
+  emotionToggles: {fileID: 0}
   popUp: {fileID: 0}
 --- !u!1001 &1244977774
 PrefabInstance:
@@ -2777,7 +2832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7851707059256198717, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7851707059256198717, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3003,6 +3058,7 @@ MonoBehaviour:
   nameInputText: {fileID: 0}
   needsText: {fileID: 0}
   checkButton: {fileID: 0}
+  emotionToggles: {fileID: 0}
   popUp: {fileID: 0}
 --- !u!114 &1576073328 stripped
 MonoBehaviour:
@@ -3372,6 +3428,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2096114935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1277574761, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
+  m_PrefabInstance: {fileID: 787673403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2174638f59ed1af4eab92982b0ad71e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1721182960468797820

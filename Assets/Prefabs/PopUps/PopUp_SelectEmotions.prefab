@@ -229,6 +229,20 @@ MonoBehaviour:
       Value: {fileID: 1218888005203533007}
     - Key: 6
       Value: {fileID: 1218888003956982043}
+  <EmotionTooglesDict>k__BackingField:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 1218888005478282762}
+    - Key: 1
+      Value: {fileID: 1218888005192794216}
+    - Key: 2
+      Value: {fileID: 1218888004489597434}
+    - Key: 3
+      Value: {fileID: 7662729525059646515}
+    - Key: 5
+      Value: {fileID: 1218888005203533007}
+    - Key: 6
+      Value: {fileID: 1218888003956982043}
 --- !u!1001 &4226850961809938703
 PrefabInstance:
   m_ObjectHideFlags: 0

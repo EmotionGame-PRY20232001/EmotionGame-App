@@ -1172,7 +1172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SaveEmotionsCheckOnDB
+      value: SaveEmotionsCheck
       objectReference: {fileID: 0}
     - target: {fileID: 8878228691677210826, guid: bf1ca0928432edb40b9f3d18bd448244, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName

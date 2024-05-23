@@ -124,13 +124,10 @@ public class PanelScript : MonoBehaviour
         UIManager.Instance.ShowPanelTemplate(PanelType.DeletePlayer, playerRef);
     }
 
-    public void SaveEmotionsCheckOnDB()
+    public void SaveEmotionsCheck()
     {
-        Exercise.EEmotions emotionsChecked = emotionToggles?.GetEmotionsFlagSelected() ?? Exercise.EEmotions.Neutral;
-        playerRef.EmotionsLearned = (int)emotionsChecked;
-        Debug.Log("PanelScript: SaveEmotionsCheckOnDB: " + emotionsChecked);
-        DBManager.Instance.UpdatePlayerToDb(playerRef);
         GameManager.Instance.SetCurrentPlayer(playerRef);
+        emotionToggles?.SaveEmotionsChecked();
         UIActions.GoToMainMenu();
     }
 

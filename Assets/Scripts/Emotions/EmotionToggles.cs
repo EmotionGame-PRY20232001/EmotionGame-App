@@ -10,9 +10,19 @@ public class EmotionToggles : MonoBehaviour
 {
     // [field:SerializeField]
     // public Emotion.EFEmotions Emotions { get; protected set; }
+    public bool LoadTogglesOnStart = false;
 
     [field:SerializeField][SerializedDictionary("Emotion", "Toggle")]
     public SerializedDictionary<Exercise.EEmotion, Toggle> EmotionTooglesDict { get; protected set; }
+
+    void Start()
+    {
+        if(LoadTogglesOnStart)
+        {
+            var gm = GameManager.Instance;
+            LoadEmotionToggles((Exercise.EEmotions)gm.currentPlayer.EmotionsLearned);
+        }
+    }
 
     public void LoadEmotionToggles(Exercise.EEmotions emotionsChecked)
     {
@@ -63,6 +73,14 @@ public class EmotionToggles : MonoBehaviour
         //TODO: Save to GameManager
         var gm = GameManager.Instance;
         gm.SelectedEmotions = emotions;
+        
+        if(gm.IsPlayerActive())
+        {
+            Exercise.EEmotions emotionsChecked = GetEmotionsFlagSelected();
+            gm.currentPlayer.EmotionsLearned = (int)emotionsChecked;
+            Debug.Log("EmotionToggles: SaveEmotionsChecked: " + emotionsChecked);
+            DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);
+        }
     }
 
     public Exercise.EEmotions GetEmotionsFlagSelected()

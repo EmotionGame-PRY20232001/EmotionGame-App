@@ -158,11 +158,11 @@ public class ThemeButton : MonoBehaviour
         if (isActive)
         {
             if (UpRect != null)
-                LeanTween.size(ShadowRect, UpRect.sizeDelta, time);
+                LeanTween.size(ShadowRect, UpRect.sizeDelta, time).setIgnoreTimeScale(true);
         }
         else
         {
-            LeanTween.size(ShadowRect, DefaultShadowSize, time);
+            LeanTween.size(ShadowRect, DefaultShadowSize, time).setIgnoreTimeScale(true);
         }
     }
 

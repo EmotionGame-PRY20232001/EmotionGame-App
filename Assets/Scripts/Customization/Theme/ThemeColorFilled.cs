@@ -210,8 +210,8 @@ public class ThemeColorFilled : MonoBehaviour
         }
         else
         {
-            LeanTween.value(gameObject, UpdateFillGraphic, LastColorFill, ColorFill, time);
-            LeanTween.value(gameObject, UpdateContrastGraphic, LastColorContrast, ColorContrast, time);
+            var effect1 = LeanTween.value(gameObject, UpdateFillGraphic, LastColorFill, ColorFill, time).setIgnoreTimeScale(true);
+            var effect2 = LeanTween.value(gameObject, UpdateContrastGraphic, LastColorContrast, ColorContrast, time).setIgnoreTimeScale(true);
         }
     }
 

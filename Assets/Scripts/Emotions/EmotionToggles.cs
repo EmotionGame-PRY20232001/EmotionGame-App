@@ -31,6 +31,7 @@ public class EmotionToggles : MonoBehaviour
     public void LoadEmotionToggles(Exercise.EEmotions emotionsChecked)
     {
         Debug.Log("EmotionToggles: LoadEmotionToggles: " + emotionsChecked);
+        numActive = 0;
         if (emotionsChecked == Exercise.EEmotions.Neutral)
         {
             // if loads from default, all checked
@@ -112,7 +113,8 @@ public class EmotionToggles : MonoBehaviour
             Exercise.EEmotions emotionsChecked = GetEmotionsFlagSelected();
             gm.currentPlayer.EmotionsLearned = (int)emotionsChecked;
             Debug.Log("EmotionToggles: SaveEmotionsChecked: " + emotionsChecked);
-            DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);
+            if (numActive > 0)
+                DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);
         }
     }
 

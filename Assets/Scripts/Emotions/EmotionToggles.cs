@@ -21,17 +21,30 @@ public class EmotionToggles : MonoBehaviour
 
     void Start()
     {
+        foreach (var emotionToggle in EmotionTooglesDict)
+        {
+            if (emotionToggle.Value != null)
+            {
+                emotionToggle.Value.onValueChanged.AddListener(delegate {
+                    SetNumActive(emotionToggle.Value);
+                });
+            }
+        }
+    }
+
+    void OnEnable()
+    {
         if(LoadTogglesOnStart)
         {
             var gm = GameManager.Instance;
-            LoadEmotionToggles((Exercise.EEmotions)gm.currentPlayer.EmotionsLearned);
+            if (gm != null && gm.IsPlayerActive())
+                LoadEmotionToggles((Exercise.EEmotions)gm.currentPlayer.EmotionsLearned);
         }
     }
 
     public void LoadEmotionToggles(Exercise.EEmotions emotionsChecked)
     {
         Debug.Log("EmotionToggles: LoadEmotionToggles: " + emotionsChecked);
-        numActive = 0;
         if (emotionsChecked == Exercise.EEmotions.Neutral)
         {
             // if loads from default, all checked
@@ -62,17 +75,15 @@ public class EmotionToggles : MonoBehaviour
                 EmotionTooglesDict[Exercise.EEmotion.Surprise].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Surprise);
         }
 
+        numActive = 0;
         foreach (var emotionToggle in EmotionTooglesDict)
         {
-            if (emotionToggle.Value != null)
-            {
-                emotionToggle.Value.onValueChanged.AddListener(delegate{
-                    SetNumActive(emotionToggle.Value);
-                });
-                if (emotionToggle.Value.isOn)
-                    numActive++;
-            }
+            if (emotionToggle.Value != null && emotionToggle.Value.isOn)
+                numActive++;
         }
+
+        if (CheckButton != null)
+            CheckButton.interactable = numActive > 0;
     }
 
     protected void SetNumActive(Toggle toggle)

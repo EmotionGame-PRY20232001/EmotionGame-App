@@ -812,6 +812,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7535687077250983763, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1083925585}
+    - target: {fileID: 7535687077250983763, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ApplySelectedOptions
+      objectReference: {fileID: 0}
     - target: {fileID: 8186149617464266666, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -14,7 +14,7 @@ public class PlayerButton : MonoBehaviour
     [SerializeField]
     private Character guide;
     [SerializeField]
-    private bool needsText;
+    private bool enableAudio;
     [SerializeField]
     private GameObject optionsContainer;
     [SerializeField]
@@ -36,7 +36,7 @@ public class PlayerButton : MonoBehaviour
         nameText.text = player.Name;
         background.sprite = GameManager.Instance.GetBackgrounds()[(Theme.EBackground)player.BackgroundId].Texture;
         guide.SetByJson(player.GuideJSON);
-        needsText = player.NeedsText;
+        enableAudio = player.EnableAudio;
     }
 
     public void ActivateOptions()

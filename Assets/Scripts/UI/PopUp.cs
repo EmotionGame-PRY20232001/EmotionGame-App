@@ -31,8 +31,6 @@ public class PopUp : MonoBehaviour
     public void Open()
     {
         gameObject.SetActive(true);
-        if (GameManager.Instance != null)
-            GameManager.Instance.PauseGame();
         onOpen?.Invoke();
         //play animation
     }
@@ -40,8 +38,6 @@ public class PopUp : MonoBehaviour
     public void Close()
     {
         onClose?.Invoke();
-        if (GameManager.Instance != null)
-            GameManager.Instance.ResumeGame();
         gameObject.SetActive(false);
         //play animation
     }

@@ -20,7 +20,7 @@ public class ThemeToggleSwitch : ThemeToggle
 
     protected override void PlaySfx(bool isOn)
     {
-        SfxType = isOn ? AudioSrcs.ESfxButton.On : AudioSrcs.ESfxButton.Off;
+        SfxType = isOn ? AudioManager.ESfxButton.On : AudioManager.ESfxButton.Off;
         LoadSfx();
         AudioSrc?.Play();
     }
@@ -43,12 +43,12 @@ public class ThemeToggleSwitch : ThemeToggle
         //Track = Shadow | Thumb = Up
         if (UpRect != null)
         {
-            LeanTween.moveX(UpRect, moveX, time);
+            LeanTween.moveX(UpRect, moveX, time).setIgnoreTimeScale(true);
             moveX = isActive ? IconTrack.MoveDist : -IconTrack.MoveDist;
         }
 
         if (IconTrack.Rect != null)
-            LeanTween.moveX(IconTrack.Rect, -moveX, time);
+            LeanTween.moveX(IconTrack.Rect, -moveX, time).setIgnoreTimeScale(true);
     }
 
     protected override void ToggleIconSprite(bool isActive)

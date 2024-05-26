@@ -32,6 +32,11 @@ public class UIActions : MonoBehaviour
         // if (guideImage) guideImage.sprite = GameManager.Instance.GetGuideSprites()[player.GuideId];
     }
 
+    private void Start()
+    {
+        AudioManager.Instance.Load();
+    }
+
     private static bool CheckPauseStatus()
     {
         return Time.timeScale == 0;
@@ -43,6 +48,7 @@ public class UIActions : MonoBehaviour
     public void GoToPlayerSelecion()
     {
         GameManager.Instance.SetCurrentPlayer(null);
+        AudioManager.Instance.Load();
         SceneManager.LoadScene(Scenes.PLAYER_SELECT);
     }
 
@@ -74,7 +80,6 @@ public class UIActions : MonoBehaviour
         {
             Debug.LogWarning("DBManager.Instance is null");
         }
-        GoToMainMenu();
     }
 
 

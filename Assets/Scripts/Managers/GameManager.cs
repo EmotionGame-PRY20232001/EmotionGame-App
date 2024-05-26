@@ -131,10 +131,10 @@ public class GameManager : MonoBehaviour
     {
         //Button-Toggle
         [field:SerializeField][SerializedDictionary("Tag", "AudioClip")]
-        public SerializedDictionary<AudioSrcs.ESfxButton, AudioClip> ButtonSfxs { get; private set; }
+        public SerializedDictionary<AudioManager.ESfxButton, AudioClip> ButtonSfxs { get; private set; }
         //PopUp
         [field:SerializeField][SerializedDictionary("Tag", "AudioClip")]
-        public SerializedDictionary<AudioSrcs.ESfxGame, AudioClip> GameSfxs { get; private set; }
+        public SerializedDictionary<AudioManager.ESfxGame, AudioClip> GameSfxs { get; private set; }
     }
 
     public void PauseGame()

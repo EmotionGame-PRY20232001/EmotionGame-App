@@ -34,6 +34,6 @@ public class ThemeToggleButton : ThemeToggle
         //if (ShadowRect != null)
         //    LeanTween.moveY(ShadowRect, moveY, time);
         if (UpRect != null)
-            LeanTween.moveY(UpRect, moveY, time);
+            LeanTween.moveY(UpRect, moveY, time).setIgnoreTimeScale(true);
     }
 }

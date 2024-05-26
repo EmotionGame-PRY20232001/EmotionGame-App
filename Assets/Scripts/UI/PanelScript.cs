@@ -14,7 +14,7 @@ public class PanelScript : MonoBehaviour
     [SerializeField]
     private TMP_InputField nameInputText;
     [SerializeField]
-    private Toggle needsText;
+    private Toggle enableAudio;
     [SerializeField]
     private Button checkButton;
     [SerializeField]
@@ -92,7 +92,7 @@ public class PanelScript : MonoBehaviour
         Player player = new Player
         {
             Name = nameInputText.text,
-            NeedsText = needsText.isOn,
+            EnableAudio = enableAudio.isOn,
             BackgroundId = 0,
             // GuideId = 0,
             GuideJSON = Character.Custom.GetDefault().ToJson()
@@ -105,13 +105,13 @@ public class PanelScript : MonoBehaviour
 
     public void UpdatePlayer()
     {
-        if (playerRef.Name.Equals(nameInputText.text) && playerRef.NeedsText.Equals(needsText.isOn))
+        if (playerRef.Name.Equals(nameInputText.text) && playerRef.EnableAudio.Equals(enableAudio.isOn))
         {
             // gameObject.SetActive(false);
             return;
         }
         playerRef.Name = nameInputText.text;
-        playerRef.NeedsText = needsText.isOn;
+        playerRef.EnableAudio = enableAudio.isOn;
         DBManager.Instance.UpdatePlayerToDb(playerRef);
         UIManager.Instance.RefreshSelectPlayerMenu();
         playerRef = null;
@@ -149,7 +149,7 @@ public class PanelScript : MonoBehaviour
             case PanelType.EditPlayer:
                 nameText.text = player.Name;
                 nameInputText.text = player.Name;
-                needsText.isOn = player.NeedsText;
+                enableAudio.isOn = player.EnableAudio;
                 break;
             case PanelType.DeletePlayer:
                 nameText.text = "Está por eliminar a\n" + player.Name;
@@ -168,12 +168,12 @@ public class PanelScript : MonoBehaviour
         {
             case PanelType.NewPlayer:
                 nameInputText.text = string.Empty;
-                needsText.isOn = false;
+                enableAudio.isOn = false;
                 break;
             case PanelType.EditPlayer:
                 nameText.text = string.Empty;
                 nameInputText.text = string.Empty;
-                needsText.isOn = false;
+                enableAudio.isOn = false;
                 break;
             case PanelType.DeletePlayer:
                 nameText.text = string.Empty;

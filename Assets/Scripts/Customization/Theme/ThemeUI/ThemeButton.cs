@@ -88,7 +88,7 @@ public class ThemeButton : MonoBehaviour
     //---- Tooltip ----//
     protected AudioSource AudioSrc;
     [SerializeField]
-    protected AudioSrcs.ESfxButton SfxType = AudioSrcs.ESfxButton.Regular;
+    protected AudioManager.ESfxButton SfxType = AudioManager.ESfxButton.Regular;
 
     public delegate void OnNormalState();
     public OnNormalState onNormalState;

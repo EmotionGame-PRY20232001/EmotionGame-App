@@ -55,7 +55,17 @@ public class PanelScript : MonoBehaviour
         // popUp.onOpen += RefreshPlayerPanel;
     }
 
-    private void Update()
+    void Start()
+    {
+        if (nameInputText != null)
+        {
+            nameInputText.onValueChanged.AddListener(delegate {
+                UpdateCheckButton();
+            });
+        }
+    }
+
+    private void UpdateCheckButton()
     {
         if (checkButton != null)
         {

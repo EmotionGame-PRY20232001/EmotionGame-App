@@ -604,6 +604,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -104.009995
       objectReference: {fileID: 0}
+    - target: {fileID: 5550807994448619305, guid: e53cba7097bb71e4b9643e8db9758ac9, type: 3}
+      propertyPath: FillType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550807994448619305, guid: e53cba7097bb71e4b9643e8db9758ac9, type: 3}
+      propertyPath: PaperAlphaFill
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6314684954355659367, guid: e53cba7097bb71e4b9643e8db9758ac9, type: 3}
       propertyPath: m_text
       value: Nombre
@@ -3132,7 +3140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382811399919761871, guid: 280c57730a7fa7748b946af75838a635, type: 3}
       propertyPath: FillType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4382811399919761871, guid: 280c57730a7fa7748b946af75838a635, type: 3}
       propertyPath: ColorFill.a
@@ -3532,7 +3540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382811399919761871, guid: 280c57730a7fa7748b946af75838a635, type: 3}
       propertyPath: FillType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4382811399919761871, guid: 280c57730a7fa7748b946af75838a635, type: 3}
       propertyPath: ColorFill.a
@@ -3842,7 +3850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5550807994448619305, guid: e53cba7097bb71e4b9643e8db9758ac9, type: 3}
       propertyPath: FillType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5550807994448619305, guid: e53cba7097bb71e4b9643e8db9758ac9, type: 3}
       propertyPath: ColorFill.a

@@ -11,6 +11,10 @@ public class EmotionToggles : MonoBehaviour
     // [field:SerializeField]
     // public Emotion.EFEmotions Emotions { get; protected set; }
     public bool LoadTogglesOnStart = false;
+    protected uint numActive = 0;
+
+    [field: SerializeField]
+    protected Button CheckButton;
 
     [field:SerializeField][SerializedDictionary("Emotion", "Toggle")]
     public SerializedDictionary<Exercise.EEmotion, Toggle> EmotionTooglesDict { get; protected set; }
@@ -56,6 +60,35 @@ public class EmotionToggles : MonoBehaviour
             if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Surprise))
                 EmotionTooglesDict[Exercise.EEmotion.Surprise].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Surprise);
         }
+
+        foreach (var emotionToggle in EmotionTooglesDict)
+        {
+            if (emotionToggle.Value != null)
+            {
+                emotionToggle.Value.onValueChanged.AddListener(delegate{
+                    SetNumActive(emotionToggle.Value);
+                });
+                if (emotionToggle.Value.isOn)
+                    numActive++;
+            }
+        }
+    }
+
+    protected void SetNumActive(Toggle toggle)
+    {
+        if (toggle.isOn)
+        {
+            if (numActive < EmotionTooglesDict.Count)
+                numActive++;
+        }
+        else
+        {
+            if (numActive > 0)
+                numActive--;
+        }
+
+        if (CheckButton != null)
+            CheckButton.interactable = numActive > 0;
     }
 
     public void SaveEmotionsChecked()

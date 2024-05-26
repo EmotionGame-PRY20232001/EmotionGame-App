@@ -215,20 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2174638f59ed1af4eab92982b0ad71e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Emotions>k__BackingField:
-    _serializedList:
-    - Key: 0
-      Value: {fileID: 1218888005478282762}
-    - Key: 1
-      Value: {fileID: 1218888005192794216}
-    - Key: 2
-      Value: {fileID: 1218888004489597434}
-    - Key: 3
-      Value: {fileID: 7662729525059646515}
-    - Key: 5
-      Value: {fileID: 1218888005203533007}
-    - Key: 6
-      Value: {fileID: 1218888003956982043}
+  LoadTogglesOnStart: 0
+  CheckButton: {fileID: 8878228691677210826}
   <EmotionTooglesDict>k__BackingField:
     _serializedList:
     - Key: 0
@@ -1287,6 +1275,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6258161165861037562, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
   m_PrefabInstance: {fileID: 4617857885955169170}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8878228691677210826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4260441201360106328, guid: 3090c234e27e1244c950d4e0a5f4ee54, type: 3}
+  m_PrefabInstance: {fileID: 4617857885955169170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4617857886011763751
 PrefabInstance:
   m_ObjectHideFlags: 0

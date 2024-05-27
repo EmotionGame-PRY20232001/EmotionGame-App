@@ -81,9 +81,7 @@ public class EmotionToggles : MonoBehaviour
             if (emotionToggle.Value != null && emotionToggle.Value.isOn)
                 numActive++;
         }
-
-        if (CheckButton != null)
-            CheckButton.interactable = numActive > 0;
+        ValidateInteractable();
     }
 
     protected void SetNumActive(Toggle toggle)
@@ -98,9 +96,13 @@ public class EmotionToggles : MonoBehaviour
             if (numActive > 0)
                 numActive--;
         }
+        ValidateInteractable();
+    }
 
+    protected void ValidateInteractable()
+    {
         if (CheckButton != null)
-            CheckButton.interactable = numActive > 0;
+            CheckButton.interactable = numActive > 1;
     }
 
     public void SaveEmotionsChecked()

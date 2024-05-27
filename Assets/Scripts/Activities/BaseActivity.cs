@@ -29,7 +29,7 @@ public class BaseActivity : EmotionExercise
     protected readonly int GoodScore = 10;
     protected readonly int BadScore = 5;
 
-    private List<GameObject> InstantiateButtons = new List<GameObject>();
+    protected List<GameObject> InstantiateButtons = new List<GameObject>();
 
     protected override void Awake()
     {

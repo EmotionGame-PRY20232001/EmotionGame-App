@@ -162,7 +162,7 @@ public class Character : MonoBehaviour
     }
     public void SetByJson(string jsonCustom)
     {
-        Debug.Log("SetByJson " + jsonCustom);
+        //Debug.Log("SetByJson " + jsonCustom);
         ChangeCustomization(Custom.FromJson(jsonCustom));
     }
 

@@ -12,7 +12,8 @@ public class GamePopUp : MonoBehaviour
 
     void Start()
     {
-        AudioManager.Instance.Load();
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.Load();
         if (TurnAudio != null)
             TurnAudio.isOn = !AudioListener.pause;
     }

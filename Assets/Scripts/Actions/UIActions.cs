@@ -34,7 +34,8 @@ public class UIActions : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.Load();
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.Load();
     }
 
     private static bool CheckPauseStatus()

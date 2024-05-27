@@ -18,6 +18,11 @@ public class GamePopUp : MonoBehaviour
             TurnAudio.isOn = !AudioListener.pause;
     }
 
+    private void OnEnable()
+    {
+        Pause();
+    }
+
     public void Pause()
     {
         if (GameManager.Instance != null)

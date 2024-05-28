@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 2898853047491286776}
   - component: {fileID: 7512135826399742642}
   - component: {fileID: 6534367232590024777}
+  - component: {fileID: 7609032450694393959}
   m_Layer: 5
   m_Name: Toggle_Btn
   m_TagString: Untagged
@@ -612,11 +613,24 @@ MonoBehaviour:
   ShadowRect: {fileID: 5565546783684854839}
   UpRect: {fileID: 7749427171197466453}
   Tooltip: {fileID: 5336275115037187110}
-  SfxType: 8
   IconThumb:
     ImageT: {fileID: 7207791144791060653}
     SpriteOn: {fileID: 0}
     SpriteOff: {fileID: 0}
+--- !u!114 &7609032450694393959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2638803878648128633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da9f1f60c391b84b954fd004abe0cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SfxType: 10
+  SfxTypeOff: 11
 --- !u!1 &5607225308986791490
 GameObject:
   m_ObjectHideFlags: 0

@@ -83,13 +83,6 @@ public class ThemeToggle : ThemeButton
     protected virtual void ToggleValueChanged(Toggle toggle)
     {
         ChangeState(SelectionState.Normal, false);
-        PlaySfx(toggle.isOn);
-    }
-
-    protected virtual void PlaySfx(bool isOn)
-    {
-        if (isOn)
-            AudioSrc?.Play();
     }
 
     protected virtual void CalcTrackThumDiff() { }
@@ -112,6 +105,7 @@ public class ThemeToggle : ThemeButton
     }
     protected override void PlayAnimationHighlighted(float time)
     {
+        ThemeColor?.OnLightnessChange(m_Toggle.isOn ? Theme.ELightness.Main : Theme.ELightness.Light, time);
     }
     protected override void PlayAnimationPressed(float time)
     {

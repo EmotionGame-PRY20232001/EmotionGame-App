@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 3545863794903625351}
   - component: {fileID: 7523544841079839821}
   - component: {fileID: 8452837821879448640}
+  - component: {fileID: 8502343646836213615}
   m_Layer: 5
   m_Name: BtnRegular
   m_TagString: Untagged
@@ -544,6 +545,19 @@ MonoBehaviour:
   ShadowRect: {fileID: 6638598362119371922}
   UpRect: {fileID: 6784601227340223614}
   Tooltip: {fileID: 0}
+--- !u!114 &8502343646836213615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7506513800619235907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784a1ba37529ab44e920d13a3f64f871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SfxType: 1
 --- !u!1 &7506513801400681545
 GameObject:
   m_ObjectHideFlags: 0

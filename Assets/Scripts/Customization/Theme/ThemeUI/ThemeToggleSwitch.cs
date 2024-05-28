@@ -18,13 +18,6 @@ public class ThemeToggleSwitch : ThemeToggle
         IconTrack.MoveDist = TrackThumbDiff - (UpRect.sizeDelta.x / 2);
     }
 
-    protected override void PlaySfx(bool isOn)
-    {
-        SfxType = isOn ? AudioManager.ESfxButton.On : AudioManager.ESfxButton.Off;
-        LoadSfx();
-        AudioSrc?.Play();
-    }
-
     ////////==== State ====////////
     protected override void PlayAnimationSelected(float time)
     {

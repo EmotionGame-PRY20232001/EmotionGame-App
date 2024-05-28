@@ -835,6 +835,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Tema
       objectReference: {fileID: 0}
+    - target: {fileID: 8071419376168083101, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: SfxType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071419376168083101, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: SfxTypeOff
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8219273209267558831, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -938,6 +946,14 @@ PrefabInstance:
     - target: {fileID: 4504854573942083374, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_text
       value: "Gu\xEDa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071419376168083101, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: SfxType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071419376168083101, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
+      propertyPath: SfxTypeOff
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8219273209267558831, guid: f66f366955ff1ee408150ce8413564bb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4609,6 +4625,10 @@ PrefabInstance:
       propertyPath: FillType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3300106401540671584, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: SfxType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_text
       value: 'Cancelar
@@ -4732,6 +4752,10 @@ PrefabInstance:
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: FillType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300106401540671584, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: SfxType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_text

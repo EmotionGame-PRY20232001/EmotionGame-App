@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3966308655753079291}
   - component: {fileID: 1168071407051892537}
   - component: {fileID: 1800533673990489272}
+  - component: {fileID: 9125597443332414065}
   m_Layer: 5
   m_Name: BtnEmotion
   m_TagString: Untagged
@@ -323,6 +324,20 @@ MonoBehaviour:
   GraphicsToFill:
   - {fileID: 3749265073191175776}
   GraphicsToContrast: []
+--- !u!114 &9125597443332414065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311458337517007882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da9f1f60c391b84b954fd004abe0cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SfxType: 4
+  SfxTypeOff: 5
 --- !u!1 &4658339171265447993
 GameObject:
   m_ObjectHideFlags: 0

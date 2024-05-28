@@ -27,9 +27,6 @@ public class GameManager : MonoBehaviour
     [field:SerializeField]
     public CharacterCustomParts CharacterCustom { get; private set; }
 
-    [field:SerializeField]
-    public CustomSfxs SfxsCustom { get; private set; }
-
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -124,17 +121,6 @@ public class GameManager : MonoBehaviour
         public Sprite Eyelashes { get; private set; }
         [field:SerializeField][SerializedDictionary("Haircut", "Sprite")]
         public SerializedDictionary<Character.EHairCut, Sprite> HairCuts { get; private set; }
-    }
-
-    [System.Serializable]
-    public struct CustomSfxs
-    {
-        //Button-Toggle
-        [field:SerializeField][SerializedDictionary("Tag", "AudioClip")]
-        public SerializedDictionary<AudioManager.ESfxButton, AudioClip> ButtonSfxs { get; private set; }
-        //PopUp
-        [field:SerializeField][SerializedDictionary("Tag", "AudioClip")]
-        public SerializedDictionary<AudioManager.ESfxGame, AudioClip> GameSfxs { get; private set; }
     }
 
     public void PauseGame()

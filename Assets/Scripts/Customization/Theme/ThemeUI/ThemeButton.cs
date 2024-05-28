@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(ThemeColorFilled))]
-[RequireComponent(typeof(AudioSource))]
 //public class ThemeButton : Button
 //{
 
@@ -84,11 +83,8 @@ public class ThemeButton : MonoBehaviour
     //---- Tooltip ----//
     [SerializeField]
     protected CanvasGroup Tooltip;
-
-    //---- Tooltip ----//
+    //---- Audio ----//
     protected AudioSource AudioSrc;
-    [SerializeField]
-    protected AudioManager.ESfxButton SfxType = AudioManager.ESfxButton.Regular;
 
     public delegate void OnNormalState();
     public OnNormalState onNormalState;
@@ -107,20 +103,7 @@ public class ThemeButton : MonoBehaviour
             DefaultShadowSize = ShadowRect.sizeDelta;
         }
 
-        LoadSfx();
         ChangeState(SelectionState.Normal, true);
-    }
-
-
-    ////////==== Sfx ====////////
-    protected virtual void LoadSfx()
-    {
-        if (AudioSrc != null && GameManager.Instance != null)
-        {
-            var gmsfxs = GameManager.Instance.SfxsCustom.ButtonSfxs;
-            if (gmsfxs.ContainsKey(SfxType))
-                AudioSrc.clip = gmsfxs[SfxType];
-        }
     }
 
     ////////==== State ====////////

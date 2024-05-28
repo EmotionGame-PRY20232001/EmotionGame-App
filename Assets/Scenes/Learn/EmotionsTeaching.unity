@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: FillType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3300106401540671584, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: SfxType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_text
       value: cancel
@@ -1064,6 +1068,10 @@ PrefabInstance:
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: FillType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300106401540671584, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
+      propertyPath: SfxType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_text

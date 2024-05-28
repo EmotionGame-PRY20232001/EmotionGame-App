@@ -2647,6 +2647,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Otro Jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 8502343646836213615, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: SfxType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
 --- !u!224 &1757756033 stripped

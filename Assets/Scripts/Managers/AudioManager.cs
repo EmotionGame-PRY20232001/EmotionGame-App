@@ -1,3 +1,4 @@
+using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,9 @@ public class AudioManager : MonoBehaviour
     private static AudioManager _instance;
     public static AudioManager Instance { get { return _instance; } }
 
-    public enum ESfxButton { Regular, Accept, Cancel, Correct, Fail, Add, Remove, Invalid, Selection, On, Off }
-    public enum ESfxGame { StartGame, AddScore, Star, OpenPopUp, ClosePopUp }
+    [field: SerializeField]
+    [SerializedDictionary("Tag", "AudioClip")]
+    public SerializedDictionary<ESfx, AudioClip> Sfxs { get; private set; }
 
     private void Awake()
     {
@@ -54,4 +56,28 @@ public class AudioManager : MonoBehaviour
                 gm.currentPlayer.EnableAudio = toggle.isOn;
         }
     }
+
+    public enum ESfx
+    {
+        None,
+        // Button
+        Regular,
+        Accept,
+        Cancel,
+        Correct,
+        Fail,
+        Add,
+        Remove,
+        Invalid,
+        Selection,
+        On,
+        Off,
+        // Game
+        StartGame,
+        AddScore,
+        Star,
+        OpenPopUp,
+        ClosePopUp,
+    }
+
 }

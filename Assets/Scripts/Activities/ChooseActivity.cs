@@ -8,7 +8,7 @@ public class ChooseActivity : BaseActivity
     [SerializeField]
     protected OriginObj BubbleOrigin;
     [SerializeField]
-    protected float TimeTraslation = 0.5f;
+    protected float TimeTraslation = 0.33f;
 
     protected override void Awake()
     {

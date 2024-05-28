@@ -1306,7 +1306,7 @@ MonoBehaviour:
   BubbleOrigin:
     <GO>k__BackingField: {fileID: 94921122}
     Offset: {x: -28, y: 36, z: 0}
-  TimeTraslation: 0.5
+  TimeTraslation: 0.25
 --- !u!114 &744207308343788988 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1509861140204797579, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}

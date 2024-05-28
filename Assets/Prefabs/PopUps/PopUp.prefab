@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7851707059256198717}
   - component: {fileID: 7127755834283478430}
+  - component: {fileID: 1592831272046406154}
   - component: {fileID: 4830450037701177313}
   - component: {fileID: 3234907901283782732}
   - component: {fileID: 3115763677028629194}
@@ -205,6 +206,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TMPTitle: {fileID: 4580025360377405445}
+  Panel: {fileID: 1567535919284407623}
+  TransitionTime: 0.25
+--- !u!225 &1592831272046406154
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131448256718245842}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &4830450037701177313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +307,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -42,7 +42,9 @@ public class UIManager : MonoBehaviour
         var template = templates[panelType];
         if (template == null) { return; }
 
-        template.SetActive(true);
+        PopUp popUp = template.GetComponent<PopUp>();
+        if (popUp != null) popUp.Open();
+        else template.SetActive(true);
         if (panelType == PanelScript.PanelType.EditPlayer ||
             panelType == PanelScript.PanelType.DeletePlayer ||
             panelType == PanelScript.PanelType.ChooseEmotions)

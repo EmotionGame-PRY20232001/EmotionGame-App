@@ -70,9 +70,11 @@ public class AnswerPopUp : MonoBehaviour
             SelectedEmotion.SetEmotion(emotionSelected);
 
         LoadBackEffectPosition();
+        const float start = 48.0f;
+        const float end = start + 128.0f;
         if (BackEffect != null)
-            LeanTween.moveY(BackEffect, BackEffectPosition.y + 48f, EffectTime)
-                .setFrom(BackEffectPosition.y + 96f)
+            LeanTween.moveY(BackEffect, BackEffectPosition.y + start, EffectTime)
+                .setFrom(BackEffectPosition.y + end)
                 .setLoopPingPong()
                 .setIgnoreTimeScale(true);
     }

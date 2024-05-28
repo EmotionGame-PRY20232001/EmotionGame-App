@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class EmotionPhoto : MonoBehaviour
 {
     public Exercise.EEmotion PhotoEmotion { get; protected set; }
-    [SerializeField]
-    protected Image Photo; //or RawImage
+    [field:SerializeField]
+    public Image Photo { get; protected set; } //or RawImage
     //[SerializeField]
     //protected Image Frame;
 

@@ -31,6 +31,11 @@ public class BaseActivity : EmotionExercise
 
     protected List<GameObject> InstantiateButtons = new List<GameObject>();
 
+    [SerializeField]
+    protected AnswerPopUp PopUpGood;
+    [SerializeField]
+    protected AnswerPopUp PopUpBad;
+
     protected override void Awake()
     {
         base.Awake();
@@ -52,6 +57,12 @@ public class BaseActivity : EmotionExercise
         SetEmotionExercises();
         UpdateScoreText();
         LoadExercise();
+
+        if (PopUpGood !=null && PopUpGood.PopUp != null)
+            PopUpGood.PopUp.onClose += LoadExercise;
+        if (PopUpBad !=null && PopUpBad.PopUp != null)
+            PopUpBad.PopUp.onClose += LoadExercise;
+
     }
 
     private void CleanUp()
@@ -64,14 +75,38 @@ public class BaseActivity : EmotionExercise
     {
         Score += GoodScore;
         UpdateScoreText();
-        LoadExercise();
+
+        if (PopUpGood != null)
+        {
+            Sprite photoSprite = Exercises.Photos[CurrentExercise].Photo.sprite;
+            PopUpGood.LoadAnswerCorrect(photoSprite, ExerciseEmotion);
+            PopUpGood.PopUp.Open();
+            PopUpGood.transform.SetAsLastSibling();
+            CleanUp();
+        }
+        else
+        {
+            LoadExercise();
+        }
     }
     
-    public void Bad()
+    public void Bad(Exercise.EEmotion emotionSelected)
     {
         if (Score >= BadScore) Score -= BadScore;
         UpdateScoreText();
-        LoadExercise();
+
+        if (PopUpBad != null)
+        {
+            Sprite photoSprite = Exercises.Photos[CurrentExercise].Photo.sprite;
+            PopUpBad.LoadAnswerWrong(photoSprite, ExerciseEmotion, emotionSelected);
+            PopUpBad.PopUp.Open();
+            PopUpBad.transform.SetAsLastSibling();
+            CleanUp();
+        }
+        else
+        {
+            LoadExercise();
+        }
     }
 
     protected virtual void LoadExercise()

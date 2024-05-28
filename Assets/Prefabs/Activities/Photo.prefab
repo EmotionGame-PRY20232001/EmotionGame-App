@@ -89,4 +89,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd27b21b1ed0004ab87937b0b37ca8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Photo: {fileID: 3480285289401856034}
+  <Photo>k__BackingField: {fileID: 3480285289401856034}

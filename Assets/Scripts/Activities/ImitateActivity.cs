@@ -99,7 +99,7 @@ public class ImitateActivity : BaseActivity
     public void CheckExercise()
     {
         if (Model.PredictedEmotion == ExerciseEmotion) Good();
-        else Bad();
+        else Bad(Model.PredictedEmotion);
         webCam.PlayCamera();
     }
 

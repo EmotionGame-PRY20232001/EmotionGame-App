@@ -24,7 +24,7 @@ public class EmotionButton : EmotionObject
         if (BaseActivity.Instance != null)
         {
             if (CurrEmotion == BaseActivity.Instance.ExerciseEmotion) BaseActivity.Instance.Good();
-            else BaseActivity.Instance.Bad();
+            else BaseActivity.Instance.Bad(CurrEmotion);
         }
     }
 

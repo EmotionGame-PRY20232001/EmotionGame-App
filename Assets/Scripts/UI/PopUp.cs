@@ -38,6 +38,7 @@ public class PopUp : MonoBehaviour
     public void Close()
     {
         onClose?.Invoke();
+        LeanTween.cancel(gameObject);
         gameObject.SetActive(false);
         //play animation
     }

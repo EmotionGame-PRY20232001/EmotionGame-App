@@ -811,8 +811,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 384, y: 384}
+  m_AnchoredPosition: {x: 0, y: -32}
+  m_SizeDelta: {x: 384, y: 256}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!95 &7569885511478219614
 Animator:
@@ -826,7 +826,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 84d472c16d43fac46842a94bba4f716c, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1318,7 +1318,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 420}
+  m_SizeDelta: {x: 64, y: 420}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &6989465240511147069
 GameObject:
@@ -1604,6 +1604,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+--- !u!114 &7810599625924158894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6217310183323873885, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+  m_PrefabInstance: {fileID: 4191866442807908339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7810599626101677891 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6217310183096633520, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
@@ -1813,6 +1824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PopUp>k__BackingField: {fileID: 6319932053638369733}
   Photo: {fileID: 362005991545882456}
+  ExerciseText: {fileID: 7810599625924158894}
+  Expressions: {fileID: 5004602836309027424}
   BackEffect: {fileID: 6989465240511147069}
   CorrectEmotion: {fileID: 72696606892687728}
   SelectedEmotion: {fileID: 0}

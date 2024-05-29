@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(PopUp))]
 public class AnswerPopUp : MonoBehaviour
@@ -10,6 +11,10 @@ public class AnswerPopUp : MonoBehaviour
     public PopUp PopUp { get; protected set; }
     [SerializeField]
     protected Image Photo;
+    [SerializeField]
+    private TMP_Text ExerciseText;
+    [SerializeField]
+    private CharacterExpressions Expressions;
     [SerializeField]
     protected GameObject BackEffect;
     protected Vector3 BackEffectPosition = Vector3.zero;
@@ -31,7 +36,7 @@ public class AnswerPopUp : MonoBehaviour
         LoadBackEffectPosition();
     }
 
-    public void LoadBackEffectPosition()
+    protected void LoadBackEffectPosition()
     {
         if (BackEffectPosition == Vector3.zero && BackEffect != null)
         {
@@ -43,16 +48,40 @@ public class AnswerPopUp : MonoBehaviour
 
     protected void LoadPhoto(Sprite photo)
     {
-        if (photo == null || Photo == null) return;
+        if (Photo == null) return;
         Photo.sprite = photo;
     }
 
-    public void LoadAnswerCorrect(Sprite photo, Exercise.EEmotion emotion)
+    protected void LoadExercisePreview(EmotionPhoto emotionEx)
     {
-        LoadPhoto(photo);
+        if (emotionEx.Photo != null)
+        {
+            Sprite photo = emotionEx.Photo.sprite;
+            LoadPhoto(photo);
+        }
+        else
+        {
+            EmotionContext emotionCtx = (EmotionContext)emotionEx;
+            if (emotionCtx != null)
+            {
+                if (ExerciseText != null)
+                    ExerciseText.text = emotionCtx.Text;
+                if (Expressions != null)
+                {
+                    Expressions.Load();
+                    //Popup needs to be active before playing
+                    Expressions.PlayEmotion(emotionCtx.PhotoEmotion);
+                }
+            }
+        }
+    }
+
+    public void LoadAnswerCorrect(EmotionPhoto emotionEx)
+    {
+        LoadExercisePreview(emotionEx);
 
         if (CorrectEmotion != null)
-            CorrectEmotion.SetEmotion(emotion);
+            CorrectEmotion.SetEmotion(emotionEx.PhotoEmotion);
 
         if (BackEffect != null)
             LeanTween.rotateAroundLocal(BackEffect, Vector3.forward, 360f, EffectTime)
@@ -60,18 +89,18 @@ public class AnswerPopUp : MonoBehaviour
                 .setIgnoreTimeScale(true);
     }
 
-    public void LoadAnswerWrong(Sprite photo, Exercise.EEmotion emotionCorrect, Exercise.EEmotion emotionSelected)
+    public void LoadAnswerWrong(EmotionPhoto emotionEx, Exercise.EEmotion emotionSelected)
     {
-        LoadPhoto(photo);
+        LoadExercisePreview(emotionEx);
 
         if (CorrectEmotion != null)
-            CorrectEmotion.SetEmotion(emotionCorrect);
+            CorrectEmotion.SetEmotion(emotionEx.PhotoEmotion);
         if (SelectedEmotion != null)
             SelectedEmotion.SetEmotion(emotionSelected);
 
         LoadBackEffectPosition();
         const float start = 48.0f;
-        const float end = start + 128.0f;
+        const float end = start + 160.0f;
         if (BackEffect != null)
             LeanTween.moveY(BackEffect, BackEffectPosition.y + start, EffectTime)
                 .setFrom(BackEffectPosition.y + end)

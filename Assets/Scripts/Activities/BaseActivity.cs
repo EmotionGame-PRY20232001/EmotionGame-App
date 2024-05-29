@@ -78,10 +78,9 @@ public class BaseActivity : EmotionExercise
 
         if (PopUpGood != null)
         {
-            Sprite photoSprite = Exercises.Photos[CurrentExercise].Photo.sprite;
-            PopUpGood.LoadAnswerCorrect(photoSprite, ExerciseEmotion);
             PopUpGood.PopUp.Open();
             PopUpGood.transform.SetAsLastSibling();
+            PopUpGood.LoadAnswerCorrect(Exercises.Photos[CurrentExercise]); //ExerciseEmotion
             CleanUp();
         }
         else
@@ -97,10 +96,9 @@ public class BaseActivity : EmotionExercise
 
         if (PopUpBad != null)
         {
-            Sprite photoSprite = Exercises.Photos[CurrentExercise].Photo.sprite;
-            PopUpBad.LoadAnswerWrong(photoSprite, ExerciseEmotion, emotionSelected);
             PopUpBad.PopUp.Open();
             PopUpBad.transform.SetAsLastSibling();
+            PopUpBad.LoadAnswerWrong(Exercises.Photos[CurrentExercise], emotionSelected);
             CleanUp();
         }
         else

@@ -5,12 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class CharacterExpressions : MonoBehaviour
 {
+    protected bool m_loaded = false;
     protected Animator Anim;
-
     protected Dictionary<Exercise.EEmotion, string> TriggerNames;
 
     public void Awake()
     {
+        Load();
+    }
+
+    public void Load()
+    {
+        if (m_loaded) return;
+
         Anim = gameObject.GetComponent<Animator>();
 
         TriggerNames = new Dictionary<Exercise.EEmotion, string>();
@@ -21,6 +28,8 @@ public class CharacterExpressions : MonoBehaviour
         TriggerNames.Add(Exercise.EEmotion.Happy, "Happy");
         TriggerNames.Add(Exercise.EEmotion.Sad, "Sad");
         TriggerNames.Add(Exercise.EEmotion.Surprise, "Surprise");
+
+        m_loaded = true;
     }
 
     public void PlayEmotion(Exercise.EEmotion emotion)

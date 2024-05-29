@@ -48,8 +48,8 @@ public class UIActions : MonoBehaviour
 
     public void GoToPlayerSelecion()
     {
-        GameManager.Instance.SetCurrentPlayer(null);
-        AudioManager.Instance.Load();
+        GameManager.Instance?.SetCurrentPlayer(null);
+        AudioManager.Instance?.Load();
         SceneManager.LoadScene(Scenes.PLAYER_SELECT);
     }
 
@@ -113,16 +113,22 @@ public class UIActions : MonoBehaviour
 
     public static void GoToChooseGame()
     {
+        if (GameManager.Instance != null)
+            GameManager.Instance.LastPlayedGame = Exercise.EActivity.Choose;
         SceneManager.LoadScene(Scenes.GAME_CHOOSE);
     }
 
     public static void GoToContextGame()
     {
+        if (GameManager.Instance != null)
+            GameManager.Instance.LastPlayedGame = Exercise.EActivity.Context;
         SceneManager.LoadScene(Scenes.GAME_CONTEXT);
     }
 
     public static void GoToImitateGame()
     {
+        if (GameManager.Instance != null)
+            GameManager.Instance.LastPlayedGame = Exercise.EActivity.Imitate;
         SceneManager.LoadScene(Scenes.GAME_IMITATE);
     }
     public static void GoToGameComplete()

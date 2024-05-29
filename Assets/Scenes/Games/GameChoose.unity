@@ -1228,6 +1228,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6914954864261153310, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7039048845250499759, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1309,7 +1313,7 @@ MonoBehaviour:
   TimeTraslation: 0.25
 --- !u!114 &744207308343788988 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1509861140204797579, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7667975392429105453, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
   m_PrefabInstance: {fileID: 744207308343788983}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1320,7 +1324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &744207308343788989 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5199084471628073871, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5084627565030415277, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
   m_PrefabInstance: {fileID: 744207308343788983}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

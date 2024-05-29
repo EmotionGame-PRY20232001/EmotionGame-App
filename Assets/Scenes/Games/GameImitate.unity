@@ -123,6 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &4123386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7667975392429105453, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+  m_PrefabInstance: {fileID: 1141103031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15781f598cc741446b46d8dfe941f3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4123387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5084627565030415277, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+  m_PrefabInstance: {fileID: 1141103031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15781f598cc741446b46d8dfe941f3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &136085637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1364,14 +1386,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumExcercises: 10
   Exercises: {fileID: 1141103033}
-  Activity: 3
+  Activity: 4
   ScoreText: {fileID: 1141103034}
   NumButtons: 4
   Score: 0
   AreaOfButtons: {fileID: 0}
   BtnEmotionPrefab: {fileID: 0}
-  PopUpGood: {fileID: 0}
-  PopUpBad: {fileID: 0}
+  PopUpGood: {fileID: 4123387}
+  PopUpBad: {fileID: 4123386}
   webCam: {fileID: 797313966}
   Model: {fileID: 1193357732}
   fillVelocity: 0.45

@@ -884,12 +884,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumExcercises: 10
   Exercises: {fileID: 1620429747}
-  Activity: 2
+  Activity: 3
   ScoreText: {fileID: 1620429748}
   NumButtons: 4
   Score: 0
   AreaOfButtons: {fileID: 290889342}
   BtnEmotionPrefab: {fileID: 1168071407051892537, guid: 22d937df91bdc5b4e8555e75a47a6490, type: 3}
+  PopUpGood: {fileID: 1970440844}
+  PopUpBad: {fileID: 1970440843}
   ExerciseText: {fileID: 913982649}
   Speecher: {fileID: 1679878586}
   Expressions: {fileID: 1679878589}
@@ -1034,6 +1036,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f998f088a282dfe42b98a1aec375132a, type: 3}
+--- !u!114 &1970440843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7667975392429105453, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+  m_PrefabInstance: {fileID: 1620429745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15781f598cc741446b46d8dfe941f3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1970440844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5084627565030415277, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+  m_PrefabInstance: {fileID: 1620429745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15781f598cc741446b46d8dfe941f3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1977512228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1195260842997338291, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}

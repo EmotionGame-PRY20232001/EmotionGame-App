@@ -44,7 +44,7 @@ public class EmotionObject : MonoBehaviour
     {
         if (GameManager.Instance != null && EmotionImage != null)
         {
-            Exercise.Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
+            Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
             EmotionImage.sprite = emoData.SpriteColor;
             if (EmotionName != null)
                 EmotionName.text = emoData.Name;

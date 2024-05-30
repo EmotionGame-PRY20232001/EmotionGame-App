@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<Sprite> emotionSprites;
     [field:SerializeField][SerializedDictionary("Emotion", "Data")]
-    public SerializedDictionary<Exercise.EEmotion, Exercise.Emotion> Emotions { get; protected set; }
+    public SerializedDictionary<Exercise.EEmotion, Emotion> Emotions { get; protected set; }
 
     [field:SerializeField]
     public List<Exercise.EEmotion> AllEmotions { get; private set; }

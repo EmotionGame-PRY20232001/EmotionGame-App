@@ -77,4 +77,10 @@ public class DBManager : MonoBehaviour
         cmd.CommandText = "ALTER TABLE " + table + " ADD COLUMN " + column + " " + columnType + ";";
         cmd.ExecuteNonQuery();
     }
+
+    // https://stackoverflow.com/questions/19851213/how-to-usecreate-db-create-table-query-etc-praeclarum-sqlite-net
+    // https://github.com/praeclarum/sqlite-net
+    // https://github.com/praeclarum/sqlite-net/wiki
+    // https://stackoverflow.com/questions/18752436/c-sharp-sqlite-net-define-multi-column-unique
+    //https://stackoverflow.com/questions/43551933/how-to-make-sqlite-foreign-keys-with-sqlite-net-pcl
 }

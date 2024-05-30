@@ -37,35 +37,11 @@ public class Exercise : MonoBehaviour
     //     Fear     = 1 << 3,
     //     Surprise = 1 << 4
     // }
-
-
-    [System.Serializable]
-    public struct Emotion
-    {
-        public Sprite SpriteColor;
-        public Sprite SpriteGray;
-        public Sprite Icon;
-        public string Name;
-        public Color Color;
-        public List<Sprite> Faces;
-        public List<string> Contexts;
-    }
-
-    [System.Serializable]
-    public struct Activity
-    {
-        public EActivity Game;
-        public string Name;
-        public Sprite Sprite;
-    }
-
-
-    // ID
+    
     [AutoIncrement, PrimaryKey]
     public int Id { get; set; }
-    EActivity Game { get; set; }
-    EEmotion CorrectEmotion { get; set; }
-    string ImageName { get; set; }
-    string Text { get; set; }
+    public EActivity Activity { get; set; }
+    public string Image { get; set; }
+    public string Text { get; set; }
 
 }

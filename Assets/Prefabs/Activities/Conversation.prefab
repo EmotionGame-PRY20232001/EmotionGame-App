@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseFromPlayer: 1
+  ElementType: 2
   <Id>k__BackingField: 0
-  ElementType: 1
 --- !u!114 &873519048044480221
 MonoBehaviour:
   m_ObjectHideFlags: 0

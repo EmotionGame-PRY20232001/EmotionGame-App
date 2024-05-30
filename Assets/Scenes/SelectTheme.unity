@@ -2623,10 +2623,6 @@ PrefabInstance:
       propertyPath: <Customization>k__BackingField
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6328510927807911565, guid: 1312ee1a9f4b1d342b9c2f19fbc301fa, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1312ee1a9f4b1d342b9c2f19fbc301fa, type: 3}
 --- !u!224 &870990783 stripped
@@ -2818,7 +2814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416, y: -410}
+  m_AnchoredPosition: {x: 416, y: -406}
   m_SizeDelta: {x: 832, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920098787
@@ -3705,7 +3701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 416, y: -170}
+  m_AnchoredPosition: {x: 416, y: -166}
   m_SizeDelta: {x: 832, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1358789796
@@ -3933,7 +3929,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ac5998d821f804e8e291edd371ef0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 837043c39de1b72439c6666be6d5f311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1453318592
@@ -5351,7 +5347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5771466049883439453, guid: 35764897cc9071249a469dc755f25aa9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -290
+      value: -286
       objectReference: {fileID: 0}
     - target: {fileID: 5771466049883439453, guid: 35764897cc9071249a469dc755f25aa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

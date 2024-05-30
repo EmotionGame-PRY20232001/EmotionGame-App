@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ThemeLayout : MonoBehaviour
 {
     [SerializeField]
-    protected CustomBackground Background;
+    protected ThemeElementUI Background;
     [SerializeField]
     private ToggleGroup toggleGroup;
     [SerializeField]

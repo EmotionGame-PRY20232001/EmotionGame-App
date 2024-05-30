@@ -633,7 +633,8 @@ MonoBehaviour:
   PaperAlphaFill: 0.5
   ColorFill: {r: 0.5882353, g: 0.8156863, b: 1, a: 1}
   ColorContrast: {r: 0.22745098, g: 0.32156864, b: 0.46666667, a: 1}
-  GraphicsToFill: []
+  GraphicsToFill:
+  - {fileID: 5314057454610198696}
   GraphicsToContrast:
   - {fileID: 3909826819999405002}
 --- !u!1 &5717827777816782822

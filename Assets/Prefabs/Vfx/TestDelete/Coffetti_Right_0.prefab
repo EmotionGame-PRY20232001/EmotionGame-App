@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6507534494201483931
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8034489266913342170, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: m_Name
+      value: Coffetti_Right Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034489266913342171, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034489266913342171, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034489266913342171, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034489266913342171, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034489266913342171, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034489266913342171, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034489266913342173, guid: aca754ff496054b4fb4d848a940d2436, type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: 92.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aca754ff496054b4fb4d848a940d2436, type: 3}

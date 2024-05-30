@@ -45,7 +45,7 @@ public class CustomHairCut : CustomHair
 
     protected override void ChangeSelection()
     {
-        Customization.SetHairCut(HairCut);
+        Customization?.SetHairCut(HairCut);
 
         if (HairColors != null)
         {

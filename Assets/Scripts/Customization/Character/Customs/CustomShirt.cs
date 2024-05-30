@@ -22,6 +22,6 @@ public class CustomShirt : CustomPart
 
     protected override void ChangeSelection()
     {
-        Customization.SetShirt(Shirt);
+        Customization?.SetShirt(Shirt);
     }
 }

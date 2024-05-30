@@ -22,6 +22,6 @@ public class CustomEyeColor : CustomPart
 
     protected override void ChangeSelection()
     {
-        Customization.SetEyeColor(EyeColor);
+        Customization?.SetEyeColor(EyeColor);
     }
 }

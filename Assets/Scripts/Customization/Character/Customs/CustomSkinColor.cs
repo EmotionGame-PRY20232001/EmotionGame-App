@@ -22,6 +22,6 @@ public class CustomSkinColor : CustomPart
 
     protected override void ChangeSelection()
     {
-        Customization.SetSkinColor(SkinColor);
+        Customization?.SetSkinColor(SkinColor);
     }
 }

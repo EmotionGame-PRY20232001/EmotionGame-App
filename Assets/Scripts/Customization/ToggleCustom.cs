@@ -14,7 +14,7 @@ public class ToggleCustom : MonoBehaviour
         
         if (toggle != null) {
             toggle.onValueChanged.AddListener(delegate {
-                ChangeSelection();
+                ChangeIfSelected(toggle);
             });
         }
     }
@@ -27,6 +27,12 @@ public class ToggleCustom : MonoBehaviour
     }
     
     protected virtual bool IsSameCustomActive(Player player) { return false; }
+
+    protected virtual void ChangeIfSelected(Toggle _toggle)
+    {
+        if (_toggle.isOn)
+            ChangeSelection();
+    }
 
     protected virtual void ChangeSelection() { }
 }

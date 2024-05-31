@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     [field:SerializeField]
     public CharacterCustomParts CharacterCustom { get; private set; }
 
+    //Temporal fix
+    public uint LastNumCorrectAnswers;
+    public uint LastNumExcercises;
+    public int LastScore;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)

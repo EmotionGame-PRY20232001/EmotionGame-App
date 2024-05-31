@@ -18,8 +18,9 @@ public class BaseActivity : EmotionExercise
     private TMP_Text ScoreText;
     [SerializeField] 
     private int NumButtons = 4;
-    [SerializeField]
-    private int Score;
+
+    public uint NumCorrectAnswers { get; protected set; }
+    public int Score { get; protected set; }
 
     [SerializeField]
     protected GameObject AreaOfButtons;
@@ -49,6 +50,7 @@ public class BaseActivity : EmotionExercise
         _instance = this;
 
         CurrentExercise = -1;
+        NumCorrectAnswers = 0;
     }
 
     // Start is called before the first frame update
@@ -75,6 +77,7 @@ public class BaseActivity : EmotionExercise
     {
         Score += GoodScore;
         UpdateScoreText();
+        NumCorrectAnswers++;
 
         if (PopUpGood != null)
         {
@@ -111,6 +114,10 @@ public class BaseActivity : EmotionExercise
     {
         if (CurrentExercise == NumExcercises - 1)
         {
+            GameManager.Instance.LastNumCorrectAnswers = NumCorrectAnswers;
+            GameManager.Instance.LastNumExcercises = NumExcercises;
+            GameManager.Instance.LastScore = Score;
+
             StopCurrentExercise();
             OnLastExercise();
             return;

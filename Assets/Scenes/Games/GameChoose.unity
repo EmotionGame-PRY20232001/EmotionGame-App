@@ -1302,7 +1302,6 @@ MonoBehaviour:
   Activity: 1
   ScoreText: {fileID: 744207308343788985}
   NumButtons: 4
-  Score: 0
   AreaOfButtons: {fileID: 1408188143}
   BtnEmotionPrefab: {fileID: -7617381012138773316, guid: 36639c2718e0ac44ea0ac86fe5024cc8, type: 3}
   PopUpGood: {fileID: 744207308343788989}

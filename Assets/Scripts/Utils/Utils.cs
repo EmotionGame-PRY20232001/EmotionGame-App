@@ -52,35 +52,19 @@ public class Utils : MonoBehaviour
     //    Shuffle(floats).ToList();
     //}
 
-    // [System.Serializable]
-    // public struct CustomSprites<T>
-    // {
-    //     public T Key;
-    //     public Sprite Value;
-    // }
+    //https://docs.unity3d.com/ScriptReference/Resources.Load.html
+    public static T LoadFromResources<T>(string path) where T : Object
+    {
+        var val = Resources.Load<T>(path);
+        CheckNull(val, path);
+        return val;
+    }
 
-    // [System.Serializable]
-    // public struct CustomSpritesMul<T,G>
-    // {
-    //     public T Key1;
-    //     public G Key2;
-    //     public Sprite Value;
-    // }
-
-    //[System.Serializable]
-    //public struct SpriteName
-    //{
-    //    [field:SerializeField]
-    //    public string Name { get; private set; }
-    //    [field:SerializeField]
-    //    public Sprite Sprite { get; private set; }
-    //}
-    //[System.Serializable]
-    //public struct TextureName
-    //{
-    //    [field:SerializeField]
-    //    public string Name { get; private set; }
-    //    [field:SerializeField]
-    //    public Texture Texture { get; private set; }
-    //}
+    protected static void CheckNull<T>(T val, string name)
+    {
+        if (val == null)
+        {
+            Debug.LogError("ExerciseContent:CheckNull\t" + name + "\tis null");
+        }
+    }
 }

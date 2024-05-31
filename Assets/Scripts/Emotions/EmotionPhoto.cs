@@ -25,7 +25,7 @@ public class EmotionPhoto : MonoBehaviour
     public void SetRandomPhoto()
     {
         var gm = GameManager.Instance;
-        var faceImages = gm.Emotions[PhotoEmotion].Faces;
+        var faceImages = gm.Emotions[PhotoEmotion].ExerciseContents.Faces;
         //ExerciseImage.texture = faceImages[Random.Range(0, faceImages.Count)].texture;
         if (Photo != null)
         {

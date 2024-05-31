@@ -7,10 +7,10 @@ using SQLite;
 [System.Serializable]
 public class Emotion
 {
-    public enum EEmotion { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
+    public enum EEmotion : uint { Anger, Disgust, Fear, Happy, Neutral, Sad, Surprise }
     
     [System.Flags]
-    public enum EEmotions
+    public enum EEmotions : uint
     {
         Neutral = 0,
         Anger   = 1 << 0,
@@ -31,10 +31,9 @@ public class Emotion
     public Sprite Icon;
     public string Name;
     public Color Color;
-    public List<Sprite> Faces;
-    public List<string> Contexts;
-    public List<ExerciseContent> ExerciseContents;
-
+    //[SerializedDictionary("Type", "Values")]
+    //public SerializedDictionary<ExerciseContent.EValueType, List<string>> ExerciseContents;
+    public ExerciseContent ExerciseContents;
 
     // [System.Flags]
     // public enum EFEmotions

@@ -80,7 +80,7 @@ public class PhotosCollection : MonoBehaviour
         {
             foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
             {
-                var faceImages = LoadByEmotionQ(emotion, (int)emotionExercises[emotion], gm.Emotions[emotion].Faces);
+                var faceImages = LoadByEmotionQ(emotion, (int)emotionExercises[emotion], gm.Emotions[emotion].ExerciseContents.Faces);
                 if (faceImages != null)
                 {
                     foreach (Sprite sprite in faceImages)
@@ -92,7 +92,7 @@ public class PhotosCollection : MonoBehaviour
         {
             foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
             {
-                var contexts = LoadByEmotionQ(emotion, (int)emotionExercises[emotion], gm.Emotions[emotion].Contexts);
+                var contexts = LoadByEmotionQ(emotion, (int)emotionExercises[emotion], gm.Emotions[emotion].ExerciseContents.Contexts);
                 if (contexts != null)
                 {
                     foreach (string context in contexts)

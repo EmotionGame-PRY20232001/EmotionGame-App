@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     public Player currentPlayer;
     public EmotionExercise.EActivity LastPlayedGame;
 
-    [SerializeField]
-    private List<Sprite> emotionSprites;
     [field:SerializeField][SerializedDictionary("Emotion", "Data")]
     public SerializedDictionary<Emotion.EEmotion, Emotion> Emotions { get; protected set; }
 
@@ -79,11 +77,6 @@ public class GameManager : MonoBehaviour
     public SerializedDictionary<Theme.EBackground, Theme.CustomBackground> GetBackgrounds() 
     {
         return ThemeCustom.Backgrounds;
-    }
-
-    public List<Sprite> GetEmotionSprites()
-    {
-        return emotionSprites;
     }
 
     

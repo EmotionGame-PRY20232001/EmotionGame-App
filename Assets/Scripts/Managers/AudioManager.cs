@@ -78,6 +78,9 @@ public class AudioManager : MonoBehaviour
         Star,
         OpenPopUp,
         ClosePopUp,
+        Win,
+        CameraShutter,
+        BubbleCollision,
     }
 
 }

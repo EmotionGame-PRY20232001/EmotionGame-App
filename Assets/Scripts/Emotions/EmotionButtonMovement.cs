@@ -11,6 +11,7 @@ public class EmotionButtonMovement : EmotionButton
     protected RectTransform RectTransform;
     protected RectPos LatestPos;
     protected bool ToClamp = false;
+    protected AudioPlay CollisionSfx;
 
     protected override void Awake()
     {
@@ -18,6 +19,7 @@ public class EmotionButtonMovement : EmotionButton
         RectTransform = GetComponent<RectTransform>();
         CanvasRectTransform = GameObject.Find("AreaOfButtons").GetComponent<RectTransform>();
         CheckTouchingBorders();
+        CollisionSfx = GetComponent<AudioPlay>();
     }
 
     private void Update()
@@ -47,6 +49,7 @@ public class EmotionButtonMovement : EmotionButton
             LatestPos.bottom = bottomPos;
             LatestPos.left = leftPos;
             LatestPos.right = rightPos;
+            CollisionSfx?.Play();
         }
 
         if (topPos > 0 || bottomPos < -CanvasRectTransform.rect.height) Dir.y *= -1;

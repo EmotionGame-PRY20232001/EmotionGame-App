@@ -2494,6 +2494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da9f1f60c391b84b954fd004abe0cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayOnStart: 0
   SfxType: 4
   SfxTypeOff: 5
 --- !u!1 &1866316242
@@ -2692,6 +2693,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f0697c79a98d6ae4aaec82443d5bb977, type: 3}
+    - target: {fileID: 9041021286167723029, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: SfxType
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
 --- !u!224 &2064087151 stripped

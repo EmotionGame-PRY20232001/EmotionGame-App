@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class AudioPlay : MonoBehaviour
 {
+    public bool PlayOnStart = false;
+
     protected AudioSource AudioSrc;
     [SerializeField]
     protected AudioManager.ESfx SfxType = AudioManager.ESfx.Regular;
@@ -18,6 +20,8 @@ public class AudioPlay : MonoBehaviour
     protected virtual void Start()
     {
         LoadSfx();
+        if(PlayOnStart)
+            Play();
     }
 
     protected virtual void LoadSfx()
@@ -32,6 +36,9 @@ public class AudioPlay : MonoBehaviour
 
     public void Play()
     {
-        AudioSrc?.Play();
+        if (AudioSrc == null) return;
+        // play once at a time
+        if (!AudioSrc.isPlaying)
+            AudioSrc?.Play();
     }
 }

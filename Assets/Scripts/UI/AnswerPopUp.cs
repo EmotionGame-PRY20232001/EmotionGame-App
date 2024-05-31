@@ -26,6 +26,13 @@ public class AnswerPopUp : MonoBehaviour
     protected float EffectTime;
     //public enum EAnswerType { Good, Bad };
 
+    // Response
+    [SerializeField]
+    protected TMP_Text TextDuration;
+    [SerializeField]
+    protected TMP_Text CompletedDT;
+
+
     protected void Start()
     {
         if (PopUp != null)
@@ -74,6 +81,12 @@ public class AnswerPopUp : MonoBehaviour
                 }
             }
         }
+
+        System.DateTime completedAt = System.DateTime.Now;
+        if (TextDuration != null)
+            TextDuration.text = "¡" + (completedAt - emotionEx.StartedAt).TotalSeconds.ToString() + " segundos!";
+        if (CompletedDT != null)
+            CompletedDT.text = completedAt.ToString();
     }
 
     public void LoadAnswerCorrect(EmotionPhoto emotionEx)

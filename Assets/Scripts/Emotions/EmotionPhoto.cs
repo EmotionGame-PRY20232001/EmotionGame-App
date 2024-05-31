@@ -12,6 +12,8 @@ public class EmotionPhoto : MonoBehaviour
     //[SerializeField]
     //protected Image Frame;
 
+    public System.DateTime StartedAt;
+
     /// PHOTOS
     public void SetPhotoEmotion(Emotion.EEmotion emotion, Sprite photo = null)
     {

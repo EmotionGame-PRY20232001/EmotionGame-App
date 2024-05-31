@@ -55,7 +55,7 @@ public class EmotionExercise : MonoBehaviour
     }
 
 
-    public enum EActivity { None, Learn, Choose, Context, Imitate }
+    public enum EActivity : uint { None, Learn, Choose, Context, Imitate }
 
     [System.Serializable]
     public struct Data

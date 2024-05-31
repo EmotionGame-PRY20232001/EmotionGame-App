@@ -1299,7 +1299,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumExcercises: 10
   Exercises: {fileID: 744207308343788984}
-  StartAudio: {fileID: 0}
   Activity: 1
   ScoreText: {fileID: 744207308343788985}
   NumButtons: 4

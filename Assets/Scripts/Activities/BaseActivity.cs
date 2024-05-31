@@ -143,6 +143,10 @@ public class BaseActivity : EmotionExercise
             Exercises.Photos[CurrentExercise] != null)
         {
             Exercises.Photos[CurrentExercise].gameObject.SetActive(value);
+            if (value)
+            {
+                Exercises.Photos[CurrentExercise].StartedAt = System.DateTime.Now;
+            }
         }
     }
 

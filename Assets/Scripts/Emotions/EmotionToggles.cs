@@ -17,7 +17,7 @@ public class EmotionToggles : MonoBehaviour
     protected Button CheckButton;
 
     [field:SerializeField][SerializedDictionary("Emotion", "Toggle")]
-    public SerializedDictionary<Exercise.EEmotion, Toggle> EmotionTooglesDict { get; protected set; }
+    public SerializedDictionary<Emotion.EEmotion, Toggle> EmotionTooglesDict { get; protected set; }
 
     void Start()
     {
@@ -38,17 +38,17 @@ public class EmotionToggles : MonoBehaviour
         {
             var gm = GameManager.Instance;
             if (gm != null && gm.IsPlayerActive())
-                LoadEmotionToggles((Exercise.EEmotions)gm.currentPlayer.EmotionsLearned);
+                LoadEmotionToggles((Emotion.EEmotions)gm.currentPlayer.EmotionsLearned);
         }
     }
 
-    public void LoadEmotionToggles(Exercise.EEmotions emotionsChecked)
+    public void LoadEmotionToggles(Emotion.EEmotions emotionsChecked)
     {
         Debug.Log("EmotionToggles: LoadEmotionToggles: " + emotionsChecked);
-        if (emotionsChecked == Exercise.EEmotions.Neutral)
+        if (emotionsChecked == Emotion.EEmotions.Neutral)
         {
             // if loads from default, all checked
-            foreach (KeyValuePair<Exercise.EEmotion, Toggle> etg in EmotionTooglesDict)
+            foreach (KeyValuePair<Emotion.EEmotion, Toggle> etg in EmotionTooglesDict)
             {
                 if (etg.Value != null)
                     etg.Value.isOn = true;
@@ -56,23 +56,23 @@ public class EmotionToggles : MonoBehaviour
         }
         else
         {
-            if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Anger))
-                EmotionTooglesDict[Exercise.EEmotion.Anger].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Anger);
+            if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Anger))
+                EmotionTooglesDict[Emotion.EEmotion.Anger].isOn = emotionsChecked.HasFlag(Emotion.EEmotions.Anger);
 
-            if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Disgust))
-                EmotionTooglesDict[Exercise.EEmotion.Disgust].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Disgust);
+            if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Disgust))
+                EmotionTooglesDict[Emotion.EEmotion.Disgust].isOn = emotionsChecked.HasFlag(Emotion.EEmotions.Disgust);
 
-            if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Fear))
-                EmotionTooglesDict[Exercise.EEmotion.Fear].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Fear);
+            if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Fear))
+                EmotionTooglesDict[Emotion.EEmotion.Fear].isOn = emotionsChecked.HasFlag(Emotion.EEmotions.Fear);
 
-            if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Happy))
-                EmotionTooglesDict[Exercise.EEmotion.Happy].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Happy);
+            if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Happy))
+                EmotionTooglesDict[Emotion.EEmotion.Happy].isOn = emotionsChecked.HasFlag(Emotion.EEmotions.Happy);
 
-            if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Sad))
-                EmotionTooglesDict[Exercise.EEmotion.Sad].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Sad);
+            if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Sad))
+                EmotionTooglesDict[Emotion.EEmotion.Sad].isOn = emotionsChecked.HasFlag(Emotion.EEmotions.Sad);
 
-            if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Surprise))
-                EmotionTooglesDict[Exercise.EEmotion.Surprise].isOn = emotionsChecked.HasFlag(Exercise.EEmotions.Surprise);
+            if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Surprise))
+                EmotionTooglesDict[Emotion.EEmotion.Surprise].isOn = emotionsChecked.HasFlag(Emotion.EEmotions.Surprise);
         }
 
         numActive = 0;
@@ -107,8 +107,8 @@ public class EmotionToggles : MonoBehaviour
 
     public void SaveEmotionsChecked()
     {
-        List<Exercise.EEmotion> emotions = new List<Exercise.EEmotion>();
-        foreach (KeyValuePair<Exercise.EEmotion, Toggle> etg in EmotionTooglesDict)
+        List<Emotion.EEmotion> emotions = new List<Emotion.EEmotion>();
+        foreach (KeyValuePair<Emotion.EEmotion, Toggle> etg in EmotionTooglesDict)
         {
             if (etg.Value != null && etg.Value.isOn)
             {
@@ -123,7 +123,7 @@ public class EmotionToggles : MonoBehaviour
         
         if(gm.IsPlayerActive())
         {
-            Exercise.EEmotions emotionsChecked = GetEmotionsFlagSelected();
+            Emotion.EEmotions emotionsChecked = GetEmotionsFlagSelected();
             gm.currentPlayer.EmotionsLearned = (int)emotionsChecked;
             Debug.Log("EmotionToggles: SaveEmotionsChecked: " + emotionsChecked);
             if (numActive > 0)
@@ -131,46 +131,46 @@ public class EmotionToggles : MonoBehaviour
         }
     }
 
-    public Exercise.EEmotions GetEmotionsFlagSelected()
+    public Emotion.EEmotions GetEmotionsFlagSelected()
     {
-        Exercise.EEmotions emotionsChecked = Exercise.EEmotions.Neutral;
+        Emotion.EEmotions emotionsChecked = Emotion.EEmotions.Neutral;
 
-        if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Anger) &&
-            EmotionTooglesDict[Exercise.EEmotion.Anger].isOn)
-            emotionsChecked |= Exercise.EEmotions.Anger;
+        if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Anger) &&
+            EmotionTooglesDict[Emotion.EEmotion.Anger].isOn)
+            emotionsChecked |= Emotion.EEmotions.Anger;
 
-        if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Disgust) &&
-            EmotionTooglesDict[Exercise.EEmotion.Disgust].isOn)
-            emotionsChecked |= Exercise.EEmotions.Disgust;
+        if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Disgust) &&
+            EmotionTooglesDict[Emotion.EEmotion.Disgust].isOn)
+            emotionsChecked |= Emotion.EEmotions.Disgust;
 
-        if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Fear) &&
-            EmotionTooglesDict[Exercise.EEmotion.Fear].isOn)
-            emotionsChecked |= Exercise.EEmotions.Fear;
+        if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Fear) &&
+            EmotionTooglesDict[Emotion.EEmotion.Fear].isOn)
+            emotionsChecked |= Emotion.EEmotions.Fear;
 
-        if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Happy) &&
-            EmotionTooglesDict[Exercise.EEmotion.Happy].isOn)
-            emotionsChecked |= Exercise.EEmotions.Happy;
+        if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Happy) &&
+            EmotionTooglesDict[Emotion.EEmotion.Happy].isOn)
+            emotionsChecked |= Emotion.EEmotions.Happy;
 
-        if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Sad) &&
-            EmotionTooglesDict[Exercise.EEmotion.Sad].isOn)
-            emotionsChecked |= Exercise.EEmotions.Sad;
+        if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Sad) &&
+            EmotionTooglesDict[Emotion.EEmotion.Sad].isOn)
+            emotionsChecked |= Emotion.EEmotions.Sad;
 
-        if (EmotionTooglesDict.ContainsKey(Exercise.EEmotion.Surprise) &&
-            EmotionTooglesDict[Exercise.EEmotion.Surprise].isOn)
-            emotionsChecked |= Exercise.EEmotions.Surprise;
+        if (EmotionTooglesDict.ContainsKey(Emotion.EEmotion.Surprise) &&
+            EmotionTooglesDict[Emotion.EEmotion.Surprise].isOn)
+            emotionsChecked |= Emotion.EEmotions.Surprise;
 
         return emotionsChecked;
     }
 
-    protected void SaveSelectedGame(Exercise.EActivity activity)
+    protected void SaveSelectedGame(EmotionExercise.EActivity activity)
     {
         var gm = GameManager.Instance;
         if (gm != null)
             gm.LastPlayedGame = activity;
     }
 
-    public void SaveLearn()     { SaveSelectedGame(Exercise.EActivity.Learn); }
-    public void SaveChoose()    { SaveSelectedGame(Exercise.EActivity.Choose); }
-    public void SaveContext()   { SaveSelectedGame(Exercise.EActivity.Context); }
-    public void SaveImitate()   { SaveSelectedGame(Exercise.EActivity.Imitate); }
+    public void SaveLearn()     { SaveSelectedGame(EmotionExercise.EActivity.Learn); }
+    public void SaveChoose()    { SaveSelectedGame(EmotionExercise.EActivity.Choose); }
+    public void SaveContext()   { SaveSelectedGame(EmotionExercise.EActivity.Context); }
+    public void SaveImitate()   { SaveSelectedGame(EmotionExercise.EActivity.Imitate); }
 }

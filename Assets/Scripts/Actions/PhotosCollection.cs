@@ -40,9 +40,9 @@ public class PhotosCollection : MonoBehaviour
             TopObject.transform.SetAsLastSibling();
     }
 
-    protected Dictionary<Exercise.EEmotion, uint> GetQuantityPerEmotion(uint numPhotos)
+    protected Dictionary<Emotion.EEmotion, uint> GetQuantityPerEmotion(uint numPhotos)
     {
-        Dictionary<Exercise.EEmotion, uint> emotionExercises = new Dictionary<Exercise.EEmotion, uint>();
+        Dictionary<Emotion.EEmotion, uint> emotionExercises = new Dictionary<Emotion.EEmotion, uint>();
         var gm = GameManager.Instance;
         uint numEmotions = (uint)(gm.SelectedEmotions.Count);
         if (numEmotions == 0)
@@ -52,7 +52,7 @@ public class PhotosCollection : MonoBehaviour
         }
         uint numPerEmotion = numPhotos / numEmotions;
 
-        foreach (Exercise.EEmotion emotion in gm.SelectedEmotions)
+        foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
         {
             emotionExercises[emotion] = numPerEmotion;
         }
@@ -64,7 +64,7 @@ public class PhotosCollection : MonoBehaviour
 
             for (int i = 0; i < reminder; i++)
             {
-                Exercise.EEmotion emotion = emotions.ElementAt(i);
+                Emotion.EEmotion emotion = emotions.ElementAt(i);
                 emotionExercises[emotion] += 1;
             }
         }
@@ -72,13 +72,13 @@ public class PhotosCollection : MonoBehaviour
         return emotionExercises;
     }
 
-    protected void FillExercise(Dictionary<Exercise.EEmotion, uint> emotionExercises)
+    protected void FillExercise(Dictionary<Emotion.EEmotion, uint> emotionExercises)
     {
         var gm = GameManager.Instance;
 
         if (UseFaces)
         {
-            foreach (Exercise.EEmotion emotion in gm.SelectedEmotions)
+            foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
             {
                 var faceImages = LoadByEmotionQ(emotion, (int)emotionExercises[emotion], gm.Emotions[emotion].Faces);
                 if (faceImages != null)
@@ -90,7 +90,7 @@ public class PhotosCollection : MonoBehaviour
         }
         else
         {
-            foreach (Exercise.EEmotion emotion in gm.SelectedEmotions)
+            foreach (Emotion.EEmotion emotion in gm.SelectedEmotions)
             {
                 var contexts = LoadByEmotionQ(emotion, (int)emotionExercises[emotion], gm.Emotions[emotion].Contexts);
                 if (contexts != null)
@@ -102,7 +102,7 @@ public class PhotosCollection : MonoBehaviour
         }
     }
 
-    protected List<T> LoadByEmotionQ<T>(Exercise.EEmotion emotion, int q, List<T> list)
+    protected List<T> LoadByEmotionQ<T>(Emotion.EEmotion emotion, int q, List<T> list)
     {
         if (list.Count < q)
         {
@@ -120,7 +120,7 @@ public class PhotosCollection : MonoBehaviour
         return list;
     }
 
-    protected EmotionPhoto LoadPhoto(Exercise.EEmotion emotion, Sprite sprite)
+    protected EmotionPhoto LoadPhoto(Emotion.EEmotion emotion, Sprite sprite)
     {
         if (PhotoPrefab == null) return null;
         var photo = Instantiate(PhotoPrefab, transform);
@@ -130,7 +130,7 @@ public class PhotosCollection : MonoBehaviour
         return photo;
     }
 
-    protected EmotionPhoto LoadContext(Exercise.EEmotion emotion, string text)
+    protected EmotionPhoto LoadContext(Emotion.EEmotion emotion, string text)
     {
         if (PhotoPrefab == null) return null;
         var photo = Instantiate(PhotoPrefab, transform);

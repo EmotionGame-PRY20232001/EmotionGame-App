@@ -6,14 +6,14 @@ using UnityEngine.UI;
 // TODO: Rename to Exercise?
 public class EmotionPhoto : MonoBehaviour
 {
-    public Exercise.EEmotion PhotoEmotion { get; protected set; }
+    public Emotion.EEmotion PhotoEmotion { get; protected set; }
     [field:SerializeField]
     public Image Photo { get; protected set; } //or RawImage
     //[SerializeField]
     //protected Image Frame;
 
     /// PHOTOS
-    public void SetPhotoEmotion(Exercise.EEmotion emotion, Sprite photo = null)
+    public void SetPhotoEmotion(Emotion.EEmotion emotion, Sprite photo = null)
     {
         PhotoEmotion = emotion;
         if (photo == null)
@@ -36,19 +36,19 @@ public class EmotionPhoto : MonoBehaviour
         }
     }
 
-    public Exercise.EEmotion SetPhotoEmotion(List<Exercise.EEmotion> emotions)
+    public Emotion.EEmotion SetPhotoEmotion(List<Emotion.EEmotion> emotions)
     {
         if (emotions.Count == 0)
         {
             Debug.Log("[EmotionPhoto] Empty Emotion list");
-            PhotoEmotion = Exercise.EEmotion.Neutral;
+            PhotoEmotion = Emotion.EEmotion.Neutral;
         }
         else
             SetPhotoEmotion(emotions[Random.Range(0, emotions.Count - 1)]);
         return PhotoEmotion;
     }
 
-    public Exercise.EEmotion SetPhotoEmotionFromGMSelected()
+    public Emotion.EEmotion SetPhotoEmotionFromGMSelected()
     {
         var gm = GameManager.Instance;
         return SetPhotoEmotion(gm.SelectedEmotions);
@@ -56,6 +56,6 @@ public class EmotionPhoto : MonoBehaviour
 
 
     /// CONTEXTS
-    public virtual void SetContextEmotion(Exercise.EEmotion emotion, string text) {}
+    public virtual void SetContextEmotion(Emotion.EEmotion emotion, string text) {}
 
 }

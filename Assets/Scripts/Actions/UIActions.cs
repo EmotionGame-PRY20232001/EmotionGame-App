@@ -87,19 +87,19 @@ public class UIActions : MonoBehaviour
     ////======== GO TO GAME SCREENS ========////
     public void GoToLastGame()
     {
-        Exercise.EActivity GameSelected = GameManager.Instance.LastPlayedGame;
+        EmotionExercise.EActivity GameSelected = GameManager.Instance.LastPlayedGame;
         switch (GameSelected)
 		{
-            case Exercise.EActivity.Learn:
+            case EmotionExercise.EActivity.Learn:
 				GoToLearnEmotions();
                 break;
-            case Exercise.EActivity.Choose:
+            case EmotionExercise.EActivity.Choose:
 				GoToChooseGame();
                 break;
-            case Exercise.EActivity.Context:
+            case EmotionExercise.EActivity.Context:
 				GoToContextGame();
                 break;
-            case Exercise.EActivity.Imitate:
+            case EmotionExercise.EActivity.Imitate:
 				GoToImitateGame();
                 break;
             default:
@@ -114,21 +114,21 @@ public class UIActions : MonoBehaviour
     public static void GoToChooseGame()
     {
         if (GameManager.Instance != null)
-            GameManager.Instance.LastPlayedGame = Exercise.EActivity.Choose;
+            GameManager.Instance.LastPlayedGame = EmotionExercise.EActivity.Choose;
         SceneManager.LoadScene(Scenes.GAME_CHOOSE);
     }
 
     public static void GoToContextGame()
     {
         if (GameManager.Instance != null)
-            GameManager.Instance.LastPlayedGame = Exercise.EActivity.Context;
+            GameManager.Instance.LastPlayedGame = EmotionExercise.EActivity.Context;
         SceneManager.LoadScene(Scenes.GAME_CONTEXT);
     }
 
     public static void GoToImitateGame()
     {
         if (GameManager.Instance != null)
-            GameManager.Instance.LastPlayedGame = Exercise.EActivity.Imitate;
+            GameManager.Instance.LastPlayedGame = EmotionExercise.EActivity.Imitate;
         SceneManager.LoadScene(Scenes.GAME_IMITATE);
     }
     public static void GoToGameComplete()

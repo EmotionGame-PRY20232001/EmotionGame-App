@@ -89,7 +89,7 @@ public class AnswerPopUp : MonoBehaviour
                 .setIgnoreTimeScale(true);
     }
 
-    public void LoadAnswerWrong(EmotionPhoto emotionEx, Exercise.EEmotion emotionSelected)
+    public void LoadAnswerWrong(EmotionPhoto emotionEx, Emotion.EEmotion emotionSelected)
     {
         LoadExercisePreview(emotionEx);
 

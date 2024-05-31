@@ -10,15 +10,15 @@ public class EmotionExercise : MonoBehaviour
     public uint NumExcercises = 10;
     protected int CurrentExercise = 0;
     [SerializeField]
-    public Exercise.EEmotion ExerciseEmotion { get; protected set; }
-    protected List<Exercise.EEmotion> EmotionsToPractice;
+    public Emotion.EEmotion ExerciseEmotion { get; protected set; }
+    protected List<Emotion.EEmotion> EmotionsToPractice;
 
     [SerializeField]
     protected PhotosCollection Exercises;
 
     protected virtual void Awake()
     {
-        EmotionsToPractice = new List<Exercise.EEmotion>();
+        EmotionsToPractice = new List<Emotion.EEmotion>();
     }
 
     protected virtual void Start()
@@ -52,5 +52,17 @@ public class EmotionExercise : MonoBehaviour
         //EmotionPhoto photo = Exercises.Photos.ElementAt(CurrentExercise);
         //if (photo != null)
         //    ExerciseEmotion = photo.PhotoEmotion;
+    }
+
+
+    public enum EActivity { None, Learn, Choose, Context, Imitate }
+
+    [System.Serializable]
+    public struct Data
+    {
+        //[PrimaryKey]
+        public EActivity Id { get; set; }
+        public string Name { get; set; }
+        public Sprite Sprite { get; set; }
     }
 }

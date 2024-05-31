@@ -10,7 +10,7 @@ public class EmotionContext : EmotionPhoto
     [field:SerializeField]
     public Character.Custom RndCharacter { get; protected set; }
 
-    public override void SetContextEmotion(Exercise.EEmotion emotion, string text) {
+    public override void SetContextEmotion(Emotion.EEmotion emotion, string text) {
         PhotoEmotion = emotion;
         Text = text;
         RndCharacter = Character.Custom.GetRandom();

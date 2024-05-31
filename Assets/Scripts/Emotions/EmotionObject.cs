@@ -9,7 +9,7 @@ using TMPro;
 public class EmotionObject : MonoBehaviour
 {
     [field:SerializeField]
-    public Exercise.EEmotion CurrEmotion { get; protected set; }
+    public Emotion.EEmotion CurrEmotion { get; protected set; }
     [SerializeField]
     protected bool IsRandom;
     protected Image EmotionImage;
@@ -34,8 +34,8 @@ public class EmotionObject : MonoBehaviour
     {
         if (!IsRandom) return;
 
-        int cant = System.Enum.GetNames(typeof(Exercise.EEmotion)).Length;
-        CurrEmotion = (Exercise.EEmotion)Random.Range(0, cant - 1);
+        int cant = System.Enum.GetNames(typeof(Emotion.EEmotion)).Length;
+        CurrEmotion = (Emotion.EEmotion)Random.Range(0, cant - 1);
         Debug.Log("[EmotionObject] Loading random: " + CurrEmotion);
         LoadByEmotion();
     }
@@ -51,7 +51,7 @@ public class EmotionObject : MonoBehaviour
         }
     }
 
-    public void SetEmotion(Exercise.EEmotion emotion, int num = -1)
+    public void SetEmotion(Emotion.EEmotion emotion, int num = -1)
     {
         CurrEmotion = emotion;
         LoadByEmotion();

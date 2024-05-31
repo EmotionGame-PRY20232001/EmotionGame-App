@@ -13,7 +13,7 @@ public class ChooseActivity : BaseActivity
     protected override void Awake()
     {
         base.Awake();
-        Activity = Exercise.EActivity.Choose;
+        Activity = EActivity.Choose;
     }
 
     protected override void Start()

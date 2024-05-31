@@ -82,5 +82,6 @@ public class DBManager : MonoBehaviour
     // https://github.com/praeclarum/sqlite-net
     // https://github.com/praeclarum/sqlite-net/wiki
     // https://stackoverflow.com/questions/18752436/c-sharp-sqlite-net-define-multi-column-unique
-    //https://stackoverflow.com/questions/43551933/how-to-make-sqlite-foreign-keys-with-sqlite-net-pcl
+    // https://stackoverflow.com/questions/43551933/how-to-make-sqlite-foreign-keys-with-sqlite-net-pcl
+    // https://stackoverflow.com/questions/1624533/attribute-not-valid-on-declaration-type
 }

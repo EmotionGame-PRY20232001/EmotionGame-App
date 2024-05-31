@@ -10,7 +10,7 @@ public class BarChart : MonoBehaviour
 {
     [SerializeField]
     protected BarStat[] Bars;
-    protected Dictionary<Exercise.EEmotion, BarStat> EmotionBars;
+    protected Dictionary<Emotion.EEmotion, BarStat> EmotionBars;
     [field:SerializeField]
     public float Total { get; protected set; }
     [field: SerializeField]
@@ -19,7 +19,7 @@ public class BarChart : MonoBehaviour
 
     protected virtual void Awake()
     {
-        EmotionBars = new Dictionary<Exercise.EEmotion, BarStat>();
+        EmotionBars = new Dictionary<Emotion.EEmotion, BarStat>();
     }
 
     protected virtual void Start()
@@ -39,7 +39,7 @@ public class BarChart : MonoBehaviour
         }
     }
 
-    public virtual void LoadStats(Dictionary<Exercise.EEmotion, float> EmotionValues)
+    public virtual void LoadStats(Dictionary<Emotion.EEmotion, float> EmotionValues)
     {
         Total = 0;
         Maximum = 0;

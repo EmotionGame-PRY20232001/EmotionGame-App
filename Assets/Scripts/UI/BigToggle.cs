@@ -20,7 +20,7 @@ public class BigToggle : MonoBehaviour
     [SerializeField]
     protected TMP_Text Text;
     [SerializeField]
-    protected Exercise.EActivity Activity;
+    protected EmotionExercise.EActivity Activity;
 
     public Toggle ToggleComp { get; protected set; }
     protected RectTransform Rect;

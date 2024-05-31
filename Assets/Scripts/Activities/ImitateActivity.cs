@@ -26,7 +26,7 @@ public class ImitateActivity : BaseActivity
     private RawImage RawImgPhoto;
     protected bool IsFirstPhoto;
 
-    private Exercise.EEmotion lastEmotion;
+    private Emotion.EEmotion lastEmotion;
 
     protected override void Start()
     {

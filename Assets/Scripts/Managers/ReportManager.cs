@@ -20,13 +20,13 @@ public class ReportManager : MonoBehaviour
     /// Currents
     protected Player CurrentPlayer = null;
     [field: SerializeField]
-    public Exercise.EActivity CurrentGame { get; protected set; }
+    public EmotionExercise.EActivity CurrentGame { get; protected set; }
     [field:SerializeField]
     public List<DateTime> SelectedDates { get; protected set; }
 
     protected void Awake()
     {
-        CurrentGame = Exercise.EActivity.None;
+        CurrentGame = EmotionExercise.EActivity.None;
         SelectedDates = new List<DateTime>();
     }
 

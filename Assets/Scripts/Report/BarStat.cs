@@ -22,7 +22,7 @@ public class BarStat : MonoBehaviour
     [SerializeField]
     protected EmotionObject EmotionObj;
     [field:SerializeField]
-    public Exercise.EEmotion CurrEmotion { get; protected set; }
+    public Emotion.EEmotion CurrEmotion { get; protected set; }
 
     protected void Start()
     {

@@ -13,7 +13,7 @@ public class BaseActivity : EmotionExercise
 
 
     [SerializeField]
-    protected Exercise.EActivity Activity;
+    protected EActivity Activity;
     [SerializeField]
     private TMP_Text ScoreText;
     [SerializeField] 
@@ -89,7 +89,7 @@ public class BaseActivity : EmotionExercise
         }
     }
     
-    public void Bad(Exercise.EEmotion emotionSelected)
+    public void Bad(Emotion.EEmotion emotionSelected)
     {
         if (Score >= BadScore) Score -= BadScore;
         UpdateScoreText();
@@ -159,7 +159,7 @@ public class BaseActivity : EmotionExercise
         CleanUp();
 
         var gm = GameManager.Instance;
-        var selEmotions = new List<Exercise.EEmotion>(gm.SelectedEmotions); //AllEmotions allEmotions
+        var selEmotions = new List<Emotion.EEmotion>(gm.SelectedEmotions); //AllEmotions allEmotions
         selEmotions.Remove(ExerciseEmotion);
         selEmotions = selEmotions.OrderBy(x => Random.value).ToList();
 

@@ -7,7 +7,7 @@ public class CharacterExpressions : MonoBehaviour
 {
     protected bool m_loaded = false;
     protected Animator Anim;
-    protected Dictionary<Exercise.EEmotion, string> TriggerNames;
+    protected Dictionary<Emotion.EEmotion, string> TriggerNames;
 
     public void Awake()
     {
@@ -20,19 +20,19 @@ public class CharacterExpressions : MonoBehaviour
 
         Anim = gameObject.GetComponent<Animator>();
 
-        TriggerNames = new Dictionary<Exercise.EEmotion, string>();
-        TriggerNames.Add(Exercise.EEmotion.Neutral, "Neutral");
-        TriggerNames.Add(Exercise.EEmotion.Anger, "Anger");
-        TriggerNames.Add(Exercise.EEmotion.Disgust, "Disgust");
-        TriggerNames.Add(Exercise.EEmotion.Fear, "Fear");
-        TriggerNames.Add(Exercise.EEmotion.Happy, "Happy");
-        TriggerNames.Add(Exercise.EEmotion.Sad, "Sad");
-        TriggerNames.Add(Exercise.EEmotion.Surprise, "Surprise");
+        TriggerNames = new Dictionary<Emotion.EEmotion, string>();
+        TriggerNames.Add(Emotion.EEmotion.Neutral, "Neutral");
+        TriggerNames.Add(Emotion.EEmotion.Anger, "Anger");
+        TriggerNames.Add(Emotion.EEmotion.Disgust, "Disgust");
+        TriggerNames.Add(Emotion.EEmotion.Fear, "Fear");
+        TriggerNames.Add(Emotion.EEmotion.Happy, "Happy");
+        TriggerNames.Add(Emotion.EEmotion.Sad, "Sad");
+        TriggerNames.Add(Emotion.EEmotion.Surprise, "Surprise");
 
         m_loaded = true;
     }
 
-    public void PlayEmotion(Exercise.EEmotion emotion)
+    public void PlayEmotion(Emotion.EEmotion emotion)
     {
         if (Anim == null) return;
 

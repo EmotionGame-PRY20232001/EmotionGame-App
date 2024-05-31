@@ -156,7 +156,7 @@ public class PanelScript : MonoBehaviour
                 break;
             case PanelType.ChooseEmotions:
                 // Read selected player emotions
-                emotionToggles?.LoadEmotionToggles((Exercise.EEmotions)player.EmotionsLearned);
+                emotionToggles?.LoadEmotionToggles((Emotion.EEmotions)player.EmotionsLearned);
                 break;
             default: break;
         }
@@ -180,7 +180,7 @@ public class PanelScript : MonoBehaviour
                 break;
             case PanelType.ChooseEmotions:
                 // Select all emotions by default
-                emotionToggles?.LoadEmotionToggles(Exercise.EEmotions.Neutral);
+                emotionToggles?.LoadEmotionToggles(Emotion.EEmotions.Neutral);
                 break;
             default: break;
         }

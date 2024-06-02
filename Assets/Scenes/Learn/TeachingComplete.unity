@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Container: {fileID: 1039990065}
-  EmotionPrefab: {fileID: 7776086050351534723, guid: ca5fcc848f65cd34d951f7ac88fe8d63, type: 3}
+  EmotionPrefab: {fileID: 1629614099890347487, guid: c61b734258c4cc84c8d94e493b6d657d, type: 3}
 --- !u!114 &1039990068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,5 +1248,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4039066512304664523, guid: 68bf6d5cbf5e2224eaf03a01a3745f7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 68bf6d5cbf5e2224eaf03a01a3745f7d, type: 3}

@@ -8,6 +8,9 @@ using TMPro;
 [RequireComponent(typeof(Image))]
 public class EmotionObject : MonoBehaviour
 {
+    public enum ImageType { Regular, Icon }
+
+    public ImageType ImgType = ImageType.Regular;
     [field:SerializeField]
     public Emotion.EEmotion CurrEmotion { get; protected set; }
     [SerializeField]
@@ -16,6 +19,14 @@ public class EmotionObject : MonoBehaviour
     [SerializeField]
     protected TMP_Text EmotionName;
     protected Vector2 Dir;
+
+    // Glow
+    [SerializeField]
+    protected GameObject Glow;
+    [SerializeField]
+    protected float GlowLoopTime = 1.0f;
+    [SerializeField][Tooltip("Number of rotations per Scale")]
+    protected float GlowLoopRotFactor = 1.0f;
 
     protected virtual void Awake()
     {
@@ -28,6 +39,7 @@ public class EmotionObject : MonoBehaviour
             LoadRandom();
         else
             LoadByEmotion();
+        GlowEffect();
     }
 
     protected void LoadRandom()
@@ -45,7 +57,7 @@ public class EmotionObject : MonoBehaviour
         if (GameManager.Instance != null && EmotionImage != null)
         {
             Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
-            EmotionImage.sprite = emoData.SpriteColor;
+            EmotionImage.sprite = ImgType == ImageType.Regular ? emoData.SpriteColor : emoData.Icon;
             if (EmotionName != null)
                 EmotionName.text = emoData.Name;
         }
@@ -68,4 +80,28 @@ public class EmotionObject : MonoBehaviour
         //Dir = Random.insideUnitCircle.normalized;
     }
 
+    protected void GlowEffect()
+    {
+        if (Glow == null) return;
+
+        {
+            Image imgGlow = Glow.GetComponent<Image>();
+            if (imgGlow != null)
+            {
+                Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
+                imgGlow.color = emoData.Color * 1.5f;
+            }
+        }
+
+        float rotationZ = Random.Range(0.0f, 360.0f);
+        Glow.transform.rotation = Quaternion.AngleAxis(rotationZ, Vector3.forward);
+
+        LeanTween.scale(Glow, Vector3.one, GlowLoopTime)
+            .setFrom(Vector3.one * 1.1f)
+            .setLoopPingPong()
+            .setIgnoreTimeScale(true);
+        LeanTween.rotateAroundLocal(Glow, Vector3.forward, 360f, GlowLoopRotFactor)
+            .setRepeat(-1)
+            .setIgnoreTimeScale(true);
+    }
 }

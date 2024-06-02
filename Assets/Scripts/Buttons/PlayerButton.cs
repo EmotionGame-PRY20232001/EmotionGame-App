@@ -14,8 +14,6 @@ public class PlayerButton : MonoBehaviour
     [SerializeField]
     private Character guide;
     [SerializeField]
-    private bool enableAudio;
-    [SerializeField]
     private GameObject optionsContainer;
     [SerializeField]
     protected ThemeButton playerButton;
@@ -36,15 +34,15 @@ public class PlayerButton : MonoBehaviour
         nameText.text = player.Name;
         background.sprite = GameManager.Instance.GetBackgrounds()[(Theme.EBackground)player.BackgroundId].Texture;
         guide.SetByJson(player.GuideJSON);
-        enableAudio = player.EnableAudio;
     }
 
     public void ActivateOptions()
     {
         if (optionsContainer.activeSelf)
         {
-            GameManager.Instance.SetCurrentPlayer(playerReference);
-            SceneManager.LoadScene("MainMenu");
+            ChooseEmotions();
+            //GameManager.Instance.SetCurrentPlayer(playerReference);
+            //SceneManager.LoadScene("MainMenu");
         }
         optionsContainer.SetActive(true);
     }

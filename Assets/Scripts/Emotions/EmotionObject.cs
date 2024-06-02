@@ -23,10 +23,6 @@ public class EmotionObject : MonoBehaviour
     // Glow
     [SerializeField]
     protected GameObject Glow;
-    [SerializeField]
-    protected float GlowLoopTime = 1.0f;
-    [SerializeField][Tooltip("Number of rotations per Scale")]
-    protected float GlowLoopRotFactor = 1.0f;
 
     protected virtual void Awake()
     {
@@ -84,24 +80,11 @@ public class EmotionObject : MonoBehaviour
     {
         if (Glow == null) return;
 
+        Image imgGlow = Glow.GetComponent<Image>();
+        if (imgGlow != null)
         {
-            Image imgGlow = Glow.GetComponent<Image>();
-            if (imgGlow != null)
-            {
-                Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
-                imgGlow.color = emoData.Color * 1.5f;
-            }
+            Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
+            imgGlow.color = emoData.Color * 1.5f;
         }
-
-        float rotationZ = Random.Range(0.0f, 360.0f);
-        Glow.transform.rotation = Quaternion.AngleAxis(rotationZ, Vector3.forward);
-
-        LeanTween.scale(Glow, Vector3.one, GlowLoopTime)
-            .setFrom(Vector3.one * 1.1f)
-            .setLoopPingPong()
-            .setIgnoreTimeScale(true);
-        LeanTween.rotateAroundLocal(Glow, Vector3.forward, 360f, GlowLoopRotFactor)
-            .setRepeat(-1)
-            .setIgnoreTimeScale(true);
     }
 }

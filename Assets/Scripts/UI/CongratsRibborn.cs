@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CongratsRibborn : MonoBehaviour
 {
-    CanvasGroup CanvasGr;
     public float TimeTransitionIn = 1.0f;
     public float TimeLoop = 1.0f;
     public float ScaleFrom = 0.5f;
@@ -18,7 +17,7 @@ public class CongratsRibborn : MonoBehaviour
     {
         float posY = gameObject.transform.localPosition.y;
         float newPosY = gameObject.transform.localPosition.y;
-        newPosY -= newPosY;
+        newPosY += newPosY;
 
         LeanTween.moveLocalY(gameObject, posY, TimeTransitionIn).setFrom(newPosY).setOnComplete(Loop);
         LeanTween.scale(gameObject, Vector3.one, TimeTransitionIn).setFrom(ScaleFrom);

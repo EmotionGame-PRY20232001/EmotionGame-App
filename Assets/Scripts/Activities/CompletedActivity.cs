@@ -17,7 +17,7 @@ public class CompletedActivity : MonoBehaviour
     [SerializeField]
     protected TMP_Text TxtMotivation;
 
-    readonly uint NumMaxStars = 5;
+    readonly sbyte NumMaxStars = 5;
     [SerializeField]
     protected RectTransform StarsLayout;
     [SerializeField]
@@ -51,7 +51,7 @@ public class CompletedActivity : MonoBehaviour
                 TxtScore.text = "¡" + score + " puntos!";
         }
 
-        uint numGood = gm.LastNumCorrectAnswers;
+        sbyte numGood = gm.LastNumCorrectAnswers;
         if (TxtNumGood != null)
         {
             if (numGood > 0)
@@ -82,38 +82,42 @@ public class CompletedActivity : MonoBehaviour
         var gm = GameManager.Instance;
         if (gm == null) return;
 
-        uint numGood = gm.LastNumCorrectAnswers;
-        uint total = gm.LastNumExcercises;
+        sbyte numGood = gm.LastNumCorrectAnswers;
+        sbyte total = gm.LastNumExcercises;
         if (total == 0) return;
 
-        uint starPerExercises = total / NumMaxStars;
-        uint currentStars = numGood / starPerExercises;
-        uint halfStars = (uint)Mathf.CeilToInt(currentStars / 2);
+        sbyte exercisesPerStar = total >= NumMaxStars ? (sbyte)(total / NumMaxStars) : total;
+        sbyte currentStars = (sbyte)Mathf.CeilToInt(numGood * 1.0f / exercisesPerStar * 1.0f);
+        sbyte halfStars = (sbyte)Mathf.CeilToInt(currentStars / 2.0f);
+        Debug.Log("CompletedActivity:LoadStars [eps" + exercisesPerStar + "] [ns" + currentStars + "] [hs"+ halfStars + "]");
 
         if (currentStars % 2 == 0)
         {
             // 1  .2.  .3.  4    |  4/2 = 2
-            float halfDec = (halfStars * 2 + 1) / 2;
-            for (uint i = 1; i <= currentStars; i++)
+            float halfDec = (halfStars * 2 + 1) / 2.0f;
+            for (sbyte i = 1; i <= currentStars; i++)
             {
                 var star = Instantiate(StarPrefab, StarsLayout);
                 if (Mathf.Abs(i - halfDec) > 0.6f)
                 {
                     bool closeToHalf = Mathf.Abs(i - halfDec) <= 1.1f;
-                    star.transform.localScale = Vector3.one * (closeToHalf ? StarScaleClose : StarScaleFar);
+                    RectTransform rt = star.GetComponent<RectTransform>();
+                    rt.sizeDelta *= (closeToHalf ? StarScaleClose : StarScaleFar);
                 }
             }
         }
         else
         {
             // 1  .2.  >3<  .4.  5    |  5/2 = 2.5...3
-            for (uint i = 1; i <= currentStars; i++)
+            for (sbyte i = 1; i <= currentStars; i++)
             {
                 var star = Instantiate(StarPrefab, StarsLayout);
                 if (i != halfStars)
                 {
-                    bool closeToHalf = Mathf.Abs(i - halfStars) <= 1.1f;
-                    star.transform.localScale = Vector3.one * (closeToHalf ? StarScaleClose : StarScaleFar);
+                    int aux = i - halfStars;
+                    bool closeToHalf = Mathf.Abs(aux) == 1;
+                    RectTransform rt = star.GetComponent<RectTransform>();
+                    rt.sizeDelta *= (closeToHalf ? StarScaleClose : StarScaleFar);
                 }
             }
         }

@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     public CharacterCustomParts CharacterCustom { get; private set; }
 
     //Temporal fix
-    public uint LastNumCorrectAnswers;
-    public uint LastNumExcercises;
+    public sbyte LastNumCorrectAnswers;
+    public sbyte LastNumExcercises;
     public int LastScore;
 
     private void Awake()

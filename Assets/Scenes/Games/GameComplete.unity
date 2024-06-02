@@ -993,7 +993,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -96
+  m_Spacing: -16
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -1378,8 +1378,8 @@ MonoBehaviour:
   TxtNumGood: {fileID: 1915372579}
   TxtMotivation: {fileID: 894254341}
   StarsLayout: {fileID: 838753710}
-  StarScaleClose: 0.95
-  StarScaleFar: 0.85
+  StarScaleClose: 0.75
+  StarScaleFar: 0.5
 --- !u!1 &1338955494
 GameObject:
   m_ObjectHideFlags: 0

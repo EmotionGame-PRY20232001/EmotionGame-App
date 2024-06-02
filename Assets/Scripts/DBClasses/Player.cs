@@ -15,4 +15,5 @@ public class Player
     public int BackgroundId { get; set; } = 0;
     public int EmotionsLearned { get; set; }
     public string GuideJSON { get; set; } = "";
+    public uint StarsWon { get; set; } = 0;
 }

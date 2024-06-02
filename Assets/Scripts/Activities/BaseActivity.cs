@@ -19,7 +19,7 @@ public class BaseActivity : EmotionExercise
     [SerializeField] 
     private int NumButtons = 4;
 
-    public uint NumCorrectAnswers { get; protected set; }
+    public sbyte NumCorrectAnswers { get; protected set; }
     public int Score { get; protected set; }
 
     [SerializeField]
@@ -115,7 +115,7 @@ public class BaseActivity : EmotionExercise
         if (CurrentExercise == NumExcercises - 1)
         {
             GameManager.Instance.LastNumCorrectAnswers = NumCorrectAnswers;
-            GameManager.Instance.LastNumExcercises = NumExcercises;
+            GameManager.Instance.LastNumExcercises = (sbyte)NumExcercises;
             GameManager.Instance.LastScore = Score;
 
             StopCurrentExercise();

@@ -21,6 +21,8 @@ public class BaseActivity : EmotionExercise
 
     public sbyte NumCorrectAnswers { get; protected set; }
     public int Score { get; protected set; }
+    public float SecondsToSolveExercise { get; protected set; }
+    public Exercise CurrentExerciseDBO { get; protected set; }
 
     [SerializeField]
     protected GameObject AreaOfButtons;
@@ -78,13 +80,13 @@ public class BaseActivity : EmotionExercise
         Score += GoodScore;
         UpdateScoreText();
         NumCorrectAnswers++;
+        OnExerciseCompleted(ExerciseEmotion);
 
         if (PopUpGood != null)
         {
             PopUpGood.PopUp.Open();
             PopUpGood.transform.SetAsLastSibling();
             PopUpGood.LoadAnswerCorrect(Exercises.Photos[CurrentExercise]); //ExerciseEmotion
-            CleanUp();
         }
         else
         {
@@ -96,13 +98,13 @@ public class BaseActivity : EmotionExercise
     {
         if (Score >= BadScore) Score -= BadScore;
         UpdateScoreText();
+        OnExerciseCompleted(emotionSelected);
 
         if (PopUpBad != null)
         {
             PopUpBad.PopUp.Open();
             PopUpBad.transform.SetAsLastSibling();
             PopUpBad.LoadAnswerWrong(Exercises.Photos[CurrentExercise], emotionSelected);
-            CleanUp();
         }
         else
         {
@@ -110,22 +112,39 @@ public class BaseActivity : EmotionExercise
         }
     }
 
+    protected virtual void OnExerciseCompleted(Emotion.EEmotion emotionAnswer)
+    {
+        var gm = GameManager.Instance;
+        if (gm != null && gm.IsPlayerActive())
+        {
+            Response response = new Response();
+            response.UserId = gm.currentPlayer.Id;
+            response.CompletedAt = System.DateTime.Now;
+            response.ExerciseId = CurrentExerciseDBO.Id;
+            response.ResponseEmotionId = emotionAnswer;
+            response.SecondsToSolve = SecondsToSolveExercise;
+            response.IsCorrect = ExerciseEmotion == emotionAnswer;
+            DBManager.Instance.AddResponseToDb(response);
+            Debug.LogWarning("BaseActivity:OnExerciseCompleted " + response.ResponseEmotionId);
+        }
+
+        StopCurrentExercise();
+        CleanUp();
+    }
+
     protected virtual void LoadExercise()
     {
+        SecondsToSolveExercise = 0;
         if (CurrentExercise == NumExcercises - 1)
         {
             GameManager.Instance.LastNumCorrectAnswers = NumCorrectAnswers;
             GameManager.Instance.LastNumExcercises = (sbyte)NumExcercises;
             GameManager.Instance.LastScore = Score;
 
-            StopCurrentExercise();
             OnLastExercise();
             return;
         }
-
-        StopCurrentExercise();
         LoadCurrentExercise(CurrentExercise + 1);
-
         LoadEmotionButtons();
     }
 
@@ -163,6 +182,29 @@ public class BaseActivity : EmotionExercise
         CurrentExercise = newCurrent;
         EnableCurrentExercise(true);
         LoadCurrentEmotion();
+        LoadExerciseDataBD();
+    }
+
+    protected virtual void LoadExerciseDataBD()
+    {
+        EmotionPhoto photo = Exercises.Photos[CurrentExercise];
+        if (photo == null) return;
+
+        //TODO: Needs rework
+        Exercise exercise = new Exercise();
+
+        var gm = GameManager.Instance;
+        ExerciseContent.IdStruct contentId = new ExerciseContent.IdStruct();
+        contentId.type = ExerciseContent.EValueType.FacePhoto;
+        var sprites = gm.Emotions[ExerciseEmotion].ExerciseContents.Faces;
+        contentId.order = sprites.FindIndex((x) => x == photo.Photo.sprite);
+
+        exercise.ActivityId = Activity;
+        exercise.ContentId = contentId.ToString();
+        exercise.Id = DBManager.Instance.FindOrAddExerciseIdToDb(exercise);
+
+        Debug.LogWarning("BaseActivity:LoadExerciseDataBD " + exercise.ContentId);
+        CurrentExerciseDBO = exercise;
     }
 
     protected virtual void LoadEmotionButtons()
@@ -191,5 +233,10 @@ public class BaseActivity : EmotionExercise
     private void UpdateScoreText()
     {
         ScoreText.text = "Puntaje: " + Score;
+    }
+
+    protected virtual void Update()
+    {
+        SecondsToSolveExercise += Time.deltaTime;
     }
 }

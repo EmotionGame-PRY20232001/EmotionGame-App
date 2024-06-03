@@ -24,6 +24,7 @@ public class EmotionPhoto : MonoBehaviour
             Photo.sprite = photo;
     }
 
+    //deprecated
     public void SetRandomPhoto()
     {
         var gm = GameManager.Instance;

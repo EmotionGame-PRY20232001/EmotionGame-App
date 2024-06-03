@@ -55,10 +55,10 @@ public class ExerciseContent
     [System.Serializable]
     public struct IdStruct
     {
-        public EValueType type { get; private set; }
-        public int order { get; private set; }
+        public EValueType type { get; set; } //private
+        public int order { get; set; } //private
 
-        public static string ToString(EValueType type, int order)
+        public override string ToString()
         {
             const string separator = "_";
             string id = ((uint)type).ToString() + separator + order.ToString();
@@ -79,5 +79,14 @@ public class ExerciseContent
             idSt.order = int.Parse(parts[1]);
             return idSt;
         }
+    }
+
+
+    [System.Serializable]
+    public struct Data
+    {
+        public IdStruct Id { get; set; }
+        Emotion.EEmotion Emotion { get; set; }
+        public string Value { get; set; } // or sprite
     }
 }

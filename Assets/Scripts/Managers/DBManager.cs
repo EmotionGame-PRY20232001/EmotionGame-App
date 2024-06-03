@@ -30,8 +30,11 @@ public class DBManager : MonoBehaviour
         dbPath = Application.persistentDataPath + "/" + dbname;
         var db = new SQLiteConnection(dbPath);
         db.CreateTable<Player>();
+        db.CreateTable<Exercise>();
+        db.CreateTable<Response>();
     }
 
+    /// PLAYER
     public void AddPlayerToDb(Player player)
     {
         var db = new SQLiteConnection(dbPath);
@@ -46,7 +49,13 @@ public class DBManager : MonoBehaviour
 
     public void DeletePlayerFromDb(Player player)
     {
+        List<Response> responses = GetResponsesByPlayerFromDb(player);
+
         var db = new SQLiteConnection(dbPath);
+
+        foreach (Response response in responses)
+            db.Delete(response);
+
         db.Delete(player);
     }
 
@@ -56,6 +65,89 @@ public class DBManager : MonoBehaviour
         var playerList = db.Query<Player>($"select * from Player");
         return playerList;
     }
+    /// PLAYER ---
+
+    ///--- EXERCISE
+    public void AddExerciseToDb(Exercise exercise)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Insert(exercise);
+    }
+    public int FindOrAddExerciseIdToDb(Exercise exercise)
+    {
+        var db = new SQLiteConnection(dbPath);
+        Exercise exerciseFound = db.FindWithQuery<Exercise>($"select * from Exercise where ActivityId = ? and ContentId = ?",
+                                                            exercise.ActivityId, exercise.ContentId);
+        if (exerciseFound != null)
+            return exerciseFound.Id;
+
+        return db.Insert(exercise);
+    }
+
+    public void UpdateExerciseToDb(Exercise exercise)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Update(exercise);
+    }
+
+    public void DeleteExerciseFromDb(Exercise exercise)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Delete(exercise);
+    }
+
+    public List<Exercise> GetExercisesFromDb()
+    {
+        var db = new SQLiteConnection(dbPath);
+        var exerciseList = db.Query<Exercise>($"select * from Exercise");
+        return exerciseList;
+    }
+    /// EXERCISE ---
+
+    ///--- RESPONSE
+    public void AddResponseToDb(Response response)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Insert(response);
+    }
+
+    public void UpdateResponseToDb(Response response)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Update(response);
+    }
+
+    public void DeleteResponseFromDb(Response response)
+    {
+        var db = new SQLiteConnection(dbPath);
+        db.Delete(response);
+    }
+
+    public List<Response> GetResponsesByPlayerFromDb(Player player)
+    {
+        var db = new SQLiteConnection(dbPath);
+        var responseList = db.Query<Response>($"select * from Response where UserId = ?", player.Id);
+        return responseList;
+    }
+    public List<Response> GetResponsesByPlayerAndTodayFromDb(Player player)
+    {
+        var db = new SQLiteConnection(dbPath);
+        var responseList = db.Query<Response>($"select * from Response where UserId = ? and CompletedAt = date('?')",
+                                              player.Id, System.DateTime.Today);
+        return responseList;
+    }
+    public List<Response> GetResponsesByPlayerAndDateRangeFromDb(Player player, System.DateTime start, System.DateTime end)
+    {
+        if (end < start) end = start;
+
+        var db = new SQLiteConnection(dbPath);
+        //date('1004-01-01') AND date('1980-12-31'); //yyyy-mm-dd
+        var responseList = db.Query<Response>($"select * from Response where UserId = ? and CompletedAt BETWEEN date('?') and date('?')",
+                                              player.Id, start, end);
+        return responseList;
+    }
+    /// RESPONSE ---
+
 
     // // https://stackoverflow.com/questions/18920136/check-if-a-column-exists-in-sqlite
     // public bool DoFieldExist(string table, string column)

@@ -27,16 +27,8 @@ public class CompletedActivity : MonoBehaviour
 
     void Start()
     {
-        AnimateRibornEntrance();
         LoadTexts();
         LoadStars();
-    }
-
-    protected void AnimateRibornEntrance()
-    {
-    }
-    protected void AnimateRibornLoop()
-    {
     }
 
     protected void LoadTexts()
@@ -120,6 +112,12 @@ public class CompletedActivity : MonoBehaviour
                     rt.sizeDelta *= (closeToHalf ? StarScaleClose : StarScaleFar);
                 }
             }
+        }
+
+        if (gm != null && gm.IsPlayerActive())
+        {
+            gm.currentPlayer.StarsWon += (uint)currentStars;
+            DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);
         }
     }
 }

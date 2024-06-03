@@ -9,7 +9,9 @@ public class Exercise
 {
     [AutoIncrement, PrimaryKey]
     public int Id { get; set; }
-    public int ContentId { get; set; }
-    public EmotionExercise.EActivity Activity { get; set; }
+    //[MaxLength(16)]
+    public string ContentId { get; set; }
+    public EmotionExercise.EActivity ActivityId { get; set; }
+    //public uint ActivityId { get; set; }
 
 }

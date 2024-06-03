@@ -6,18 +6,22 @@ using UnityEngine;
 
 public class Response
 {
-    public int UserId { get; set; }
-
-    public int CompletedAt { get; set; }
-
-    public string ExerciseId { get; set; }
-
-    public uint ActivityId { get; set; }
-
-    public uint ResponseEmotionId { get; set; }
-
+    public int UserId { get; set; } //PlayerId
+    public System.DateTime CompletedAt { get; set; }
+    public int ExerciseId { get; set; }
+    public Emotion.EEmotion ResponseEmotionId { get; set; } //uint
+    // numAlerts
+    // numHelp
     public float SecondsToSolve { get; set; }
-
     public bool IsCorrect { get; set; }
 
+    public override string ToString()
+    {
+        return "Player_" + UserId +
+            " CompletedAt_" + CompletedAt +
+            " ExerciseId_" + ExerciseId +
+            " ResponseEmotionId_" + ResponseEmotionId +
+            " Seconds_" + SecondsToSolve +
+            " Correct_" + IsCorrect;
+    }
 }

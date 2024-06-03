@@ -124,7 +124,7 @@ public class EmotionToggles : MonoBehaviour
         if(gm.IsPlayerActive())
         {
             Emotion.EEmotions emotionsChecked = GetEmotionsFlagSelected();
-            gm.currentPlayer.EmotionsLearned = (int)emotionsChecked;
+            gm.currentPlayer.EmotionsLearned = (uint)emotionsChecked;
             Debug.Log("EmotionToggles: SaveEmotionsChecked: " + emotionsChecked);
             if (numActive > 0)
                 DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);

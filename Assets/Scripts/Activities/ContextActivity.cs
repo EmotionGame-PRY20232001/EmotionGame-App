@@ -38,5 +38,28 @@ public class ContextActivity : BaseActivity
         }
     }
 
+    protected override void LoadExerciseDataBD()
+    {
+        EmotionPhoto photo = Exercises.Photos[CurrentExercise];
+        if (photo == null) return;
 
+        EmotionContext context = (EmotionContext)photo;
+        if (context == null) return;
+
+        //TODO: Needs rework
+        Exercise exercise = new Exercise();
+
+        var gm = GameManager.Instance;
+        ExerciseContent.IdStruct contentId = new ExerciseContent.IdStruct();
+        contentId.type = ExerciseContent.EValueType.Text;
+        var sprites = gm.Emotions[ExerciseEmotion].ExerciseContents.Contexts;
+        contentId.order = sprites.FindIndex((x) => x == context.Text);
+
+        exercise.ActivityId = Activity;
+        exercise.ContentId = contentId.ToString();
+        exercise.Id = DBManager.Instance.FindOrAddExerciseIdToDb(exercise);
+
+        Debug.LogWarning("BaseActivity:LoadExerciseDataBD " + exercise.ContentId);
+        CurrentExerciseDBO = exercise;
+    }
 }

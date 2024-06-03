@@ -18,7 +18,6 @@ public class ReportManager : MonoBehaviour
     protected TMP_Text CurrentDateText;
 
     /// Currents
-    protected Player CurrentPlayer = null;
     [field: SerializeField]
     public EmotionExercise.EActivity CurrentGame { get; protected set; }
     [field:SerializeField]
@@ -40,9 +39,14 @@ public class ReportManager : MonoBehaviour
         var gm = GameManager.Instance;
         if (gm != null)
         {
-            CurrentPlayer = gm.currentPlayer;
-            CurrentPlayerName.text = CurrentPlayer.Name;
+            CurrentPlayerName.text = gm.currentPlayer.Name;
+
+            List<Response> responses = DBManager.Instance.GetResponsesByPlayerFromDb(gm.currentPlayer);
+            Debug.LogWarning("ReportManager:LoadPlayer" + responses);
+            foreach (Response resp in responses)
+                Debug.Log(resp);
         }
+
     }
 
     public void SetReportName(string name)

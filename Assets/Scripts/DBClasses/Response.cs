@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Response
 {
+    [AutoIncrement, PrimaryKey]
+    public int Id { get; set; }
     public int UserId { get; set; } //PlayerId
     public System.DateTime CompletedAt { get; set; }
     public int ExerciseId { get; set; }

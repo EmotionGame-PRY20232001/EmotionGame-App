@@ -55,28 +55,32 @@ public class ExerciseContent
     [System.Serializable]
     public struct IdStruct
     {
+        public Emotion.EEmotion emotion { get; set; } //private
         public EValueType type { get; set; } //private
         public int order { get; set; } //private
 
         public override string ToString()
         {
             const string separator = "_";
-            string id = ((uint)type).ToString() + separator + order.ToString();
+            string id = ((uint)emotion).ToString() + separator +
+                        ((uint)type).ToString() + separator +
+                        ((uint)order).ToString();
             return id;
         }
 
         public static IdStruct FromString(string id)
         {
             IdStruct idSt = new IdStruct();
-            if (id.Length < 2) return idSt;
+            if (id.Length < 3) return idSt;
 
             string idStr = id.ToString();
             const string separator = "_";
             string[] parts = idStr.Split(separator, System.StringSplitOptions.RemoveEmptyEntries);
-            if (parts.Length < 2) return idSt;
+            if (parts.Length < 3) return idSt;
 
-            idSt.type = (EValueType)uint.Parse(parts[0]);
-            idSt.order = int.Parse(parts[1]);
+            idSt.emotion = (Emotion.EEmotion)uint.Parse(parts[0]);
+            idSt.type = (EValueType)uint.Parse(parts[1]);
+            idSt.order = int.Parse(parts[2]);
             return idSt;
         }
     }

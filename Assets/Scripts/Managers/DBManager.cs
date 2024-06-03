@@ -31,6 +31,7 @@ public class DBManager : MonoBehaviour
         var db = new SQLiteConnection(dbPath);
         db.CreateTable<Player>();
         db.CreateTable<Exercise>();
+        //db.DropTable<Response>();
         db.CreateTable<Response>();
     }
 
@@ -81,7 +82,8 @@ public class DBManager : MonoBehaviour
         if (exerciseFound != null)
             return exerciseFound.Id;
 
-        return db.Insert(exercise);
+        db.Insert(exercise);
+        return exercise.Id;
     }
 
     public void UpdateExerciseToDb(Exercise exercise)
@@ -94,6 +96,12 @@ public class DBManager : MonoBehaviour
     {
         var db = new SQLiteConnection(dbPath);
         db.Delete(exercise);
+    }
+
+    public Exercise GetExerciseFromDB(int id)
+    {
+        var db = new SQLiteConnection(dbPath);
+        return db.Find<Exercise>(id);
     }
 
     public List<Exercise> GetExercisesFromDb()

@@ -41,6 +41,21 @@ public abstract class Report : MonoBehaviour
     {
     }
 
+    protected Emotion.EEmotion GetExerciseEmotion(int exerciseId)
+    {
+        //TODO: rework or optimize
+        var dbm = DBManager.Instance;
+        var gm = GameManager.Instance;
+        if (dbm == null || gm == null) return Emotion.EEmotion.Neutral;
+
+        Exercise exercise = dbm.GetExerciseFromDB(exerciseId);
+        ExerciseContent.IdStruct idCont = ExerciseContent.IdStruct.FromString(exercise.ContentId);
+        //if (idCont.type == ExerciseContent.EValueType.FacePhoto)
+        //{
+        //gm.Emotions[idCont.emotion].ExerciseContents.Faces[idCont.order];
+        //}
+        return idCont.emotion;
+    }
 
     //protected abstract void OnGameChoose();
     //protected abstract void OnGameContext();

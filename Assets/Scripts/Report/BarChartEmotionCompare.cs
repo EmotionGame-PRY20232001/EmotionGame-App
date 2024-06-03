@@ -11,13 +11,13 @@ public class BarChartEmotionCompare : BarChart
     protected override void LoadBars()
     {
         base.LoadBars();
-        if (Bars == null || EmotionObj == null) return;
+        //if (Bars == null || EmotionObj == null) return;
 
-        if (EmotionBars.ContainsKey(EmotionObj.CurrEmotion))
-        {
-            Destroy(EmotionBars[EmotionObj.CurrEmotion].gameObject);
-            EmotionBars.Remove(EmotionObj.CurrEmotion);
-        }
+        //if (EmotionBars.ContainsKey(EmotionObj.CurrEmotion))
+        //{
+        //    Destroy(EmotionBars[EmotionObj.CurrEmotion].gameObject);
+        //    EmotionBars.Remove(EmotionObj.CurrEmotion);
+        //}
     }
 
     /// <param name="EmotionValues"></param>

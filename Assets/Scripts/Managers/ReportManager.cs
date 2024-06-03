@@ -22,6 +22,10 @@ public class ReportManager : MonoBehaviour
     public EmotionExercise.EActivity CurrentGame { get; protected set; }
     [field:SerializeField]
     public List<DateTime> SelectedDates { get; protected set; }
+    public List<Response> Responses { get; protected set; }
+
+    [field: SerializeField]
+    protected StatsReport Stats { get; set; }
 
     protected void Awake()
     {
@@ -32,19 +36,20 @@ public class ReportManager : MonoBehaviour
     protected void Start()
     {
         LoadPlayer();
+        if (Stats != null)
+            Stats.LoadAssertsChart();
     }
 
     protected void LoadPlayer()
     {
         var gm = GameManager.Instance;
-        if (gm != null)
+        if (gm != null && gm.IsPlayerActive())
         {
             CurrentPlayerName.text = gm.currentPlayer.Name;
-
-            List<Response> responses = DBManager.Instance.GetResponsesByPlayerFromDb(gm.currentPlayer);
-            Debug.LogWarning("ReportManager:LoadPlayer" + responses);
-            foreach (Response resp in responses)
-                Debug.Log(resp);
+            Responses = DBManager.Instance.GetResponsesByPlayerFromDb(gm.currentPlayer);
+            //Debug.LogWarning("ReportManager:LoadPlayer" + Responses);
+            //foreach (Response resp in Responses)
+            //    Debug.Log(resp);
         }
 
     }

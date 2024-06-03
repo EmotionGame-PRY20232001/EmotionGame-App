@@ -51,6 +51,7 @@ public class ContextActivity : BaseActivity
 
         var gm = GameManager.Instance;
         ExerciseContent.IdStruct contentId = new ExerciseContent.IdStruct();
+        contentId.emotion = ExerciseEmotion;
         contentId.type = ExerciseContent.EValueType.Text;
         var sprites = gm.Emotions[ExerciseEmotion].ExerciseContents.Contexts;
         contentId.order = sprites.FindIndex((x) => x == context.Text);

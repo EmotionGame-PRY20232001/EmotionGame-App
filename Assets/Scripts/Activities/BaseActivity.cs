@@ -195,6 +195,7 @@ public class BaseActivity : EmotionExercise
 
         var gm = GameManager.Instance;
         ExerciseContent.IdStruct contentId = new ExerciseContent.IdStruct();
+        contentId.emotion = ExerciseEmotion;
         contentId.type = ExerciseContent.EValueType.FacePhoto;
         var sprites = gm.Emotions[ExerciseEmotion].ExerciseContents.Faces;
         contentId.order = sprites.FindIndex((x) => x == photo.Photo.sprite);

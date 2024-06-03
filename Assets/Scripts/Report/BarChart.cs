@@ -10,7 +10,7 @@ public class BarChart : MonoBehaviour
 {
     [SerializeField]
     protected BarStat[] Bars;
-    protected Dictionary<Emotion.EEmotion, BarStat> EmotionBars;
+    protected Dictionary<Emotion.EEmotion, BarStat> EmotionBars { get; set; }
     [field:SerializeField]
     public float Total { get; protected set; }
     [field: SerializeField]
@@ -20,10 +20,6 @@ public class BarChart : MonoBehaviour
     protected virtual void Awake()
     {
         EmotionBars = new Dictionary<Emotion.EEmotion, BarStat>();
-    }
-
-    protected virtual void Start()
-    {
         LoadBars();
         LoadRandom();
     }
@@ -45,6 +41,9 @@ public class BarChart : MonoBehaviour
         Total = 0;
         Maximum = 0;
 
+        //Not optimized //TODO: Check
+        LoadBars();
+
         if (Bars == null) return;
         foreach (var value in EmotionValues)
         {
@@ -53,15 +52,17 @@ public class BarChart : MonoBehaviour
         }
         foreach (var value in EmotionValues)
         {
-            EmotionBars[value.Key].LoadPercentage(Maximum, value.Value);
+            if (EmotionBars.ContainsKey(value.Key))
+                EmotionBars[value.Key]?.LoadPercentage(Maximum, value.Value, true);
         }
     }
 
     public virtual void LoadRandom()
     {
         Total = 100;
-        Maximum = 100;
+        Maximum = 20;
 
+        if (Bars == null) return;
         foreach (var bar in EmotionBars)
         {
             float value = Random.Range(1, Maximum);

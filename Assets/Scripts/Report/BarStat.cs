@@ -69,7 +69,10 @@ public class BarStat : MonoBehaviour
         Percentage = percentage;
 
         if (PercentText != null)
-            PercentText.text = percentage + "%";
+        {
+            float percRound = Mathf.Round(percentage * 100) / 100;
+            PercentText.text = percRound + "%";
+        }
 
         if (Bar != null)
         {
@@ -86,7 +89,7 @@ public class BarStat : MonoBehaviour
         Absolute = absoluteVal;
 
         if (AbsoluteText != null)
-            AbsoluteText.text = absoluteVal + "";
+            AbsoluteText.text = Mathf.Round(absoluteVal) + ""; //Temporal
     }
 
 }

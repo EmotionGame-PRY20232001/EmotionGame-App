@@ -25,6 +25,7 @@ public class BarChart : MonoBehaviour
     protected virtual void Start()
     {
         LoadBars();
+        LoadRandom();
     }
 
     //TODO: Check if better read or spawn bars
@@ -53,6 +54,18 @@ public class BarChart : MonoBehaviour
         foreach (var value in EmotionValues)
         {
             EmotionBars[value.Key].LoadPercentage(Maximum, value.Value);
+        }
+    }
+
+    public virtual void LoadRandom()
+    {
+        Total = 100;
+        Maximum = 100;
+
+        foreach (var bar in EmotionBars)
+        {
+            float value = Random.Range(1, Maximum);
+            EmotionBars[bar.Key].LoadPercentage(Maximum, value);
         }
     }
 }

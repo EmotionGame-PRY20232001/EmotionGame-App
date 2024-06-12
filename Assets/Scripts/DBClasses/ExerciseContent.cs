@@ -16,7 +16,7 @@ public class ExerciseContent
     //public string Text { get; set; }
     //Exercise.EEmotion CorrectEmotion { get; set; }
 
-    public enum EValueType : uint { FacePhoto, Text };
+    public enum EValueType : uint { ResPhoto, Text };
 
     //[System.Serializable]
     //public struct Unit {
@@ -25,9 +25,9 @@ public class ExerciseContent
     //    // Value can be path or text
     //    public EValueType Type;
 
-    //    public Sprite LoadFacePhoto()
+    //    public Sprite LoadResPhoto()
     //    {
-    //        if (Type != EValueType.FacePhoto) return null;
+    //        if (Type != EValueType.ResPhoto) return null;
     //        var sprite = Utils.LoadFromResources<Sprite>("Faces/" + Value);
     //        return sprite;
     //    }
@@ -37,10 +37,10 @@ public class ExerciseContent
     public List<Sprite> Faces;
     public List<string> Contexts;
 
-    public Sprite GetFacePhotoFromId(string id)
+    public Sprite GetResPhotoFromId(string id)
     {
         IdStruct idStruct = IdStruct.FromString(id);
-        if (idStruct.type != EValueType.FacePhoto) return null;
+        if (idStruct.type != EValueType.ResPhoto) return null;
         return Faces[idStruct.order];
     }
 
@@ -83,14 +83,5 @@ public class ExerciseContent
             idSt.order = int.Parse(parts[2]);
             return idSt;
         }
-    }
-
-
-    [System.Serializable]
-    public struct Data
-    {
-        public IdStruct Id { get; set; }
-        Emotion.EEmotion Emotion { get; set; }
-        public string Value { get; set; } // or sprite
     }
 }

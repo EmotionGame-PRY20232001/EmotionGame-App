@@ -31,8 +31,6 @@ public class Emotion
     public Sprite Icon;
     public string Name;
     public Color Color;
-    //[SerializedDictionary("Type", "Values")]
-    //public SerializedDictionary<ExerciseContent.EValueType, List<string>> ExerciseContents;
     public ExerciseContent ExerciseContents;
 
     // [System.Flags]

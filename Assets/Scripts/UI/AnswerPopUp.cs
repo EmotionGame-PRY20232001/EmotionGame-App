@@ -84,9 +84,15 @@ public class AnswerPopUp : MonoBehaviour
 
         System.DateTime completedAt = System.DateTime.Now;
         if (TextDuration != null)
-            TextDuration.text = "ก" + (completedAt - emotionEx.StartedAt).TotalSeconds.ToString() + " segundos!";
+        {
+            float duration = (float)(completedAt - emotionEx.StartedAt).TotalSeconds;
+            duration = Mathf.Round(duration * 100) / 100;
+            TextDuration.text = "ยก" + duration.ToString() + " segundos!";
+        }
         if (CompletedDT != null)
             CompletedDT.text = completedAt.ToString();
+
+        CorrectEmotion?.UpdateGlowEffect();
     }
 
     public void LoadAnswerCorrect(EmotionPhoto emotionEx)

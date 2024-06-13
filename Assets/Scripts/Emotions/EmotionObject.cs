@@ -35,7 +35,7 @@ public class EmotionObject : MonoBehaviour
             LoadRandom();
         else
             LoadByEmotion();
-        GlowEffect();
+        UpdateGlowEffect();
     }
 
     protected void LoadRandom()
@@ -76,9 +76,9 @@ public class EmotionObject : MonoBehaviour
         //Dir = Random.insideUnitCircle.normalized;
     }
 
-    protected void GlowEffect()
+    public void UpdateGlowEffect()
     {
-        if (Glow == null) return;
+        if (Glow == null || GameManager.Instance == null) return;
 
         Image imgGlow = Glow.GetComponent<Image>();
         if (imgGlow != null)

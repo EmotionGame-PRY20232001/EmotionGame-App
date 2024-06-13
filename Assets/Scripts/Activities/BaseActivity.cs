@@ -188,7 +188,7 @@ public class BaseActivity : EmotionExercise
     protected virtual void LoadExerciseDataBD()
     {
         EmotionPhoto photo = Exercises.Photos[CurrentExercise];
-        if (photo == null) return;
+        if (photo == null || DBManager.Instance == null) return;
 
         //TODO: Needs rework
         Exercise exercise = new Exercise();

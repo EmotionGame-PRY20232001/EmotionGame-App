@@ -31,6 +31,10 @@ public class ImitateActivity : BaseActivity
     protected override void Start()
     {
         base.Start();
+#if UNITY_ANDROID && !UNITY_EDITOR
+        RawImgPhoto.transform.Rotate(Vector3.forward, 90);
+        RawImgPhoto.transform.Rotate(Vector3.right, 180);
+#endif
     }
 
     protected override void Update()

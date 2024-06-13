@@ -40,18 +40,22 @@ public class Utils : MonoBehaviour
     /// <typeparam name="T"></typeparam>
     /// <param name="list"></param>
     /// <returns></returns>
-    static public IEnumerable<T> Shuffle<T>(IEnumerable<T> list) 
+    static public IEnumerable<T> Shuffle<G,T>(G list) where G : IEnumerable<T>
     {
         if (list.Count() < 2)
             return list;
-        return list.OrderBy(x => Random.value);
+        return list.OrderBy(x => Random.value).AsEnumerable();
+    }
+    static public List<T> Shuffle<T>(List<T> list)
+    {
+        return Shuffle<List<T>, T>(list).ToList();
     }
 
     protected static void CheckNull<T>(T val, string name)
     {
         if (val == null)
         {
-            Debug.LogError("ExerciseContent:CheckNull\t" + name + "\tis null");
+            Debug.LogWarning("ExerciseContent:CheckNull\t" + name + "\tis null");
         }
     }
 
@@ -61,6 +65,41 @@ public class Utils : MonoBehaviour
     //    Shuffle(floats).ToList();
     //}
 
+    //https://stackoverflow.com/questions/163162/can-you-call-directory-getfiles-with-multiple-filters
+    //extensions = (new[] { ".png", ".jpg" })
+    public static string[] GetFilesFromResources(string folderPath, string[] extensions)
+    {
+        string RES_PATH = Application.dataPath + "/Resources/";
+        string[] files = Directory.GetFiles(RES_PATH + folderPath, "*.*", SearchOption.AllDirectories)
+                                    .Where(fn =>
+                                        extensions.Any(x =>
+                                            fn.EndsWith(x, System.StringComparison.OrdinalIgnoreCase)
+                                        )
+                                    ).ToArray();
+
+        for (int i = 0; i < files.Length; i++)
+        {
+            files[i] = files[i].Replace(RES_PATH, "")
+                                .Replace(Path.GetExtension(files[i]), "")
+                                .Replace("\\", "/");
+        }
+
+        return files;
+    }
+
+    public static string[] GetFilesFromResources<T>(string folderPath, string[] extensions) where T : Object
+    {
+        string[] files = GetFilesFromResources(folderPath, extensions);
+
+        List<string> filesLst = files.ToList();
+        foreach (string file in filesLst)
+        {
+            T obj = Resources.Load<T>(file);
+            if (obj == null)
+                filesLst.Remove(file);
+        }
+        return filesLst.ToArray();
+    }
 
     //https://docs.unity3d.com/ScriptReference/Resources.Load.html
     public static T LoadFromResources<T>(string path) where T : Object

@@ -592,7 +592,7 @@ MonoBehaviour:
         <Shape>k__BackingField: {r: 0.753916, g: 0.77305096, b: 0.8113208, a: 1}
   FillType: 0
   Lightness: 0
-  PaperAlphaFill: 0.5
+  PaperAlphaFill: 1
   ColorFill: {r: 0.5882353, g: 0.8156863, b: 1, a: 1}
   ColorContrast: {r: 0.22745098, g: 0.32156864, b: 0.46666667, a: 1}
   GraphicsToFill:
@@ -630,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784a1ba37529ab44e920d13a3f64f871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayOnStart: 0
   SfxType: 1
 --- !u!1 &7658228503439105452
 GameObject:

@@ -631,7 +631,7 @@ MonoBehaviour:
         <Shape>k__BackingField: {r: 0.753916, g: 0.77305096, b: 0.8113208, a: 1}
   FillType: 0
   Lightness: 0
-  PaperAlphaFill: 0.5
+  PaperAlphaFill: 1
   ColorFill: {r: 0.5882353, g: 0.8156863, b: 1, a: 1}
   ColorContrast: {r: 0.22745098, g: 0.32156864, b: 0.46666667, a: 1}
   GraphicsToFill:
@@ -804,7 +804,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_fontSize
-      value: 37.15
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.46666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.32156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.22745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286009914
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915270552735074502, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596243361570996081, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 4078013014713609776, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -894,12 +918,63 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4444e9044afd32741b7c0e22141c9abe, type: 3}
+    - target: {fileID: 9020074159381583601, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: GraphicsToFill.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020074159381583601, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: GraphicsToFill.Array.data[2]
+      value: 
+      objectReference: {fileID: 3037236133285840759}
     - target: {fileID: 9041021286167723029, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: SfxType
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+--- !u!1 &5920071049081586074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1703504894883176965, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+  m_PrefabInstance: {fileID: 5011452975566267295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!222 &2114429317375277965
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920071049081586074}
+  m_CullTransparentMesh: 1
+--- !u!114 &3037236133285840759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920071049081586074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5882353, g: 0.8156863, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1543740983, guid: 2b73b05ceda0d24428ec391ff2ccbe5e, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1.5
 --- !u!224 &9012902245366173102 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4078013014713609777, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}

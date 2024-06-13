@@ -772,7 +772,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultDataList:
-    DefaultList: []
+    Type: 0
+    EmotionDatas: []
 --- !u!114 &761679834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,18 +2598,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultDataList:
-    DefaultList:
-    - <Emotion>k__BackingField: 0
-      <Value>k__BackingField: "\xA1Esto es inaceptable, estoy realmente enojado! "
-    - <Emotion>k__BackingField: 0
-      <Value>k__BackingField: "\xA1No quiero hablar ahora mismo, d\xE9jame tranquilo!"
-    - <Emotion>k__BackingField: 0
-      <Value>k__BackingField: "\xA1No quiero hablar contigo ahora mismo, d\xE9jame
-        tranquilo!"
-    - <Emotion>k__BackingField: 0
-      <Value>k__BackingField: "\xA1Tiraste mi juguete!"
-    - <Emotion>k__BackingField: 0
-      <Value>k__BackingField: "\xA1No me gusta que me jalen del brazo!"
+    Type: 0
+    EmotionDatas:
+    - Emotion: 0
+      Values:
+      - "\xA1Esto es inaceptable, estoy realmente enojado!"
+      - "\xA1No quiero hablar ahora mismo, d\xE9jame tranquilo!"
+      - "\xA1No quiero hablar contigo ahora mismo, d\xE9jame tranquilo!"
+      - "\xA1Tiraste mi juguete!"
+      - "\xA1No me gusta que me jalen del brazo!"
+    - Emotion: 1
+      Values:
+      - "\xA1Qu\xE9 asco! No puedo ni mirarlo."
+      - "\xA1Me da n\xE1useas! No puedo tocarlo."
+      - No puedo soportar el olor.
+      - "\xA1Apesta muy fuerte!"
+      - "Tiene un sabor extra\xF1o."
+    - Emotion: 2
+      Values:
+      - No quiero estar solo, me da miedo.
+      - "Estoy sudando fr\xEDo, tengo mucho miedo."
+      - Me tiemblan las manos, estoy sudando.
+      - "Acomp\xE1\xF1ame, no quiero ir solo yo."
+      - "\xA1Ah! \xA1Ese animal tiene colmillos muy grandes!"
+    - Emotion: 3
+      Values:
+      - "\xA1No puedo contener la sonrisa!"
+      - "\xA1No puedo dejar de re\xEDr!"
+      - "Mi coraz\xF3n late de emoci\xF3n."
+      - "\xA1Gan\xF3 mi equipo favorito!"
+      - "\xA1Hoy com\xED algo delicioso!"
+      - "\xA1Encontr\xE9 mi cartuchera!"
+    - Emotion: 5
+      Values:
+      - "Me siento abatido, no tengo \xE1nimos."
+      - Siento un nudo en la garganta.
+      - "No puedo contener las l\xE1grimas."
+      - "\xA1Se perdi\xF3 mi perrito!"
+      - "\xA1Se escap\xF3 mi gato!"
+      - "Iba corriendo y me ca\xED."
+    - Emotion: 6
+      Values:
+      - "\xA1No puedo creer lo que veo!"
+      - "\xA1Qu\xE9 sorpresa! Nunca lo imagin\xE9."
+      - Estoy boquiabierto, es asombroso.
+      - "\xA1Qu\xE9 maravilla! Estoy sin palabras."
+      - "\xA1Esa pelota es gigante!"
+      - "\xA1Qu\xE9 incre\xEDble! \xA1Puede mover las orejas!"
+      - "\xA1El mago lo desapareci\xF3!"
 --- !u!114 &2004177721
 MonoBehaviour:
   m_ObjectHideFlags: 0

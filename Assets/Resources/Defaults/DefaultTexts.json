@@ -1,1 +1,69 @@
-{"DefaultList":[{"Id":0,"Emotion":0,"Type":0,"Value":"¡Esto es inaceptable, estoy realmente enojado! "},{"Id":0,"Emotion":0,"Type":0,"Value":"¡No quiero hablar ahora mismo, déjame tranquilo!"},{"Id":0,"Emotion":0,"Type":0,"Value":"¡No quiero hablar contigo ahora mismo, déjame tranquilo!"},{"Id":0,"Emotion":0,"Type":0,"Value":"¡Tiraste mi juguete!"},{"Id":0,"Emotion":0,"Type":0,"Value":"¡No me gusta que me jalen del brazo!"}]}
+{
+  "Type": 0,
+  "EmotionDatas": [
+    {
+      "Emotion": 0,
+      "Values": [
+        "¡Esto es inaceptable, estoy realmente enojado!",
+        "¡No quiero hablar ahora mismo, déjame tranquilo!",
+        "¡No quiero hablar contigo ahora mismo, déjame tranquilo!",
+        "¡Tiraste mi juguete!",
+        "¡No me gusta que me jalen del brazo!"
+      ]
+    },
+    {
+      "Emotion": 1,
+      "Values": [
+        "¡Qué asco! No puedo ni mirarlo.",
+        "¡Me da náuseas! No puedo tocarlo.",
+        "No puedo soportar el olor.",
+        "¡Apesta muy fuerte!",
+        "Tiene un sabor extraño."
+      ]
+    },
+    {
+      "Emotion": 2,
+      "Values": [
+        "No quiero estar solo, me da miedo.",
+        "Estoy sudando frío, tengo mucho miedo.",
+        "Me tiemblan las manos, estoy sudando.",
+        "Acompáñame, no quiero ir solo yo.",
+        "¡Ah! ¡Ese animal tiene colmillos muy grandes!"
+      ]
+    },
+    {
+      "Emotion": 3,
+      "Values": [
+        "¡No puedo contener la sonrisa!",
+        "¡No puedo dejar de reír!",
+        "Mi corazón late de emoción.",
+        "¡Ganó mi equipo favorito!",
+        "¡Hoy comí algo delicioso!",
+        "¡Encontré mi cartuchera!"
+      ]
+    },
+    {
+      "Emotion": 5,
+      "Values": [
+        "Me siento abatido, no tengo ánimos.",
+        "Siento un nudo en la garganta.",
+        "No puedo contener las lágrimas.",
+        "¡Se perdió mi perrito!",
+        "¡Se escapó mi gato!",
+        "Iba corriendo y me caí."
+      ]
+    },
+    {
+      "Emotion": 6,
+      "Values": [
+        "¡No puedo creer lo que veo!",
+        "¡Qué sorpresa! Nunca lo imaginé.",
+        "Estoy boquiabierto, es asombroso.",
+        "¡Qué maravilla! Estoy sin palabras.",
+        "¡Esa pelota es gigante!",
+        "¡Qué increíble! ¡Puede mover las orejas!",
+        "¡El mago lo desapareció!"
+      ]
+    }
+  ]
+}

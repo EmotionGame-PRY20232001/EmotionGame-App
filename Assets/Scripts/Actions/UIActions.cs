@@ -149,4 +149,8 @@ public class UIActions : MonoBehaviour
         SceneManager.LoadScene(Scenes.REPORT);
     }
 
+    public static void GoToScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }

@@ -1,1 +1,103 @@
-{"DefaultList":[{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry01"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry02"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry03"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry04"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry05"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry06"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry07"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry08"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry09"},{"Id":0,"Emotion":0,"Type":0,"Value":"Faces/Angry/Angry10"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust01"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust02"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust03"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust04"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust05"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust06"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust07"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust08"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust09"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust10"},{"Id":0,"Emotion":1,"Type":0,"Value":"Faces/Disgust/Disgust11"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear01"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear02"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear03"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear04"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear05"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear06"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear07"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear08"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear09"},{"Id":0,"Emotion":2,"Type":0,"Value":"Faces/Fear/Fear10"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy01"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy02"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy03"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy04"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy05"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy06"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy07"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy08"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy09"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy10"},{"Id":0,"Emotion":3,"Type":0,"Value":"Faces/Happy/Happy11"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/001"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/002"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/003"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/004"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/005"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/006"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad01"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad02"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad03"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad04"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad05"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad06"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad07"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad08"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad09"},{"Id":0,"Emotion":5,"Type":0,"Value":"Faces/Sad/Sad10"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise01"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise02"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise03"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise04"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise05"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise06"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise07"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise08"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise09"},{"Id":0,"Emotion":6,"Type":0,"Value":"Faces/Surprise/Surprise10"}]}
+{
+  "Type": 0,
+  "EmotionDatas": [
+    {
+      "Emotion": 0,
+      "Values": [
+        "Faces/Angry/Angry01",
+        "Faces/Angry/Angry02",
+        "Faces/Angry/Angry03",
+        "Faces/Angry/Angry04",
+        "Faces/Angry/Angry05",
+        "Faces/Angry/Angry06",
+        "Faces/Angry/Angry07",
+        "Faces/Angry/Angry08",
+        "Faces/Angry/Angry09",
+        "Faces/Angry/Angry10"
+      ]
+    },
+    {
+      "Emotion": 1,
+      "Values": [
+        "Faces/Disgust/Disgust01",
+        "Faces/Disgust/Disgust02",
+        "Faces/Disgust/Disgust03",
+        "Faces/Disgust/Disgust04",
+        "Faces/Disgust/Disgust05",
+        "Faces/Disgust/Disgust06",
+        "Faces/Disgust/Disgust07",
+        "Faces/Disgust/Disgust08",
+        "Faces/Disgust/Disgust09",
+        "Faces/Disgust/Disgust10",
+        "Faces/Disgust/Disgust11"
+      ]
+    },
+    {
+      "Emotion": 2,
+      "Values": [
+        "Faces/Fear/Fear01",
+        "Faces/Fear/Fear02",
+        "Faces/Fear/Fear03",
+        "Faces/Fear/Fear04",
+        "Faces/Fear/Fear05",
+        "Faces/Fear/Fear06",
+        "Faces/Fear/Fear07",
+        "Faces/Fear/Fear08",
+        "Faces/Fear/Fear09",
+        "Faces/Fear/Fear10"
+      ]
+    },
+    {
+      "Emotion": 3,
+      "Values": [
+        "Faces/Happy/Happy01",
+        "Faces/Happy/Happy02",
+        "Faces/Happy/Happy03",
+        "Faces/Happy/Happy04",
+        "Faces/Happy/Happy05",
+        "Faces/Happy/Happy06",
+        "Faces/Happy/Happy07",
+        "Faces/Happy/Happy08",
+        "Faces/Happy/Happy09",
+        "Faces/Happy/Happy10",
+        "Faces/Happy/Happy11"
+      ]
+    },
+    {
+      "Emotion": 5,
+      "Values": [
+        "Faces/Sad/001",
+        "Faces/Sad/002",
+        "Faces/Sad/003",
+        "Faces/Sad/004",
+        "Faces/Sad/005",
+        "Faces/Sad/006",
+        "Faces/Sad/Sad01",
+        "Faces/Sad/Sad02",
+        "Faces/Sad/Sad03",
+        "Faces/Sad/Sad04",
+        "Faces/Sad/Sad05",
+        "Faces/Sad/Sad06",
+        "Faces/Sad/Sad07",
+        "Faces/Sad/Sad08",
+        "Faces/Sad/Sad09",
+        "Faces/Sad/Sad10"
+      ]
+    },
+    {
+      "Emotion": 6,
+      "Values": [
+        "Faces/Surprise/Surprise01",
+        "Faces/Surprise/Surprise02",
+        "Faces/Surprise/Surprise03",
+        "Faces/Surprise/Surprise04",
+        "Faces/Surprise/Surprise05",
+        "Faces/Surprise/Surprise06",
+        "Faces/Surprise/Surprise07",
+        "Faces/Surprise/Surprise08",
+        "Faces/Surprise/Surprise09",
+        "Faces/Surprise/Surprise10"
+      ]
+    }
+  ]
+}

@@ -8,16 +8,16 @@ public class BarChartEmotionCompare : BarChart
     protected EmotionObject EmotionObj;
 
     //TODO: Check if better read or spawn bars
-    protected override void LoadBars()
+    protected override void LoadBarsDict()
     {
-        base.LoadBars();
-        //if (Bars == null || EmotionObj == null) return;
+        base.LoadBarsDict();
+        if (Bars == null || EmotionObj == null) return;
 
-        //if (EmotionBars.ContainsKey(EmotionObj.CurrEmotion))
-        //{
-        //    Destroy(EmotionBars[EmotionObj.CurrEmotion].gameObject);
-        //    EmotionBars.Remove(EmotionObj.CurrEmotion);
-        //}
+        if (EmotionBars.ContainsKey(EmotionObj.CurrEmotion))
+        {
+            Destroy(EmotionBars[EmotionObj.CurrEmotion].gameObject);
+            EmotionBars.Remove(EmotionObj.CurrEmotion);
+        }
     }
 
     /// <param name="EmotionValues"></param>

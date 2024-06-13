@@ -9,6 +9,7 @@ public class BarStat : MonoBehaviour
 {
     public float Absolute { get; protected set; }
     public float Percentage { get; protected set; }
+    public float Maximum { get; protected set; }
     protected float DefaultGrow = 192.0f;
     protected float TransitionTime = 0.1f;
     [Tooltip("Else is Horizontal")]
@@ -44,22 +45,26 @@ public class BarStat : MonoBehaviour
 
     public void ResetPercentage()
     {
-        LoadPercentage(0, 0, true);
+        LoadPercentage(0, 0, 0, true);
     }
 
-    public void LoadPercentage(float total, float absoluteVal, bool instant = false)
+    public void LoadPercentage(float total, float maximum, float absoluteVal, bool instant = false)
     {
         if (Bar == null) return;
 
         float newPercentage = total == 0 ? 0 : absoluteVal / total;
+        float maximumPerc = maximum == 0 ? 0 : absoluteVal / maximum;
+
         if (instant)
         {
             SetAbsolute(absoluteVal);
+            GrowStatBar(maximumPerc);
             SetPercentage(newPercentage);
         }
         else
         {
             LeanTween.value(gameObject, SetPercentage, Percentage, newPercentage, TransitionTime);
+            LeanTween.value(gameObject, GrowStatBar, Maximum, maximumPerc, TransitionTime);
             LeanTween.value(gameObject, SetAbsolute, Absolute, absoluteVal, TransitionTime);
         }
     }
@@ -67,21 +72,22 @@ public class BarStat : MonoBehaviour
     protected void SetPercentage(float percentage)
     {
         Percentage = percentage;
+        if (PercentText == null) return;
 
-        if (PercentText != null)
-        {
-            float percRound = Mathf.Round(percentage * 100) / 100;
-            PercentText.text = percRound + "%";
-        }
+        float percRound = Mathf.Round(percentage * 100) / 100;
+        PercentText.text = percRound + "%";
+    }
 
-        if (Bar != null)
-        {
-            float grow = percentage * DefaultGrow;
-            if (IsVertical)
-                Bar.sizeDelta = new Vector2(Bar.sizeDelta.x, grow);
-            else
-                Bar.sizeDelta = new Vector2(grow, Bar.sizeDelta.y);
-        }
+    protected void GrowStatBar(float maximumPerc)
+    {
+        Maximum = maximumPerc;
+        if (Bar == null) return;
+
+        float grow = maximumPerc * DefaultGrow;
+        if (IsVertical)
+            Bar.sizeDelta = new Vector2(Bar.sizeDelta.x, grow);
+        else
+            Bar.sizeDelta = new Vector2(grow, Bar.sizeDelta.y);
     }
 
     protected void SetAbsolute(float absoluteVal)

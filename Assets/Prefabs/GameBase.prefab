@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 1}
+  m_Color: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 0.5}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -145,8 +145,8 @@ MonoBehaviour:
         <Shape>k__BackingField: {r: 0.753916, g: 0.77305096, b: 0.8113208, a: 1}
   FillType: 3
   Lightness: 0
-  PaperAlphaFill: 0.5
-  ColorFill: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 1}
+  PaperAlphaFill: 1
+  ColorFill: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 0.5}
   ColorContrast: {r: 0.29411766, g: 0.14901961, b: 0.18431373, a: 1}
   GraphicsToFill:
   - {fileID: 4359150422989741856}
@@ -1437,6 +1437,10 @@ PrefabInstance:
     - target: {fileID: 4197658213094974697, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
       propertyPath: m_PreferredWidth
       value: 408
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554089429050091640, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5025476903646784164, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
       propertyPath: m_RootOrder
@@ -2838,6 +2842,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 744207309705107608}
     m_Modifications:
+    - target: {fileID: 329612128522197892, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329612128522197892, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 329612128522197892, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329612128522197892, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329612128522197892, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -64
+      objectReference: {fileID: 0}
     - target: {fileID: 779558493421337694, guid: 946123b1d9197c04190303b877551296, type: 3}
       propertyPath: m_text
       value: "Era otra emoci\xF3n"
@@ -2900,7 +2924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246944986561663662, guid: 946123b1d9197c04190303b877551296, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4246944986561663662, guid: 946123b1d9197c04190303b877551296, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2958,6 +2982,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ae02a2f76aaa87041b2a837858b14d5b, type: 3}
+    - target: {fileID: 7974676934954591595, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7974676934954591595, guid: 946123b1d9197c04190303b877551296, type: 3}
       propertyPath: m_Color.b
       value: 0.46666667

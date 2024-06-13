@@ -161,9 +161,9 @@ public class ThemeColorFilled : MonoBehaviour
                         ColorContrast = DefaultTheme.Paper.Disabled.Shape;
                         break;
                 }
-                ColorFill.a = PaperAlphaFill;
             break;
         }
+        ColorFill.a = PaperAlphaFill;
     }
 
     protected void UpdateFillGraphic(Color color)

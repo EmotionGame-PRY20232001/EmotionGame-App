@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 0.5}
+  m_Color: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -146,7 +146,7 @@ MonoBehaviour:
   FillType: 3
   Lightness: 0
   PaperAlphaFill: 1
-  ColorFill: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 0.5}
+  ColorFill: {r: 0.9433962, g: 0.47334966, b: 0.45834818, a: 1}
   ColorContrast: {r: 0.29411766, g: 0.14901961, b: 0.18431373, a: 1}
   GraphicsToFill:
   - {fileID: 4359150422989741856}
@@ -1433,6 +1433,10 @@ PrefabInstance:
     - target: {fileID: 2808978806797394763, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
       propertyPath: m_Name
       value: SpeechBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808978806797394763, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4197658213094974697, guid: 5d6362641a072eb46b38e54f8f040776, type: 3}
       propertyPath: m_PreferredWidth
@@ -2967,11 +2971,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6990900938911377884, guid: 946123b1d9197c04190303b877551296, type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990900938911377884, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990900938911377884, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6990900938911377884, guid: 946123b1d9197c04190303b877551296, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 1536
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990900938911377884, guid: 946123b1d9197c04190303b877551296, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6990900938911377884, guid: 946123b1d9197c04190303b877551296, type: 3}

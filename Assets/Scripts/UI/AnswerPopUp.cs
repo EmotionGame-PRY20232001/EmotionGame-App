@@ -16,12 +16,11 @@ public class AnswerPopUp : MonoBehaviour
     [SerializeField]
     private CharacterExpressions Expressions;
     [SerializeField]
-    protected GameObject BackEffect;
-    protected Vector3 BackEffectPosition = Vector3.zero;
+    protected RectTransform BackEffect;
     [SerializeField]
     protected EmotionObject CorrectEmotion;
-    [SerializeField]
-    protected EmotionObject SelectedEmotion; // for wrong selected emotion
+    [SerializeField][Tooltip("For wrong selected emotion")]
+    protected EmotionObject SelectedEmotion;
     [SerializeField]
     protected float EffectTime;
     //public enum EAnswerType { Good, Bad };
@@ -38,18 +37,6 @@ public class AnswerPopUp : MonoBehaviour
         if (PopUp != null)
         {
             PopUp.onClose += OnPopUpClose;
-        }
-        BackEffectPosition = Vector3.zero;
-        LoadBackEffectPosition();
-    }
-
-    protected void LoadBackEffectPosition()
-    {
-        if (BackEffectPosition == Vector3.zero && BackEffect != null)
-        {
-            RectTransform rt = BackEffect.GetComponent<RectTransform>();
-            if (rt != null)
-                BackEffectPosition = rt.position;
         }
     }
 
@@ -91,8 +78,6 @@ public class AnswerPopUp : MonoBehaviour
         }
         if (CompletedDT != null)
             CompletedDT.text = completedAt.ToString();
-
-        CorrectEmotion?.UpdateGlowEffect();
     }
 
     public void LoadAnswerCorrect(EmotionPhoto emotionEx)
@@ -117,12 +102,12 @@ public class AnswerPopUp : MonoBehaviour
         if (SelectedEmotion != null)
             SelectedEmotion.SetEmotion(emotionSelected);
 
-        LoadBackEffectPosition();
-        const float start = 48.0f;
-        const float end = start + 160.0f;
+        float start = BackEffect.rect.height / 2;
+        start -= BackEffect.rect.width / 4;
+        start += 48.0f;
         if (BackEffect != null)
-            LeanTween.moveY(BackEffect, BackEffectPosition.y + start, EffectTime)
-                .setFrom(BackEffectPosition.y + end)
+            LeanTween.moveY(BackEffect, start, EffectTime)
+                .setFrom(start + 160.0f)
                 .setLoopPingPong()
                 .setIgnoreTimeScale(true);
     }

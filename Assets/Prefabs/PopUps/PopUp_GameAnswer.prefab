@@ -2288,7 +2288,7 @@ MonoBehaviour:
   Photo: {fileID: 362005991545882456}
   ExerciseText: {fileID: 7810599625924158894}
   Expressions: {fileID: 5004602836309027424}
-  BackEffect: {fileID: 6989465240511147069}
+  BackEffect: {fileID: 6990900938911377884}
   CorrectEmotion: {fileID: 4567050961724147802}
   SelectedEmotion: {fileID: 0}
   EffectTime: 1

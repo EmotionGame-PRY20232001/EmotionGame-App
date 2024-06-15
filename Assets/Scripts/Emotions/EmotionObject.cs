@@ -35,7 +35,6 @@ public class EmotionObject : MonoBehaviour
             LoadRandom();
         else
             LoadByEmotion();
-        UpdateGlowEffect();
     }
 
     protected void LoadRandom()
@@ -50,13 +49,23 @@ public class EmotionObject : MonoBehaviour
 
     protected void LoadByEmotion()
     {
-        if (GameManager.Instance != null && EmotionImage != null)
+        if (GameManager.Instance == null) return;
+        Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
+
+        if (EmotionImage != null)
         {
-            Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
             EmotionImage.sprite = ImgType == ImageType.Regular ? emoData.SpriteColor : emoData.Icon;
             if (EmotionName != null)
                 EmotionName.text = emoData.Name;
         }
+
+        if (Glow != null)
+        {
+            Image imgGlow = Glow.GetComponent<Image>();
+            if (imgGlow != null)
+                imgGlow.color = emoData.Color * 1.5f;
+        }
+
     }
 
     public void SetEmotion(Emotion.EEmotion emotion, int num = -1)
@@ -74,17 +83,5 @@ public class EmotionObject : MonoBehaviour
             default: break;
         }
         //Dir = Random.insideUnitCircle.normalized;
-    }
-
-    public void UpdateGlowEffect()
-    {
-        if (Glow == null || GameManager.Instance == null) return;
-
-        Image imgGlow = Glow.GetComponent<Image>();
-        if (imgGlow != null)
-        {
-            Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
-            imgGlow.color = emoData.Color * 1.5f;
-        }
     }
 }

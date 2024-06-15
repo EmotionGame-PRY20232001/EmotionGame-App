@@ -33,13 +33,6 @@ public class ExerciseContentData : MonoBehaviour
         }
     }
 
-    //[System.Serializable]
-    //public class EmotionDataList
-    //{
-    //    public Emotion.EEmotion Emotion;
-    //    public List<string> Values;
-    //}
-
     [System.Serializable]
     public struct DataLists
     {

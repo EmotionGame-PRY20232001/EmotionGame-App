@@ -74,7 +74,7 @@ public class BarStat : MonoBehaviour
         Percentage = percentage;
         if (PercentText == null) return;
 
-        float percRound = Mathf.Round(percentage * 100) / 100;
+        float percRound = Mathf.Round(percentage * 100); // / 100
         PercentText.text = percRound + "%";
     }
 

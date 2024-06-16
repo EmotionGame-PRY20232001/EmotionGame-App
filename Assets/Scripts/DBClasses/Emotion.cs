@@ -26,6 +26,12 @@ public class Emotion
         Hard = Medium | Fear | Disgust, //All
     }
 
+    public static EEmotion[] GetEEmotionsArray()
+    {
+        return (EEmotion[])System.Enum.GetValues(typeof(EEmotion));
+    }
+
+
     public Sprite SpriteColor;
     public Sprite SpriteGray;
     public Sprite Icon;

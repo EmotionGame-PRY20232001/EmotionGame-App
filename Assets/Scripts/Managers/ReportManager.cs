@@ -37,7 +37,7 @@ public class ReportManager : MonoBehaviour
     {
         LoadPlayer();
         if (Stats != null)
-            Stats.LoadAssertsChart();
+            Stats.LoadResponsesChart();
     }
 
     protected void LoadPlayer()

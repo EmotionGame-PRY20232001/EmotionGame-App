@@ -21,7 +21,7 @@ public class BarChartEmotionCompare : BarChart
     }
 
     /// <param name="EmotionValues"></param>
-    public override void LoadStats(Dictionary<Emotion.EEmotion, float> EmotionValues)
+    public override void LoadStats<T>(Dictionary<Emotion.EEmotion, T> EmotionValues)
     {
         Emotion.EEmotion emotion = EmotionObj?.CurrEmotion ?? Emotion.EEmotion.Neutral;
 

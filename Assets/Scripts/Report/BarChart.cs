@@ -37,7 +37,7 @@ public class BarChart : MonoBehaviour
         }
     }
 
-    public virtual void LoadStats(Dictionary<Emotion.EEmotion, float> EmotionValues)
+    public virtual void LoadStats<T>(Dictionary<Emotion.EEmotion, T> EmotionValues) where T : System.IConvertible
     {
         Total = 0;
         Maximum = 0;
@@ -48,13 +48,13 @@ public class BarChart : MonoBehaviour
         if (Bars == null) return;
         foreach (var value in EmotionValues)
         {
-            Total += value.Value;
-            Maximum = Mathf.Max(Maximum, value.Value);
+            Total += System.Convert.ToSingle(value.Value);
+            Maximum = Mathf.Max(Maximum, System.Convert.ToSingle(value.Value));
         }
         foreach (var value in EmotionValues)
         {
             if (EmotionBars.ContainsKey(value.Key))
-                EmotionBars[value.Key]?.LoadPercentage(Total, Maximum, value.Value, true);
+                EmotionBars[value.Key]?.LoadPercentage(Total, Maximum, System.Convert.ToSingle(value.Value), true);
         }
     }
 

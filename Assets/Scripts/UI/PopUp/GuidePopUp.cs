@@ -13,7 +13,6 @@ public class GuidePopUp : MonoBehaviour
     protected Button PlayButton;
     [SerializeField]
     protected Stepper InstStepper;
-    private bool MovedUp = false;
     //public float ScaleGuideTo = 0.75f;
 
     private void Awake()
@@ -72,8 +71,6 @@ public class GuidePopUp : MonoBehaviour
     protected void EnableGuide(bool value)
     {
         if (Guide == null) return;
-        sbyte moveYDirection = (sbyte)((value ? 1 : -1) * (MovedUp ? 1 : -1));
-        MovedUp = !MovedUp;
 
         LeanTween.alpha(Guide, value ? 1.0f : 0.0f, popUp.TransitionTime/2)
                 .setIgnoreTimeScale(true);

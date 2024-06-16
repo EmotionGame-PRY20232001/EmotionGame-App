@@ -13,7 +13,8 @@ public class Player
     public bool NeedsText { get; set; }
     public bool EnableAudio { get; set; } = true;
     public int BackgroundId { get; set; } = 0;
-    public uint EmotionsLearned { get; set; }
     public string GuideJSON { get; set; } = "";
     public uint StarsWon { get; set; } = 0;
+    public Emotion.EEmotions EmotionsLearned { get; set; } = 0;
+    public EmotionExercise.EActivity InstructionsRead { get; set; } = 0;
 }

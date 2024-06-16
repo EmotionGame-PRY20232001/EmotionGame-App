@@ -67,8 +67,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f71f1384ecaa78b47982b7371c16bbb3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -418,11 +418,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1156816969130121509, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_Color.g
-      value: 0.8980392
+      value: 0.96862745
       objectReference: {fileID: 0}
     - target: {fileID: 1156816969130121509, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_Color.r
-      value: 0.7058824
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2758899532944105318, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -466,11 +466,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392142223318148067, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_Color.g
-      value: 0.8980392
+      value: 0.96862745
       objectReference: {fileID: 0}
     - target: {fileID: 6392142223318148067, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_Color.r
-      value: 0.7058824
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7020743293713435902, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -490,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8941295436417045411, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.7411765
+      value: 0.43137255
       objectReference: {fileID: 0}
     - target: {fileID: 8941295436417045411, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_fontColor.g
@@ -498,11 +498,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8941295436417045411, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.1882353
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 8941295436417045411, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4290605360
+      value: 4285428086
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0037309f6b84a9d4391b0a9656a60c3f, type: 3}

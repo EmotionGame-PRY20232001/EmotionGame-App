@@ -12,8 +12,8 @@ public class BaseActivity : EmotionExercise
     public static BaseActivity Instance {  get { return _instance; } }
 
 
-    [SerializeField]
-    protected EActivity Activity;
+    [field:SerializeField]
+    public EActivity Activity { get; protected set; }
     [SerializeField]
     private TMP_Text ScoreText;
     [SerializeField] 
@@ -204,7 +204,7 @@ public class BaseActivity : EmotionExercise
         exercise.ContentId = contentId.ToString();
         exercise.Id = DBManager.Instance.FindOrAddExerciseIdToDb(exercise);
 
-        Debug.LogWarning("BaseActivity:LoadExerciseDataBD " + exercise.ContentId);
+        Debug.Log("BaseActivity:LoadExerciseDataBD " + exercise.ContentId);
         CurrentExerciseDBO = exercise;
     }
 

@@ -85,10 +85,10 @@ public class Stepper : MonoBehaviour
     void AddListeners()
     {
         if (ButtonPrev != null)
-            ButtonPrev.onClick.AddListener(delegate { SetPreviousStep(); });
+            ButtonPrev.onClick.AddListener(SetPreviousStep);
 
         if (ButtonNext != null)
-            ButtonNext.onClick.AddListener(delegate { SetNextStep(); });
+            ButtonNext.onClick.AddListener(SetNextStep);
 
         //onStepChange += UpdateNavigationButtons;
     }

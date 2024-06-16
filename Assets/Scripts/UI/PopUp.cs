@@ -10,8 +10,7 @@ public class PopUp : MonoBehaviour
     private TMP_Text TMPTitle;
     [SerializeField]
     protected RectTransform Panel;
-    [SerializeField]
-    protected float TransitionTime = 0.25f;
+    public float TransitionTime = 0.25f;
 
     public delegate void OnOpen();
     public OnOpen onOpen;
@@ -66,11 +65,12 @@ public class PopUp : MonoBehaviour
                 .setOnComplete(OnClosed);
         else
             OnClosed();
+
+        onClose?.Invoke();
     }
 
     protected void OnClosed()
     {
-        onClose?.Invoke();
         LeanTween.cancel(gameObject);
         gameObject.SetActive(false);
     }

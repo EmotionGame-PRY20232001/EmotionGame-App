@@ -41,7 +41,7 @@ public class ContextActivity : BaseActivity
     protected override void LoadExerciseDataBD()
     {
         EmotionPhoto photo = Exercises.Photos[CurrentExercise];
-        if (photo == null) return;
+        if (photo == null || DBManager.Instance == null) return;
 
         EmotionContext context = (EmotionContext)photo;
         if (context == null) return;

@@ -20,10 +20,10 @@ public class Response
     public override string ToString()
     {
         return "Player_" + UserId +
-            " CompletedAt_" + CompletedAt +
-            " ExerciseId_" + ExerciseId +
-            " ResponseEmotionId_" + ResponseEmotionId +
+            " Exercise_" + ExerciseId +
+            " CompletedAt_" + CompletedAt.Date +
+            " Response_" + ResponseEmotionId +
             " Seconds_" + SecondsToSolve +
-            " Correct_" + IsCorrect;
+            " _" + (IsCorrect ? "Correct" : "Wrong");
     }
 }

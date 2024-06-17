@@ -31,10 +31,12 @@ public class ReportManager : MonoBehaviour
     {
         CurrentGame = EmotionExercise.EActivity.None;
         SelectedDates = new List<DateTime>();
+        Debug.Log("ReportManager.Awake ");
     }
 
     protected void Start()
     {
+        Debug.Log("ReportManager.Start ");
         LoadPlayer();
         if (Stats != null)
             Stats.LoadResponsesChart();

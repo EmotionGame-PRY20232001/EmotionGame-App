@@ -10,6 +10,7 @@ public class BarStat : MonoBehaviour
     public float Absolute { get; protected set; }
     public float Percentage { get; protected set; }
     public float Maximum { get; protected set; }
+    [SerializeField]
     protected float DefaultGrow = 192.0f;
     protected float TransitionTime = 0.1f;
     [Tooltip("Else is Horizontal")]
@@ -25,21 +26,25 @@ public class BarStat : MonoBehaviour
     [field:SerializeField]
     public Emotion.EEmotion CurrEmotion { get; protected set; }
 
+    protected void Awake()
+    {
+        ResetPercentage();
+        if (EmotionObj != null)
+            EmotionObj.SetEmotion(CurrEmotion);
+    }
+
     protected void Start()
     {
         FillColor();
-        ResetPercentage();
     }
 
     protected void FillColor()
     {
         var gm = GameManager.Instance;
         if (gm == null || Bar == null) return;
-        Image img = Bar.GetComponent<Image>();
 
+        Image img = Bar.GetComponent<Image>();
         if (img == null) return;
-        if (EmotionObj != null)
-            CurrEmotion = EmotionObj.CurrEmotion;
         img.color = gm.Emotions[CurrEmotion].Color;
     }
 

@@ -17,7 +17,10 @@ public class StatsReport : Report
 
     public void LoadResponsesChart()
     {
-        if (SuccessesChart == null || Manager == null) return;
+        Debug.Log("StatsReport.LoadResponsesChart [--start--]");
+        if (SuccessesChart == null ||
+            Manager == null || Manager.Responses == null)
+            return;
 
         var emotionCount = CreateEmotionValuesDict<ushort>(0);
         var emotionSuccesses = CreateEmotionValuesDict<ushort>(0);
@@ -57,6 +60,7 @@ public class StatsReport : Report
             if (emoChart.Value == null) continue;
             emoChart.Value.LoadStats(emotionsConfused[emoChart.Key]);
         }
+        Debug.Log("StatsReport.LoadResponsesChart [--end--]");
     }
 
     protected Dictionary<Emotion.EEmotion, T> CreateEmotionValuesDict<T>(T defaultValue)

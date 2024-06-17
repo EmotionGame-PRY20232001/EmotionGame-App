@@ -10,11 +10,14 @@ public class BarStat : MonoBehaviour
     public float Absolute { get; protected set; }
     public float Percentage { get; protected set; }
     public float Maximum { get; protected set; }
+    public bool RoundAbsToInt = true;
+
     [SerializeField]
     protected float DefaultGrow = 192.0f;
     protected float TransitionTime = 0.1f;
     [Tooltip("Else is Horizontal")]
     public bool IsVertical = true;
+
     [SerializeField]
     protected RectTransform Bar;
     [SerializeField]
@@ -100,7 +103,12 @@ public class BarStat : MonoBehaviour
         Absolute = absoluteVal;
 
         if (AbsoluteText != null)
-            AbsoluteText.text = Mathf.Round(absoluteVal) + ""; //Temporal
+        {
+            if (RoundAbsToInt)
+                AbsoluteText.text = Mathf.Round(absoluteVal) + "";
+            else
+                AbsoluteText.text = Mathf.Round(absoluteVal * 100) / 100 + "";
+        }
     }
 
 }

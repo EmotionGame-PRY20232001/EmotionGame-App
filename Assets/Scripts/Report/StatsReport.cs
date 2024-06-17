@@ -17,7 +17,7 @@ public class StatsReport : Report
 
     public void LoadResponsesChart()
     {
-        Debug.Log("StatsReport.LoadResponsesChart [--start--]");
+        //Debug.Log("StatsReport.LoadResponsesChart [--start--]");
         if (SuccessesChart == null ||
             Manager == null || Manager.Responses == null)
             return;
@@ -43,8 +43,6 @@ public class StatsReport : Report
             emotionsConfused[emotion][resp.ResponseEmotionId]++;
         }
         // Calc average
-        //for (ushort i = 0; i < emotionAvgSeconds.Keys.Count; i++)
-        //KeyValuePair<Emotion.EEmotion, float> emo in emotionAvgSeconds
         foreach (Emotion.EEmotion emo in Emotion.GetEEmotionsArray())
         {
             if (emotionAvgSeconds.ContainsKey(emo) && emotionCount[emo] > 0)
@@ -60,7 +58,7 @@ public class StatsReport : Report
             if (emoChart.Value == null) continue;
             emoChart.Value.LoadStats(emotionsConfused[emoChart.Key]);
         }
-        Debug.Log("StatsReport.LoadResponsesChart [--end--]");
+        //Debug.Log("StatsReport.LoadResponsesChart [--end--]");
     }
 
     protected Dictionary<Emotion.EEmotion, T> CreateEmotionValuesDict<T>(T defaultValue)
@@ -71,12 +69,6 @@ public class StatsReport : Report
             if (emo == Emotion.EEmotion.Neutral) continue;
             emotionValues[emo] = defaultValue;
         }
-        //emotionValues[Emotion.EEmotion.Anger] = 0;
-        //emotionValues[Emotion.EEmotion.Disgust] = 0;
-        //emotionValues[Emotion.EEmotion.Fear] = 0;
-        //emotionValues[Emotion.EEmotion.Happy] = 0;
-        //emotionValues[Emotion.EEmotion.Sad] = 0;
-        //emotionValues[Emotion.EEmotion.Surprise] = 0;
         return emotionValues;
     }
 

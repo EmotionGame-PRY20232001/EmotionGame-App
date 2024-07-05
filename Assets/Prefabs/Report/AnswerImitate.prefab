@@ -85,7 +85,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2083707662133404008, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2083707662133404008, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.b
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: ColorFill.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: ColorFill.b
@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontColor.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontColor.b
@@ -149,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 2162355186
+      value: 4293061618
       objectReference: {fileID: 0}
     - target: {fileID: 5670995149775772912, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5670995149775772912, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.b
@@ -284,6 +284,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 288103356569811307, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
+      propertyPath: PlayerImitationPhoto
+      value: 
+      objectReference: {fileID: 1896641643}
     - target: {fileID: 566353765716396516, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -95,6 +95,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 6217310183323873875, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217310183323873875, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217310183323873875, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217310183323873875, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217310183323873875, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6217310183323873875, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbe15fee4f6e4545b0dba289fa903d8, type: 3}
 --- !u!114 &257023577 stripped
@@ -139,6 +163,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 288103356569811307, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
+      propertyPath: Text
+      value: 
+      objectReference: {fileID: 257023577}
+    - target: {fileID: 288103356569811307, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
+      propertyPath: ContextText
+      value: 
+      objectReference: {fileID: 257023577}
     - target: {fileID: 566353765716396516, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

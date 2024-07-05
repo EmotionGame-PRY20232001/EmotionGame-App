@@ -26,6 +26,8 @@ public class ReportManager : MonoBehaviour
 
     [field: SerializeField]
     protected StatsReport Stats { get; set; }
+    [field: SerializeField]
+    protected AnswersReport Answers { get; set; }
 
     protected void Awake()
     {
@@ -39,7 +41,7 @@ public class ReportManager : MonoBehaviour
         //Debug.Log("ReportManager.Start ");
         LoadPlayer();
         if (Stats != null)
-            Stats.LoadResponsesChart();
+            Stats.Load();
     }
 
     protected void LoadPlayer()

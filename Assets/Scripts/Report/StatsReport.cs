@@ -15,7 +15,7 @@ public class StatsReport : Report
     [SerializeField]
     protected SerializedDictionary<Emotion.EEmotion, BarChart> EmotionsConfusedCharts;
 
-    public void LoadResponsesChart()
+    protected void LoadResponsesChart()
     {
         //Debug.Log("StatsReport.LoadResponsesChart [--start--]");
         if (SuccessesChart == null ||
@@ -31,7 +31,8 @@ public class StatsReport : Report
         foreach (Response resp in Manager.Responses)
         {
             Debug.Log(resp);
-            Emotion.EEmotion emotion = GetExerciseEmotion(resp.ExerciseId);
+            Exercise exercise = GetExercise(resp.ExerciseId);
+            Emotion.EEmotion emotion = ExerciseContent.IdStruct.FromString(exercise.ContentId).emotion;
 
             if (resp.IsCorrect)
                 emotionSuccesses[emotion]++;
@@ -82,6 +83,11 @@ public class StatsReport : Report
             dict[emo] = CreateEmotionValuesDict(defaultValue);
         }
         return dict;
+    }
+
+    public override void Load()
+    {
+        LoadResponsesChart();
     }
 
     protected override void OnFilerDates(List<System.DateTime> dates)

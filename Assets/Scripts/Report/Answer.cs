@@ -27,10 +27,10 @@ public class Answer : MonoBehaviour
             return;
 
         if (CorrectEmotion != null)
-            CorrectEmotion.sprite = gm.Emotions[correctEmotion].SpriteColor;
+            CorrectEmotion.sprite = gm.Emotions[correctEmotion].Icon;
 
         if (ResponseEmotion != null)
-            ResponseEmotion.sprite = gm.Emotions[responseEmotion].SpriteColor;
+            ResponseEmotion.sprite = gm.Emotions[responseEmotion].Icon;
 
         if (BackgroundRevision != null && gm.IsPlayerActive())
         {

@@ -737,7 +737,6 @@ GameObject:
   - component: {fileID: 2747357154181753987}
   - component: {fileID: 8086620183953403063}
   - component: {fileID: 5233171302853447094}
-  - component: {fileID: 8127447195416877779}
   m_Layer: 5
   m_Name: CorrectEmotion
   m_TagString: Untagged
@@ -803,24 +802,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8127447195416877779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4406888615849580718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d270a1be6b916a0468e28c5e82290308, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImgType: 0
-  <CurrEmotion>k__BackingField: 4
-  IsRandom: 0
-  EmotionName: {fileID: 0}
-  EmotionColor: {fileID: 0}
-  Glow: {fileID: 0}
 --- !u!1 &4609764110372408520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1343,6 @@ GameObject:
   - component: {fileID: 5961236368350908322}
   - component: {fileID: 5177179306022983273}
   - component: {fileID: 2610785400171105095}
-  - component: {fileID: 2802971143608278604}
   m_Layer: 5
   m_Name: ResponseEmotion
   m_TagString: Untagged
@@ -1428,21 +1408,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2802971143608278604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8220499331210449887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d270a1be6b916a0468e28c5e82290308, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImgType: 0
-  <CurrEmotion>k__BackingField: 4
-  IsRandom: 0
-  EmotionName: {fileID: 0}
-  EmotionColor: {fileID: 0}
-  Glow: {fileID: 0}

@@ -26,9 +26,9 @@ public class AnswersReport : Report
         {
             Exercise exercise = GetExercise(resp.ExerciseId);
             ExerciseContent.IdStruct idCont = ExerciseContent.IdStruct.FromString(exercise.ContentId);
-            Debug.Log("AnswersReport.SpawnAnswersList\t" + exercise.ActivityId + "\t" + idCont.emotion);
+            Debug.Log("AnswersReport.SpawnAnswersList\t" + exercise.ActivityId + "\t" + idCont.emotion + " - " + resp.ResponseEmotionId);
 
-            switch(exercise.ActivityId)
+            switch (exercise.ActivityId)
             {
                 case EmotionExercise.EActivity.Choose:
                     if (ChooseAnswerPrefab != null)

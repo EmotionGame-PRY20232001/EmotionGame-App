@@ -26,11 +26,14 @@ public class FERModel : MonoBehaviour
     private byte[] modelFile;
     private string[] emotions = { "Enojo", "Disgusto", "Miedo", "Feliz", "Neutral", "Triste", "Sorpresa" };
 
+    private bool canUseGPU = false;
+
     [field: SerializeField]
     public Emotion.EEmotion PredictedEmotion { get; private set; }
 
     private void Awake()
     {
+        ValidateGPU();
         modelFile = FileUtil.LoadFile(filePath);
 
         var options = new InterpreterOptions()
@@ -42,6 +45,38 @@ public class FERModel : MonoBehaviour
         inputBuffer = new ComputeBuffer(48 * 48, sizeof(float));
     }
 
+    protected void ValidateGPU()
+    {
+        canUseGPU = false;
+
+        if (SystemInfo.supportsComputeShaders)
+        {
+            Debug.Log("FERModel::ValidateGPU supportsComputeShaders " + SystemInfo.graphicsDeviceName);
+            //canUseGPU = true;
+        }
+
+        Debug.Log("FERModel::ValidateGPU graphicsDeviceType " + SystemInfo.graphicsDeviceType);
+        if (SystemInfo.graphicsDeviceType != UnityEngine.Rendering.GraphicsDeviceType.Null)
+        {
+            UnityEngine.Rendering.GraphicsDeviceType[] supportedGDT =
+            {
+                //UnityEngine.Rendering.GraphicsDeviceType.Direct3D11,
+                UnityEngine.Rendering.GraphicsDeviceType.Direct3D12,
+                UnityEngine.Rendering.GraphicsDeviceType.Vulkan,
+                UnityEngine.Rendering.GraphicsDeviceType.Metal,
+            };
+            if (System.Array.Exists(supportedGDT, a => a == SystemInfo.graphicsDeviceType))
+            {
+                Debug.Log("FERModel::ValidateGPU Dedicated or capable integrated GPU detected");
+                canUseGPU = true;
+            }
+            else
+            {
+                Debug.Log("FERModel::ValidateGPU Software rendering or limited GPU detected");
+            }
+        }
+    }
+
     //public void ChangeSprite(Texture2D texture)
     //{
     //    ExecuteModel();
@@ -49,6 +84,12 @@ public class FERModel : MonoBehaviour
 
     public void Execute(RawImage faceImage)
     {
+        if (!canUseGPU)
+        {
+            Debug.LogWarning("FERModel::Execute valid GPU required");
+            return;
+        }
+
         compute.SetTexture(0, "InputTexture", faceImage.texture);
         compute.SetBuffer(0, "OutputTensor", inputBuffer);
         compute.Dispatch(0, 48 / 4, 48 / 4, 1);

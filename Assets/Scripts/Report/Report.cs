@@ -14,6 +14,7 @@ public abstract class Report : MonoBehaviour
     //Filter
     //action button (download|help)
 
+    protected bool loaded = false;
 
     protected virtual void Start()
     {

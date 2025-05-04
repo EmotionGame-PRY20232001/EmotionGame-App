@@ -16,6 +16,8 @@ public class AnswersReport : Report
 
     protected void SpawnAnswersList()
     {
+        if (loaded) return;
+
         var gm = GameManager.Instance;
         if (Manager == null || Manager.Responses == null || gm == null)
             return;
@@ -24,6 +26,7 @@ public class AnswersReport : Report
         {
             Exercise exercise = GetExercise(resp.ExerciseId);
             ExerciseContent.IdStruct idCont = ExerciseContent.IdStruct.FromString(exercise.ContentId);
+            Debug.Log("AnswersReport.SpawnAnswersList\t" + exercise.ActivityId + "\t" + idCont.emotion);
 
             switch(exercise.ActivityId)
             {
@@ -56,6 +59,8 @@ public class AnswersReport : Report
                     break;
             }
         }
+
+        loaded = true;
     }
 
     public override void Load()

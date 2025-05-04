@@ -17,6 +17,8 @@ public class StatsReport : Report
 
     protected void LoadResponsesChart()
     {
+        if (loaded) return;
+
         //Debug.Log("StatsReport.LoadResponsesChart [--start--]");
         if (SuccessesChart == null ||
             Manager == null || Manager.Responses == null)
@@ -30,9 +32,9 @@ public class StatsReport : Report
 
         foreach (Response resp in Manager.Responses)
         {
-            Debug.Log(resp);
             Exercise exercise = GetExercise(resp.ExerciseId);
             Emotion.EEmotion emotion = ExerciseContent.IdStruct.FromString(exercise.ContentId).emotion;
+            Debug.Log(resp + "\t[" + exercise.ContentId + "]-"+ exercise.ActivityId);
 
             if (resp.IsCorrect)
                 emotionSuccesses[emotion]++;
@@ -60,6 +62,8 @@ public class StatsReport : Report
             emoChart.Value.LoadStats(emotionsConfused[emoChart.Key]);
         }
         //Debug.Log("StatsReport.LoadResponsesChart [--end--]");
+
+        loaded = true;
     }
 
     protected Dictionary<Emotion.EEmotion, T> CreateEmotionValuesDict<T>(T defaultValue)

@@ -89,7 +89,7 @@ public class StatsReport : Report
         return dict;
     }
 
-    public override void Load()
+    protected override void OnLoad()
     {
         LoadResponsesChart();
     }

@@ -14,6 +14,8 @@ public class AnswersReport : Report
     [SerializeField]
     RectTransform AnswersContainer;
 
+    List<Answer> AnswersLoaded = new List<Answer>();
+
     protected void SpawnAnswersList()
     {
         if (loaded) return;
@@ -28,13 +30,14 @@ public class AnswersReport : Report
             ExerciseContent.IdStruct idCont = ExerciseContent.IdStruct.FromString(exercise.ContentId);
             Debug.Log("AnswersReport.SpawnAnswersList\t" + exercise.ActivityId + "\t" + idCont.emotion + " - " + resp.ResponseEmotionId);
 
+            Answer instance = null;
             switch (exercise.ActivityId)
             {
                 case EmotionExercise.EActivity.Choose:
                     if (ChooseAnswerPrefab != null)
                     {
                         Sprite exercisePhoto = gm.Emotions[idCont.emotion].ExerciseContents.Faces[idCont.order];
-                        Answer instance = Instantiate(ChooseAnswerPrefab, AnswersContainer);
+                        instance = Instantiate(ChooseAnswerPrefab, AnswersContainer);
                         instance.LoadChoose(exercisePhoto, idCont.emotion, resp.ResponseEmotionId);
                     }
                     break;
@@ -43,7 +46,7 @@ public class AnswersReport : Report
                     if (ContextAnswerPrefab != null)
                     {
                         string exerciseText = gm.Emotions[idCont.emotion].ExerciseContents.Contexts[idCont.order];
-                        Answer instance = Instantiate(ContextAnswerPrefab, AnswersContainer);
+                        instance = Instantiate(ContextAnswerPrefab, AnswersContainer);
                         instance.LoadContext(exerciseText, idCont.emotion, resp.ResponseEmotionId);
                     }
                     break;
@@ -53,25 +56,52 @@ public class AnswersReport : Report
                     {
                         Sprite exercisePhoto = gm.Emotions[idCont.emotion].ExerciseContents.Faces[idCont.order];
                         Sprite playerPhoto = null;
-                        Answer instance = Instantiate(ImitateAnswerPrefab, AnswersContainer);
+                        instance = Instantiate(ImitateAnswerPrefab, AnswersContainer);
                         instance.LoadImitate(exercisePhoto, playerPhoto, idCont.emotion, resp.ResponseEmotionId);
                     }
                     break;
             }
+
+            if (instance != null)
+                AnswersLoaded.Add(instance);
         }
 
         loaded = true;
     }
 
-    public override void Load()
+    protected virtual void CleanAnswers()
     {
-        SpawnAnswersList();
+        if (AnswersLoaded.Count > 0)
+        {
+            foreach (Answer a in AnswersLoaded)
+            {
+                Destroy(a.gameObject);
+            }
+        }
     }
 
-    protected override void OnEnable()
+    public override void SnapToTop()
     {
-        base.OnEnable();
+        if (AnswersLoaded.Count == 0)
+        {
+            Debug.Log("SnapToTop there are NOT AnswersLoaded");
+            return;
+        }
+
+        RectTransform rt = (RectTransform)(AnswersLoaded[0].gameObject.transform);
+        float answerHeight = rt.sizeDelta.y;
+
+        Vector2 position = AnswersContainer.anchoredPosition;
+        position.y = -AnswersLoaded.Count * answerHeight * 0.5f;
+
+        AnswersContainer.anchoredPosition = position;
+        //Debug.Log("SnapToTop A:" + AnswersLoaded.Count + "\th:" + answerHeight + "\t" + position.y);
+    }
+
+    protected override void OnLoad()
+    {
         SpawnAnswersList();
+        SnapToTop();
     }
 
     protected override void OnFilerDates(List<DateTime> dates)

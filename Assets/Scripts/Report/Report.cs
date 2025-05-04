@@ -26,6 +26,8 @@ public abstract class Report : MonoBehaviour
     {
         if (ButtonAux != null)
             ButtonAux.gameObject.SetActive(true);
+
+        Load();
     }
 
     protected virtual void OnDisable()
@@ -34,7 +36,7 @@ public abstract class Report : MonoBehaviour
             ButtonAux.gameObject.SetActive(false);
     }
 
-    public void SnapToTop()
+    public virtual void SnapToTop()
     {
         //if (target == null || StepperContent == null || StepperScrollRect == null) return;
         //if (StepperContent.sizeDelta.x <= StepperScrollRect.preferredWidth) return;
@@ -47,15 +49,31 @@ public abstract class Report : MonoBehaviour
         //        - (Vector2)StepperScrollRect.transform.InverseTransformPoint(target.position);
     }
 
-    public abstract void Load();
+    protected virtual bool CanLoad()
+    {
+        if (loaded) return false;
+
+        //Debug.Log("StatsReport.LoadResponsesChart [--start--]");
+        if (Manager == null || Manager.Responses == null)
+            return false;
+
+        return true;
+    }
+
+    public void Load()
+    {
+        if (CanLoad())
+            OnLoad();
+    }
+
+    protected abstract void OnLoad();
+    protected void OnLoad(List<System.DateTime> dates, EmotionExercise.EActivity game)
+    {
+    }
 
     protected abstract void OnFilerDates(List<System.DateTime> dates);
 
     protected abstract void OnGameToggleChanged(EmotionExercise.EActivity game);
-
-    protected void OnLoad(List<System.DateTime> dates, EmotionExercise.EActivity game)
-    {
-    }
 
     protected Exercise GetExercise(int exerciseId)
     {

@@ -56,10 +56,11 @@ public class EmotionExercise : MonoBehaviour
 
 
     [System.Flags]
-    public enum EActivity : ushort {
-        None = 0,
-        Learn = 1 << 0,
-        Choose = 1 << 1,
+    public enum EActivity : byte
+    {
+        None    = 0,
+        Learn   = 1 << 0,
+        Choose  = 1 << 1,
         Context = 1 << 2,
         Imitate = 1 << 3,
     }

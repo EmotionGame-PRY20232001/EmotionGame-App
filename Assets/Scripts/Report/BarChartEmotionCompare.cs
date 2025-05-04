@@ -29,5 +29,13 @@ public class BarChartEmotionCompare : BarChart
             EmotionValues.Remove(emotion);
 
         base.LoadStats(EmotionValues);
+
+        foreach (var value in EmotionValues)
+        {
+            if (EmotionBars.ContainsKey(value.Key))
+            {
+                EmotionBars[value.Key].gameObject.SetActive(System.Convert.ToSingle(value.Value) > 0);
+            }
+        }
     }
 }

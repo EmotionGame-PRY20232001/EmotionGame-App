@@ -4294,6 +4294,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Neutral
       objectReference: {fileID: 0}
+    - target: {fileID: 3957742875565931949, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4078013014713609777, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4411,6 +4415,7 @@ PrefabInstance:
     - {fileID: 340726971073176939, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
     - {fileID: 9041021286167723029, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
     - {fileID: 6328694715862330814, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
+    - {fileID: 3957742875565931949, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5be966aba6d674a46a977745d33bfeff, type: 3}
 --- !u!114 &1757156467 stripped
 MonoBehaviour:

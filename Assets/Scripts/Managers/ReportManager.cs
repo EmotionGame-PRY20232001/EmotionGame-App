@@ -39,12 +39,14 @@ public class ReportManager : MonoBehaviour
     protected void Start()
     {
         //Debug.Log("ReportManager.Start ");
-        LoadPlayer();
-        if (Stats != null)
-            Stats.Load();
+        if (LoadPlayer())
+        {
+            if (Stats != null)
+                Stats.Load();
+        }
     }
 
-    protected void LoadPlayer()
+    protected bool LoadPlayer()
     {
         var gm = GameManager.Instance;
         if (gm != null && gm.IsPlayerActive())
@@ -54,8 +56,16 @@ public class ReportManager : MonoBehaviour
             //Debug.LogWarning("ReportManager:LoadPlayer" + Responses);
             //foreach (Response resp in Responses)
             //    Debug.Log(resp);
+
+            if (Responses.Count > 0)
+                return true;
+
+            Debug.LogWarning("ReportManger::LoadPlayer: " + gm.currentPlayer.Name + " has no registered answers");
+            return false;
         }
 
+        Debug.Log("ReportManger::LoadPlayer: gm is null or player is not active");
+        return false;
     }
 
     public void SetReportName(string name)

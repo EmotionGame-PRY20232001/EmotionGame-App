@@ -13,16 +13,18 @@ public class EmotionObject : MonoBehaviour
     public ImageType ImgType = ImageType.Regular;
     [field:SerializeField]
     public Emotion.EEmotion CurrEmotion { get; protected set; }
+
     [SerializeField]
     protected bool IsRandom;
-    protected Image EmotionImage;
     [SerializeField]
     protected TMP_Text EmotionName;
-    protected Vector2 Dir;
-
-    // Glow
     [SerializeField]
-    protected GameObject Glow;
+    protected Image EmotionColor;
+    [SerializeField]
+    protected Image Glow;
+
+    protected Image EmotionImage;
+    protected Vector2 Dir;
 
     protected virtual void Awake()
     {
@@ -53,19 +55,16 @@ public class EmotionObject : MonoBehaviour
         Emotion emoData = GameManager.Instance.Emotions[CurrEmotion];
 
         if (EmotionImage != null)
-        {
             EmotionImage.sprite = ImgType == ImageType.Regular ? emoData.SpriteColor : emoData.Icon;
-            if (EmotionName != null)
-                EmotionName.text = emoData.Name;
-        }
+
+        if (EmotionName != null)
+            EmotionName.text = emoData.Name;
 
         if (Glow != null)
-        {
-            Image imgGlow = Glow.GetComponent<Image>();
-            if (imgGlow != null)
-                imgGlow.color = emoData.Color * 1.5f;
-        }
+            Glow.color = emoData.Color * 1.5f;
 
+        if (EmotionColor != null)
+            EmotionColor.color = emoData.Color;
     }
 
     public void SetEmotion(Emotion.EEmotion emotion, int num = -1)

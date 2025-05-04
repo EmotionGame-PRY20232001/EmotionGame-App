@@ -192,7 +192,7 @@ PrefabInstance:
     - target: {fileID: 7776086050351534723, guid: ca5fcc848f65cd34d951f7ac88fe8d63, type: 3}
       propertyPath: Glow
       value: 
-      objectReference: {fileID: 5982184093102525610}
+      objectReference: {fileID: 1643200504394969523}
     - target: {fileID: 7776086050351534723, guid: ca5fcc848f65cd34d951f7ac88fe8d63, type: 3}
       propertyPath: GlowLoopRotFactor
       value: 5

@@ -35,11 +35,15 @@ public class WebCamera : MonoBehaviour
         isRunning = true;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    protected bool LoadWebCamTexture()
     {
-        Application.targetFrameRate = 60;
         devices = WebCamTexture.devices;
+
+        if (devices.Length == 0)
+        {
+            Debug.LogWarning("WebCamera::LoadWebCamTexture() COULD NOT FIND any camera device");
+            return false;
+        }
 
         foreach (var cam in devices)
         {
@@ -50,6 +54,22 @@ public class WebCamera : MonoBehaviour
                 break;
             }
         }
+
+        if (webCamTexture == null)
+        {
+            // use first camera found if no camera isFrontFacing
+            webCamTexture = new WebCamTexture(devices[0].name);
+            webCamTexture.deviceName = devices[0].name;
+        }
+
+        return webCamTexture != null;
+    }
+
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+        if (!LoadWebCamTexture())
+            return;
 
 #if UNITY_EDITOR
         GetComponent<RectTransform>().localScale = new Vector3(-1f, 1f, 1f);
@@ -70,17 +90,23 @@ public class WebCamera : MonoBehaviour
 
     public void PlayCamera()
     {
-        webCamTexture.Play();
+        webCamTexture?.Play();
     }
 
     public void PauseCamera()
     {
-        webCamTexture.Pause();
+        webCamTexture?.Pause();
     }
 
     public void StartEmotionCoroutine()
     {
         isRunning = true;
+
+        if (webCamTexture == null)
+        {
+            Debug.LogWarning("WebCamera::StartEmotionCoroutine CAN NOT START COR - webCamTexture not found");
+            return;
+        }
         StartCoroutine("EmotionRoutine");
     }
 

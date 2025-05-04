@@ -168,6 +168,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 257023577}
     - target: {fileID: 288103356569811307, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
+      propertyPath: Photo
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 288103356569811307, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
       propertyPath: ContextText
       value: 
       objectReference: {fileID: 257023577}
@@ -365,6 +369,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7060829820360153313, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060829820360153313, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8707541560310636099, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}

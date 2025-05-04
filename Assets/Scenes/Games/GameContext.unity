@@ -1841,6 +1841,10 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4460489453779756527, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4475480529298527605, guid: 879cb7c6ef14ce54d9020f366325d42e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2760,7 +2764,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 7bb8c9a9391608a4d88d3cf46d897c52, type: 3}
 --- !u!114 &569831152147131174 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6272076731698192545, guid: 7bb8c9a9391608a4d88d3cf46d897c52, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1804344797196559535, guid: 7bb8c9a9391608a4d88d3cf46d897c52, type: 3}
   m_PrefabInstance: {fileID: 569831152147131173}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

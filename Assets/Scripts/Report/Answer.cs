@@ -17,6 +17,8 @@ public class Answer : MonoBehaviour
     [SerializeField]
     protected TMP_Text ContextText;
     [SerializeField]
+    protected CharacterExpressions ContextExpression;
+    [SerializeField]
     protected Image PlayerImitationPhoto;
 
     protected void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
@@ -59,6 +61,9 @@ public class Answer : MonoBehaviour
     {
         if (ContextText != null)
             ContextText.text = text;
+
+        if (ContextExpression != null)
+            ContextExpression.PlayEmotion(correctEmotion);
 
         LoadEmotion(correctEmotion, responseEmotion);
     }

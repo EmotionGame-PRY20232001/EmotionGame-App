@@ -30,9 +30,9 @@ public class ThemeColorFilled : MonoBehaviour
     protected Color ColorContrast;
 
     [SerializeField]
-    protected List<Graphic> GraphicsToFill;
+    protected List<Graphic> GraphicsToFill = new List<Graphic>();
     [SerializeField]
-    protected List<Graphic> GraphicsToContrast;
+    protected List<Graphic> GraphicsToContrast = new List<Graphic>();
 
     protected void Start()
     {

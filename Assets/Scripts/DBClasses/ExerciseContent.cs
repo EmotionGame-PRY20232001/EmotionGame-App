@@ -34,8 +34,8 @@ public class ExerciseContent
     //}
 
     // For now keep using list
-    public List<Sprite> Faces;
-    public List<string> Contexts;
+    public List<Sprite> Faces = new List<Sprite>();
+    public List<string> Contexts = new List<string>();
 
     public Sprite GetResPhotoFromId(string id)
     {

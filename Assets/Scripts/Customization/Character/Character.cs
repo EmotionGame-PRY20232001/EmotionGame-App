@@ -91,7 +91,7 @@ public class Character : MonoBehaviour
 
     [field: SerializeField]
     protected Custom Customization;
-    [SerializeField]
+    [field: SerializeField]
     private GOParts Parts;
 
     protected void SetHair(EHairCut hairCut, EHairColor hairColor)

@@ -7,7 +7,7 @@ public class CharacterCustomizationLayout : MonoBehaviour
     [SerializeField]
     protected Character Customization;
     [SerializeField]
-    protected List<CustomPart> CustomParts;
+    protected List<CustomPart> CustomParts = new List<CustomPart>();
     
     void Awake()
     {

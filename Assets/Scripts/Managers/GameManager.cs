@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [field:SerializeField]
     public List<Emotion.EEmotion> AllEmotions { get; private set; }
     [field: SerializeField]
-    public List<Emotion.EEmotion> SelectedEmotions;
+    public List<Emotion.EEmotion> SelectedEmotions = new List<Emotion.EEmotion>();
     
     [field:SerializeField]
     public CustomThemes ThemeCustom { get; private set; }

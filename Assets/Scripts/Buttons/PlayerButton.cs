@@ -17,6 +17,8 @@ public class PlayerButton : MonoBehaviour
     private GameObject optionsContainer;
     [SerializeField]
     protected ThemeButton playerButton;
+    [SerializeField]
+    private Image playIcon;
 
     private Player playerReference;
 
@@ -34,6 +36,7 @@ public class PlayerButton : MonoBehaviour
         nameText.text = player.Name;
         background.sprite = GameManager.Instance.GetBackgrounds()[(Theme.EBackground)player.BackgroundId].Texture;
         guide.SetByJson(player.GuideJSON);
+        playIcon?.CrossFadeAlpha(0.0f, 0.0f, true);
     }
 
     public void ActivateOptions()
@@ -45,6 +48,7 @@ public class PlayerButton : MonoBehaviour
             //SceneManager.LoadScene("MainMenu");
         }
         optionsContainer.SetActive(true);
+        playIcon?.CrossFadeAlpha(1.0f, 0.25f, true);
     }
 
     public void DesactivateOptions()
@@ -52,6 +56,7 @@ public class PlayerButton : MonoBehaviour
         if (optionsContainer != null && optionsContainer.activeSelf)
         {
             optionsContainer.SetActive(false);
+            playIcon?.CrossFadeAlpha(0.0f, 0.25f, true);
         }
     }
 

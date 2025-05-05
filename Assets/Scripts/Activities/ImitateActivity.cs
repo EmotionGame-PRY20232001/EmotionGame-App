@@ -12,8 +12,8 @@ public class ImitateActivity : BaseActivity
     [SerializeField] 
     private float fillVelocity;
 
-    [SerializeField]
-    private Image emotionImageColor;
+    //[SerializeField]
+    //private Image emotionImageColor;
     [SerializeField]
     private GameObject BtnCameraImgCheck;
     [SerializeField]

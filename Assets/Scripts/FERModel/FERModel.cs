@@ -84,16 +84,18 @@ public class FERModel : MonoBehaviour
 
     public void Execute(RawImage faceImage)
     {
-        if (!canUseGPU)
+        if (canUseGPU)
         {
-            Debug.LogWarning("FERModel::Execute valid GPU required");
-            return;
+            compute.SetTexture(0, "InputTexture", faceImage.texture);
+            compute.SetBuffer(0, "OutputTensor", inputBuffer);
+            compute.Dispatch(0, 48 / 4, 48 / 4, 1);
+            inputBuffer.GetData(input);
         }
-
-        compute.SetTexture(0, "InputTexture", faceImage.texture);
-        compute.SetBuffer(0, "OutputTensor", inputBuffer);
-        compute.Dispatch(0, 48 / 4, 48 / 4, 1);
-        inputBuffer.GetData(input);
+        else
+        {
+            //Debug.Log("FERModel::Execute executing without valid GPU");
+            input = TextureToBuffer(faceImage);
+        }
 
         float startTime = Time.realtimeSinceStartup;
         interpreter.SetInputTensorData(0, input);
@@ -110,11 +112,36 @@ public class FERModel : MonoBehaviour
         emocionSpriteColor.sprite = gm.Emotions[PredictedEmotion].SpriteColor;
         if (smallEmocionSprite != null)
             smallEmocionSprite.sprite = emocionSpriteColor.sprite;
+
+        //Debug.Log("FERModel::Execute t " + (finishTime - startTime) + " \te " + PredictedEmotion + " \tmv " + maxValue + " - mi" + maxIndex);
     }
 
     private void OnDestroy()
     {
         interpreter?.Dispose();
         inputBuffer?.Dispose();
+    }
+
+    protected float[] TextureToBuffer(RawImage rawImage)
+    {
+        int w = rawImage.texture.width;
+        int h = rawImage.texture.height;
+
+        Texture2D texture = rawImage.texture as Texture2D;
+        Color[] pixels = texture.GetPixels(); // or GetPixels32() if preferred
+        float[] tensor = new float[w * h];
+
+        for (int y = 0; y < h; y++)
+        {
+            for (int x = 0; x < w; x++)
+            {
+                int idx = (h - 1 - y) * w + x;
+                Color pixel = pixels[idx];
+
+                tensor[idx] = pixel.r; //grayscale
+            }
+        }
+        //Debug.Log(texture + " \twxh " + (w * h) + " \tc" + pixels[w * h / 2] + " \tt" + tensor[w * h / 2]);
+        return tensor;
     }
 }

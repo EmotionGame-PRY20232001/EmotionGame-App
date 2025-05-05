@@ -55,17 +55,20 @@ public class FERModel : MonoBehaviour
             //canUseGPU = true;
         }
 
+#if UNITY_EDITOR
+#endif
         Debug.Log("FERModel::ValidateGPU graphicsDeviceType " + SystemInfo.graphicsDeviceType);
         if (SystemInfo.graphicsDeviceType != UnityEngine.Rendering.GraphicsDeviceType.Null)
         {
-            UnityEngine.Rendering.GraphicsDeviceType[] supportedGDT =
+            //if (SystemInfo.graphicsDeviceType)
+            UnityEngine.Rendering.GraphicsDeviceType[] unSupportedGDT =
             {
-                //UnityEngine.Rendering.GraphicsDeviceType.Direct3D11,
-                UnityEngine.Rendering.GraphicsDeviceType.Direct3D12,
-                UnityEngine.Rendering.GraphicsDeviceType.Vulkan,
-                UnityEngine.Rendering.GraphicsDeviceType.Metal,
+                UnityEngine.Rendering.GraphicsDeviceType.Direct3D11,
+                //UnityEngine.Rendering.GraphicsDeviceType.Direct3D12,
+                //UnityEngine.Rendering.GraphicsDeviceType.Vulkan,
+                //UnityEngine.Rendering.GraphicsDeviceType.Metal,
             };
-            if (System.Array.Exists(supportedGDT, a => a == SystemInfo.graphicsDeviceType))
+            if (!System.Array.Exists(unSupportedGDT, a => a == SystemInfo.graphicsDeviceType))
             {
                 Debug.Log("FERModel::ValidateGPU Dedicated or capable integrated GPU detected");
                 canUseGPU = true;

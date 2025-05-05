@@ -18,11 +18,11 @@ public class BarChart : MonoBehaviour
     public float Maximum { get; protected set; }
     //public string Title;
 
+    protected bool barsLoaded = false;
+
     protected virtual void Awake()
     {
         //Debug.Log("BarChart[" + name + "].Awake ");
-        EmotionBars = new Dictionary<Emotion.EEmotion, BarStat>();
-        Bars = GetComponentsInChildren<BarStat>();
         LoadBarsDict();
     }
 
@@ -36,13 +36,24 @@ public class BarChart : MonoBehaviour
     //TODO: Check if better read or spawn bars
     protected virtual void LoadBarsDict()
     {
+        if (barsLoaded) return;
+
+        if (EmotionBars == null)
+            EmotionBars = new Dictionary<Emotion.EEmotion, BarStat>();
+
+        if (Bars == null || Bars.Length == 0)
+            Bars = GetComponentsInChildren<BarStat>();
+
         //Debug.Log("BarChart[" + name + "].LoadBarsDict [--start--] " + EmotionBars.Count);
         if (Bars == null) return;
+
         foreach (BarStat barStat in Bars)
         {
             if (barStat != null)
                 EmotionBars[barStat.CurrEmotion] = barStat;
         }
+
+        barsLoaded = true;
         //Debug.Log("BarChart[" + name + "].LoadBarsDict [--end--] " + EmotionBars.Count);
     }
 
@@ -52,16 +63,25 @@ public class BarChart : MonoBehaviour
         Total = 0;
         Maximum = 0;
 
-        if (Bars == null) return;
         foreach (var value in EmotionValues)
         {
             Total += System.Convert.ToSingle(value.Value);
             Maximum = Mathf.Max(Maximum, System.Convert.ToSingle(value.Value));
         }
+
+        LoadBarsDict();
+        if (Bars == null) return;
+
         foreach (var value in EmotionValues)
         {
             if (EmotionBars.ContainsKey(value.Key))
-                EmotionBars[value.Key]?.LoadPercentage(Total, Maximum, System.Convert.ToSingle(value.Value), true);
+            {
+                if (EmotionBars[value.Key] != null)
+                {
+                    float val = System.Convert.ToSingle(value.Value);
+                    EmotionBars[value.Key].LoadPercentage(Total, Maximum, val, true);
+                }
+            }
         }
         //Debug.Log("BarChart[" + name + "].LoadStats [--end--] " + EmotionBars.Count);
     }

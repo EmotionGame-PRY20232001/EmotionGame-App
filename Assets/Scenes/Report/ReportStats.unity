@@ -772,8 +772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b103d9b2e4e7947a8df9995e80c385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ReportName>k__BackingField: "Estad\xEDsticas"
   Manager: {fileID: 42919632}
-  Name: "Estad\xEDsticas"
   ButtonAux: {fileID: 313436806}
   SuccessesChart: {fileID: 2960208548630309738}
   MistakesChart: {fileID: 2143305336}
@@ -2951,6 +2951,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 872586589}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 42919632}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetGameName
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ReportManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Imitate
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2638803878648128633, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Name
       value: Toggle_GameImitate
@@ -3252,8 +3284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd07936978a0a2347984c2e7df98fe4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ReportName>k__BackingField: Respuestas
   Manager: {fileID: 42919632}
-  Name: Respuestas
   ButtonAux: {fileID: 0}
   ChooseAnswerPrefab: {fileID: 288103356569811307, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
   ContextAnswerPrefab: {fileID: 8620291849682024167, guid: 2f80f93ca578bde43a2ba9059b277d40, type: 3}
@@ -3368,6 +3400,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 872586589}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 42919632}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetGameName
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ReportManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Context
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2638803878648128633, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Name
       value: Toggle_GameContext
@@ -3746,6 +3810,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 872586589}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 42919632}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetGameName
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ReportManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Choose
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2638803878648128633, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Name
       value: Toggle_GameChoose
@@ -5223,7 +5319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GameName
+  m_text: Todos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 82e79de21c69ccd4ba1c46c893f19163, type: 2}
   m_sharedMaterial: {fileID: 3481198651253753787, guid: 82e79de21c69ccd4ba1c46c893f19163, type: 2}
@@ -12064,6 +12160,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 872586589}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 42919632}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetGameName
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ReportManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: None
+      objectReference: {fileID: 0}
+    - target: {fileID: 475753600282842790, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2638803878648128633, guid: fdf97aff0c740404dbb3933a71a0aaca, type: 3}
       propertyPath: m_Name
       value: Toggle_AllGames

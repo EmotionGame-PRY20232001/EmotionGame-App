@@ -21,43 +21,41 @@ public class AnswersReport : Report
         if (loaded) return;
 
         var gm = GameManager.Instance;
-        if (Manager == null || Manager.Responses == null || gm == null)
+        if (Manager == null || Manager.FilteredResponses == null || gm == null)
             return;
 
-        foreach (Response resp in Manager.Responses)
+        foreach (ReportManager.FullResponse r in Manager.FilteredResponses)
         {
-            Exercise exercise = GetExercise(resp.ExerciseId);
-            ExerciseContent.IdStruct idCont = ExerciseContent.IdStruct.FromString(exercise.ContentId);
-            Debug.Log("AnswersReport.SpawnAnswersList\t" + exercise.ActivityId + "\t" + idCont.emotion + " - " + resp.ResponseEmotionId);
+            Debug.Log("AnswersReport.SpawnAnswersList\t" + r.exercise.ActivityId + "\t" + r.idCont.emotion + " - " + r.response.ResponseEmotionId);
 
             Answer instance = null;
-            switch (exercise.ActivityId)
+            switch (r.exercise.ActivityId)
             {
                 case EmotionExercise.EActivity.Choose:
                     if (ChooseAnswerPrefab != null)
                     {
-                        Sprite exercisePhoto = gm.Emotions[idCont.emotion].ExerciseContents.Faces[idCont.order];
+                        Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
                         instance = Instantiate(ChooseAnswerPrefab, AnswersContainer);
-                        instance.LoadChoose(exercisePhoto, idCont.emotion, resp.ResponseEmotionId);
+                        instance.LoadChoose(exercisePhoto, r.idCont.emotion, r.response.ResponseEmotionId);
                     }
                     break;
 
                 case EmotionExercise.EActivity.Context:
                     if (ContextAnswerPrefab != null)
                     {
-                        string exerciseText = gm.Emotions[idCont.emotion].ExerciseContents.Contexts[idCont.order];
+                        string exerciseText = gm.Emotions[r.idCont.emotion].ExerciseContents.Contexts[r.idCont.order];
                         instance = Instantiate(ContextAnswerPrefab, AnswersContainer);
-                        instance.LoadContext(exerciseText, idCont.emotion, resp.ResponseEmotionId);
+                        instance.LoadContext(exerciseText, r.idCont.emotion, r.response.ResponseEmotionId);
                     }
                     break;
 
                 case EmotionExercise.EActivity.Imitate:
                     if (ImitateAnswerPrefab != null)
                     {
-                        Sprite exercisePhoto = gm.Emotions[idCont.emotion].ExerciseContents.Faces[idCont.order];
+                        Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
                         Sprite playerPhoto = null;
                         instance = Instantiate(ImitateAnswerPrefab, AnswersContainer);
-                        instance.LoadImitate(exercisePhoto, playerPhoto, idCont.emotion, resp.ResponseEmotionId);
+                        instance.LoadImitate(exercisePhoto, playerPhoto, r.idCont.emotion, r.response.ResponseEmotionId);
                     }
                     break;
             }
@@ -73,8 +71,10 @@ public class AnswersReport : Report
     {
         if (AnswersLoaded.Count > 0)
         {
-            foreach (Answer a in AnswersLoaded)
+            for (int i = AnswersLoaded.Count - 1; i >= 0; i--)
             {
+                Answer a = AnswersLoaded[i];
+                AnswersLoaded.RemoveAt(i);
                 Destroy(a.gameObject);
             }
         }
@@ -100,6 +100,7 @@ public class AnswersReport : Report
 
     protected override void OnLoad()
     {
+        CleanAnswers();
         SpawnAnswersList();
         SnapToTop();
     }

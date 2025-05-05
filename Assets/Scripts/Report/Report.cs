@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public abstract class Report : MonoBehaviour
 {
+    [field:SerializeField]
+    public string ReportName { get; protected set; }
     [SerializeField]
     protected ReportManager Manager;
-    [SerializeField]
-    protected string Name;
     [SerializeField]
     protected Button ButtonAux;
     //Filter
@@ -19,13 +19,16 @@ public abstract class Report : MonoBehaviour
     protected virtual void Start()
     {
         if (Manager != null)
-            Manager.SetReportName(Name);
+            Manager.SetReportName(ReportName);
     }
 
     protected virtual void OnEnable()
     {
         if (ButtonAux != null)
             ButtonAux.gameObject.SetActive(true);
+
+        if (Manager != null)
+            Manager.SetReportName(ReportName);
 
         Load();
     }
@@ -54,42 +57,29 @@ public abstract class Report : MonoBehaviour
         if (loaded) return false;
 
         //Debug.Log("StatsReport.LoadResponsesChart [--start--]");
-        if (Manager == null || Manager.Responses == null)
+        if (Manager == null ||
+            Manager.FilteredResponses == null ||
+            Manager.FilteredResponses.Count == 0)
             return false;
 
         return true;
     }
 
-    public void Load()
+    public void Load(bool reLoad = false)
     {
+        if (reLoad)
+            loaded = false;
+
         if (CanLoad())
             OnLoad();
     }
 
     protected abstract void OnLoad();
-    protected void OnLoad(List<System.DateTime> dates, EmotionExercise.EActivity game)
-    {
-    }
 
     protected abstract void OnFilerDates(List<System.DateTime> dates);
 
     protected abstract void OnGameToggleChanged(EmotionExercise.EActivity game);
 
-    protected Exercise GetExercise(int exerciseId)
-    {
-        //TODO: rework or optimize
-        var dbm = DBManager.Instance;
-        var gm = GameManager.Instance;
-        if (dbm == null || gm == null) return new Exercise();
-
-        Exercise exercise = dbm.GetExerciseFromDB(exerciseId);
-        //ExerciseContent.IdStruct idCont = ExerciseContent.IdStruct.FromString(exercise.ContentId);
-        //if (idCont.type == ExerciseContent.EValueType.FacePhoto)
-        //{
-        //gm.Emotions[idCont.emotion].ExerciseContents.Faces[idCont.order];
-        //}
-        return exercise;
-    }
 
     //protected abstract void OnGameChoose();
     //protected abstract void OnGameContext();

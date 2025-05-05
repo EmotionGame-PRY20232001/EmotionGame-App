@@ -21,7 +21,7 @@ public class StatsReport : Report
 
         //Debug.Log("StatsReport.LoadResponsesChart [--start--]");
         if (SuccessesChart == null ||
-            Manager == null || Manager.Responses == null)
+            Manager == null || Manager.FilteredResponses == null)
             return;
 
         var emotionCount = CreateEmotionValuesDict<ushort>(0);
@@ -30,21 +30,21 @@ public class StatsReport : Report
         var emotionAvgSeconds = CreateEmotionValuesDict<float>(0);
         var emotionsConfused = CreateEmotionVsEmotionsDict<ushort>(0);
 
-        foreach (Response resp in Manager.Responses)
+        foreach (ReportManager.FullResponse r in Manager.FilteredResponses)
         {
-            Exercise exercise = GetExercise(resp.ExerciseId);
-            Emotion.EEmotion emotion = ExerciseContent.IdStruct.FromString(exercise.ContentId).emotion;
-            Debug.Log(resp + "\t[" + exercise.ContentId + "]-"+ exercise.ActivityId);
+            Emotion.EEmotion emotion = r.idCont.emotion;
+            //Debug.Log(r + "\t[" + r.exercise.ContentId + "]-"+ r.exercise.ActivityId);
 
-            if (resp.IsCorrect)
+            if (r.response.IsCorrect)
                 emotionSuccesses[emotion]++;
             else
                 emotionMistakes[emotion]++;
 
             emotionCount[emotion]++;
-            emotionAvgSeconds[emotion] += resp.SecondsToSolve;
-            emotionsConfused[emotion][resp.ResponseEmotionId]++;
+            emotionAvgSeconds[emotion] += r.response.SecondsToSolve;
+            emotionsConfused[emotion][r.response.ResponseEmotionId]++;
         }
+
         // Calc average
         foreach (Emotion.EEmotion emo in Emotion.GetEEmotionsArray())
         {
@@ -55,6 +55,7 @@ public class StatsReport : Report
         SuccessesChart?.LoadStats(emotionSuccesses);
         MistakesChart?.LoadStats(emotionMistakes);
         AvgTimeSolveChart?.LoadStats(emotionAvgSeconds);
+
         // Load every emotion confused per another
         foreach(var emoChart in EmotionsConfusedCharts)
         {

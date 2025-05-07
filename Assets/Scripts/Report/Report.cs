@@ -15,6 +15,7 @@ public abstract class Report : MonoBehaviour
     //action button (download|help)
 
     protected bool loaded = false;
+    public bool awaitingReload = false;
 
     protected virtual void Start()
     {
@@ -59,16 +60,20 @@ public abstract class Report : MonoBehaviour
         //Debug.Log("StatsReport.LoadResponsesChart [--start--]");
         if (Manager == null ||
             Manager.FilteredResponses == null ||
-            Manager.FilteredResponses.Count == 0)
+            Manager.Responses == null ||
+            Manager.Responses.Count == 0)
             return false;
 
         return true;
     }
 
-    public void Load(bool reLoad = false)
+    public void Load()
     {
-        if (reLoad)
+        if (awaitingReload)
+        {
             loaded = false;
+            awaitingReload = false;
+        }
 
         if (CanLoad())
             OnLoad();

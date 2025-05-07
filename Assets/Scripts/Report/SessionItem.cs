@@ -47,9 +47,13 @@ public class SessionItem : MonoBehaviour
             txtGames.text = "";
             for (int i = 0; i < session.Games.Count; i++)
             {
-                txtGames.text += gm.Games[session.Games[i]].Name;
+                if (!gm.Games.ContainsKey(session.Games[i]))
+                    continue;
+
                 if (i > 0)
                     txtGames.text += separator;
+
+                txtGames.text += gm.Games[session.Games[i]].Name;
             }
         }
 
@@ -58,9 +62,10 @@ public class SessionItem : MonoBehaviour
             txtEmotions.text = "";
             for (int i = 0; i < session.Emotions.Count; i++)
             {
-                txtEmotions.text += gm.Emotions[session.Emotions[i]].Name;
                 if (i > 0)
                     txtEmotions.text += separator;
+
+                txtEmotions.text += gm.Emotions[session.Emotions[i]].Name;
             }
         }
     }
@@ -70,7 +75,7 @@ public class SessionItem : MonoBehaviour
         if (theme != null)
         {
             theme.OnLightnessChange(enabled ? Theme.ELightness.Light
-                                            : Theme.ELightness.Dark);
+                                            : Theme.ELightness.Dark, 0.25f);
         }
     }
 

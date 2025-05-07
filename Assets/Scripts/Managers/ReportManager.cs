@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using System;
-//using UnityEngine.UI;
 using TMPro;
 
 public class ReportManager : MonoBehaviour
@@ -16,6 +16,8 @@ public class ReportManager : MonoBehaviour
     protected TMP_Text CurrentGameName;
     [SerializeField]
     protected TMP_Text CurrentDateText;
+    [SerializeField]
+    protected SessionsFilter SessionsFilterGO;
 
     /// Currents
     [field: SerializeField]
@@ -44,8 +46,13 @@ public class ReportManager : MonoBehaviour
         //Debug.Log("ReportManager.Start ");
         if (LoadPlayer())
         {
+            LoadToday();
+
             if (Stats != null)
                 Stats.Load();
+
+            if (SessionsFilterGO != null)
+                SessionsFilterGO.LoadSessions();
         }
     }
 
@@ -78,16 +85,51 @@ public class ReportManager : MonoBehaviour
         return false;
     }
 
+    protected void LoadToday()
+    {
+        List<DateTime> today = new List<DateTime>() { DateTime.Today.Date };
+        SetSelectedDates(today);
+
+        if (FilteredResponses.Count == 0)
+            SetSelectedDates(new List<DateTime>());
+    }
+
     protected void LoadCurrentTab()
     {
+        Stats.awaitingReload = true;
+        Answers.awaitingReload = true;
+
         if (Stats.isActiveAndEnabled)
         {
-            Stats.Load(true);
+            Stats.Load();
         }
         else if (Answers.isActiveAndEnabled)
         {
-            Answers.Load(true);
+            Answers.Load();
         }
+    }
+
+    protected void ApplyFilters()
+    {
+        if (CurrentGame == EmotionExercise.EActivity.None
+            || SelectedDates.Count == 0)
+        {
+            FilteredResponses = Responses;
+        }
+
+        if (CurrentGame != EmotionExercise.EActivity.None)
+        {
+            FilteredResponses = Responses.FindAll(r => r.exercise.ActivityId == CurrentGame);
+            Debug.Log("RG " + Responses.Count + " \tFR " + FilteredResponses.Count);
+        }
+
+        if (SelectedDates.Count > 0)
+        {
+            FilteredResponses = FilteredResponses.FindAll(r => SelectedDates.Exists(d => r.response.CompletedAt.Date == d.Date));
+            Debug.Log("RD " + Responses.Count + " \tFR " + FilteredResponses.Count);
+        }
+
+        LoadCurrentTab();
     }
 
     public void SetReportName(string name)
@@ -101,46 +143,32 @@ public class ReportManager : MonoBehaviour
     {
         CurrentGame = (EmotionExercise.EActivity)System.Enum.Parse(typeof(EmotionExercise.EActivity), name);
 
-        if (CurrentGame == EmotionExercise.EActivity.None)
-        {
-            FilteredResponses = Responses;
-        }
-        else
-        {
-            FilteredResponses = Responses.FindAll(r => r.exercise.ActivityId == CurrentGame);
-            Debug.Log("R " + Responses.Count + " \tFR " + FilteredResponses.Count);
-        }
-
         if (CurrentGameName != null)
         {
-            switch (CurrentGame)
-            {
-                case EmotionExercise.EActivity.Choose:
-                    CurrentGameName.text = "Elige";
-                    break;
-                case EmotionExercise.EActivity.Context:
-                    CurrentGameName.text = "Reacciona";
-                    break;
-                case EmotionExercise.EActivity.Imitate:
-                    CurrentGameName.text = "Imita";
-                    break;
-                default:
-                    CurrentGameName.text = "Todos";
-                    break;
-            }
+            CurrentGameName.text = CurrentGame == EmotionExercise.EActivity.None
+                                                ? "Todos"
+                                                : GameManager.Instance.Games[CurrentGame].Name;
         }
 
-        LoadCurrentTab();
+        ApplyFilters();
     }
 
-    protected void SetSelectedDates(List<DateTime> selectedDates)
+    public void SetSelectedDates(List<DateTime> selectedDates)
     {
         if (selectedDates != null)
             SelectedDates = selectedDates;
 
+        ApplyFilters();
+
+        if (selectedDates.Count == 0)
+        {
+            selectedDates = Responses.Select(r => r.response.CompletedAt.Date)
+                                    .Distinct()
+                                    .ToList();
+        }
+
         DateTime minDate = DateTime.MaxValue;
         DateTime maxDate = DateTime.MinValue;
-        //TODO: Optimize
         foreach (DateTime date in selectedDates)
         {
             if (date < minDate)

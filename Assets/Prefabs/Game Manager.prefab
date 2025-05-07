@@ -45,6 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LastPlayedGame: 0
+  <Games>k__BackingField:
+    _serializedList:
+    - Key: 1
+      Value:
+        <Name>k__BackingField: Aprende
+        <Icon>k__BackingField: {fileID: 21300000, guid: 809e912df49639f44a254f7e92b59c32, type: 3}
+    - Key: 2
+      Value:
+        <Name>k__BackingField: Elige
+        <Icon>k__BackingField: {fileID: 21300000, guid: 959f599747a078b4da2763e72f083a7a, type: 3}
+    - Key: 8
+      Value:
+        <Name>k__BackingField: Imita
+        <Icon>k__BackingField: {fileID: 21300000, guid: fcc9607fcb7bc254f8b739a6ca7a02fb, type: 3}
+    - Key: 4
+      Value:
+        <Name>k__BackingField: Reaciona
+        <Icon>k__BackingField: {fileID: 21300000, guid: 443b318d5371e2c40a9b4a3d81808d02, type: 3}
   <Emotions>k__BackingField:
     _serializedList:
     - Key: 0
@@ -521,3 +539,6 @@ MonoBehaviour:
         Value: {fileID: 21300000, guid: 106f602125f0cae4d8464fcd080fa1f5, type: 3}
       - Key: 4
         Value: {fileID: 21300000, guid: 6866dc7278186ce4eac3743ac73e1b42, type: 3}
+  LastNumCorrectAnswers: 0
+  LastNumExcercises: 0
+  LastScore: 0

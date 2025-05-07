@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Player currentPlayer;
     public EmotionExercise.EActivity LastPlayedGame;
 
+    [field: SerializeField] [SerializedDictionary("Game", "Data")]
+    public SerializedDictionary<EmotionExercise.EActivity, GameData> Games { get; protected set; }
+
     [field:SerializeField][SerializedDictionary("Emotion", "Data")]
     public SerializedDictionary<Emotion.EEmotion, Emotion> Emotions { get; protected set; }
 
@@ -119,6 +122,15 @@ public class GameManager : MonoBehaviour
         public Sprite Eyelashes { get; private set; }
         [field:SerializeField][SerializedDictionary("Haircut", "Sprite")]
         public SerializedDictionary<Character.EHairCut, Sprite> HairCuts { get; private set; }
+    }
+
+    [System.Serializable]
+    public struct GameData
+    {
+        [field: SerializeField]
+        public string Name { get; private set; }
+        [field: SerializeField]
+        public Sprite Icon { get; private set; }
     }
 
     public void PauseGame()

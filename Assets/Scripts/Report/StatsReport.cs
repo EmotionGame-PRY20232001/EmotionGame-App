@@ -95,13 +95,5 @@ public class StatsReport : Report
         LoadResponsesChart();
     }
 
-    protected override void OnFilerDates(List<System.DateTime> dates)
-    {
-    }
-
-    protected override void OnGameToggleChanged(EmotionExercise.EActivity game)
-    {
-    }
-
     //protected void 
 }

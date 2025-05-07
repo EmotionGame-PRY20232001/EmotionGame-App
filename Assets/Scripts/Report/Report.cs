@@ -76,11 +76,6 @@ public abstract class Report : MonoBehaviour
 
     protected abstract void OnLoad();
 
-    protected abstract void OnFilerDates(List<System.DateTime> dates);
-
-    protected abstract void OnGameToggleChanged(EmotionExercise.EActivity game);
-
-
     //protected abstract void OnGameChoose();
     //protected abstract void OnGameContext();
     //protected abstract void OnGameImitate();

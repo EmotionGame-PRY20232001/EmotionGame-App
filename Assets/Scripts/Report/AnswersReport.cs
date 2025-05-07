@@ -104,14 +104,4 @@ public class AnswersReport : Report
         SpawnAnswersList();
         SnapToTop();
     }
-
-    protected override void OnFilerDates(List<DateTime> dates)
-    {
-        throw new NotImplementedException();
-    }
-
-    protected override void OnGameToggleChanged(EmotionExercise.EActivity game)
-    {
-        throw new NotImplementedException();
-    }
 }

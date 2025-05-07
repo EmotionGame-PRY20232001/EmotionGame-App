@@ -7,10 +7,10 @@ using System;
 [RequireComponent(typeof(ThemeColorFilled))]
 public class SessionItem : MonoBehaviour
 {
-    public int num;
-    public DateTime date;
-    public List<EmotionExercise.EActivity> games;
-    public List<Emotion.EEmotion> emotions;
+    [field: SerializeField]
+    public SessionData session { get; protected set; }
+    [field: SerializeField]
+    public Toggle toggle { get; protected set; }
 
     [SerializeField]
     protected TMPro.TMP_Text txtTitle;
@@ -18,8 +18,6 @@ public class SessionItem : MonoBehaviour
     protected TMPro.TMP_Text txtGames;
     [SerializeField]
     protected TMPro.TMP_Text txtEmotions;
-    [SerializeField]
-    protected Toggle toggle;
     protected ThemeColorFilled theme;
 
     protected void Awake()
@@ -33,15 +31,12 @@ public class SessionItem : MonoBehaviour
             toggle.onValueChanged.AddListener(SetEnabled);
     }
 
-    public void SetData(int n, DateTime d, List<EmotionExercise.EActivity> gs, List<Emotion.EEmotion> ems)
+    public void SetData(SessionData s)
     {
-        num = n;
-        date = d;
-        games = gs;
-        emotions = ems;
+        session = s;
 
         if (txtTitle != null)
-            txtTitle.text = num + ". " + date.ToShortDateString();
+            txtTitle.text = session.Num + ". " + session.Date.ToShortDateString();
 
         var gm = GameManager.Instance;
         if (gm == null) return;
@@ -50,27 +45,24 @@ public class SessionItem : MonoBehaviour
         if (txtGames != null)
         {
             txtGames.text = "";
-            for (int i = 0; i < games.Count; i++)
+            for (int i = 0; i < session.Games.Count; i++)
             {
-                txtGames.text = "";
+                txtGames.text += gm.Games[session.Games[i]].Name;
+                if (i > 0)
+                    txtGames.text += separator;
             }
         }
 
         if (txtEmotions!=null)
         {
             txtEmotions.text = "";
-            for (int i = 0; i < emotions.Count; i++)
+            for (int i = 0; i < session.Emotions.Count; i++)
             {
-                txtEmotions.text += gm.Emotions[emotions[i]].Name;
+                txtEmotions.text += gm.Emotions[session.Emotions[i]].Name;
                 if (i > 0)
                     txtEmotions.text += separator;
             }
         }
-    }
-
-    public bool IsSelected()
-    {
-        return toggle.isOn;
     }
 
     protected void SetEnabled(bool enabled)
@@ -80,5 +72,14 @@ public class SessionItem : MonoBehaviour
             theme.OnLightnessChange(enabled ? Theme.ELightness.Light
                                             : Theme.ELightness.Dark);
         }
+    }
+
+    [Serializable]
+    public struct SessionData
+    {
+        public uint Num;
+        public DateTime Date;
+        public List<EmotionExercise.EActivity> Games;
+        public List<Emotion.EEmotion> Emotions;
     }
 }

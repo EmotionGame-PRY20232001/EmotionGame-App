@@ -519,10 +519,10 @@ RectTransform:
   m_Father: {fileID: 7851707059256198717}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 940, y: 1080}
+  m_SizeDelta: {x: -128, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6897350926469423340
 CanvasRenderer:
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0.8156863, b: 1, a: 1}
+  m_Color: {r: 0.5882353, g: 0.8156863, b: 1, a: 0.5}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -631,7 +631,7 @@ MonoBehaviour:
   FillType: 0
   Lightness: 0
   PaperAlphaFill: 0.5
-  ColorFill: {r: 0.5882353, g: 0.8156863, b: 1, a: 1}
+  ColorFill: {r: 0.5882353, g: 0.8156863, b: 1, a: 0.5}
   ColorContrast: {r: 0.22745098, g: 0.32156864, b: 0.46666667, a: 1}
   GraphicsToFill:
   - {fileID: 2039279504878503482}
@@ -932,7 +932,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2083707662133404008, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2083707662133404008, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.b
@@ -952,7 +952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: ColorFill.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: ColorFill.b
@@ -988,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontColor.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontColor.b
@@ -1004,11 +1004,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 2162355186
+      value: 4293061618
       objectReference: {fileID: 0}
     - target: {fileID: 5670995149775772912, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5670995149775772912, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.b
@@ -1190,6 +1190,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5846278747022207185, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846278747022207185, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: m_Color.b
       value: 0.24705882
       objectReference: {fileID: 0}
@@ -1200,6 +1204,10 @@ PrefabInstance:
     - target: {fileID: 5846278747022207185, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578989458405676029, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6578989458405676029, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: m_Color.b
@@ -1436,6 +1444,10 @@ PrefabInstance:
     - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: FillType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
+      propertyPath: ColorFill.a
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7523544841079839821, guid: 4eb57f90602fe6449a9d5dcd7854dd36, type: 3}
       propertyPath: ColorFill.b

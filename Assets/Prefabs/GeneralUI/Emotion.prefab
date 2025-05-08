@@ -53,9 +53,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d270a1be6b916a0468e28c5e82290308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowText: 1
+  ImgType: 0
   <CurrEmotion>k__BackingField: 4
   IsRandom: 0
   EmotionName: {fileID: 6363487281197470067}
+  EmotionColor: {fileID: 0}
+  Glow: {fileID: 0}
 --- !u!222 &3640490397993529061
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -287,8 +291,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Texto
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 82e79de21c69ccd4ba1c46c893f19163, type: 2}
-  m_sharedMaterial: {fileID: 3481198651253753787, guid: 82e79de21c69ccd4ba1c46c893f19163, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 90b28bb3f9e0f234798471b547978a8e, type: 2}
+  m_sharedMaterial: {fileID: -7219325674426483461, guid: 90b28bb3f9e0f234798471b547978a8e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

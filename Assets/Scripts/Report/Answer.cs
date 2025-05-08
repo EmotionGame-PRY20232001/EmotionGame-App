@@ -20,8 +20,15 @@ public class Answer : MonoBehaviour
     protected CharacterExpressions ContextExpression;
     [SerializeField]
     protected Image PlayerImitationPhoto;
+    [field:SerializeField]
+    public Button BtnOpenFull { get; protected set; }
 
-    protected void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
+    private void Awake()
+    {
+        BtnOpenFull = gameObject.GetComponent<Button>();
+    }
+
+    protected virtual void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
     {
         var gm = GameManager.Instance;
 
@@ -49,7 +56,7 @@ public class Answer : MonoBehaviour
         }
     }
 
-    public void LoadChoose(Sprite exercisePhoto, Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
+    public virtual void LoadChoose(Sprite exercisePhoto, Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
     {
         if (Photo != null)
             Photo.sprite = exercisePhoto;
@@ -57,7 +64,7 @@ public class Answer : MonoBehaviour
         LoadEmotion(correctEmotion, responseEmotion);
     }
 
-    public void LoadContext(string text, Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
+    public virtual void LoadContext(string text, Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
     {
         if (ContextText != null)
             ContextText.text = text;
@@ -68,7 +75,7 @@ public class Answer : MonoBehaviour
         LoadEmotion(correctEmotion, responseEmotion);
     }
 
-    public void LoadImitate(Sprite exercisePhoto, Sprite playerPhoto, Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
+    public virtual void LoadImitate(Sprite exercisePhoto, Sprite playerPhoto, Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
     {
         if (Photo != null)
             Photo.sprite = exercisePhoto;

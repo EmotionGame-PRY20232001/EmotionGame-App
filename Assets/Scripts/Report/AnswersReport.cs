@@ -13,6 +13,10 @@ public class AnswersReport : Report
     Answer ImitateAnswerPrefab;
     [SerializeField]
     RectTransform AnswersContainer;
+    [SerializeField]
+    AnswerFull AnswerFullData;
+    [SerializeField]
+    PopUp AnswerFullPopUp;
 
     List<Answer> AnswersLoaded = new List<Answer>();
 
@@ -60,8 +64,46 @@ public class AnswersReport : Report
                     break;
             }
 
-            if (instance != null)
+            if (instance != null && instance.BtnOpenFull != null)
+            {
+                instance.BtnOpenFull.onClick.AddListener(() => {
+                    if (AnswerFullPopUp != null) AnswerFullPopUp.Open();
+                    AnswerFullData.LoadTime(r.response.CompletedAt, r.response.SecondsToSolve);
+                });
+
+                switch (r.exercise.ActivityId)
+                {
+                    case EmotionExercise.EActivity.Choose:
+                        {
+                            Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
+                            instance.BtnOpenFull.onClick.AddListener(() => {
+                                AnswerFullData.LoadChoose(exercisePhoto, r.idCont.emotion, r.response.ResponseEmotionId);
+                            });
+                        }
+                        break;
+
+                    case EmotionExercise.EActivity.Context:
+                        {
+                            string exerciseText = gm.Emotions[r.idCont.emotion].ExerciseContents.Contexts[r.idCont.order];
+                            instance.BtnOpenFull.onClick.AddListener(() => {
+                                AnswerFullData.LoadContext(exerciseText, r.idCont.emotion, r.response.ResponseEmotionId);
+                            });
+                        }
+                        break;
+
+                    case EmotionExercise.EActivity.Imitate:
+                        {
+                            Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
+                            Sprite playerPhoto = null;
+                            instance.BtnOpenFull.onClick.AddListener(() => {
+                                AnswerFullData.LoadImitate(exercisePhoto, playerPhoto, r.idCont.emotion, r.response.ResponseEmotionId);
+                            });
+                        }
+                        break;
+                }
+
                 AnswersLoaded.Add(instance);
+            }
         }
 
         loaded = true;

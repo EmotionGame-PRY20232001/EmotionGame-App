@@ -17,7 +17,9 @@ public class SessionItem : MonoBehaviour
     [SerializeField]
     protected TMPro.TMP_Text txtGames;
     [SerializeField]
-    protected TMPro.TMP_Text txtEmotions;
+    protected RectTransform emotionsContent;
+    [SerializeField]
+    protected EmotionObject emotionPrefab;
     protected ThemeColorFilled theme;
 
     protected void Awake()
@@ -57,15 +59,14 @@ public class SessionItem : MonoBehaviour
             }
         }
 
-        if (txtEmotions!=null)
+        if (emotionsContent != null)
         {
-            txtEmotions.text = "";
             for (int i = 0; i < session.Emotions.Count; i++)
             {
-                if (i > 0)
-                    txtEmotions.text += separator;
-
-                txtEmotions.text += gm.Emotions[session.Emotions[i]].Name;
+                EmotionObject eobj = Instantiate(emotionPrefab, emotionsContent);
+                eobj.ImgType = EmotionObject.ImageType.Icon;
+                eobj.ShowText = false;
+                eobj.SetEmotion(session.Emotions[i]);
             }
         }
     }

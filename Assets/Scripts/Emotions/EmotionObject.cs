@@ -10,6 +10,7 @@ public class EmotionObject : MonoBehaviour
 {
     public enum ImageType { Regular, Icon }
 
+    public bool ShowText = true;
     public ImageType ImgType = ImageType.Regular;
     [field:SerializeField]
     public Emotion.EEmotion CurrEmotion { get; protected set; }
@@ -29,6 +30,8 @@ public class EmotionObject : MonoBehaviour
     protected virtual void Awake()
     {
         EmotionImage = gameObject.GetComponent<Image>();
+        if (!ShowText && EmotionName != null)
+            EmotionName.enabled = false;
     }
 
     protected virtual void Start()

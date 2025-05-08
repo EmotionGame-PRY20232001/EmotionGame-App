@@ -349,8 +349,6 @@ MonoBehaviour:
   CurrentDateText: {fileID: 268621652}
   SessionsFilterGO: {fileID: 1665511243}
   <CurrentGame>k__BackingField: 0
-  <Stats>k__BackingField: {fileID: 61040989}
-  <Answers>k__BackingField: {fileID: 628513284}
 --- !u!1001 &55440373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -777,6 +775,7 @@ MonoBehaviour:
   <ReportName>k__BackingField: "Estad\xEDsticas"
   Manager: {fileID: 42919632}
   ButtonAux: {fileID: 313436806}
+  awaitingReload: 0
   SuccessesChart: {fileID: 2960208548630309738}
   MistakesChart: {fileID: 2143305336}
   AvgTimeSolveChart: {fileID: 1137025727}
@@ -3602,6 +3601,7 @@ MonoBehaviour:
   <ReportName>k__BackingField: Respuestas
   Manager: {fileID: 42919632}
   ButtonAux: {fileID: 0}
+  awaitingReload: 0
   ChooseAnswerPrefab: {fileID: 288103356569811307, guid: bad84fc11a62eb643868e9fb3e9ada86, type: 3}
   ContextAnswerPrefab: {fileID: 8620291849682024167, guid: 2f80f93ca578bde43a2ba9059b277d40, type: 3}
   ImitateAnswerPrefab: {fileID: 4141025436297101167, guid: eea446b2836fd1d44bb5e30eed17ca60, type: 3}

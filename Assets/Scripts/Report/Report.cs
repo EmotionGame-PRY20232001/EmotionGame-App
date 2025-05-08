@@ -17,10 +17,10 @@ public abstract class Report : MonoBehaviour
     protected bool loaded = false;
     public bool awaitingReload = false;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         if (Manager != null)
-            Manager.SetReportName(ReportName);
+            Manager.onFilterUpdated += ResetLoad;
     }
 
     protected virtual void OnEnable()
@@ -65,6 +65,14 @@ public abstract class Report : MonoBehaviour
             return false;
 
         return true;
+    }
+
+    protected void ResetLoad()
+    {
+        awaitingReload = true;
+
+        if (isActiveAndEnabled)
+            Load();
     }
 
     public void Load()

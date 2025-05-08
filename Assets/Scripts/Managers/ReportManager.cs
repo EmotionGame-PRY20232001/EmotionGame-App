@@ -27,10 +27,8 @@ public class ReportManager : MonoBehaviour
     public List<FullResponse> Responses { get; protected set; }
     public List<FullResponse> FilteredResponses { get; protected set; }
 
-    [field: SerializeField]
-    protected StatsReport Stats { get; set; }
-    [field: SerializeField]
-    protected AnswersReport Answers { get; set; }
+    public delegate void OnFilterUpdated();
+    public OnFilterUpdated onFilterUpdated;
 
     protected void Awake()
     {
@@ -47,9 +45,6 @@ public class ReportManager : MonoBehaviour
         if (LoadPlayer())
         {
             LoadToday();
-
-            if (Stats != null)
-                Stats.Load();
 
             if (SessionsFilterGO != null)
                 SessionsFilterGO.LoadSessions();
@@ -94,21 +89,6 @@ public class ReportManager : MonoBehaviour
             SetSelectedDates(new List<DateTime>());
     }
 
-    protected void LoadCurrentTab()
-    {
-        Stats.awaitingReload = true;
-        Answers.awaitingReload = true;
-
-        if (Stats.isActiveAndEnabled)
-        {
-            Stats.Load();
-        }
-        else if (Answers.isActiveAndEnabled)
-        {
-            Answers.Load();
-        }
-    }
-
     protected void ApplyFilters()
     {
         if (CurrentGame == EmotionExercise.EActivity.None
@@ -129,7 +109,7 @@ public class ReportManager : MonoBehaviour
             Debug.Log("RD " + Responses.Count + " \tFR " + FilteredResponses.Count);
         }
 
-        LoadCurrentTab();
+        onFilterUpdated?.Invoke();
     }
 
     public void SetReportName(string name)
@@ -141,7 +121,12 @@ public class ReportManager : MonoBehaviour
     // EmotionExercise.EActivity Choose | Context | Imitate | None
     public void SetGameName(string name)
     {
-        CurrentGame = (EmotionExercise.EActivity)System.Enum.Parse(typeof(EmotionExercise.EActivity), name);
+        var game = (EmotionExercise.EActivity)Enum.Parse(typeof(EmotionExercise.EActivity), name);
+
+        if (CurrentGame == game)
+            return;
+
+        CurrentGame = game;
 
         if (CurrentGameName != null)
         {
@@ -155,8 +140,10 @@ public class ReportManager : MonoBehaviour
 
     public void SetSelectedDates(List<DateTime> selectedDates)
     {
-        if (selectedDates != null)
-            SelectedDates = selectedDates;
+        if (SelectedDates == selectedDates)
+            return;
+
+        SelectedDates = selectedDates;
 
         ApplyFilters();
 
@@ -181,7 +168,7 @@ public class ReportManager : MonoBehaviour
             CurrentDateText.text = minDate.ToShortDateString();
 
         if (minDate != maxDate)
-            CurrentDateText.text += (" - " + maxDate.ToShortDateString());
+            CurrentDateText.text += ("\n" + maxDate.ToShortDateString());
     }
 
     public class FullResponse

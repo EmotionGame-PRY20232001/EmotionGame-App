@@ -13,7 +13,7 @@ public class Answer : MonoBehaviour
     [SerializeField]
     protected Image ResponseEmotion;
     [SerializeField]
-    protected Image BackgroundRevision;
+    protected ThemeColorFilled ThemeRevision;
     [SerializeField]
     protected TMP_Text ContextText;
     [SerializeField]
@@ -41,19 +41,10 @@ public class Answer : MonoBehaviour
         if (ResponseEmotion != null)
             ResponseEmotion.sprite = gm.Emotions[responseEmotion].Icon;
 
-        if (BackgroundRevision != null && gm.IsPlayerActive())
-        {
-            Theme.ETheme theme = gm.GetBackgrounds()[(Theme.EBackground)gm.currentPlayer.BackgroundId].Theme;
-
-            if (correctEmotion == responseEmotion)
-            {
-                BackgroundRevision.color = gm.ThemeCustom.Themes[theme].Accent.Main.Background;
-            }
-            else
-            {
-                BackgroundRevision.color = gm.ThemeCustom.Themes[theme].Danger.Main.Background;
-            }
-        }
+        if (ThemeRevision != null && gm.IsPlayerActive())
+            ThemeRevision.OnFillTypeChange(correctEmotion == responseEmotion ?
+                                            Theme.ETypes.Accent :
+                                            Theme.ETypes.Danger);
     }
 
     public virtual void LoadChoose(Sprite exercisePhoto, Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)

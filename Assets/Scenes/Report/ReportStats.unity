@@ -776,7 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ReportName>k__BackingField: "Estad\xEDsticas"
   Manager: {fileID: 42919632}
-  ButtonAux: {fileID: 313436806}
+  ButtonAux: {fileID: 0}
   awaitingReload: 0
   SuccessesChart: {fileID: 2960208548630309738}
   MistakesChart: {fileID: 2143305336}
@@ -4508,6 +4508,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6851257509903455797, guid: b2be20e330a317949a399047861e8d9f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -152.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851257509903455797, guid: b2be20e330a317949a399047861e8d9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -124.000015
+      objectReference: {fileID: 0}
     - target: {fileID: 7294467950041101810, guid: b2be20e330a317949a399047861e8d9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4616,6 +4624,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0913f6204b50dd04f94cccb18855864b, type: 3}
+    - target: {fileID: 9012902245366173102, guid: b2be20e330a317949a399047861e8d9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -64
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2582228367773297932, guid: b2be20e330a317949a399047861e8d9f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2be20e330a317949a399047861e8d9f, type: 3}
@@ -9236,12 +9248,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 1032759635}
     m_Modifications:
     - target: {fileID: 2850322236983539558, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850322236983539558, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850322236983539558, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 263.71
       objectReference: {fileID: 0}
     - target: {fileID: 2850322236983539558, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
       propertyPath: m_SizeDelta.y
       value: 48.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850322236983539558, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 2850322237286850428, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
       propertyPath: m_Name
@@ -9332,12 +9356,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2850322237611323777, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850322237611323777, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850322237611323777, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 489.02
       objectReference: {fileID: 0}
     - target: {fileID: 2850322237611323777, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
       propertyPath: m_SizeDelta.y
       value: 48.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850322237611323777, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 8198295502375003665, guid: cc9c18fc9485e1142b79384e00d46aa9, type: 3}
       propertyPath: m_AnchorMax.y

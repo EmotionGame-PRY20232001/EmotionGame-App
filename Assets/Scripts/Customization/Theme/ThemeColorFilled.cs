@@ -38,14 +38,14 @@ public class ThemeColorFilled : MonoBehaviour
     {
         LoadDefault();
         UpdateColors();
-        UpdateFillType();
+        UpdateGraphics();
     }
 
     public void LoadPlayerTheme(Theme.EBackground bgId)
     {
         LoadByBgId(bgId);
         UpdateColors();
-        UpdateFillType();
+        UpdateGraphics();
     }
 
     protected void LoadByBgId(Theme.EBackground bgId)
@@ -190,10 +190,17 @@ public class ThemeColorFilled : MonoBehaviour
         }
     }
 
-    protected void UpdateFillType()
+    protected void UpdateGraphics()
     {
         UpdateFillGraphic(ColorFill);
         UpdateContrastGraphic(ColorContrast);
+    }
+
+    public void OnFillTypeChange(Theme.ETypes fillType)
+    {
+        FillType = fillType;
+        UpdateColors();
+        UpdateGraphics();
     }
 
     public void OnLightnessChange(Theme.ELightness newLightness, float time = 1f)
@@ -206,7 +213,7 @@ public class ThemeColorFilled : MonoBehaviour
 
         if (time == 0.0f)
         {
-            UpdateFillType();
+            UpdateGraphics();
         }
         else
         {
@@ -221,7 +228,7 @@ public class ThemeColorFilled : MonoBehaviour
         if (!Application.isPlaying)
         {
             UpdateColors();
-            UpdateFillType();
+            UpdateGraphics();
         }
 #endif
     }

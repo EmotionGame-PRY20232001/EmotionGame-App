@@ -173,4 +173,35 @@ public class Utils : MonoBehaviour
 # endif
     }
 
+    public static string GetDefaultFilePathName(string folder = "", string extension = "csv")
+    {
+        var gm = GameManager.Instance;
+        string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
+        playerName.Trim();
+        playerName.Replace(" ", "-");
+
+        System.DateTime dateExported = System.DateTime.Now;
+        string customDate = "yyyymmdd-HHmmssff";
+        customDate = dateExported.ToString(customDate);
+
+        string fileName = playerName + "_" + customDate + "." + extension;
+        string filePath;
+        if (folder == "")
+        {
+            filePath = Path.Combine(Application.persistentDataPath, fileName);
+        }
+        else
+        {
+            filePath = Path.Combine(Application.persistentDataPath, folder);
+            if (!Directory.Exists(filePath))
+            {
+                Directory.CreateDirectory(filePath);
+                Debug.Log($"Created folder: {filePath}");
+            }
+            filePath = Path.Combine(filePath, fileName);
+        }
+
+        return filePath;
+    }
+
 }

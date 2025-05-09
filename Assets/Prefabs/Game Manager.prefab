@@ -47,6 +47,10 @@ MonoBehaviour:
   LastPlayedGame: 0
   <Games>k__BackingField:
     _serializedList:
+    - Key: 0
+      Value:
+        <Name>k__BackingField: Desconocido
+        <Icon>k__BackingField: {fileID: 21300000, guid: 4444e9044afd32741b7c0e22141c9abe, type: 3}
     - Key: 1
       Value:
         <Name>k__BackingField: Aprende

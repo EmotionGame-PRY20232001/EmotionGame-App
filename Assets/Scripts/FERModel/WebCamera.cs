@@ -120,15 +120,19 @@ public class WebCamera : MonoBehaviour
     {
         finalTexture = new Texture2D(0, 0);
         myFace = new OpenCvSharp.Rect(0, 0, 48, 48);
-        while (true)
+        while (isRunning)
         {
-            CopyTexture(webCamTexture, finalTexture);
+            if (webCamTexture != null && webCamTexture.isPlaying)
+            {
+                CopyTexture(webCamTexture, finalTexture);
 #if UNITY_ANDROID && !UNITY_EDITOR
-            RotateImage(finalTexture, 90);
+                RotateImage(finalTexture, 90);
 #endif
-            Mat webImage = OpenCvSharp.Unity.TextureToMat(finalTexture);
-            FindNewFace(webImage);
-            Display(webImage);
+                Mat webImage = OpenCvSharp.Unity.TextureToMat(finalTexture);
+                FindNewFace(webImage);
+                Display(webImage);
+                webImage.Dispose();
+            }
             yield return new WaitForSeconds(0.35f);
         }
     }
@@ -177,15 +181,22 @@ public class WebCamera : MonoBehaviour
         tex.Apply(true);
 
         RenderTexture rtt = new(width, height, 32);
-        Graphics.SetRenderTarget(rtt);
-        GL.LoadPixelMatrix(0, 1, 1, 0);
-        GL.Clear(true, true, new Color(0, 0, 0, 0));
-        Graphics.DrawTexture(new UnityEngine.Rect(0, 0, 1, 1), tex);
+        try
+        {
+            Graphics.SetRenderTarget(rtt);
+            GL.LoadPixelMatrix(0, 1, 1, 0);
+            GL.Clear(true, true, new Color(0, 0, 0, 0));
+            Graphics.DrawTexture(new UnityEngine.Rect(0, 0, 1, 1), tex);
 
-        // Update new texture
-        tex.Reinitialize(width, height);
-        tex.ReadPixels(texR, 0, 0, true);
-        tex.Apply(true); //Remove this if you hate us applying textures for you :)
+            // Update new texture
+            tex.Reinitialize(width, height);
+            tex.ReadPixels(texR, 0, 0, true);
+            tex.Apply(true);
+        }
+        finally
+        {
+            rtt.Release();
+        }
     }
 
     private void CopySectionTexture(Texture2D src, Texture2D dst, OpenCvSharp.Rect myFace, FilterMode mode = FilterMode.Trilinear)
@@ -195,18 +206,25 @@ public class WebCamera : MonoBehaviour
         src.Apply(true);
 
         RenderTexture rtt = new(myFace.Width, myFace.Height, 32);
-        Graphics.SetRenderTarget(rtt);
-        GL.LoadPixelMatrix(0, 1, 1, 0);
-        GL.Clear(true, true, new Color(0, 0, 0, 0));
-        UnityEngine.Rect section = new((float)myFace.X / src.width,
-                                       ((float)src.height - myFace.Bottom) / src.height,
-                                       ((float)myFace.Right - myFace.Left) / src.width,
-                                       ((float)myFace.Bottom - myFace.Top) / src.height);
-        Graphics.DrawTexture(new UnityEngine.Rect(0, 0, 1, 1), src, section, 0, 0, 0, 0);
+        try
+        {
+            Graphics.SetRenderTarget(rtt);
+            GL.LoadPixelMatrix(0, 1, 1, 0);
+            GL.Clear(true, true, new Color(0, 0, 0, 0));
+            UnityEngine.Rect section = new((float)myFace.X / src.width,
+                                           ((float)src.height - myFace.Bottom) / src.height,
+                                           ((float)myFace.Right - myFace.Left) / src.width,
+                                           ((float)myFace.Bottom - myFace.Top) / src.height);
+            Graphics.DrawTexture(new UnityEngine.Rect(0, 0, 1, 1), src, section, 0, 0, 0, 0);
 
-        dst.Reinitialize(myFace.Width, myFace.Height);
-        dst.ReadPixels(texR, 0, 0, true);
-        dst.Apply(true);
+            dst.Reinitialize(myFace.Width, myFace.Height);
+            dst.ReadPixels(texR, 0, 0, true);
+            dst.Apply(true);
+        }
+        finally
+        {
+            rtt.Release();
+        }
     }
 
     private void CopyTexture(Texture src, Texture2D dst, FilterMode mode = FilterMode.Trilinear)
@@ -215,14 +233,21 @@ public class WebCamera : MonoBehaviour
         src.filterMode = mode;
 
         RenderTexture rtt = new(src.width, src.height, 32);
-        Graphics.SetRenderTarget(rtt);
-        GL.LoadPixelMatrix(0, 1, 1, 0);
-        GL.Clear(true, true, new Color(0, 0, 0, 0));
-        Graphics.DrawTexture(new UnityEngine.Rect(0, 0, 1, 1), src);
+        try
+        {
+            Graphics.SetRenderTarget(rtt);
+            GL.LoadPixelMatrix(0, 1, 1, 0);
+            GL.Clear(true, true, new Color(0, 0, 0, 0));
+            Graphics.DrawTexture(new UnityEngine.Rect(0, 0, 1, 1), src);
 
-        dst.Reinitialize(src.width, src.height);
-        dst.ReadPixels(texR, 0, 0, true);
-        dst.Apply(true);
+            dst.Reinitialize(src.width, src.height);
+            dst.ReadPixels(texR, 0, 0, true);
+            dst.Apply(true);
+        }
+        finally
+        {
+            rtt.Release();
+        }
     }
 
     private void RotateImage(Texture2D tex, float angleDegrees)
@@ -260,5 +285,25 @@ public class WebCamera : MonoBehaviour
         tex.Apply(true);
 
         System.Buffers.ArrayPool<Color32>.Shared.Return(copy);
+    }
+
+    private void OnDestroy()
+    {
+        if (finalTexture != null)
+        {
+            Destroy(finalTexture);
+        }
+        if (smallTexture != null)
+        {
+            Destroy(smallTexture);
+        }
+        if (webCamTexture != null)
+        {
+            webCamTexture.Stop();
+        }
+        if (cascade != null)
+        {
+            cascade.Dispose();
+        }
     }
 }

@@ -82,23 +82,30 @@ public class ImitateActivity : BaseActivity
 
     public void TakePhoto()
     {
-        webCam.StopEmotionCoroutine();
-        webCam.PauseCamera();
-
-        if (IsFirstPhoto)
+        if (!IsFirstPhoto)
         {
-            ShowBtnCameraCheck(false);
-            if (BtnReady != null)
-                BtnReady.interactable = true;
-            if (RawImgPhoto != null)
-                RawImgPhoto.color = Color.white;
-            if (BtnReadyImgEmotion != null)
-                BtnReadyImgEmotion.SetActive(true);
-            IsFirstPhoto = false;
+            webCam.PlayCamera();
+            webCam.StartEmotionCoroutine();
         }
+        else
+        {
+            webCam.StopEmotionCoroutine();
+            webCam.PauseCamera();
+        }
+
+        ShowBtnCameraCheck(!IsFirstPhoto);
+        
+        if (BtnReady != null)
+            BtnReady.interactable = IsFirstPhoto;
+        if (RawImgPhoto != null)
+            RawImgPhoto.color = IsFirstPhoto ? Color.white : Color.clear;
+        if (BtnReadyImgEmotion != null)
+            BtnReadyImgEmotion.SetActive(IsFirstPhoto);
 
         if (RawImgPhoto != null)
             RawImgPhoto.texture = webCam.rawImage.texture;
+
+        IsFirstPhoto = !IsFirstPhoto;
     }
 
     public void CheckExercise()

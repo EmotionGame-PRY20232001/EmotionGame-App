@@ -116,6 +116,7 @@ public class ImitateActivity : BaseActivity
 
     public void CheckExercise()
     {
+        SavePhoto();
         if (Model.PredictedEmotion == ExerciseEmotion) Good();
         else Bad(Model.PredictedEmotion);
         webCam.PlayCamera();

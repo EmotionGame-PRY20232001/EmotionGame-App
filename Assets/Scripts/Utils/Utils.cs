@@ -203,8 +203,18 @@ public class Utils : MonoBehaviour
         return sanitized;
     }
 
+    public static string SanitizeFilePlayerName(string playerName)
+    {
+        playerName.Trim();
+        playerName.Replace(" ", "-");
+        playerName.Replace("_", "-");
+        playerName = SanitizeFileName(playerName, "-");
+        return playerName;
+    }
+
     /// <summary>
-    /// Returns [playerNameSanitized]/[playerNameSanitized][_name?][_date-hour].[extension]
+    /// <b>Returns</b> [playerNameSanitized]/[playerNameSanitized][_date-hour][_name?].[extension]
+    /// <br></br><b>Split _</b> [0]playerName [1]customDate [2]detName?.extension
     /// </summary>
     /// <param name="extension">whitout dot</param>
     /// <param name="detName">detailed name after player name</param>
@@ -215,10 +225,7 @@ public class Utils : MonoBehaviour
     {
         var gm = GameManager.Instance;
         string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
-        playerName.Trim();
-        playerName.Replace(" ", "-");
-        playerName.Replace("_", "-");
-        playerName = SanitizeFileName(playerName, "-");
+        playerName = SanitizeFilePlayerName(playerName);
 
         string filePath = Application.persistentDataPath;
         if (folder != "")
@@ -275,5 +282,35 @@ public class Utils : MonoBehaviour
                                 );
 
         return sprite;
+    }
+
+    /// <summary>
+    /// This function does include Application.persistentDataPath
+    /// </summary>
+    /// <param name="folderName"></param>
+    public static void DeleteFolderPermanently(string folderName)
+    {
+        string fullPath = Path.Combine(Application.persistentDataPath, folderName);
+
+        if (Directory.Exists(fullPath))
+        {
+            try
+            {
+                Directory.Delete(fullPath, true); // true = recursive delete
+                Debug.Log("Folder and all contents deleted: " + fullPath);
+            }
+            catch (IOException ex)
+            {
+                Debug.LogWarning("IO error deleting folder: " + ex.Message);
+            }
+            catch (System.UnauthorizedAccessException ex)
+            {
+                Debug.LogWarning("Access denied deleting folder: " + ex.Message);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Folder not found: " + fullPath);
+        }
     }
 }

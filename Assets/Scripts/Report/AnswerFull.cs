@@ -16,7 +16,13 @@ public class AnswerFull : Answer
     [SerializeField]
     protected RectTransform ContextExercise;
 
-    public void LoadTime(System.DateTime completedAt, float secondsToSolve)
+    public override void Load(ReportManager.FullResponse r)
+    {
+        base.Load(r);
+        LoadTime(r.response.CompletedAt, r.response.SecondsToSolve);
+    }
+
+    public virtual void LoadTime(System.DateTime completedAt, float secondsToSolve)
     {
         if (txtDateTime != null)
         {

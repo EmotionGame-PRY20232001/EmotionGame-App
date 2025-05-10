@@ -37,71 +37,24 @@ public class AnswersReport : Report
             {
                 case EmotionExercise.EActivity.Choose:
                     if (ChooseAnswerPrefab != null)
-                    {
-                        Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
                         instance = Instantiate(ChooseAnswerPrefab, AnswersContainer);
-                        instance.LoadChoose(exercisePhoto, r.idCont.emotion, r.response.ResponseEmotionId);
-                    }
                     break;
 
                 case EmotionExercise.EActivity.Context:
                     if (ContextAnswerPrefab != null)
-                    {
-                        string exerciseText = gm.Emotions[r.idCont.emotion].ExerciseContents.Contexts[r.idCont.order];
                         instance = Instantiate(ContextAnswerPrefab, AnswersContainer);
-                        instance.LoadContext(exerciseText, r.idCont.emotion, r.response.ResponseEmotionId);
-                    }
                     break;
 
                 case EmotionExercise.EActivity.Imitate:
                     if (ImitateAnswerPrefab != null)
-                    {
-                        Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
-                        Sprite playerPhoto = null;
                         instance = Instantiate(ImitateAnswerPrefab, AnswersContainer);
-                        instance.LoadImitate(exercisePhoto, playerPhoto, r.idCont.emotion, r.response.ResponseEmotionId);
-                    }
                     break;
             }
 
-            if (instance != null && instance.BtnOpenFull != null)
+            if (instance != null)
             {
-                instance.BtnOpenFull.onClick.AddListener(() => {
-                    if (AnswerFullPopUp != null) AnswerFullPopUp.Open();
-                    AnswerFullData.LoadTime(r.response.CompletedAt, r.response.SecondsToSolve);
-                });
-
-                switch (r.exercise.ActivityId)
-                {
-                    case EmotionExercise.EActivity.Choose:
-                        {
-                            Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
-                            instance.BtnOpenFull.onClick.AddListener(() => {
-                                AnswerFullData.LoadChoose(exercisePhoto, r.idCont.emotion, r.response.ResponseEmotionId);
-                            });
-                        }
-                        break;
-
-                    case EmotionExercise.EActivity.Context:
-                        {
-                            string exerciseText = gm.Emotions[r.idCont.emotion].ExerciseContents.Contexts[r.idCont.order];
-                            instance.BtnOpenFull.onClick.AddListener(() => {
-                                AnswerFullData.LoadContext(exerciseText, r.idCont.emotion, r.response.ResponseEmotionId);
-                            });
-                        }
-                        break;
-
-                    case EmotionExercise.EActivity.Imitate:
-                        {
-                            Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
-                            Sprite playerPhoto = null;
-                            instance.BtnOpenFull.onClick.AddListener(() => {
-                                AnswerFullData.LoadImitate(exercisePhoto, playerPhoto, r.idCont.emotion, r.response.ResponseEmotionId);
-                            });
-                        }
-                        break;
-                }
-
+                instance.Load(r);
+                instance.OnBtnOpenFull(r, AnswerFullPopUp, AnswerFullData);
                 AnswersLoaded.Add(instance);
             }
         }

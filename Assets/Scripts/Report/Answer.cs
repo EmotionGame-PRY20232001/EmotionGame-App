@@ -28,6 +28,40 @@ public class Answer : MonoBehaviour
         BtnOpenFull = gameObject.GetComponent<Button>();
     }
 
+    public virtual void Load(ReportManager.FullResponse r)
+    {
+        var gm = GameManager.Instance;
+        switch (r.exercise.ActivityId)
+        {
+            case EmotionExercise.EActivity.Choose:
+                Sprite exercisePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
+                LoadChoose(exercisePhoto, r.idCont.emotion, r.response.ResponseEmotionId);
+                break;
+
+            case EmotionExercise.EActivity.Context:
+                string exerciseText = gm.Emotions[r.idCont.emotion].ExerciseContents.Contexts[r.idCont.order];
+                LoadContext(exerciseText, r.idCont.emotion, r.response.ResponseEmotionId);
+                break;
+
+            case EmotionExercise.EActivity.Imitate:
+                Sprite exsePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
+                Sprite playerPhoto = null;
+                LoadImitate(exsePhoto, playerPhoto, r.idCont.emotion, r.response.ResponseEmotionId);
+                break;
+        }
+    }
+
+    public void OnBtnOpenFull(ReportManager.FullResponse r, PopUp AnswerFullPopUp, AnswerFull AnswerFullData)
+    {
+        if (BtnOpenFull == null) return;
+        var gm = GameManager.Instance;
+
+        BtnOpenFull.onClick.AddListener(() => {
+            if (AnswerFullPopUp != null) AnswerFullPopUp.Open();
+            AnswerFullData.Load(r);
+        });
+    }
+
     protected virtual void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
     {
         var gm = GameManager.Instance;

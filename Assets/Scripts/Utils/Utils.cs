@@ -204,12 +204,18 @@ public class Utils : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns [playerNameSanitized][_name?][_date-hour].[extension]
+    /// Returns [playerNameSanitized]/[playerNameSanitized][_name?][_date-hour].[extension]
     /// </summary>
     /// <param name="extension">whitout dot</param>
     /// <param name="detName">detailed name after player name</param>
     public static string GetDefaultFilePathName(string folder = "", string extension = "csv", string detName = "")
     {
+        var gm = GameManager.Instance;
+        string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
+        playerName.Trim();
+        playerName.Replace(" ", "-");
+        playerName = SanitizeFileName(playerName, "-");
+
         string filePath = Application.persistentDataPath;
         if (folder != "")
         {
@@ -221,19 +227,20 @@ public class Utils : MonoBehaviour
             }
         }
 
-        var gm = GameManager.Instance;
-        string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
-        playerName.Trim();
-        playerName.Replace(" ", "-");
-        playerName = SanitizeFileName(playerName, "-");
+        filePath = Path.Combine(filePath, playerName);
+        if (!Directory.Exists(filePath))
+        {
+            Directory.CreateDirectory(filePath);
+            Debug.Log($"Created folder: {filePath}");
+        }
 
         System.DateTime dateExported = System.DateTime.Now;
         string customDate = "yyyymmdd-HHmmssff";
         customDate = dateExported.ToString(customDate);
 
         string fileName = playerName +
-                          (detName == "" ? "" : "_" + detName) +
                           "_" + customDate +
+                          (detName == "" ? "" : "_" + detName) +
                           "." + extension;
         filePath = Path.Combine(filePath, fileName);
 

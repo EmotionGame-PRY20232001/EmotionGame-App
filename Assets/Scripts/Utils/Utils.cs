@@ -258,6 +258,25 @@ public class Utils : MonoBehaviour
         return filePath;
     }
 
+    private static Texture2D RotateTexture90(Texture2D original)
+    {
+        int width = original.width;
+        int height = original.height;
+
+        Texture2D rotated = new Texture2D(height, width, original.format, false);
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                rotated.SetPixel(y, width - x - 1, original.GetPixel(x, y));
+            }
+        }
+
+        rotated.Apply();
+        return rotated;
+    }
+
     public static Sprite LoadSpriteFromSavedJPG(string filePath)
     {
         if (!File.Exists(filePath))
@@ -273,6 +292,11 @@ public class Utils : MonoBehaviour
             Debug.LogWarning("Failed to load image data.");
             return null;
         }
+
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+        texture = RotateTexture90(texture);
+#endif
 
         // Create the sprite (pivot at center, no borders)
         Sprite sprite = Sprite.Create(

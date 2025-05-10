@@ -168,12 +168,12 @@ public class PanelScript : MonoBehaviour
         {
             case PanelType.NewPlayer:
                 nameInputText.text = string.Empty;
-                enableAudio.isOn = false;
+                enableAudio.isOn = true;
                 break;
             case PanelType.EditPlayer:
                 nameText.text = string.Empty;
                 nameInputText.text = string.Empty;
-                enableAudio.isOn = false;
+                enableAudio.isOn = true;
                 break;
             case PanelType.DeletePlayer:
                 nameText.text = string.Empty;

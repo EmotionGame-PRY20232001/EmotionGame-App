@@ -12,6 +12,12 @@ public class ContextActivity : BaseActivity
     [SerializeField]
     private CharacterExpressions Expressions;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        Activity = EActivity.Context;
+    }
+
     protected override void LoadCurrentEmotion()
     {
         base.LoadCurrentEmotion();

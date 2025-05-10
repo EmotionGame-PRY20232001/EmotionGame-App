@@ -28,6 +28,12 @@ public class ImitateActivity : BaseActivity
 
     private Emotion.EEmotion lastEmotion;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        Activity = EActivity.Imitate;
+    }
+
     protected override void Start()
     {
         base.Start();

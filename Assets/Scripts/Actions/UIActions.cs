@@ -9,6 +9,9 @@ public class UIActions : MonoBehaviour
     // [SerializeField]
     // private Image guideImage;
 
+    // to from
+    protected static Dictionary<string, string> BackScene = new Dictionary<string, string>();
+
     public static class Scenes
     {
         public static readonly string NONE = "";
@@ -46,7 +49,7 @@ public class UIActions : MonoBehaviour
 
     ////========  ========////
 
-    public void GoToPlayerSelecion()
+    public static void GoToPlayerSelecion()
     {
         GameManager.Instance?.SetCurrentPlayer(null);
         AudioManager.Instance?.Load();
@@ -146,7 +149,25 @@ public class UIActions : MonoBehaviour
     
     public static void GoToReport()
     {
+        string currScene = SceneManager.GetActiveScene().name;
+        BackScene[Scenes.REPORT] = currScene;
         SceneManager.LoadScene(Scenes.REPORT);
+    }
+    public static void ReturnFromReport()
+    {
+        if (BackScene.ContainsKey(Scenes.REPORT))
+        {
+            string oldScene = BackScene[Scenes.REPORT];
+
+            if (oldScene == Scenes.PLAYER_SELECT)
+                GoToPlayerSelecion();
+
+            else
+                SceneManager.LoadScene(oldScene);
+        }
+
+        else
+            GoToPlayerSelecion();
     }
 
     public static void GoToScene(string name)

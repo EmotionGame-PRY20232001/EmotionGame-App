@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
@@ -173,24 +174,44 @@ public class Utils : MonoBehaviour
 # endif
     }
 
-    public static string GetDefaultFilePathName(string folder = "", string extension = "csv")
+    public static string SanitizeFileName(string name, string replacement = "_")
     {
-        var gm = GameManager.Instance;
-        string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
-        playerName.Trim();
-        playerName.Replace(" ", "-");
+        // Remove invalid characters
+        string invalidChars = Regex.Escape(new string(Path.GetInvalidFileNameChars()));
+        string invalidReStr = $"[{invalidChars}]+";
+        string sanitized = Regex.Replace(name, invalidReStr, replacement);
 
-        System.DateTime dateExported = System.DateTime.Now;
-        string customDate = "yyyymmdd-HHmmssff";
-        customDate = dateExported.ToString(customDate);
+        // Trim spaces and dots at start/end
+        sanitized = sanitized.Trim().TrimEnd('.');
 
-        string fileName = playerName + "_" + customDate + "." + extension;
-        string filePath;
-        if (folder == "")
+        // Avoid reserved names (Windows)
+        string[] reservedNames = {
+            "CON", "PRN", "AUX", "NUL",
+            "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9",
+            "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9"
+        };
+
+        foreach (string reserved in reservedNames)
         {
-            filePath = Path.Combine(Application.persistentDataPath, fileName);
+            if (sanitized.Equals(reserved, System.StringComparison.OrdinalIgnoreCase))
+            {
+                sanitized = $"_{sanitized}";
+                break;
+            }
         }
-        else
+
+        return sanitized;
+    }
+
+    /// <summary>
+    /// Returns [playerNameSanitized][_name?][_date-hour].[extension]
+    /// </summary>
+    /// <param name="extension">whitout dot</param>
+    /// <param name="detName">detailed name after player name</param>
+    public static string GetDefaultFilePathName(string folder = "", string extension = "csv", string detName = "")
+    {
+        string filePath = Application.persistentDataPath;
+        if (folder != "")
         {
             filePath = Path.Combine(Application.persistentDataPath, folder);
             if (!Directory.Exists(filePath))
@@ -198,8 +219,23 @@ public class Utils : MonoBehaviour
                 Directory.CreateDirectory(filePath);
                 Debug.Log($"Created folder: {filePath}");
             }
-            filePath = Path.Combine(filePath, fileName);
         }
+
+        var gm = GameManager.Instance;
+        string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
+        playerName.Trim();
+        playerName.Replace(" ", "-");
+        playerName = SanitizeFileName(playerName, "-");
+
+        System.DateTime dateExported = System.DateTime.Now;
+        string customDate = "yyyymmdd-HHmmssff";
+        customDate = dateExported.ToString(customDate);
+
+        string fileName = playerName +
+                          (detName == "" ? "" : "_" + detName) +
+                          "_" + customDate +
+                          "." + extension;
+        filePath = Path.Combine(filePath, fileName);
 
         return filePath;
     }

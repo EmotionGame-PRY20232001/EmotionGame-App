@@ -16,10 +16,41 @@ public class AnswerFull : Answer
     [SerializeField]
     protected RectTransform ContextExercise;
 
+    // Imitation
+    [SerializeField]
+    protected RectMask2D PlayerMask;
+    [SerializeField]
+    protected Button PlayerEditEmotion;
+    [SerializeField]
+    protected Button PlayerBtnShow;
+    [SerializeField]
+    protected Button PlayerBtnHide;
+    [field: SerializeField]
+    public EPhotoMode PhotoMode { get; protected set; } = EPhotoMode.HALF;
+
+    public enum EPhotoMode { HALF, PLAYER, EXERCISE };
+
+    protected void Awake()
+    {
+        PlayerBtnShow?.onClick.AddListener(OnBtnShowClick);
+        PlayerBtnHide?.onClick.AddListener(OnBtnHideClick);
+    }
+
     public override void Load(ReportManager.FullResponse r)
     {
         base.Load(r);
         LoadTime(r.response.CompletedAt, r.response.SecondsToSolve);
+
+        if (r.exercise.ActivityId == EmotionExercise.EActivity.Imitate)
+        {
+            ImitateResetToHalf();
+        }
+        else
+        {
+            //PlayerEditEmotion?.gameObject.SetActive(false);
+            PlayerBtnShow?.gameObject.SetActive(false);
+            PlayerBtnHide?.gameObject.SetActive(false);
+        }
     }
 
     public virtual void LoadTime(System.DateTime completedAt, float secondsToSolve)
@@ -53,7 +84,7 @@ public class AnswerFull : Answer
     {
         Photo.enabled = true;
         ContextExercise.gameObject.SetActive(false);
-        PlayerImitationPhoto.gameObject.SetActive(false);
+        PlayerPhoto.gameObject.SetActive(false);
         base.LoadChoose(exercisePhoto, correctEmotion, responseEmotion);
     }
 
@@ -61,7 +92,7 @@ public class AnswerFull : Answer
     {
         Photo.enabled = false;
         ContextExercise.gameObject.SetActive(true);
-        PlayerImitationPhoto.gameObject.SetActive(false);
+        PlayerPhoto.gameObject.SetActive(false);
         base.LoadContext(text, correctEmotion, responseEmotion);
     }
 
@@ -69,7 +100,55 @@ public class AnswerFull : Answer
     {
         Photo.enabled = true;
         ContextExercise.gameObject.SetActive(false);
-        PlayerImitationPhoto.gameObject.SetActive(true);
+        PlayerPhoto.gameObject.SetActive(true);
         base.LoadImitate(exercisePhoto, playerPhoto, correctEmotion, responseEmotion);
+    }
+
+    public void OnBtnShowClick()
+    {
+        if (PhotoMode == EPhotoMode.HALF)
+            ImitateShowFull(true);
+        else
+            ImitateResetToHalf();
+    }
+
+    public void OnBtnHideClick()
+    {
+        if (PhotoMode == EPhotoMode.HALF)
+            ImitateShowFull(false);
+        else
+            ImitateResetToHalf();
+    }
+
+    public void ImitateShowFull(bool isPlayer)
+    {
+        if (PhotoMode != EPhotoMode.HALF) return;
+
+        PhotoMode = isPlayer ? EPhotoMode.PLAYER : EPhotoMode.EXERCISE;
+
+        PlayerMask.enabled = !isPlayer;
+        //PlayerEditEmotion.gameObject.SetActive(isPlayer);
+        PlayerPhoto.gameObject.SetActive(isPlayer);
+
+        PlayerBtnShow.gameObject.SetActive(isPlayer);
+        PlayerBtnShow.gameObject.LeanScaleX(isPlayer ? - 1 : 1, 0.0f);
+        PlayerBtnHide.gameObject.SetActive(!isPlayer);
+        PlayerBtnHide.gameObject.LeanScaleX(isPlayer ? 1 : -1, 0.0f);
+    }
+
+    public void ImitateResetToHalf()
+    {
+        if (PhotoMode == EPhotoMode.HALF) return;
+
+        PhotoMode = EPhotoMode.HALF;
+
+        PlayerMask.enabled = true;
+        //PlayerEditEmotion.gameObject.SetActive(true);
+        PlayerPhoto.gameObject.SetActive(true);
+
+        PlayerBtnShow.gameObject.SetActive(true);
+        PlayerBtnShow.gameObject.LeanScaleX(1, 0.0f);
+        PlayerBtnHide.gameObject.SetActive(true);
+        PlayerBtnHide.gameObject.LeanScaleX(1, 0.0f);
     }
 }

@@ -19,7 +19,7 @@ public class Answer : MonoBehaviour
     [SerializeField]
     protected CharacterExpressions ContextExpression;
     [SerializeField]
-    protected Image PlayerImitationPhoto;
+    protected Image PlayerPhoto;
     [field:SerializeField]
     public Button BtnOpenFull { get; protected set; }
 
@@ -105,8 +105,8 @@ public class Answer : MonoBehaviour
         if (Photo != null)
             Photo.sprite = exercisePhoto;
 
-        if (PlayerImitationPhoto != null)
-            PlayerImitationPhoto.sprite = playerPhoto;
+        if (PlayerPhoto != null)
+            PlayerPhoto.sprite = playerPhoto;
 
         LoadEmotion(correctEmotion, responseEmotion);
     }
@@ -127,7 +127,6 @@ public class Answer : MonoBehaviour
         {
             string file = filePath.Substring(idxDirSep + 1);
             string[] fpParts = file.Split('_');
-            //[0]playerName [1]customDate [2]exerciseId.extension
 
             int splitAt = fpParts[1].Length - 2;
             prefix = fpParts[0] + "_" + fpParts[1].Substring(0, splitAt);

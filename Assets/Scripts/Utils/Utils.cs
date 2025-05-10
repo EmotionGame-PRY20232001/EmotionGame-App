@@ -258,7 +258,7 @@ public class Utils : MonoBehaviour
         return filePath;
     }
 
-    private static Texture2D RotateTexture90(Texture2D original)
+    private static Texture2D RotateTexture(Texture2D original, bool clockWise = false)
     {
         int width = original.width;
         int height = original.height;
@@ -269,7 +269,10 @@ public class Utils : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                rotated.SetPixel(y, width - x - 1, original.GetPixel(x, y));
+                if (clockWise)
+                    rotated.SetPixel(y, width - x - 1, original.GetPixel(x, y));
+                else
+                    rotated.SetPixel(height - y - 1, x, original.GetPixel(x, y));
             }
         }
 

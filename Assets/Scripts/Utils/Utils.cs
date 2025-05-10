@@ -208,12 +208,16 @@ public class Utils : MonoBehaviour
     /// </summary>
     /// <param name="extension">whitout dot</param>
     /// <param name="detName">detailed name after player name</param>
-    public static string GetDefaultFilePathName(string folder = "", string extension = "csv", string detName = "")
+    public static string GetDefaultFilePathName(string folder = "",
+                                                string extension = "csv",
+                                                string detName = "",
+                                                System.DateTime date = default)
     {
         var gm = GameManager.Instance;
         string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
         playerName.Trim();
         playerName.Replace(" ", "-");
+        playerName.Replace("_", "-");
         playerName = SanitizeFileName(playerName, "-");
 
         string filePath = Application.persistentDataPath;
@@ -234,8 +238,8 @@ public class Utils : MonoBehaviour
             Debug.Log($"Created folder: {filePath}");
         }
 
-        System.DateTime dateExported = System.DateTime.Now;
-        string customDate = "yyyymmdd-HHmmssff";
+        System.DateTime dateExported = date == default ? System.DateTime.Now : date;
+        string customDate = "yyyyMMdd-HHmmssff";
         customDate = dateExported.ToString(customDate);
 
         string fileName = playerName +
@@ -247,4 +251,29 @@ public class Utils : MonoBehaviour
         return filePath;
     }
 
+    public static Sprite LoadSpriteFromSavedJPG(string filePath)
+    {
+        if (!File.Exists(filePath))
+        {
+            Debug.LogWarning("File not found at: " + filePath);
+            return null;
+        }
+
+        byte[] fileData = File.ReadAllBytes(filePath);
+        Texture2D texture = new Texture2D(2, 2); // size will be replaced by LoadImage
+        if (!texture.LoadImage(fileData))
+        {
+            Debug.LogWarning("Failed to load image data.");
+            return null;
+        }
+
+        // Create the sprite (pivot at center, no borders)
+        Sprite sprite = Sprite.Create(
+                                    texture,
+                                    new Rect(0, 0, texture.width, texture.height),
+                                    new Vector2(0.5f, 0.5f) // pivot at center
+                                );
+
+        return sprite;
+    }
 }

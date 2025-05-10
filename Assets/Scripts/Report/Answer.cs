@@ -45,7 +45,7 @@ public class Answer : MonoBehaviour
 
             case EmotionExercise.EActivity.Imitate:
                 Sprite exsePhoto = gm.Emotions[r.idCont.emotion].ExerciseContents.Faces[r.idCont.order];
-                Sprite playerPhoto = null;
+                Sprite playerPhoto = GetImitationPhoto(r);
                 LoadImitate(exsePhoto, playerPhoto, r.idCont.emotion, r.response.ResponseEmotionId);
                 break;
         }
@@ -109,5 +109,54 @@ public class Answer : MonoBehaviour
             PlayerImitationPhoto.sprite = playerPhoto;
 
         LoadEmotion(correctEmotion, responseEmotion);
+    }
+
+    protected Sprite GetImitationPhoto(ReportManager.FullResponse r)
+    {
+        string filePath = Utils.GetDefaultFilePathName("Photos", "jpg",
+                                                        r.exercise.Id.ToString(),
+                                                        r.response.CompletedAt);
+        if (System.IO.File.Exists(filePath))
+            return Utils.LoadSpriteFromSavedJPG(filePath);
+
+        int idxDirSep = filePath.LastIndexOf('\\');
+        string directory = filePath.Substring(0, idxDirSep);
+        string prefix = "";
+        string pattern = "";
+        int targetNumber = 0;
+        {
+            string file = filePath.Substring(idxDirSep + 1);
+            string[] fpParts = file.Split('_');
+            //[0]playerName [1]customDate [2]exerciseId.extension
+
+            int splitAt = fpParts[1].Length - 2;
+            prefix = fpParts[0] + "_" + fpParts[1].Substring(0, splitAt);
+            pattern = prefix + "*_" + r.exercise.Id + ".jpg";
+            Debug.Log("GetImitationPhoto " + pattern);
+
+            int.TryParse(fpParts[1].Substring(splitAt), out targetNumber);
+        }
+
+        string[] files = System.IO.Directory.GetFiles(directory, pattern);
+        string closestFile = null;
+        int closestDiff = int.MaxValue;
+
+        foreach (string file in files)
+        {
+            string filename = System.IO.Path.GetFileNameWithoutExtension(file); // e.g., "A1112"
+            string numberPart = filename.Substring(prefix.Length, 2);    // e.g., "12"
+
+            if (int.TryParse(numberPart, out int fileNumber))
+            {
+                int diff = Mathf.Abs(fileNumber - targetNumber);
+                if (diff < closestDiff)
+                {
+                    closestDiff = diff;
+                    closestFile = file;
+                }
+            }
+        }
+
+        return Utils.LoadSpriteFromSavedJPG(closestFile);
     }
 }

@@ -143,4 +143,74 @@ public class ImitateActivity : BaseActivity
     //        yield return null;
     //    }
     //}
+
+    protected void SavePhoto()
+    {
+        if (RawImgPhoto == null) return;
+
+        // Ensure the texture is a Texture2D
+        Texture2D sourceTexture = RawImgPhoto.texture as Texture2D;
+        if (sourceTexture == null)
+        {
+            Debug.LogWarning("Texture is not a Texture2D. Try converting it first.");
+            sourceTexture = GetReadableTexture(RawImgPhoto.texture, 0.5f);
+        }
+
+        if (sourceTexture == null)
+        {
+            Debug.LogWarning("Failed to create readable texture.");
+            return;
+        }
+
+        // Encode to JPG
+        int quality = 67;
+        byte[] jpgBytes = sourceTexture.EncodeToJPG(quality); //readableTex
+
+        // Save to disk
+        string path = Utils.GetDefaultFilePathName("Photos", "jpg", CurrentExerciseDBO.Id.ToString());
+        System.IO.File.WriteAllBytes(path, jpgBytes);
+        Debug.Log("Saved JPG to: " + path);
+
+        // Clean up
+        Object.Destroy(sourceTexture);
+    }
+
+    protected Texture2D GetReadableTexture(Texture sourceTexture, float scale = 1.0f)
+    {
+        // Use source size
+        int width = sourceTexture.width;
+        int height = sourceTexture.height;
+
+        // Create a temporary RenderTexture
+        RenderTexture rtOriginal = RenderTexture.GetTemporary(width, height, 0);
+        Graphics.Blit(sourceTexture, rtOriginal);
+
+        RenderTexture rtNew = rtOriginal;
+        if (scale != 1.0f)
+        {
+            // Create a scaled RenderTexture
+            width = (int)(width * scale);
+            height = (int)(height * scale);
+            rtNew = RenderTexture.GetTemporary(width, height, 0);
+
+            // Blit original RenderTexture into the new one (this scales it)
+            Graphics.Blit(rtOriginal, rtNew);
+            RenderTexture.ReleaseTemporary(rtOriginal); // Free the original now
+        }
+
+        // Backup the current active RenderTexture
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = rtNew;
+
+        // Create a new readable Texture2D and copy pixels
+        Texture2D readableTex = new Texture2D(width, height, TextureFormat.RGB24, false);
+        readableTex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+        readableTex.Apply();
+
+        // Restore state and clean up
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(rtNew);
+
+        return readableTex;
+    }
 }

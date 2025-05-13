@@ -30,14 +30,17 @@ public abstract class Report : MonoBehaviour
 
         if (Manager != null)
             Manager.SetReportName(ReportName);
-
-        Load();
     }
 
     protected virtual void OnDisable()
     {
         if (ButtonAux != null)
             ButtonAux.gameObject.SetActive(false);
+    }
+
+    protected virtual void Update()
+    {
+        Load();
     }
 
     public virtual void SnapToTop()

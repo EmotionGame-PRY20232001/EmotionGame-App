@@ -59,25 +59,25 @@ public class FilesManager : MonoBehaviour
     /// <b>Returns</b> [playerNameSanitized]/[playerNameSanitized][_date-hour][_name?].[extension]
     /// <br></br><b>Split _</b> [0]playerName [1]customDate [2]detName?.extension
     /// </summary>
-    /// <param name="folder">if fromPersistent then subfolder of Application.persistentDataPath else full folder path</param>
+    ///// <param name="folder">if fromPersistent then subfolder of Application.persistentDataPath else full folder path</param>
     /// <param name="extension">whitout dot</param>
     /// <param name="detName">detailed name after player name</param>
-    /// <param name="fromPersistent">if should use Application.persistentDataPath at start of the path</param>
+    ///// <param name="fromPersistent">if should use Application.persistentDataPath at start of the path</param>
     public static string GetDefaultFilePathName(string folder = "",
                                                 string extension = "csv",
                                                 string detName = "",
-                                                System.DateTime date = default,
-                                                bool fromPersistent = true)
+                                                System.DateTime date = default)
+        //, bool fromPersistent = true
     {
         var gm = GameManager.Instance;
         string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
         playerName = SanitizeFilePlayerName(playerName);
 
-        string filePath = fromPersistent ? Application.persistentDataPath : folder;
+        string filePath = Application.persistentDataPath; //fromPersistent ?  : folder
         if (folder != "")
         {
-            if (fromPersistent)
-                filePath = Path.Combine(Application.persistentDataPath, folder);
+            //if (fromPersistent)
+            filePath = Path.Combine(Application.persistentDataPath, folder);
 
             if (!Directory.Exists(filePath))
             {
@@ -222,9 +222,10 @@ public class FilesManager : MonoBehaviour
 
     public static string GetCsvExportFilePath()
     {
-        LoadDefaults();
-        string folder = Path.Combine(DefaultVals.CsvExportFolder, CFolders.ANSWERS_CSV);
-        return GetDefaultFilePathName(folder, fromPersistent: false);
+        //LoadDefaults();
+        //string folder = Path.Combine(DefaultVals.CsvExportFolder, CFolders.ANSWERS_CSV);
+        //return GetDefaultFilePathName(folder, fromPersistent: false);
+        return GetDefaultFilePathName(CFolders.ANSWERS_CSV);
     }
 
 

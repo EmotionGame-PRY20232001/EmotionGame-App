@@ -31,11 +31,11 @@ public class SessionsFilter : MonoBehaviour
 
     protected void Awake()
     {
-        if (BtnAll != null)
-            BtnAll.onClick.AddListener(SelectAll);
+        //if (BtnAll != null)
+        //    BtnAll.onClick.AddListener(SelectAll);
 
-        if (BtnClean != null)
-            BtnClean.onClick.AddListener(DeselectAll);
+        //if (BtnClean != null)
+        //    BtnClean.onClick.AddListener(DeselectAll);
 
         if (BtnFilter != null)
             BtnFilter.onClick.AddListener(FilterSessions);
@@ -79,7 +79,7 @@ public class SessionsFilter : MonoBehaviour
         }
     }
 
-    protected void SelectAll()
+    public void SelectAll()
     {
         foreach(var si in SessionItems)
         {
@@ -87,7 +87,7 @@ public class SessionsFilter : MonoBehaviour
         }
         BtnFilter.interactable = true;
     }
-    protected void DeselectAll()
+    public void DeselectAll()
     {
         foreach(var si in SessionItems)
         {

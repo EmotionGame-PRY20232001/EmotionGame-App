@@ -7,8 +7,15 @@ using UnityEngine;
 
 public class FilesManager : MonoBehaviour
 {
+    public static class CFolders
+    {
+        public static readonly string NONE = "";
+        public static readonly string ANSWERS_CSV = "AnswersCSV";
+        public static readonly string PHOTOS_IMITATE = "Photos";
 
-    public static string SanitizeFileName(string name, string replacement = "_")
+    }
+
+    protected static string SanitizeFileName(string name, string replacement = "_")
     {
         // Remove invalid characters
         string invalidChars = Regex.Escape(new string(Path.GetInvalidFileNameChars()));
@@ -37,7 +44,7 @@ public class FilesManager : MonoBehaviour
         return sanitized;
     }
 
-    public static string SanitizeFilePlayerName(string playerName)
+    protected static string SanitizeFilePlayerName(string playerName)
     {
         playerName.Trim();
         playerName.Replace(" ", "-");
@@ -123,10 +130,10 @@ public class FilesManager : MonoBehaviour
     }
 
     /// <summary>
-    /// This function does include Application.persistentDataPath
+    /// From Application.persistentDataPath
     /// </summary>
     /// <param name="folderName"></param>
-    public static void DeleteFolderPermanently(string folderName)
+    protected static void DeleteFolderPermanently(string folderName)
     {
         string fullPath = Path.Combine(Application.persistentDataPath, folderName);
 
@@ -150,5 +157,35 @@ public class FilesManager : MonoBehaviour
         {
             Debug.LogWarning("Folder not found: " + fullPath);
         }
+    }
+
+    public static void DeletePlayerFiles(Player playerRef)
+    {
+        string playerFolder = SanitizeFilePlayerName(playerRef.Name);
+        string folderPath = Path.Combine("Photos", playerFolder);
+        DeleteFolderPermanently(folderPath);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sourceTexture"></param>
+    /// <param name="detName"></param>
+    /// <param name="quality">To encode to JPG</param>
+    public static void SavePlayerPhoto(Texture2D sourceTexture, string detName = "", int quality = 67)
+    {
+        if (sourceTexture == null)
+        {
+            Debug.LogWarning("Failed to create readable texture.");
+            return;
+        }
+
+        // Encode to JPG
+        byte[] jpgBytes = sourceTexture.EncodeToJPG(quality); //readableTex
+
+        // Save to disk
+        string path = GetDefaultFilePathName(CFolders.PHOTOS_IMITATE, "jpg", detName);
+        System.IO.File.WriteAllBytes(path, jpgBytes);
+        Debug.Log("Saved JPG to: " + path);
     }
 }

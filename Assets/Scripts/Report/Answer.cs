@@ -113,7 +113,7 @@ public class Answer : MonoBehaviour
 
     protected Sprite GetImitationPhoto(ReportManager.FullResponse r)
     {
-        string filePath = FilesManager.GetDefaultFilePathName("Photos", "jpg",
+        string filePath = FilesManager.GetDefaultFilePathName(FilesManager.CFolders.PHOTOS_IMITATE, "jpg",
                                                         r.exercise.Id.ToString(),
                                                         r.response.CompletedAt);
         if (System.IO.File.Exists(filePath))

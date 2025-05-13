@@ -157,20 +157,7 @@ public class ImitateActivity : BaseActivity
             sourceTexture = GetReadableTexture(RawImgPhoto.texture, 0.5f);
         }
 
-        if (sourceTexture == null)
-        {
-            Debug.LogWarning("Failed to create readable texture.");
-            return;
-        }
-
-        // Encode to JPG
-        int quality = 67;
-        byte[] jpgBytes = sourceTexture.EncodeToJPG(quality); //readableTex
-
-        // Save to disk
-        string path = FilesManager.GetDefaultFilePathName("Photos", "jpg", CurrentExerciseDBO.Id.ToString());
-        System.IO.File.WriteAllBytes(path, jpgBytes);
-        Debug.Log("Saved JPG to: " + path);
+        FilesManager.SavePlayerPhoto(sourceTexture, CurrentExerciseDBO.Id.ToString());
 
         // Clean up
         Object.Destroy(sourceTexture);

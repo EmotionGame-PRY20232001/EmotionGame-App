@@ -79,7 +79,7 @@ public class AnswersCsvExporter : MonoBehaviour
     {
         if (Manager == null) return;
 
-        string filePath = FilesManager.GetDefaultFilePathName("AnswersCSV");
+        string filePath = FilesManager.GetDefaultFilePathName(FilesManager.CFolders.ANSWERS_CSV);
         StartCsvExport(Manager.Responses, filePath);
     }
 

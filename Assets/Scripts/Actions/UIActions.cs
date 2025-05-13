@@ -49,8 +49,9 @@ public class UIActions : MonoBehaviour
 
     ////========  ========////
 
-    public static void GoToPlayerSelecion()
+    public void GoToPlayerSelecion()
     {
+        //Debug.Log("GoToPlayerSelecion");
         GameManager.Instance?.SetCurrentPlayer(null);
         AudioManager.Instance?.Load();
         SceneManager.LoadScene(Scenes.PLAYER_SELECT);
@@ -153,8 +154,9 @@ public class UIActions : MonoBehaviour
         BackScene[Scenes.REPORT] = currScene;
         SceneManager.LoadScene(Scenes.REPORT);
     }
-    public static void ReturnFromReport()
+    public void ReturnFromReport()
     {
+        Debug.Log("ReturnFromReport");
         if (BackScene.ContainsKey(Scenes.REPORT))
         {
             string oldScene = BackScene[Scenes.REPORT];

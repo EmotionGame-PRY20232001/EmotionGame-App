@@ -12,8 +12,10 @@ public class FilesManager : MonoBehaviour
         public static readonly string NONE = "";
         public static readonly string ANSWERS_CSV = "AnswersCSV";
         public static readonly string PHOTOS_IMITATE = "Photos";
-
     }
+
+    protected static readonly string DEFAULTS = "defaults.json";
+    protected static Defaults DefaultVals = new Defaults();
 
     protected static string SanitizeFileName(string name, string replacement = "_")
     {
@@ -57,21 +59,26 @@ public class FilesManager : MonoBehaviour
     /// <b>Returns</b> [playerNameSanitized]/[playerNameSanitized][_date-hour][_name?].[extension]
     /// <br></br><b>Split _</b> [0]playerName [1]customDate [2]detName?.extension
     /// </summary>
+    /// <param name="folder">if fromPersistent then subfolder of Application.persistentDataPath else full folder path</param>
     /// <param name="extension">whitout dot</param>
     /// <param name="detName">detailed name after player name</param>
+    /// <param name="fromPersistent">if should use Application.persistentDataPath at start of the path</param>
     public static string GetDefaultFilePathName(string folder = "",
                                                 string extension = "csv",
                                                 string detName = "",
-                                                System.DateTime date = default)
+                                                System.DateTime date = default,
+                                                bool fromPersistent = true)
     {
         var gm = GameManager.Instance;
         string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
         playerName = SanitizeFilePlayerName(playerName);
 
-        string filePath = Application.persistentDataPath;
+        string filePath = fromPersistent ? Application.persistentDataPath : folder;
         if (folder != "")
         {
-            filePath = Path.Combine(Application.persistentDataPath, folder);
+            if (fromPersistent)
+                filePath = Path.Combine(Application.persistentDataPath, folder);
+
             if (!Directory.Exists(filePath))
             {
                 Directory.CreateDirectory(filePath);
@@ -187,5 +194,45 @@ public class FilesManager : MonoBehaviour
         string path = GetDefaultFilePathName(CFolders.PHOTOS_IMITATE, "jpg", detName);
         System.IO.File.WriteAllBytes(path, jpgBytes);
         Debug.Log("Saved JPG to: " + path);
+    }
+
+    // FOR EXPORTING DATA KNOWN TO USER
+    protected static void LoadDefaults()
+    {
+        if (DefaultVals.loaded)
+            return;
+
+        string filePath = Path.Combine(Application.persistentDataPath, DEFAULTS);
+
+        if (!File.Exists(filePath))
+        {
+            // TODO ask for default values
+
+            string jsonD = JsonUtility.ToJson(DefaultVals, true);
+            File.WriteAllText(filePath, jsonD);
+            DefaultVals.loaded = true;
+            return;
+        }
+
+        string json = File.ReadAllText(filePath);
+        DefaultVals = JsonUtility.FromJson<Defaults>(json);
+        DefaultVals.loaded = true;
+        return;
+    }
+
+    public static string GetCsvExportFilePath()
+    {
+        LoadDefaults();
+        string folder = Path.Combine(DefaultVals.CsvExportFolder, CFolders.ANSWERS_CSV);
+        return GetDefaultFilePathName(folder, fromPersistent: false);
+    }
+
+
+    [System.Serializable]
+    public class Defaults
+    {
+        public bool loaded = false;
+        [SerializeField]
+        public string CsvExportFolder = Application.persistentDataPath;
     }
 }

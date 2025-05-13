@@ -79,16 +79,13 @@ public class AnswersCsvExporter : MonoBehaviour
     {
         if (Manager == null) return;
 
-        string filePath = FilesManager.GetDefaultFilePathName(FilesManager.CFolders.ANSWERS_CSV);
-        StartCsvExport(Manager.Responses, filePath);
-    }
+        string filePath = FilesManager.GetCsvExportFilePath();
+        exportCoroutine = StartCoroutine(ExportToCsvCoroutine(Manager.Responses, filePath));
 
-    public void StartCsvExport(List<ReportManager.FullResponse> dataList, string filePath)
-    {
-        exportCoroutine = StartCoroutine(ExportToCsvCoroutine(dataList, filePath));
         if (DownloadState != null) DownloadState.sprite = DownloadingIcon;
         if (txtTitle != null) txtTitle.text = "Descargando archivo...";
         if (txtFileLocation != null) txtFileLocation.text = filePath;
+
         SwitchButtons(true);
         StartSpinner();
     }

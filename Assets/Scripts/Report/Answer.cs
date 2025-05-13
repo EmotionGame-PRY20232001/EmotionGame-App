@@ -113,11 +113,11 @@ public class Answer : MonoBehaviour
 
     protected Sprite GetImitationPhoto(ReportManager.FullResponse r)
     {
-        string filePath = Utils.GetDefaultFilePathName("Photos", "jpg",
+        string filePath = FilesManager.GetDefaultFilePathName("Photos", "jpg",
                                                         r.exercise.Id.ToString(),
                                                         r.response.CompletedAt);
         if (System.IO.File.Exists(filePath))
-            return Utils.LoadSpriteFromSavedJPG(filePath);
+            return FilesManager.LoadSpriteFromSavedJPG(filePath);
 
         int idxDirSep = filePath.LastIndexOf('\\');
         string directory = filePath.Substring(0, idxDirSep);
@@ -156,6 +156,6 @@ public class Answer : MonoBehaviour
             }
         }
 
-        return Utils.LoadSpriteFromSavedJPG(closestFile);
+        return FilesManager.LoadSpriteFromSavedJPG(closestFile);
     }
 }

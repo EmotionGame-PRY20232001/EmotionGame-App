@@ -123,9 +123,9 @@ public class PanelScript : MonoBehaviour
     {
         {
             // Removing photos saved
-            string playerFolder = Utils.SanitizeFilePlayerName(playerRef.Name);
+            string playerFolder = FilesManager.SanitizeFilePlayerName(playerRef.Name);
             string folderPath = System.IO.Path.Combine("Photos", playerFolder);
-            Utils.DeleteFolderPermanently(folderPath);
+            FilesManager.DeleteFolderPermanently(folderPath);
         }
 
         DBManager.Instance.DeletePlayerFromDb(playerRef);

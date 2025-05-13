@@ -168,7 +168,7 @@ public class ImitateActivity : BaseActivity
         byte[] jpgBytes = sourceTexture.EncodeToJPG(quality); //readableTex
 
         // Save to disk
-        string path = Utils.GetDefaultFilePathName("Photos", "jpg", CurrentExerciseDBO.Id.ToString());
+        string path = FilesManager.GetDefaultFilePathName("Photos", "jpg", CurrentExerciseDBO.Id.ToString());
         System.IO.File.WriteAllBytes(path, jpgBytes);
         Debug.Log("Saved JPG to: " + path);
 

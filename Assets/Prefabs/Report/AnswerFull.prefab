@@ -2421,7 +2421,8 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4281542535
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7776086050351534723, guid: ca5fcc848f65cd34d951f7ac88fe8d63, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca5fcc848f65cd34d951f7ac88fe8d63, type: 3}
 --- !u!114 &6954457843699886618 stripped
 MonoBehaviour:
@@ -2537,6 +2538,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 891448327326547838}
     m_Modifications:
+    - target: {fileID: 1629614099890347487, guid: c61b734258c4cc84c8d94e493b6d657d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2681926032726007343, guid: c61b734258c4cc84c8d94e493b6d657d, type: 3}
       propertyPath: m_fontSize
       value: 32
@@ -2649,7 +2654,8 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 192
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1629614099890347487, guid: c61b734258c4cc84c8d94e493b6d657d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c61b734258c4cc84c8d94e493b6d657d, type: 3}
 --- !u!114 &8041016291707547054 stripped
 MonoBehaviour:

@@ -91,6 +91,7 @@ public class ReportManager : MonoBehaviour
 
     protected void ApplyFilters()
     {
+        // Debug.Log("RM::ApplyFilters \tG_" + CurrentGame + " \tDs_" + SelectedDates.Count);
         if (CurrentGame == EmotionExercise.EActivity.None
             || SelectedDates.Count == 0)
         {
@@ -100,13 +101,13 @@ public class ReportManager : MonoBehaviour
         if (CurrentGame != EmotionExercise.EActivity.None)
         {
             FilteredResponses = Responses.FindAll(r => r.exercise.ActivityId == CurrentGame);
-            Debug.Log("RG " + Responses.Count + " \tFR " + FilteredResponses.Count);
+            Debug.Log("R\tG " + Responses.Count + " \tFR " + FilteredResponses.Count);
         }
 
         if (SelectedDates.Count > 0)
         {
             FilteredResponses = FilteredResponses.FindAll(r => SelectedDates.Exists(d => r.response.CompletedAt.Date == d.Date));
-            Debug.Log("RD " + Responses.Count + " \tFR " + FilteredResponses.Count);
+            Debug.Log("R\tD " + Responses.Count + " \tFR " + FilteredResponses.Count);
         }
 
         onFilterUpdated?.Invoke();

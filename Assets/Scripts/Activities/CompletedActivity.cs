@@ -116,8 +116,12 @@ public class CompletedActivity : MonoBehaviour
 
         if (gm != null && gm.IsPlayerActive())
         {
-            gm.currentPlayer.StarsWon += (uint)currentStars;
-            DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);
+            // Validate
+            if (gm.currentPlayer.StarsWon < uint.MaxValue - (uint)currentStars)
+            {
+                gm.currentPlayer.StarsWon += (uint)currentStars;
+                DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);
+            }
         }
     }
 }

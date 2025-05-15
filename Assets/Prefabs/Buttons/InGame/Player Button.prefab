@@ -148,7 +148,6 @@ MonoBehaviour:
   guide: {fileID: 7857341763165577841}
   optionsContainer: {fileID: 7709086397848748275}
   playerButton: {fileID: 1961386317068847918}
-  playIcon: {fileID: 0}
 --- !u!1 &7709086397848748275
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,16 +419,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: GraphicsToContrast.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: GraphicsToContrast.Array.data[0]
       value: 
       objectReference: {fileID: 5543626171126086222}
-    - target: {fileID: 3285868597784093316, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-      propertyPath: GraphicsToContrast.Array.data[1]
-      value: 
-      objectReference: {fileID: 6455613689423617771}
     - target: {fileID: 5341293172576025779, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_text
       value: Juega
@@ -468,15 +463,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4444e9044afd32741b7c0e22141c9abe, type: 3}
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.b
-      value: 0.22352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.g
-      value: 0.30588236
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Color.r
-      value: 0.4862745
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7506513800619235907, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
       propertyPath: m_Name
@@ -624,17 +619,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7506513800619235908, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
   m_PrefabInstance: {fileID: 3583331440917622175}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6455613689423617771 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7506513800113976180, guid: e33ee71e0d8ce4548b35b77a6a04c526, type: 3}
-  m_PrefabInstance: {fileID: 3583331440917622175}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5394810792019862732
 PrefabInstance:
   m_ObjectHideFlags: 0

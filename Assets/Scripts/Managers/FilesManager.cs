@@ -55,35 +55,61 @@ public class FilesManager : MonoBehaviour
         return playerName;
     }
 
+    protected static string GetDownloadFolderPath()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        try
+        {
+            // Get Unity Activity and Context
+            AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            AndroidJavaObject context = activity.Call<AndroidJavaObject>("getApplicationContext");
+
+            // Get Downloads directory
+            AndroidJavaClass environment = new AndroidJavaClass("android.os.Environment");
+            AndroidJavaObject downloadsDir = environment.CallStatic<AndroidJavaObject>("getExternalStoragePublicDirectory", environment.GetStatic<string>("DIRECTORY_DOWNLOADS"));
+
+            return downloadsDir.Call<string>("getAbsolutePath");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error getting download folder: " + e.Message);
+        }
+#else
+        // Fallback for Editor or non-Android platforms
+#endif
+        return Application.dataPath;
+    }
+
     /// <summary>
     /// <b>Returns</b> [playerNameSanitized]/[playerNameSanitized][_date-hour][_name?].[extension]
     /// <br></br><b>Split _</b> [0]playerName [1]customDate [2]detName?.extension
     /// </summary>
-    ///// <param name="folder">if fromPersistent then subfolder of Application.persistentDataPath else full folder path</param>
+    /// <param name="folder">if fromPersistent then subfolder of Application.persistentDataPath else full folder path</param>
     /// <param name="extension">whitout dot</param>
     /// <param name="detName">detailed name after player name</param>
-    ///// <param name="fromPersistent">if should use Application.persistentDataPath at start of the path</param>
+    /// <param name="fromPersistent">if should use Application.persistentDataPath at start of the path</param>
     public static string GetDefaultFilePathName(string folder = "",
                                                 string extension = "csv",
                                                 string detName = "",
-                                                System.DateTime date = default)
-        //, bool fromPersistent = true
+                                                System.DateTime date = default,
+                                                EPathOrigin pathOrigin = EPathOrigin.PERSISTENT)
     {
         var gm = GameManager.Instance;
         string playerName = gm == null ? "Player" : gm.GetCurrentPlayer().Name;
         playerName = SanitizeFilePlayerName(playerName);
 
-        string filePath = Application.persistentDataPath; //fromPersistent ?  : folder
-        if (folder != "")
-        {
-            //if (fromPersistent)
-            filePath = Path.Combine(Application.persistentDataPath, folder);
+        string filePath = pathOrigin == EPathOrigin.PERSISTENT ?
+                            Application.persistentDataPath :
+                            GetDownloadFolderPath(); //EPathOrigin.DOWNLOAD_A
 
-            if (!Directory.Exists(filePath))
-            {
-                Directory.CreateDirectory(filePath);
-                Debug.Log($"Created folder: {filePath}");
-            }
+        if (folder != "")
+            filePath = Path.Combine(filePath, folder);
+
+        if (!Directory.Exists(filePath))
+        {
+            Directory.CreateDirectory(filePath);
+            Debug.Log($"Created folder: {filePath}");
         }
 
         filePath = Path.Combine(filePath, playerName);
@@ -224,8 +250,8 @@ public class FilesManager : MonoBehaviour
     {
         //LoadDefaults();
         //string folder = Path.Combine(DefaultVals.CsvExportFolder, CFolders.ANSWERS_CSV);
-        //return GetDefaultFilePathName(folder, fromPersistent: false);
-        return GetDefaultFilePathName(CFolders.ANSWERS_CSV);
+        //return GetDefaultFilePathName(folder);
+        return GetDefaultFilePathName(CFolders.ANSWERS_CSV, pathOrigin: EPathOrigin.DOWNLOAD_A);
     }
 
 
@@ -236,4 +262,6 @@ public class FilesManager : MonoBehaviour
         [SerializeField]
         public string CsvExportFolder = Application.persistentDataPath;
     }
+
+    public enum EPathOrigin:uint { PERSISTENT, DOWNLOAD_A };
 }

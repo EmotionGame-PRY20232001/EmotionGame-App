@@ -34,6 +34,7 @@ public class AnswersCsvExporter : MonoBehaviour
 
     private Coroutine exportCoroutine;
     private int spinTweenId = -1;
+    public StoragePermission permissionManager;
 
     protected void Awake()
     {
@@ -79,7 +80,19 @@ public class AnswersCsvExporter : MonoBehaviour
     {
         if (Manager == null) return;
 
-        string filePath = FilesManager.GetCsvExportFilePath();
+        string filePath = "";
+        permissionManager.RequestStoragePermission(
+            onGranted: () => {
+                filePath = FilesManager.GetCsvExportFilePath();
+            },
+            onDenied: () => {
+                Debug.LogWarning("User denied storage permission.");
+                if (txtTitle != null) txtTitle.text = "No se pudo descargar :c";
+                SwitchButtons(false);
+                return;
+            }
+        );
+
         exportCoroutine = StartCoroutine(ExportToCsvCoroutine(Manager.Responses, filePath));
 
         if (DownloadState != null) DownloadState.sprite = DownloadingIcon;

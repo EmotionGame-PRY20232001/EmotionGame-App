@@ -2460,6 +2460,19 @@ MonoBehaviour:
   DownloadState: {fileID: 2121945021}
   DownloadingIcon: {fileID: 21300000, guid: 6b44420d868c81341b218f40ed5e0bb9, type: 3}
   CompletedIcon: {fileID: 21300000, guid: 0913f6204b50dd04f94cccb18855864b, type: 3}
+  permissionManager: {fileID: 313436809}
+--- !u!114 &313436809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313436807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c6f739ec02bc5428a27c99151f29d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &325826974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10011,6 +10024,7 @@ MonoBehaviour:
   DownloadState: {fileID: 0}
   DownloadingIcon: {fileID: 21300000, guid: 6b44420d868c81341b218f40ed5e0bb9, type: 3}
   CompletedIcon: {fileID: 21300000, guid: 0913f6204b50dd04f94cccb18855864b, type: 3}
+  permissionManager: {fileID: 0}
 --- !u!1 &1640439153
 GameObject:
   m_ObjectHideFlags: 0

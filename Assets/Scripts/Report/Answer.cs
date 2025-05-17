@@ -62,7 +62,7 @@ public class Answer : MonoBehaviour
         });
     }
 
-    protected virtual void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
+    public virtual void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
     {
         var gm = GameManager.Instance;
 

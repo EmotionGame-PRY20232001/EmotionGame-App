@@ -19,6 +19,11 @@ public class AnswerFull : Answer
     // Imitation
     [SerializeField]
     protected RectMask2D PlayerMask;
+    // Imitation - Edit
+    [SerializeField]
+    protected AnswerEditEmotion EmotionEditObj;
+    [SerializeField]
+    protected PopUp EmotionEditPopUp;
     [SerializeField]
     protected Button PlayerEditEmotion;
     [SerializeField]
@@ -34,6 +39,7 @@ public class AnswerFull : Answer
     {
         PlayerBtnShow?.onClick.AddListener(OnBtnShowClick);
         PlayerBtnHide?.onClick.AddListener(OnBtnHideClick);
+        PlayerEditEmotion?.onClick.AddListener(OnOpenEditPopUp);
     }
 
     public override void Load(ReportManager.FullResponse r)
@@ -41,16 +47,16 @@ public class AnswerFull : Answer
         base.Load(r);
         LoadTime(r.response.CompletedAt, r.response.SecondsToSolve);
 
-        if (r.exercise.ActivityId == EmotionExercise.EActivity.Imitate)
+        bool isImitate = r.exercise.ActivityId == EmotionExercise.EActivity.Imitate;
+        if (isImitate)
         {
+            EmotionEditObj?.LoadEmotionDetected(r);
             ImitateResetToHalf();
         }
-        else
-        {
-            //PlayerEditEmotion?.gameObject.SetActive(false);
-            PlayerBtnShow?.gameObject.SetActive(false);
-            PlayerBtnHide?.gameObject.SetActive(false);
-        }
+
+        PlayerEditEmotion?.gameObject.SetActive(isImitate);
+        PlayerBtnShow?.gameObject.SetActive(isImitate);
+        PlayerBtnHide?.gameObject.SetActive(isImitate);
     }
 
     public virtual void LoadTime(System.DateTime completedAt, float secondsToSolve)
@@ -68,7 +74,7 @@ public class AnswerFull : Answer
         }
     }
 
-    protected override void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
+    public override void LoadEmotion(Emotion.EEmotion correctEmotion, Emotion.EEmotion responseEmotion)
     {
         base.LoadEmotion(correctEmotion, responseEmotion);
         var gm = GameManager.Instance;
@@ -127,7 +133,7 @@ public class AnswerFull : Answer
         PhotoMode = isPlayer ? EPhotoMode.PLAYER : EPhotoMode.EXERCISE;
 
         PlayerMask.enabled = !isPlayer;
-        //PlayerEditEmotion.gameObject.SetActive(isPlayer);
+        PlayerEditEmotion.gameObject.SetActive(isPlayer);
         PlayerPhoto.gameObject.SetActive(isPlayer);
 
         PlayerBtnShow.gameObject.SetActive(isPlayer);
@@ -143,12 +149,18 @@ public class AnswerFull : Answer
         PhotoMode = EPhotoMode.HALF;
 
         PlayerMask.enabled = true;
-        //PlayerEditEmotion.gameObject.SetActive(true);
+        PlayerEditEmotion.gameObject.SetActive(true);
         PlayerPhoto.gameObject.SetActive(true);
 
         PlayerBtnShow.gameObject.SetActive(true);
         PlayerBtnShow.gameObject.LeanScaleX(1, 0.0f);
         PlayerBtnHide.gameObject.SetActive(true);
         PlayerBtnHide.gameObject.LeanScaleX(1, 0.0f);
+    }
+
+    // Imitate edit emotion
+    protected void OnOpenEditPopUp()
+    {
+        EmotionEditPopUp?.Open();
     }
 }

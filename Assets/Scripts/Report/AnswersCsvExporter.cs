@@ -145,7 +145,14 @@ public class AnswersCsvExporter : MonoBehaviour
         exportCoroutine = null; // Clear coroutine reference
         if (DownloadState != null) DownloadState.sprite = CompletedIcon;
         if (txtTitle != null) txtTitle.text = "Descarga completa";
-        if (txtFileLocation != null) txtFileLocation.text = filePath;
+        if (txtFileLocation != null)
+        {
+            string _filePath = filePath;
+            _filePath.Replace("/storage/emulated/0", "Almacenamiento interno");
+            _filePath.Replace("/storage/emulated/1", "Almacenamiento externo");
+            txtFileLocation.text = _filePath;
+        }
+
         SwitchButtons(false);
         StopSpinner();
     }

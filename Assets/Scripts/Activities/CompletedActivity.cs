@@ -121,6 +121,7 @@ public class CompletedActivity : MonoBehaviour
             {
                 gm.currentPlayer.StarsWon += (uint)currentStars;
                 DBManager.Instance.UpdatePlayerToDb(gm.currentPlayer);
+                MainMenuManager.LastStarsWon = currentStars;
             }
         }
     }
